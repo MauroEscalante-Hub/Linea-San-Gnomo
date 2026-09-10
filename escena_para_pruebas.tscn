@@ -2,7 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://escenas/jugador/jugador.tscn" id="1_r8nmx"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8nmx"]
+albedo_color = Color(0.36862746, 0.64705884, 1, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u5bk5"]
+albedo_color = Color(1, 1, 0.3764706, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kddjp"]
 albedo_color = Color(1, 1, 0.3764706, 1)
 
 [node name="main" type="Node3D" unique_id=431489424]
@@ -13,11 +19,17 @@ use_collision = true
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=368054404]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08911133, 0, -7.480591)
 size = Vector3(12, 1, 21.406)
+material = SubResource("StandardMaterial3D_r8nmx")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGCombiner3D" unique_id=2019843601]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -6.3714476)
 polygon = PackedVector2Array(0, 0, 0, 1, 1, 1, 2.7996883, 0.07520962)
 material = SubResource("StandardMaterial3D_u5bk5")
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="CSGCombiner3D" unique_id=2032539734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7233753, 0.41569328, -11.147505)
+polygon = PackedVector2Array(-2.7342029, -0.044368744, 0, 1, 1, 1, 1, 0)
+material = SubResource("StandardMaterial3D_kddjp")
 
 [node name="CharacterBody3D" parent="." unique_id=1974979566 instance=ExtResource("1_r8nmx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
