@@ -1,3 +1,14 @@
 [gd_scene format=3 uid="uid://bt4rtt2o18nfc"]
 
-[node name="Jugador" type="Node3D" unique_id=1016799668]
+[sub_resource type="BoxShape3D" id="BoxShape3D_u5bk5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kddjp"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1974979566]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1950560103]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_u5bk5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1884744040]
+mesh = SubResource("BoxMesh_kddjp")
