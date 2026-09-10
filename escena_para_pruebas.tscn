@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://escenas/jugador/jugador.tscn" id="1_r8nmx"]
 
-[node name="Node3D" type="Node3D" unique_id=431489424]
+[node name="main" type="Node3D" unique_id=431489424]
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=833839132]
 use_collision = true
