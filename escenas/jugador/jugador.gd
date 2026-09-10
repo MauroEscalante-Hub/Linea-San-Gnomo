@@ -2,8 +2,9 @@ extends CharacterBody3D
 
 
 @export var SPEED = 5.0
+var velocidad_minima = 1.0
 @export var ACELERACION = 20.0
-@export var FRENO = 10.0  # más bajo = frenada más larga/gradual
+@export var FRENO = 10.0
 @export var Giro = 2.0
 
 func _physics_process(delta):
@@ -25,19 +26,11 @@ func _physics_process(delta):
 		return
 
 	# Ahora el movimiento es solo "avanzar" en la dirección hacia donde mira el auto.
-	var avanzando := Input.is_action_pressed("avanzar")
-	var direction := Vector3.ZERO
-	if avanzando:
-		direction = -transform.basis.z 
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+	var avanzando = Input.is_action_pressed("avanzar")
+	# Si no hay input de avanzar, igual se mueve hacia adelante a velocidad minima.
+	var velocidad_objetivo: float = SPEED if avanzando else velocidad_minima
+	var direccion = -transform.basis.z
+	velocity.x = move_toward(velocity.x, direccion.x * velocidad_objetivo, ACELERACION * delta)
+	velocity.z = move_toward(velocity.z, direccion.z * velocidad_objetivo, ACELERACION * delta)
 
 	move_and_slide()

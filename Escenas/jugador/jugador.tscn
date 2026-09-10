@@ -6,6 +6,12 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_kddjp"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kddjp"]
+albedo_color = Color(0.8784314, 0.08627451, 0.12156863, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_u5bk5"]
+material = SubResource("StandardMaterial3D_kddjp")
+
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=1974979566]
 script = ExtResource("1_vquro")
 
@@ -15,3 +21,7 @@ shape = SubResource("BoxShape3D_u5bk5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1884744040]
 mesh = SubResource("BoxMesh_kddjp")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=964427211]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, -0.17712256)
+mesh = SubResource("BoxMesh_u5bk5")
