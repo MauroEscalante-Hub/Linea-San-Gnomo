@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bt4rtt2o18nfc"]
 
 [ext_resource type="Script" uid="uid://cqo31utn3jfmm" path="res://escenas/jugador/jugador.gd" id="1_vquro"]
+[ext_resource type="Script" uid="uid://dmc10gvf5cawg" path="res://escenas/jugador/camara_player.gd" id="2_8cmsc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u5bk5"]
 
@@ -25,3 +26,14 @@ mesh = SubResource("BoxMesh_kddjp")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=964427211]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, -0.17712256)
 mesh = SubResource("BoxMesh_u5bk5")
+
+[node name="camara_player" type="Node3D" parent="." unique_id=1524765922 node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 0.9533491, 0.30187005, 0, -0.30187005, 0.9533491, 0, 0, 0)
+script = ExtResource("2_8cmsc")
+player = NodePath("..")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="camara_player" unique_id=2122480390]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 1.5, 3.5)
+
+[node name="Camera3D" type="Camera3D" parent="camara_player/SpringArm3D" unique_id=555760987]
+current = true

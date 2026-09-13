@@ -34,9 +34,6 @@ material = SubResource("StandardMaterial3D_kddjp")
 [node name="CharacterBody3D" parent="." unique_id=1974979566 instance=ExtResource("1_r8nmx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=846627471]
-transform = Transform3D(1, 0, 0, 0, 0.74670345, 0.66515714, 0, -0.66515714, 0.74670345, 0, 5.1458793, 4.2815948)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=872906465]
 transform = Transform3D(0.20545253, 0.9629557, -0.17465837, -0.31475925, 0.23400037, 0.91987526, 0.9266692, -0.13401537, 0.35117525, -5.910654, 5.324602, 4.6082563)
 sky_mode = 1
