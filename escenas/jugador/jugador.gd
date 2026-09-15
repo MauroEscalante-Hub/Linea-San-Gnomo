@@ -1,51 +1,29 @@
-extends CharacterBody3D
+extends VehicleBody3D
 
+@export var FUERZA_MOTOR_MAX := 60.0
+@export var FUERZA_FRENO := 40.0
+@export var ANGULO_GIRO_MAX := 0.5  # radianes
+@export var VELOCIDAD_GIRO_VOLANTE := 3.0  # qué tan rápido gira el volante hacia el ángulo objetivo
 
-@export var SPEED = 5.0
-var velocidad_minima = 1.0
-@export var ACELERACION = 20.0
-@export var FRENO = 10.0
-@export var Girar = 2.0
 
 func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	var avanzando := Input.is_action_pressed("avanzar")
+	var frenando := Input.is_action_pressed("frenar")
 
-# Rotación del "auto" con izquierda/derecha.
+	# Motor: empuja hacia adelante mientras se apreta "avanzar".
+	if avanzando and not frenando:
+		engine_force = FUERZA_MOTOR_MAX
+	else:
+		engine_force = 0.0
+
+	# Freno: activo mientras se apreta "frenar".
+	brake = FUERZA_FRENO if frenando else 0.0
+
+	# Dirección (steering) con izquierda/derecha, suavizado.
+	var giro_objetivo := 0.0
 	if Input.is_action_pressed("izquierda"):
-		rotate_y(Girar * delta)
-	if Input.is_action_pressed("derecha"):
-		rotate_y(-Girar * delta)
+		giro_objetivo = ANGULO_GIRO_MAX
+	elif Input.is_action_pressed("derecha"):
+		giro_objetivo = -ANGULO_GIRO_MAX
 
-	# Si está apretando "frenar", decelera gradualmente hasta 0 y no procesa más movimiento.
-	if Input.is_action_pressed("frenar"):
-		velocity.x = move_toward(velocity.x, 0, FRENO * delta)
-		velocity.z = move_toward(velocity.z, 0, FRENO * delta)
-		move_and_slide()
-		return
-
-	# Ahora el movimiento es solo "avanzar" en la dirección hacia donde mira el auto.
-	var avanzando = Input.is_action_pressed("avanzar")
-	# Si no hay input de avanzar, igual se mueve hacia adelante a velocidad minima.
-	var velocidad_objetivo: float = SPEED if avanzando else velocidad_minima
-	var direccion = -transform.basis.z
-	velocity.x = move_toward(velocity.x, direccion.x * velocidad_objetivo, ACELERACION * delta)
-	velocity.z = move_toward(velocity.z, direccion.z * velocidad_objetivo, ACELERACION * delta)
-
-	move_and_slide()
-
-	#version sin tocar nada frena 
-	#var avanzando := Input.is_action_pressed("avanzar")
-	#var direction := Vector3.ZERO
-	#if avanzando:
-		#direction = -transform.basis.z  # el "adelante" del auto según su rotación actual
-#
-	#if direction:
-		#velocity.x = move_toward(velocity.x, direction.x * SPEED, ACELERACION * delta)
-		#velocity.z = move_toward(velocity.z, direction.z * SPEED, ACELERACION * delta)
-	#else:
-		#velocity.x = move_toward(velocity.x, 0, ACELERACION * delta)
-		#velocity.z = move_toward(velocity.z, 0, ACELERACION * delta)
-#
-	#move_and_slide()
+	steering = move_toward(steering, giro_objetivo, VELOCIDAD_GIRO_VOLANTE * delta)
