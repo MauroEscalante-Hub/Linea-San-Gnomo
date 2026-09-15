@@ -1,0 +1,16 @@
+#Detalles de enemigos
+
+Enemigo 1: Color: marrón claro
+           Daño: 5  
+           Cantidad de disparos: 1
+           velocidad:  lento 
+
+Enemigo 2: Color: naranja
+           Daño: 10 
+           Cantidad de disparos: 2
+           Velocidad: media/ igual al jugador
+
+Enemigo 3: Color: azul
+           Daño: 15
+           Cantidad de disparos: 2
+           Velocidad: media alta/ un poco mayor al jugador
