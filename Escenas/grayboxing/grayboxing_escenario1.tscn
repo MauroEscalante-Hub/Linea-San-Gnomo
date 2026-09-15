@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://g3kof571e30v"]
+
+[ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://Escenas/jugador/jugador.tscn" id="1_p7yi8"]
+
+[node name="GrayboxingEscenario1" type="Node3D" unique_id=212315754]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1102800113]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Principio_y_Curva" type="CSGCombiner3D" parent="." unique_id=1423360818]
+use_collision = true
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Principio_y_Curva" unique_id=471890060]
+transform = Transform3D(0.047106426, 0, 0.99888986, 0, 1, 0, -0.99888986, 0, 0.047106426, 172.67642, -0.224, -96.288055)
+size = Vector3(40.211052, 0.30316162, 28.862556)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Principio_y_Curva" unique_id=22239843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.350357, -0.08214998, 4.412051)
+size = Vector3(109.58287, 0.30316162, 27.93463)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Principio_y_Curva" unique_id=1343750592]
+transform = Transform3D(-0.9851093, 0, -0.17192908, 0, 1, 0, 0.17192908, 0, -0.9851093, 120.55904, -0.08214998, 2.4126606)
+size = Vector3(28.271973, 0.30316162, 27.363222)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Principio_y_Curva" unique_id=1979591559]
+transform = Transform3D(-0.7782432, 0, -0.62796307, 0, 1, 0, 0.62796307, 0, -0.7782432, 140.18889, -0.08214998, -8.025444)
+size = Vector3(31.918943, 0.30316162, 28.862556)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Principio_y_Curva" unique_id=445798284]
+transform = Transform3D(-0.5015107, 0, -0.86515146, 0, 1, 0, 0.86515146, 0, -0.5015107, 157.76036, -0.112, -28.905296)
+size = Vector3(34.509247, 0.30316162, 28.862556)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Principio_y_Curva" unique_id=992743224]
+transform = Transform3D(-0.18395132, 0, -0.98293537, 0, 1, 0, 0.98293537, 0, -0.18395132, 168.27841, -0.112, -58.539318)
+size = Vector3(40.211052, 0.30316162, 28.862556)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Principio_y_Curva" unique_id=1016521097]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 173.60886, -0.224, -223.5003)
+size = Vector3(216.46327, 0.30316162, 28.862556)
+
+[node name="CharacterBody3D" parent="." unique_id=1974979566 instance=ExtResource("1_p7yi8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6580434, 1.981046, 0)
