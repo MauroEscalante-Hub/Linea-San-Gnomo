@@ -1,15 +1,16 @@
+class_name Camaraplayer
 extends Node3D
 
 @export var smooth_speed := 0.9
-@export var player := CharacterBody3D
+@export var player : VehicleBody3D
 var direccion = Vector3.FORWARD
 
 func _ready():
 	if player == null:
-		return
+		print("no hay vehiculo")
 
 func _physics_process(delta):
-	var current_velocity = get_parent().velocity
+	var current_velocity = player.linear_velocity
 	current_velocity.y = 0
 
 	if current_velocity.length() > 0.1:

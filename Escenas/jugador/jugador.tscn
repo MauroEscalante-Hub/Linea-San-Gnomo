@@ -3,39 +3,73 @@
 [ext_resource type="Script" uid="uid://cqo31utn3jfmm" path="res://escenas/jugador/jugador.gd" id="1_vquro"]
 [ext_resource type="Script" uid="uid://dmc10gvf5cawg" path="res://escenas/jugador/camara_player.gd" id="2_8cmsc"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_kddjp"]
-size = Vector3(1, 1, 3.4902344)
+[sub_resource type="BoxShape3D" id="BoxShape3D_8cmsc"]
+size = Vector3(1, 0.99694824, 1.8598633)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u5bk5"]
-albedo_color = Color(1, 0.47058824, 0.30588236, 1)
+[sub_resource type="BoxMesh" id="BoxMesh_u5bk5"]
+size = Vector3(1, 1, 1.8329468)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kh5iw"]
+albedo_color = Color(1, 0.25882354, 0.18431373, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_u5bk5"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_kddjp"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_kh5iw"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_0ru8o"]
 
 [node name="jugador" type="VehicleBody3D" unique_id=1604139032]
+can_sleep = false
 script = ExtResource("1_vquro")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1130778755]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2451172)
-shape = SubResource("BoxShape3D_kddjp")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1328462197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0015258789, 0.0021972656)
+shape = SubResource("BoxShape3D_8cmsc")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=435751540]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2539155)
-size = Vector3(1, 1, 3.498169)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=786756163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0015563965)
+mesh = SubResource("BoxMesh_u5bk5")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1956100462]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0005645752, 0.001953125, 0.021118164)
-size = Vector3(0.8505554, 0.8613281, 1)
-material = SubResource("StandardMaterial3D_u5bk5")
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1020500489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.545)
+size = Vector3(0.79, 0.79, 0.86)
+material = SubResource("StandardMaterial3D_kh5iw")
 
-[node name="derecha" type="VehicleWheel3D" parent="." unique_id=228443325]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+[node name="derecha" type="VehicleWheel3D" parent="." unique_id=73082308]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.0335636, -0.5, -0.505)
+use_as_steering = true
 
-[node name="derecha_atras" type="VehicleWheel3D" parent="." unique_id=2083122521]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -2.3849995)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="derecha" unique_id=1807814371]
+mesh = SubResource("SphereMesh_u5bk5")
 
-[node name="izquierda" type="VehicleWheel3D" parent="." unique_id=90515120]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+[node name="izquierda" type="VehicleWheel3D" parent="." unique_id=1283648186]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.0273585, -0.5, -0.5)
+use_as_steering = true
 
-[node name="izquierda_atras" type="VehicleWheel3D" parent="." unique_id=525353347]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -2.381)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="izquierda" unique_id=879670267]
+mesh = SubResource("SphereMesh_kddjp")
 
-[node name="camara_player" type="Node3D" parent="." unique_id=1206531063]
+[node name="derecha_atras" type="VehicleWheel3D" parent="." unique_id=368855817]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.0397677, -0.5, 0.5)
+use_as_traction = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="derecha_atras" unique_id=389332747]
+mesh = SubResource("SphereMesh_kh5iw")
+
+[node name="izquierda_atras" type="VehicleWheel3D" parent="." unique_id=2090882324]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.0335631, -0.5, 0.5)
+use_as_traction = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="izquierda_atras" unique_id=497553144]
+mesh = SubResource("SphereMesh_0ru8o")
+
+[node name="camara_player" type="Node3D" parent="." unique_id=1206531063 node_paths=PackedStringArray("player")]
 script = ExtResource("2_8cmsc")
+player = NodePath("..")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="camara_player" unique_id=115857641]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 1.5, 4)
+
+[node name="Camera3D" type="Camera3D" parent="camara_player/SpringArm3D" unique_id=1205624761]
