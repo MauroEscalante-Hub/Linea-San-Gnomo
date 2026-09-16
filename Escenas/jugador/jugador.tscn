@@ -78,7 +78,7 @@ mesh = SubResource("CylinderMesh_0ru8o")
 target_position = Vector3(5, 0, 0)
 
 [node name="RayCast_izquierda" type="RayCast3D" parent="." unique_id=515453143]
-target_position = Vector3(-4, 0, 0)
+target_position = Vector3(-5, 0, 0)
 
 [node name="camara_player" type="Node3D" parent="." unique_id=1206531063 node_paths=PackedStringArray("player")]
 script = ExtResource("2_8cmsc")
