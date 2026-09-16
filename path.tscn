@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bll051db7doyj"]
+
+[ext_resource type="Texture2D" uid="uid://mmufyxugh7qh" path="res://Assets/Texturas/road_road_0019_03_thumb.jpg" id="1_jnavc"]
+
+[sub_resource type="Curve3D" id="Curve3D_cnff4"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.030809402, 0, -2.8191042, 0, 0, 0, 0, 0, 0, -4.9295807, 0, -4.698507, 3.5629044, 0, 0.08383322, -3.5629044, 0, -0.08383322, -9.97613, 0, -6.140769, 0.50432205, 0, -2.3754036, -0.50432205, 0, 2.3754036, -15.31623, 0, -1.9062443, 1.1472378, 0, -3.3448803, -1.1472378, 0, 3.3448803, -14.947606, 0, 1.1861801, 0, 0, 0, 0, 0, 0, -10.8450775, 0, 9.552734, 0, 0, 0, 0, 0, 0, -0.50299835, 0, 11.631831, 0, 0, 0, 0, 0, 0, 11.904289, 0, 7.733596, 0, 0, 0, 0, 0, 0, 13.245621, 0, 4.5060253, 0, 0, 0, 0, 0, 0, 14.67078, 0, 0.9850373, 0, 0, 0, 0, 0, 0, 14.88036, 0, -1.8652847, 0, 0, 0, 0, 0, 0, 9.556961, 0, -5.5120215),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 12
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ckofj"]
+albedo_texture = ExtResource("1_jnavc")
+
+[node name="ruta" type="Path3D" unique_id=2009983065]
+curve = SubResource("Curve3D_cnff4")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="." unique_id=962247849]
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0.031677246, 0.13574219, 1.0010376, 0.115234375, 1, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.33
+path_simplify_angle = 38.7
+path_rotation = 2
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 10.0
+path_joined = false
+material = SubResource("StandardMaterial3D_ckofj")

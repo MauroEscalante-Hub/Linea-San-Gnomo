@@ -1,5 +1,7 @@
 [gd_scene format=4 uid="uid://pmc2plsrtcig"]
 
+[ext_resource type="Script" uid="uid://bv0mo455wfo0x" path="res://Scripts/vagon.gd" id="1_4b57l"]
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_182kk"]
 _surfaces = [{
 "aabb": AABB(-0.8955627, -0.6102818, -1.737793, 1.7832146, 1.6648802, 2.237793),
@@ -15,6 +17,7 @@ _surfaces = [{
 size = Vector3(0.9869995, 1.649292, 2.314331)
 
 [node name="VehicleBody3D" type="VehicleBody3D" unique_id=2072145692]
+script = ExtResource("1_4b57l")
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="." unique_id=1605239507]
 mesh = SubResource("ArrayMesh_182kk")
@@ -34,7 +37,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7638268, -0.031433105)
 size = Vector3(1, 0.58154297, 1.5257568)
 
 [node name="Ruedas" type="CSGCombiner3D" parent="CSGCombiner3D" unique_id=1114049178]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.14361227, 0)
 
 [node name="CSGTorus3D" type="CSGTorus3D" parent="CSGCombiner3D/Ruedas" unique_id=1065254063]
 transform = Transform3D(-1.9352614e-08, -0.96381086, 0, 0.4427362, -4.212951e-08, 0, 0, 0, 0.4668206, -0.6977424, -0.1187105, -1.1500455)
@@ -49,7 +51,6 @@ outer_radius = 0.772
 sides = 10
 
 [node name="Ruedas2" type="CSGCombiner3D" parent="CSGCombiner3D" unique_id=1347310218]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.14361227, 1.1315558)
 
 [node name="CSGTorus3D" type="CSGTorus3D" parent="CSGCombiner3D/Ruedas2" unique_id=1639560017]
 transform = Transform3D(-1.9352614e-08, -0.96381086, 0, 0.4427362, -4.212951e-08, 0, 0, 0, 0.4668206, -0.6977424, -0.1187105, -1.1500455)
@@ -68,13 +69,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006500244, 0.324646, -0.63
 shape = SubResource("BoxShape3D_5cipi")
 
 [node name="Giro1" type="VehicleWheel3D" parent="." unique_id=2007168836]
-transform = Transform3D(1, 0, 0, 0, 0.6328617, 0, 0, 0, 0.629076, -0.6934922, -0.24459565, -0.01856935)
+transform = Transform3D(1, 0, 0, 0, 0.6328617, 0, 0, 0, 0.629076, -0.6941999, -0.24459565, -0.01856935)
+use_as_steering = true
+damping_relaxation = 1.165
 
 [node name="Giro2" type="VehicleWheel3D" parent="." unique_id=575587241]
-transform = Transform3D(1, 0, 0, 0, 0.6328617, 0, 0, 0, 0.629076, 0.6294624, -0.24459565, -0.01856935)
+transform = Transform3D(1, 0, 0, 0, 0.6328617, 0, 0, 0, 0.629076, 0.6697623, -0.24459565, -0.01856935)
+use_as_steering = true
+damping_relaxation = 1.165
 
 [node name="Track1" type="VehicleWheel3D" parent="." unique_id=245557345]
-transform = Transform3D(1, 0, 0, 0, 0.6328617, 0, 0, 0, 0.629076, 0.6294624, -0.24459565, -1.1820234)
+transform = Transform3D(1, 0, 0, 0, 0.6328617, 0, 0, 0, 0.629076, 0.6989818, -0.24459565, -1.1820234)
+use_as_traction = true
+damping_relaxation = 1.165
 
 [node name="Track2" type="VehicleWheel3D" parent="." unique_id=1285573281]
-transform = Transform3D(1, 0, 0, 0, 0.6328617, 0, 0, 0, 0.629076, -0.8517179, -0.24459565, -1.1820234)
+transform = Transform3D(1, 0, 0, 0, 0.6328617, 0, 0, 0, 0.629076, -0.6778424, -0.24459565, -1.1820234)
+use_as_traction = true
+damping_relaxation = 1.165
