@@ -15,10 +15,16 @@ func _physics_process(delta):
 	engine_force = Input.get_axis("frenar", "avanzar") * engine_power
 	
 	if detector_derecho.is_colliding():
-		print("se detecto algo, soy derecho")
+		#print("se detecto algo, soy derecho")
 		var normal = detector_derecho.get_collision_normal()
-		print(normal)
+		var direccion_pared = normal.cross(Vector3.UP)
+		
+		print("[velocidad] ",linear_velocity)
+		print("[direccion pared] ", direccion_pared)
+	
 	if detector_izquierdo.is_colliding():
-		print("se detecto algo, soy izquierdo")
-		var normal = detector_izquierdo.get_collision_normal()
-		print(normal)
+		#print("se detecto algo, soy izquierdo")
+		#var normal = detector_izquierdo.get_collision_normal()
+		#var direccion = normal.cross(Vector3.UP)
+		#print(direccion)
+		print("[izquierdo] ",linear_velocity)
