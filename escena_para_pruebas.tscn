@@ -23,7 +23,7 @@ material = SubResource("StandardMaterial3D_r8nmx")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGCombiner3D" unique_id=2019843601]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -6.3714476)
-polygon = PackedVector2Array(0, 0, 0, 1, 1, 1, 2.7996883, 0.07520962)
+polygon = PackedVector2Array(0, 0, 0, 1, 1, 1, 4.834387, 0.21421432)
 material = SubResource("StandardMaterial3D_u5bk5")
 
 [node name="CSGPolygon3D2" type="CSGPolygon3D" parent="CSGCombiner3D" unique_id=2032539734]

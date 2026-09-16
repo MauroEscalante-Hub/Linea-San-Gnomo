@@ -12,13 +12,17 @@ size = Vector3(1, 1, 1.8329468)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kh5iw"]
 albedo_color = Color(1, 0.25882354, 0.18431373, 1)
 
-[sub_resource type="SphereMesh" id="SphereMesh_u5bk5"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_8cmsc"]
+height = 0.34014893
 
-[sub_resource type="SphereMesh" id="SphereMesh_kddjp"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_qsk7m"]
+height = 0.35862732
 
-[sub_resource type="SphereMesh" id="SphereMesh_kh5iw"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_kh5iw"]
+height = 0.31713867
 
-[sub_resource type="SphereMesh" id="SphereMesh_0ru8o"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_0ru8o"]
+height = 0.3305664
 
 [node name="jugador" type="VehicleBody3D" unique_id=1604139032]
 can_sleep = false
@@ -38,32 +42,36 @@ size = Vector3(0.79, 0.79, 0.86)
 material = SubResource("StandardMaterial3D_kh5iw")
 
 [node name="derecha" type="VehicleWheel3D" parent="." unique_id=73082308]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.0335636, -0.5, -0.505)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, -0.05, -0.505)
 use_as_steering = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="derecha" unique_id=1807814371]
-mesh = SubResource("SphereMesh_u5bk5")
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.019, 0, 0)
+mesh = SubResource("CylinderMesh_8cmsc")
 
 [node name="izquierda" type="VehicleWheel3D" parent="." unique_id=1283648186]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.0273585, -0.5, -0.5)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, -0.05, -0.5)
 use_as_steering = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="izquierda" unique_id=879670267]
-mesh = SubResource("SphereMesh_kddjp")
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.002, 0, 0)
+mesh = SubResource("CylinderMesh_qsk7m")
 
 [node name="derecha_atras" type="VehicleWheel3D" parent="." unique_id=368855817]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.0397677, -0.5, 0.5)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, -0.05, 0.5)
 use_as_traction = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="derecha_atras" unique_id=389332747]
-mesh = SubResource("SphereMesh_kh5iw")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="derecha_atras" unique_id=1545732869]
+transform = Transform3D(-4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0, 1, 0.017, 0, 0)
+mesh = SubResource("CylinderMesh_kh5iw")
 
 [node name="izquierda_atras" type="VehicleWheel3D" parent="." unique_id=2090882324]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.0335631, -0.5, 0.5)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, -0.05, 0.5)
 use_as_traction = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="izquierda_atras" unique_id=497553144]
-mesh = SubResource("SphereMesh_0ru8o")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="izquierda_atras" unique_id=222053733]
+transform = Transform3D(0.000577406, 0.9999998, -8.73723e-08, -0.9999998, 0.000577406, -8.742276e-08, -8.73723e-08, 8.742276e-08, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_0ru8o")
 
 [node name="camara_player" type="Node3D" parent="." unique_id=1206531063 node_paths=PackedStringArray("player")]
 script = ExtResource("2_8cmsc")
