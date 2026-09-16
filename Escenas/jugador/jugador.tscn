@@ -3,14 +3,11 @@
 [ext_resource type="Script" uid="uid://cqo31utn3jfmm" path="res://escenas/jugador/jugador.gd" id="1_vquro"]
 [ext_resource type="Script" uid="uid://dmc10gvf5cawg" path="res://escenas/jugador/camara_player.gd" id="2_8cmsc"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_8cmsc"]
-size = Vector3(1, 0.99694824, 1.8598633)
-
 [sub_resource type="BoxMesh" id="BoxMesh_u5bk5"]
 size = Vector3(1, 1, 1.8329468)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kh5iw"]
-albedo_color = Color(1, 0.25882354, 0.18431373, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_8cmsc"]
+size = Vector3(1, 0.99694824, 1.8598633)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_8cmsc"]
 height = 0.34014893
@@ -26,48 +23,52 @@ height = 0.3305664
 
 [node name="jugador" type="VehicleBody3D" unique_id=1604139032]
 can_sleep = false
+angular_damp = 3.0
 script = ExtResource("1_vquro")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1328462197]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0015258789, 0.0021972656)
-shape = SubResource("BoxShape3D_8cmsc")
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=786756163]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0015563965)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.4703977, 0, 0, -0.0024392535)
 mesh = SubResource("BoxMesh_u5bk5")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1020500489]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.545)
-size = Vector3(0.79, 0.79, 0.86)
-material = SubResource("StandardMaterial3D_kh5iw")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1328462197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.4703977, 0, -0.0015258789, 0.0030801226)
+shape = SubResource("BoxShape3D_8cmsc")
 
 [node name="derecha" type="VehicleWheel3D" parent="." unique_id=73082308]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, -0.05, -0.505)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, -0.4733494, -1.0071124)
 use_as_steering = true
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="derecha" unique_id=1807814371]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.019, 0, 0)
 mesh = SubResource("CylinderMesh_8cmsc")
 
 [node name="izquierda" type="VehicleWheel3D" parent="." unique_id=1283648186]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, -0.05, -0.5)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, -0.4733494, -1.0021124)
 use_as_steering = true
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="izquierda" unique_id=879670267]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.002, 0, 0)
 mesh = SubResource("CylinderMesh_qsk7m")
 
 [node name="derecha_atras" type="VehicleWheel3D" parent="." unique_id=368855817]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, -0.05, 0.5)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, -0.4733494, 1.0021125)
 use_as_traction = true
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="derecha_atras" unique_id=1545732869]
 transform = Transform3D(-4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0, 1, 0.017, 0, 0)
 mesh = SubResource("CylinderMesh_kh5iw")
 
 [node name="izquierda_atras" type="VehicleWheel3D" parent="." unique_id=2090882324]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, -0.05, 0.5)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, -0.4733494, 1.0021125)
 use_as_traction = true
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="izquierda_atras" unique_id=222053733]
 transform = Transform3D(0.000577406, 0.9999998, -8.73723e-08, -0.9999998, 0.000577406, -8.742276e-08, -8.73723e-08, 8.742276e-08, 1, 0, 0, 0)
