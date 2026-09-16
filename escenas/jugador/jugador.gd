@@ -15,10 +15,8 @@ func _ready():
 func _physics_process(delta):
 	steering = lerp(steering, Input.get_axis("derecha","izquierda") * max_steer, velocidad_de_giro * delta)
 	engine_force = Input.get_axis("frenar", "avanzar") * engine_power
-	print("frente auto: ", -transform.basis.z)
 	
-	if pegado_a_pared:
-		print("ESTOY PEGADO")
+	
 	
 	if detector_derecho.is_colliding() and !pegado_a_pared:
 		var normal = detector_derecho.get_collision_normal()
@@ -28,7 +26,7 @@ func _physics_process(delta):
 		var nuevo_basis = Basis.looking_at(direccion, normal)
 		global_transform.basis = nuevo_basis
 		var hacia_pared = -normal
-		apply_central_force(hacia_pared * 100.0)
+		apply_central_force(hacia_pared * 1000.0)
 		pegado_a_pared = true
 		
 	if detector_izquierdo.is_colliding()and !pegado_a_pared:
@@ -39,6 +37,6 @@ func _physics_process(delta):
 		var nuevo_basis = Basis.looking_at(direccion, normal)
 		global_transform.basis = nuevo_basis
 		var hacia_pared = -normal
-		apply_central_force(hacia_pared * 100.0)
+		apply_central_force(hacia_pared * 1000.0)
 		pegado_a_pared = true
 	
