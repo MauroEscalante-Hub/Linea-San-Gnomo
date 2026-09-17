@@ -22,6 +22,6 @@ func  _input(event: InputEvent) -> void:
 		
 func disparo():
 	var balita = bala.instantiate()
-	balita.global_position = $arma.global_position
+	$arma.global_position = balita.global_position
 	balita.direccion = -transform.basis.z.normalized()
 	add_child(balita)
