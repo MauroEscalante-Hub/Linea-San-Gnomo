@@ -12,7 +12,7 @@ _surfaces = [{
 }]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5cipi"]
-size = Vector3(0.9869995, 1.649292, 2.314331)
+size = Vector3(0.9869995, 1.9107056, 2.462616)
 
 [node name="VehicleBody3D" type="VehicleBody3D" unique_id=2072145692]
 
@@ -64,17 +64,21 @@ outer_radius = 0.772
 sides = 10
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=735369643]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006500244, 0.324646, -0.6314087)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007, 0.13070679, -0.6383209)
 shape = SubResource("BoxShape3D_5cipi")
 
 [node name="Giro1" type="VehicleWheel3D" parent="." unique_id=2007168836]
-transform = Transform3D(1, 0, 0, 0, 0.6328617, 0, 0, 0, 0.629076, -0.6934922, -0.24459565, -0.01856935)
+transform = Transform3D(0.675, 0, 0, 0, 0.675, 0, 0, 0, 0.675, -0.68271065, -0.30451286, 0.024228662)
+use_as_steering = true
 
 [node name="Giro2" type="VehicleWheel3D" parent="." unique_id=575587241]
-transform = Transform3D(1, 0, 0, 0, 0.6328617, 0, 0, 0, 0.629076, 0.6294624, -0.24459565, -0.01856935)
+transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, 0.72817093, -0.2685669, -1.1114147)
+use_as_steering = true
 
 [node name="Track1" type="VehicleWheel3D" parent="." unique_id=245557345]
-transform = Transform3D(1, 0, 0, 0, 0.6328617, 0, 0, 0, 0.629076, 0.6294624, -0.24459565, -1.1820234)
+transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, -0.68926454, -0.30027997, -1.1903443)
+use_as_traction = true
 
 [node name="Track2" type="VehicleWheel3D" parent="." unique_id=1285573281]
-transform = Transform3D(1, 0, 0, 0, 0.6328617, 0, 0, 0, 0.629076, -0.8517179, -0.24459565, -1.1820234)
+transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, 0.69196355, -0.40561992, -1.2129112)
+use_as_traction = true

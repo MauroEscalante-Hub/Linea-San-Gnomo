@@ -76,6 +76,12 @@ suspension_stiffness = 40.0
 transform = Transform3D(0.000577406, 0.9999998, -8.73723e-08, -0.9999998, 0.000577406, -8.742276e-08, -8.73723e-08, 8.742276e-08, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_0ru8o")
 
+[node name="RayCast_derecha" type="RayCast3D" parent="." unique_id=1435321909]
+target_position = Vector3(5, 0, 0)
+
+[node name="RayCast_izquierda" type="RayCast3D" parent="." unique_id=515453143]
+target_position = Vector3(-5, 0, 0)
+
 [node name="camara_player" type="Node3D" parent="." unique_id=1206531063 node_paths=PackedStringArray("player")]
 script = ExtResource("2_8cmsc")
 player = NodePath("..")
