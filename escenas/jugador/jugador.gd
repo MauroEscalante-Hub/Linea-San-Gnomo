@@ -20,23 +20,31 @@ func _physics_process(delta):
 	
 	if detector_derecho.is_colliding() and !pegado_a_pared:
 		var normal = detector_derecho.get_collision_normal()
+		var punto = detector_derecho.get_collision_point()
 		var direccion = normal.cross(Vector3.UP)
 		direccion.y = 0
 		direccion = direccion.normalized()
 		var nuevo_basis = Basis.looking_at(direccion, normal)
 		global_transform.basis = nuevo_basis
-		var hacia_pared = -normal
-		apply_central_force(hacia_pared * 1000.0)
+		
+		var distancia = global_position.distance_to(punto)
+		var fuerza_pared = distancia * 300.0
+
+		apply_central_force(-normal * fuerza_pared)
 		pegado_a_pared = true
 		
 	if detector_izquierdo.is_colliding()and !pegado_a_pared:
 		var normal = detector_izquierdo.get_collision_normal()
+		var punto = detector_izquierdo.get_collision_point()
+		
 		var direccion = -normal.cross(Vector3.UP)
 		direccion.y = 0
 		direccion = direccion.normalized()
 		var nuevo_basis = Basis.looking_at(direccion, normal)
 		global_transform.basis = nuevo_basis
-		var hacia_pared = -normal
-		apply_central_force(hacia_pared * 1000.0)
+		var distancia = global_position.distance_to(punto)
+		var fuerza_pared = distancia * 300.0
+		
+		apply_central_force(normal * fuerza_pared)
 		pegado_a_pared = true
 	
