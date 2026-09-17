@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bt4rtt2o18nfc"]
 
-[ext_resource type="Script" uid="uid://cqo31utn3jfmm" path="res://escenas/jugador/jugador.gd" id="1_vquro"]
-[ext_resource type="Script" uid="uid://dmc10gvf5cawg" path="res://escenas/jugador/camara_player.gd" id="2_8cmsc"]
+[ext_resource type="Script" uid="uid://cqo31utn3jfmm" path="res://Escenas/jugador/jugador.gd" id="1_vquro"]
+[ext_resource type="Script" uid="uid://dmc10gvf5cawg" path="res://Escenas/jugador/camara_player.gd" id="2_8cmsc"]
+[ext_resource type="PackedScene" uid="uid://dqb7jkqihqm02" path="res://Escenas/dispararbalas/balas.tscn" id="2_pxu2a"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_u5bk5"]
 size = Vector3(1, 1, 1.8329468)
@@ -25,6 +26,7 @@ height = 0.3305664
 can_sleep = false
 angular_damp = 3.0
 script = ExtResource("1_vquro")
+bala = ExtResource("2_pxu2a")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=786756163]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.4703977, 0, 0, -0.0024392535)
@@ -85,3 +87,6 @@ transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.965
 
 [node name="centro de masa" type="Node3D" parent="." unique_id=783383178]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17721605, -0.6891737)
+
+[node name="arma" type="Node3D" parent="." unique_id=1887910769]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8561938, 1.0418589, -0.93087983)
