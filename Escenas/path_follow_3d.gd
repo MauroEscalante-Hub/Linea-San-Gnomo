@@ -1,6 +1,6 @@
 extends PathFollow3D
 
-var speed = 0.1
+@export var speed :float=0.0089
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
