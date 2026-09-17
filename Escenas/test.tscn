@@ -46,7 +46,7 @@ transform = Transform3D(1, 0, 0, 0, 0.38706774, 0.9220513, 0, -0.9220513, 0.3870
 physics_interpolation_mode = 1
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Node3D" unique_id=289839413]
-transform = Transform3D(0.99999887, 0, 0, 0, 1.0000303, 0, 0, 0, 0.99999887, 10.198107, -0.19000003, -4.2788615)
+transform = Transform3D(-0.56514895, 0, -0.82498753, 0, 1.0000305, 0, 0.82498753, 0, -0.56514895, 10.198107, -0.19000003, -4.2788615)
 progress = 70.4
 h_offset = 0.655
 v_offset = -0.19
