@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://g3kof571e30v"]
 
+[ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://Escenas/jugador/jugador.tscn" id="1_p7yi8"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdwd0"]
 albedo_color = Color(0.84356505, 0.46794945, 0, 1)
 
@@ -304,3 +306,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.78075, 34.01937, -458.153
 pixel_size = 0.1
 text = "CHECK POINT
 "
+
+[node name="jugador" parent="." unique_id=1604139032 instance=ExtResource("1_p7yi8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.593481, 0)
