@@ -5,9 +5,9 @@ extends VehicleBody3D
 @export var velocidad_de_giro := 10
 @export var engine_power := 100
 @onready var centro_de_masa := $"centro de masa"
-@onready var detector_derecho := $RayCast_derecha
-@onready var detector_izquierdo := $RayCast_izquierda
-var pegado_a_pared :bool = false
+#@onready var detector_derecho := $RayCast_derecha
+#@onready var detector_izquierdo := $RayCast_izquierda
+#var pegado_a_pared :bool = false
 
 @export var bala : PackedScene
 
