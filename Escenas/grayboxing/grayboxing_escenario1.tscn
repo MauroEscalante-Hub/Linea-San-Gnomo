@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://g3kof571e30v"]
 
 [ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://Escenas/jugador/jugador.tscn" id="1_p7yi8"]
+[ext_resource type="PackedScene" uid="uid://dxp4h38x38m4e" path="res://Escenas/Tren/ruta.tscn" id="2_3sjby"]
+[ext_resource type="Script" uid="uid://cmv6ib0nhjx2s" path="res://Escenas/path_follow_3d.gd" id="3_ls4l5"]
+[ext_resource type="PackedScene" uid="uid://pmc2plsrtcig" path="res://Escenas/Tren/Vagon.tscn" id="4_abgxn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdwd0"]
 albedo_color = Color(0.84356505, 0.46794945, 0, 1)
@@ -192,8 +195,8 @@ material = SubResource("StandardMaterial3D_3xd07")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 151.64198, 21.051498, -530.89825)
 size = Vector3(29.015686, 12.585449, 33.05945)
 
-[node name="CSGBox3D14" type="CSGBox3D" parent="Curva_y_final" unique_id=1340220298]
-transform = Transform3D(0.9991944, 0, -0.040131792, 0, 1, 0, 0.040131792, 0, 0.9991944, 760.9715, 44.344288, -576.2764)
+[node name="CSGBox3D14" type="CSGBox3D" parent="Curva_y_final/CSGBox3D" unique_id=1340220298]
+transform = Transform3D(0.9991944, 0, -0.040131792, 0, 1, 0, 0.040131792, 0, 0.9991944, 609.3295, 23.29279, -45.378174)
 size = Vector3(111.00352, 0.30316162, 47.993057)
 material = SubResource("StandardMaterial3D_yx7sk")
 
@@ -225,6 +228,7 @@ transform = Transform3D(-1.6017476e-09, -0.036643714, 0.999328, 0.9999998, -4.37
 size = Vector3(0.5175781, 21.810165, 243.30276)
 
 [node name="Ramal" type="CSGCombiner3D" parent="." unique_id=555864309]
+visible = false
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Ramal" unique_id=372450335]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.165977, 0, 5.120453)
@@ -308,4 +312,12 @@ text = "CHECK POINT
 "
 
 [node name="jugador" parent="." unique_id=1604139032 instance=ExtResource("1_p7yi8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.593481, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.593481, 11.576477)
+
+[node name="ruta" parent="." unique_id=622969983 instance=ExtResource("2_3sjby")]
+
+[node name="PathFollow3D" type="PathFollow3D" parent="ruta" unique_id=1168567842]
+transform = Transform3D(0.7464161, 0, 0.66547954, 0, 1, 0, -0.66547954, 0, 0.7464161, -1e-45, 0, -1.0248778)
+script = ExtResource("3_ls4l5")
+
+[node name="VehicleBody3D" parent="ruta/PathFollow3D" unique_id=2072145692 instance=ExtResource("4_abgxn")]
