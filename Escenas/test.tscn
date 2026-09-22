@@ -42,7 +42,7 @@ shape = SubResource("ConcavePolygonShape3D_8uh7m")
 [node name="ruta" parent="." unique_id=769427440 instance=ExtResource("1_m32vk")]
 
 [node name="PathFollow3D" type="PathFollow3D" parent="ruta" unique_id=114226418]
-transform = Transform3D(0.07732139, 0.004224835, 0.99698937, -0.05455849, 0.9985105, 2.7742034e-12, -0.9955118, -0.054394685, 0.07743616, -6.444975, 2.3406615, -6.188342)
+transform = Transform3D(0.07732139, 0.004224835, 0.9969892, -0.05455849, 0.9985105, 2.774203e-12, -0.9955118, -0.054394685, 0.07743614, -6.444975, 2.3406615, -6.188342)
 progress = 54.77387
 v_offset = 1.005
 script = ExtResource("2_ypmfe")
@@ -53,4 +53,4 @@ transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
 disable_mode = 1
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1074324620]
-transform = Transform3D(1, 0, 0, 0, -0.2393411, 0.9709356, 0, -0.9709356, -0.2393411, 0, 10.214977, -2.0532553)
+transform = Transform3D(1, 0, 0, 0, -0.2393411, 0.9709356, 0, -0.9709356, -0.2393411, 0, 17.529308, -2.0532553)
