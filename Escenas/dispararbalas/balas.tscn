@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dqb7jkqihqm02"]
 
-[ext_resource type="Script" uid="uid://yomqjiew2lde" path="res://Escenas/dispararbalas/balas.gd" id="1_ipiei"]
+[ext_resource type="Script" uid="uid://yomqjiew2lde" path="res://escenas/dispararbalas/balas.gd" id="1_ipiei"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pxu2a"]
 albedo_color = Color(0.27244878, 0.1960508, 0.21024883, 1)
@@ -13,6 +13,7 @@ material = SubResource("StandardMaterial3D_pxu2a")
 [sub_resource type="SphereShape3D" id="SphereShape3D_yf5fn"]
 
 [node name="balas" type="CharacterBody3D" unique_id=1497429755]
+collision_layer = 2
 script = ExtResource("1_ipiei")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1936619665]

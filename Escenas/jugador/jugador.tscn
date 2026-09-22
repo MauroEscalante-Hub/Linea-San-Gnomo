@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bt4rtt2o18nfc"]
 
-[ext_resource type="Script" uid="uid://cqo31utn3jfmm" path="res://Escenas/jugador/jugador.gd" id="1_vquro"]
-[ext_resource type="Script" uid="uid://dmc10gvf5cawg" path="res://Escenas/jugador/camara_player.gd" id="2_8cmsc"]
-[ext_resource type="PackedScene" uid="uid://dqb7jkqihqm02" path="res://Escenas/dispararbalas/balas.tscn" id="2_pxu2a"]
+[ext_resource type="Script" uid="uid://cqo31utn3jfmm" path="res://escenas/jugador/jugador.gd" id="1_vquro"]
+[ext_resource type="Script" uid="uid://dmc10gvf5cawg" path="res://escenas/jugador/camara_player.gd" id="2_8cmsc"]
+[ext_resource type="PackedScene" uid="uid://dqb7jkqihqm02" path="res://escenas/dispararbalas/balas.tscn" id="2_pxu2a"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_u5bk5"]
 size = Vector3(1, 1, 1.8329468)
