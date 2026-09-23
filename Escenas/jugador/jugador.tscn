@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cqo31utn3jfmm" path="res://escenas/jugador/jugador.gd" id="1_vquro"]
 [ext_resource type="Script" uid="uid://dmc10gvf5cawg" path="res://escenas/jugador/camara_player.gd" id="2_8cmsc"]
 [ext_resource type="PackedScene" uid="uid://dqb7jkqihqm02" path="res://escenas/dispararbalas/balas.tscn" id="2_pxu2a"]
+[ext_resource type="PackedScene" uid="uid://ddrti2gwrh11m" path="res://escenas/componentes/deteccion_de_vehiculo.tscn" id="4_3don6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_u5bk5"]
 size = Vector3(1, 1, 1.8329468)
@@ -96,3 +97,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17721605, -0.6891737)
 
 [node name="arma" type="Node3D" parent="." unique_id=1887910769]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2958343, 1.1924703, -0.93087983)
+
+[node name="area_del_vehiculo" parent="." unique_id=2053109797 instance=ExtResource("4_3don6")]

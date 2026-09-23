@@ -33,7 +33,6 @@ func disparo():
 
 
 
-
 #if detector_derecho.is_colliding() and !pegado_a_pared:
 		#var normal = detector_derecho.get_collision_normal()
 		#var punto = detector_derecho.get_collision_point()

@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://m5cg0va5pghb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u5bk5"]
+albedo_color = Color(1, 0.21568628, 0.06666667, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u5bk5"]
+size = Vector3(1, 1, 5)
+
+[sub_resource type="SphereMesh" id="SphereMesh_u5bk5"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_kddjp"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_kh5iw"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_0ru8o"]
+
+[node name="auto_prueba" type="VehicleBody3D" unique_id=139441443]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=709272710]
+size = Vector3(1, 1, 5)
+material = SubResource("StandardMaterial3D_u5bk5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1204339138]
+shape = SubResource("BoxShape3D_u5bk5")
+
+[node name="VehicleWheel3D" type="VehicleWheel3D" parent="." unique_id=1850064347]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8600671, 0, 1.5198268)
+use_as_steering = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3D" unique_id=1750278417]
+mesh = SubResource("SphereMesh_u5bk5")
+
+[node name="VehicleWheel3D2" type="VehicleWheel3D" parent="." unique_id=295338996]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8058883, 0, 1.5616724)
+use_as_steering = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3D2" unique_id=156067014]
+mesh = SubResource("SphereMesh_kddjp")
+
+[node name="VehicleWheel3D3" type="VehicleWheel3D" parent="." unique_id=1923920104]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9937494, 0, -1.9235052)
+use_as_traction = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3D3" unique_id=827968613]
+mesh = SubResource("SphereMesh_kh5iw")
+
+[node name="VehicleWheel3D4" type="VehicleWheel3D" parent="." unique_id=1125229600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0644377, 0, -1.9286475)
+use_as_traction = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3D4" unique_id=429829400]
+mesh = SubResource("SphereMesh_0ru8o")
