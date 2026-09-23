@@ -13,6 +13,7 @@ material = SubResource("StandardMaterial3D_pxu2a")
 [sub_resource type="SphereShape3D" id="SphereShape3D_yf5fn"]
 
 [node name="balas" type="CharacterBody3D" unique_id=1497429755]
+collision_layer = 2
 script = ExtResource("1_ipiei")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1936619665]
