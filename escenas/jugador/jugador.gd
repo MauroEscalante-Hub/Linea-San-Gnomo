@@ -5,18 +5,24 @@ extends VehicleBody3D
 @export var velocidad_de_giro := 10
 @export var engine_power := 100
 @onready var centro_de_masa := $"centro de masa"
+signal auto_detectado
 #@onready var detector_derecho := $RayCast_derecha
 #@onready var detector_izquierdo := $RayCast_izquierda
 #var pegado_a_pared :bool = false
+@onready var area_del_vehiculo = $area_del_vehiculo
 
 @export var bala : PackedScene
 
 func _ready():
 	center_of_mass = centro_de_masa.position
+	
 
 func _physics_process(delta):
 	steering = lerp(steering, Input.get_axis("derecha","izquierda") * max_steer, velocidad_de_giro * delta)
 	engine_force = Input.get_axis("frenar", "avanzar") * engine_power
+	
+	if Input.is_action_just_pressed("cambiar_de_auto"):
+		area_del_vehiculo.input_recibido.emit()
 	
 
 func  _input(event: InputEvent) -> void:
@@ -30,7 +36,6 @@ func disparo():
 	balita.direccion = -transform.basis.z.normalized()
 	add_child(balita)
 	
-
 
 
 #if detector_derecho.is_colliding() and !pegado_a_pared:
