@@ -21,8 +21,6 @@ func _on_area_3d_body_exited(body):
 
 func _cuando_aprieta_e():
 	if auto_actual:
-		print("Voy a enviar: ", auto_actual.name)
 		listo_para_cambiar.emit(true, auto_actual)
 	else:
-		print("No hay auto")
 		listo_para_cambiar.emit(false, null)

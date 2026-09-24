@@ -1,5 +1,7 @@
+class_name vehiculoBase
 extends VehicleBody3D
 
+signal auto_actual
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

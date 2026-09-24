@@ -1,4 +1,4 @@
-class_name Camaraplayer
+class_name camara
 extends Node3D
 
 @export var smooth_speed := 0.9

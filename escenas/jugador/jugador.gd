@@ -1,4 +1,4 @@
-class_name Coche
+class_name CocheJugador
 extends VehicleBody3D
 
 #@onready var detector_derecho := $RayCast_derecha
@@ -7,6 +7,7 @@ extends VehicleBody3D
 
 @onready var centro_de_masa := $"centro de masa"
 @onready var area_del_vehiculo = $deteccion_de_vehiculo
+signal nuevo_auto
 var auto_activado: bool = true
 @export var bala : PackedScene
 
@@ -14,7 +15,7 @@ func _ready():
 	center_of_mass = centro_de_masa.position
 	area_del_vehiculo.listo_para_cambiar.connect(respuesta_)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if not auto_activado:
 		return
 	
@@ -23,11 +24,12 @@ func _physics_process(delta):
 		area_del_vehiculo.input_enviado.emit()
 	
 
-func respuesta_(Larespuesta: bool, nuevo_auto: VehicleBody3D):
+func respuesta_(Larespuesta: bool, Unauto: VehicleBody3D):
 	if Larespuesta:
-		print("Ahora quiero controlar: ", nuevo_auto.name)
+		print("Ahora quiero controlar: ", Unauto.name)
+		
 	else:
-		print("no hay nada")
+		print("no hay auto")
 	
 
 func  _input(event: InputEvent) -> void:
