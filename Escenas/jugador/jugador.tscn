@@ -23,6 +23,7 @@ height = 0.31713867
 height = 0.3305664
 
 [node name="jugador" type="VehicleBody3D" unique_id=1604139032]
+center_of_mass_mode = 1
 can_sleep = false
 angular_damp = 3.0
 script = ExtResource("1_vquro")
