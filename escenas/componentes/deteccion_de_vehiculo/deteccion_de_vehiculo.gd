@@ -6,6 +6,7 @@ signal input_enviado
 signal listo_para_cambiar
 
 func _ready():
+	auto_actual = null
 	input_enviado.connect(_cuando_aprieta_e)
 
 func _on_area_3d_body_entered(body):
@@ -19,7 +20,9 @@ func _on_area_3d_body_exited(body):
 		auto_actual = null
 
 func _cuando_aprieta_e():
-	if auto_actual != null:
+	if auto_actual:
+		print("Voy a enviar: ", auto_actual.name)
 		listo_para_cambiar.emit(true, auto_actual)
 	else:
+		print("No hay auto")
 		listo_para_cambiar.emit(false, null)

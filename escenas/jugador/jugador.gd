@@ -7,7 +7,7 @@ extends VehicleBody3D
 
 @onready var centro_de_masa := $"centro de masa"
 @onready var area_del_vehiculo = $deteccion_de_vehiculo
-var auto_activado: bool = false
+var auto_activado: bool = true
 @export var bala : PackedScene
 
 func _ready():
@@ -19,7 +19,15 @@ func _physics_process(delta):
 		return
 	
 	if Input.is_action_just_pressed("cambiar_de_auto"):
+		print("aprete e")
 		area_del_vehiculo.input_enviado.emit()
+	
+
+func respuesta_(Larespuesta: bool, nuevo_auto: VehicleBody3D):
+	if Larespuesta:
+		print("Ahora quiero controlar: ", nuevo_auto.name)
+	else:
+		print("no hay nada")
 	
 
 func  _input(event: InputEvent) -> void:
@@ -33,15 +41,6 @@ func disparo():
 	balita.direccion = -transform.basis.z.normalized()
 	add_child(balita)
 	
-
-func respuesta_(Larespuesta: bool, nuevo_auto: VehicleBody3D):
-	if Larespuesta:
-		print("Ahora quiero controlar: ", nuevo_auto.name)
-	else:
-		print("no hay nada")
-	
-
-
 
 #if detector_derecho.is_colliding() and !pegado_a_pared:
 		#var normal = detector_derecho.get_collision_normal()
