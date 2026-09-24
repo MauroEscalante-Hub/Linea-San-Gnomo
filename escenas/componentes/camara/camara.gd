@@ -1,8 +1,8 @@
-class_name Camaraplayer
+class_name camara
 extends Node3D
 
 @export var smooth_speed := 0.9
-@export var player : VehicleBody3D
+@export var player : VehicleBody3D = get_parent()
 var direccion = Vector3.FORWARD
 
 func _ready():

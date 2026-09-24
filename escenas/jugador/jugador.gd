@@ -1,51 +1,35 @@
-class_name Coche
+class_name CocheJugador
 extends VehicleBody3D
 
-@export var max_steer := 1.1
-@export var velocidad_de_giro := 10
-@export var engine_power := 100
-@onready var centro_de_masa := $"centro de masa"
-@onready var detector_derecho := $RayCast_derecha
-@onready var detector_izquierdo := $RayCast_izquierda
-var pegado_a_pared :bool = false
+#@onready var detector_derecho := $RayCast_derecha
+#@onready var detector_izquierdo := $RayCast_izquierda
+#var pegado_a_pared :bool = false
 
+@onready var centro_de_masa := $"centro de masa"
+@onready var area_del_vehiculo = $deteccion_de_vehiculo
+signal nuevo_auto
+var auto_activado: bool = true
 @export var bala : PackedScene
 
 func _ready():
 	center_of_mass = centro_de_masa.position
+	area_del_vehiculo.listo_para_cambiar.connect(respuesta_)
 
-func _physics_process(delta):
-	steering = lerp(steering, Input.get_axis("derecha","izquierda") * max_steer, velocidad_de_giro * delta)
-	engine_force = Input.get_axis("frenar", "avanzar") * engine_power
-	if detector_derecho.is_colliding() and !pegado_a_pared:
-		var normal = detector_derecho.get_collision_normal()
-		var punto = detector_derecho.get_collision_point()
-		var direccion = normal.cross(Vector3.UP)
-		direccion.y = 0
-		direccion = direccion.normalized()
-		var nuevo_basis = Basis.looking_at(direccion, normal)
-		global_transform.basis = nuevo_basis
-		
-		var distancia = global_position.distance_to(punto)
-		var fuerza_pared = distancia * 300.0
+func _physics_process(_delta):
+	if not auto_activado:
+		return
+	
+	if Input.is_action_just_pressed("cambiar_de_auto"):
+		print("aprete e")
+		area_del_vehiculo.input_enviado.emit()
+	
 
-		apply_central_force(-normal * fuerza_pared)
-		pegado_a_pared = true
+func respuesta_(Larespuesta: bool, Unauto: VehicleBody3D):
+	if Larespuesta:
+		print("Ahora quiero controlar: ", Unauto.name)
 		
-	if detector_izquierdo.is_colliding()and !pegado_a_pared:
-		var normal = detector_izquierdo.get_collision_normal()
-		var punto = detector_izquierdo.get_collision_point()
-		
-		var direccion = -normal.cross(Vector3.UP)
-		direccion.y = 0
-		direccion = direccion.normalized()
-		var nuevo_basis = Basis.looking_at(direccion, normal)
-		global_transform.basis = nuevo_basis
-		var distancia = global_position.distance_to(punto)
-		var fuerza_pared = distancia * 300.0
-		
-		apply_central_force(normal * fuerza_pared)
-		pegado_a_pared = true
+	else:
+		print("no hay auto")
 	
 
 func  _input(event: InputEvent) -> void:
@@ -59,3 +43,34 @@ func disparo():
 	balita.direccion = -transform.basis.z.normalized()
 	add_child(balita)
 	
+
+#if detector_derecho.is_colliding() and !pegado_a_pared:
+		#var normal = detector_derecho.get_collision_normal()
+		#var punto = detector_derecho.get_collision_point()
+		#var direccion = normal.cross(Vector3.UP)
+		#direccion.y = 0
+		#direccion = direccion.normalized()
+		#var nuevo_basis = Basis.looking_at(direccion, normal)
+		#global_transform.basis = nuevo_basis
+		#
+		#var distancia = global_position.distance_to(punto)
+		#var fuerza_pared = distancia * 300.0
+#
+		#apply_central_force(-normal * fuerza_pared)
+		#pegado_a_pared = true
+		#
+	#if detector_izquierdo.is_colliding()and !pegado_a_pared:
+		#var normal = detector_izquierdo.get_collision_normal()
+		#var punto = detector_izquierdo.get_collision_point()
+		#
+		#var direccion = -normal.cross(Vector3.UP)
+		#direccion.y = 0
+		#direccion = direccion.normalized()
+		#var nuevo_basis = Basis.looking_at(direccion, normal)
+		#global_transform.basis = nuevo_basis
+		#var distancia = global_position.distance_to(punto)
+		#var fuerza_pared = distancia * 300.0
+		#
+		#apply_central_force(normal * fuerza_pared)
+		#pegado_a_pared = true
+	#

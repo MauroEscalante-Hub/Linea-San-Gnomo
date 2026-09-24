@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dqb7jkqihqm02"]
 
-[ext_resource type="Script" uid="uid://yomqjiew2lde" path="res://Escenas/dispararbalas/balas.gd" id="1_ipiei"]
+[ext_resource type="Script" uid="uid://yomqjiew2lde" path="res://escenas/dispararbalas/balas.gd" id="1_ipiei"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pxu2a"]
 albedo_color = Color(0.27244878, 0.1960508, 0.21024883, 1)

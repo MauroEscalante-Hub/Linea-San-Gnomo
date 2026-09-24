@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bt4rtt2o18nfc"]
 
-[ext_resource type="Script" uid="uid://cqo31utn3jfmm" path="res://Escenas/jugador/jugador.gd" id="1_vquro"]
-[ext_resource type="Script" uid="uid://dmc10gvf5cawg" path="res://Escenas/jugador/camara_player.gd" id="2_8cmsc"]
-[ext_resource type="PackedScene" uid="uid://dqb7jkqihqm02" path="res://Escenas/dispararbalas/balas.tscn" id="2_pxu2a"]
+[ext_resource type="Script" uid="uid://cqo31utn3jfmm" path="res://escenas/jugador/jugador.gd" id="1_vquro"]
+[ext_resource type="PackedScene" uid="uid://dqb7jkqihqm02" path="res://escenas/dispararbalas/balas.tscn" id="2_pxu2a"]
+[ext_resource type="PackedScene" uid="uid://cldmjtak6b457" path="res://escenas/componentes/movimiento/movimiento.tscn" id="3_jkpmm"]
+[ext_resource type="PackedScene" uid="uid://ddrti2gwrh11m" path="res://escenas/componentes/deteccion_de_vehiculo/deteccion_de_vehiculo.tscn" id="4_3don6"]
+[ext_resource type="PackedScene" uid="uid://bjanlpui5kawe" path="res://escenas/componentes/camara/camara.tscn" id="5_jkpmm"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_u5bk5"]
 size = Vector3(1, 1, 1.8329468)
@@ -83,17 +85,17 @@ target_position = Vector3(5, 0, 0)
 [node name="RayCast_izquierda" type="RayCast3D" parent="." unique_id=515453143]
 target_position = Vector3(-5, 0, 0)
 
-[node name="camara_player" type="Node3D" parent="." unique_id=1206531063 node_paths=PackedStringArray("player")]
-script = ExtResource("2_8cmsc")
-player = NodePath("..")
-
-[node name="SpringArm3D" type="SpringArm3D" parent="camara_player" unique_id=115857641]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 1.5, 4)
-
-[node name="Camera3D" type="Camera3D" parent="camara_player/SpringArm3D" unique_id=1205624761]
-
 [node name="centro de masa" type="Node3D" parent="." unique_id=783383178]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17721605, -0.6891737)
 
 [node name="arma" type="Node3D" parent="." unique_id=1887910769]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2958343, 1.1924703, -0.93087983)
+
+[node name="movimiento" parent="." unique_id=1595637067 node_paths=PackedStringArray("player") instance=ExtResource("3_jkpmm")]
+player = NodePath("..")
+
+[node name="camara" parent="." unique_id=1265065216 node_paths=PackedStringArray("player") instance=ExtResource("5_jkpmm")]
+player = NodePath("..")
+
+[node name="deteccion_de_vehiculo" parent="." unique_id=2053109797 node_paths=PackedStringArray("auto_actual") instance=ExtResource("4_3don6")]
+auto_actual = NodePath("..")
