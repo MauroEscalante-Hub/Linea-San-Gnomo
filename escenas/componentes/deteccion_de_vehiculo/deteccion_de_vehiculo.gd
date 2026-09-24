@@ -2,11 +2,11 @@ class_name DeteccionDeVehiculo
 extends Node3D
 
 @export var auto_actual : VehicleBody3D = null 
-signal input_recibido
+signal input_enviado
 signal listo_para_cambiar
 
 func _ready():
-	input_recibido.connect(_cuando_aprieta_e)
+	input_enviado.connect(_cuando_aprieta_e)
 
 func _on_area_3d_body_entered(body):
 	if body is VehicleBody3D and body != get_parent():
@@ -20,6 +20,6 @@ func _on_area_3d_body_exited(body):
 
 func _cuando_aprieta_e():
 	if auto_actual != null:
-		print("SI HAY AUTO")
+		listo_para_cambiar.emit(true, auto_actual)
 	else:
-		print("NO HAY AUTO")
+		listo_para_cambiar.emit(false, null)

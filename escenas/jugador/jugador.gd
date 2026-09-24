@@ -1,28 +1,25 @@
 class_name Coche
 extends VehicleBody3D
 
-@export var max_steer := 1.1
-@export var velocidad_de_giro := 10
-@export var engine_power := 100
-@onready var centro_de_masa := $"centro de masa"
-signal auto_detectado
 #@onready var detector_derecho := $RayCast_derecha
 #@onready var detector_izquierdo := $RayCast_izquierda
 #var pegado_a_pared :bool = false
-@onready var area_del_vehiculo = $area_del_vehiculo
 
+@onready var centro_de_masa := $"centro de masa"
+@onready var area_del_vehiculo = $deteccion_de_vehiculo
+var auto_activado: bool = false
 @export var bala : PackedScene
 
 func _ready():
 	center_of_mass = centro_de_masa.position
-	
+	area_del_vehiculo.listo_para_cambiar.connect(respuesta_)
 
 func _physics_process(delta):
-	steering = lerp(steering, Input.get_axis("derecha","izquierda") * max_steer, velocidad_de_giro * delta)
-	engine_force = Input.get_axis("frenar", "avanzar") * engine_power
+	if not auto_activado:
+		return
 	
 	if Input.is_action_just_pressed("cambiar_de_auto"):
-		area_del_vehiculo.input_recibido.emit()
+		area_del_vehiculo.input_enviado.emit()
 	
 
 func  _input(event: InputEvent) -> void:
@@ -36,6 +33,14 @@ func disparo():
 	balita.direccion = -transform.basis.z.normalized()
 	add_child(balita)
 	
+
+func respuesta_(Larespuesta: bool, nuevo_auto: VehicleBody3D):
+	if Larespuesta:
+		print("Ahora quiero controlar: ", nuevo_auto.name)
+	else:
+		print("no hay nada")
+	
+
 
 
 #if detector_derecho.is_colliding() and !pegado_a_pared:
