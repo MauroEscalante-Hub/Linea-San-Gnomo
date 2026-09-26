@@ -18,3 +18,4 @@ func _on_area_3d_body_exited(body):
 	if body == auto_actual:
 		print("Salio un auto del area: ", auto_actual.name)
 		auto_actual = null
+		vehiculo_encontrado.emit(auto_actual)

@@ -24,7 +24,7 @@ func _process(delta):
 			print("cambie de auto ahora soy ", nuevo_vehiculo.name)
 			on_hit()
 		else:
-			print("sigo en primer auto")
+			print("sigo en primer auto, [soy jugador]")
 
 func become_player() -> void:
 	control_del_jugador.activate()
