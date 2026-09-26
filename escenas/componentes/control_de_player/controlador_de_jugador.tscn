@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cxaro2aci7e0v"]
+
+[ext_resource type="Script" uid="uid://d3wsynurqrn6n" path="res://escenas/componentes/control_de_player/controlador_de_jugador.gd" id="1_4jouy"]
+
+[node name="controlador_de_jugador" type="Node" unique_id=1153739361]
+script = ExtResource("1_4jouy")

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://escenas/jugador/jugador.tscn" id="1_r8nmx"]
 [ext_resource type="PackedScene" uid="uid://m5cg0va5pghb" path="res://auto_prueba.tscn" id="2_3k7p4"]
+[ext_resource type="PackedScene" uid="uid://cxmnfguj72fdi" path="res://escenas/componentes/game_manager.tscn" id="3_ioiu6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8nmx"]
 albedo_color = Color(0.36862746, 0.64705884, 1, 1)
@@ -46,3 +47,5 @@ sky_mode = 1
 
 [node name="auto_prueba" parent="." unique_id=139441443 instance=ExtResource("2_3k7p4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3610058, -26)
+
+[node name="GameManager" parent="." unique_id=1561341929 instance=ExtResource("3_ioiu6")]
