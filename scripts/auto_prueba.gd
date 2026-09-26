@@ -6,33 +6,24 @@ extends VehicleBody3D
 @onready var movimiento = $movimiento
 @onready var deteccion_de_vehiculo = $deteccion_de_vehiculo
 var nuevo_vehiculo: VehicleBody3D
+@onready var camara = $camara
 
 func _ready() -> void:
 	become_npc()
-	deteccion_de_vehiculo.vehiculo_encontrado.connect(respuesta_)
+	deteccion_de_vehiculo.vehiculo_encontrado.connect(_on_vehiculo_encontrado)
 	if start_as_player:
 		GameManager.set_player(self)
-
-#func _process(delta):
-	#if Input.is_action_pressed("cambiar_de_auto"):
-		#if nuevo_vehiculo != self:
-			#print("cambie de auto ahora soy ", nuevo_vehiculo.name)
-			#on_hit()
-		#else:
-			#print("sigo en primer auto, [Soy VehiculoBase]" )
 
 func become_player() -> void:
 	controlador_de_jugador.activate()
 	movimiento.movimineto_activado()
+	camara.activate()
 
 
 func become_npc() -> void:
 	controlador_de_jugador.deactivate()
 	movimiento.movimineto_desactivado()
+	camara.deactivate()
 
-func respuesta_(nuevo_auto: VehicleBody3D):
-	nuevo_vehiculo = nuevo_auto
-	
-func on_hit() -> void:
-	GameManager.set_player(nuevo_vehiculo)
-	
+func _on_vehiculo_encontrado(nuevo_auto: VehicleBody3D) -> void:
+	controlador_de_jugador.nuevo_vehiculo = nuevo_auto

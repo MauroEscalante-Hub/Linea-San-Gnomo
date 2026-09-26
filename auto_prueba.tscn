@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cxaro2aci7e0v" path="res://escenas/componentes/control_de_player/controlador_de_jugador.tscn" id="2_woj4r"]
 [ext_resource type="PackedScene" uid="uid://ddrti2gwrh11m" path="res://escenas/componentes/deteccion_de_vehiculo/deteccion_de_vehiculo.tscn" id="4_f0g4j"]
 [ext_resource type="PackedScene" uid="uid://cldmjtak6b457" path="res://escenas/componentes/movimiento/movimiento.tscn" id="4_fi87u"]
+[ext_resource type="PackedScene" uid="uid://bjanlpui5kawe" path="res://escenas/componentes/camara/camara.tscn" id="5_f0g4j"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_u5bk5"]
 size = Vector3(1, 1, 4.9868164)
@@ -75,4 +76,7 @@ vehiculo = NodePath("..")
 auto_actual = NodePath("..")
 
 [node name="movimiento" parent="." unique_id=1595637067 node_paths=PackedStringArray("player") instance=ExtResource("4_fi87u")]
+player = NodePath("..")
+
+[node name="camara" parent="." unique_id=1265065216 node_paths=PackedStringArray("player") instance=ExtResource("5_f0g4j")]
 player = NodePath("..")

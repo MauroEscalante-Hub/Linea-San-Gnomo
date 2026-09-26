@@ -23,3 +23,5 @@ func movimineto_activado():
 func movimineto_desactivado():
 	print("MOVIMIENTO DESACTIVADO: ", player.name)
 	set_physics_process(false)
+	player.steering = 0
+	player.engine_force = 0
