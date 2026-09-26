@@ -14,7 +14,7 @@ func _ready() -> void:
 	if player == null:
 		print("no hay vehiculo")
 	set_physics_process(false)
- 
+
  
 func activate() -> void:
 	set_physics_process(true)
@@ -29,10 +29,9 @@ func deactivate() -> void:
 func _physics_process(delta: float) -> void:
 	var current_velocity = player.linear_velocity
 	current_velocity.y = 0
- 
+	
 	if current_velocity.length() > 0.1:
 		direccion = lerp(direccion, current_velocity.normalized(), smooth_speed * delta)
- 
 	global_transform.basis = get_relations_from_direction(direccion)
  
  
