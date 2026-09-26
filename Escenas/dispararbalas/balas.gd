@@ -5,8 +5,10 @@ var velocidad: float = 100
 
 
 func _physics_process(delta: float) -> void:
-	velocity+= direccion * velocidad * delta
-	move_and_slide()
+	var colisiona := move_and_collide(direccion * velocidad * delta)
+	if colisiona:
+		queue_free()
+		
 
 	
 func _ready() -> void:
