@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://dsbueowlsirn0"]
+
+[ext_resource type="Script" uid="uid://dxsryeaagnyy5" path="res://Escenas/enemigos/enemigo_1.gd" id="1_wypht"]
+[ext_resource type="Script" uid="uid://dmc10gvf5cawg" path="res://Escenas/jugador/camara_player.gd" id="3_rp3b1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wohnn"]
+albedo_color = Color(0.9760527, 0, 0.21563035, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_u5bk5"]
+material = SubResource("StandardMaterial3D_wohnn")
+size = Vector3(1, 1, 1.8329468)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8cmsc"]
+size = Vector3(1, 0.99694824, 1.8598633)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8cmsc"]
+height = 0.34014893
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qsk7m"]
+height = 0.35862732
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kh5iw"]
+height = 0.31713867
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0ru8o"]
+height = 0.3305664
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3xd07"]
+
+[node name="jugador" type="VehicleBody3D" unique_id=1604139032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8725266, 0)
+can_sleep = false
+angular_damp = 3.0
+script = ExtResource("1_wypht")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1823808637]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=786756163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.4703977, 0, 0, -0.0024392535)
+mesh = SubResource("BoxMesh_u5bk5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1328462197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.4703977, 0, -0.0015258789, 0.0030801226)
+shape = SubResource("BoxShape3D_8cmsc")
+
+[node name="derecha" type="VehicleWheel3D" parent="." unique_id=73082308]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, -0.4733494, -1.0071124)
+use_as_steering = true
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="derecha" unique_id=1807814371]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.019, 0, 0)
+mesh = SubResource("CylinderMesh_8cmsc")
+
+[node name="izquierda" type="VehicleWheel3D" parent="." unique_id=1283648186]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, -0.4733494, -1.0021124)
+use_as_steering = true
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="izquierda" unique_id=879670267]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.002, 0, 0)
+mesh = SubResource("CylinderMesh_qsk7m")
+
+[node name="derecha_atras" type="VehicleWheel3D" parent="." unique_id=368855817]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, -0.4733494, 1.0021125)
+use_as_traction = true
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="derecha_atras" unique_id=1545732869]
+transform = Transform3D(-4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0, 1, 0.017, 0, 0)
+mesh = SubResource("CylinderMesh_kh5iw")
+
+[node name="izquierda_atras" type="VehicleWheel3D" parent="." unique_id=2090882324]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, -0.4733494, 1.0021125)
+use_as_traction = true
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="izquierda_atras" unique_id=222053733]
+transform = Transform3D(0.000577406, 0.9999998, -8.73723e-08, -0.9999998, 0.000577406, -8.742276e-08, -8.73723e-08, 8.742276e-08, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_0ru8o")
+
+[node name="RayCast_derecha" type="RayCast3D" parent="." unique_id=1435321909]
+target_position = Vector3(5, 0, 0)
+
+[node name="RayCast_izquierda" type="RayCast3D" parent="." unique_id=515453143]
+target_position = Vector3(-5, 0, 0)
+
+[node name="camara_player" type="Node3D" parent="." unique_id=1206531063 node_paths=PackedStringArray("player")]
+script = ExtResource("3_rp3b1")
+player = NodePath("..")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="camara_player" unique_id=115857641]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 1.5, 4)
+
+[node name="Camera3D" type="Camera3D" parent="camara_player/SpringArm3D" unique_id=1205624761]
+
+[node name="centro de masa" type="Node3D" parent="." unique_id=783383178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17721605, -0.6891737)
+
+[node name="arma" type="Node3D" parent="." unique_id=1887910769]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2958343, 1.1924703, -0.93087983)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=843993479]
+priority = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1745212300]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
+shape = SubResource("SphereShape3D_3xd07")
