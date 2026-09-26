@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://be2gt46i7eu8f"]
 
 [ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://escenas/jugador/jugador.tscn" id="1_r8nmx"]
-[ext_resource type="PackedScene" uid="uid://m5cg0va5pghb" path="res://auto_prueba.tscn" id="2_3k7p4"]
 [ext_resource type="PackedScene" uid="uid://cxmnfguj72fdi" path="res://escenas/componentes/game_manager.tscn" id="3_ioiu6"]
+[ext_resource type="PackedScene" uid="uid://b3vttic065lnx" path="res://autito.tscn" id="3_o2176"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8nmx"]
 albedo_color = Color(0.36862746, 0.64705884, 1, 1)
@@ -45,7 +45,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.784192, 2.198421, 1.430361
 transform = Transform3D(0.20545253, 0.9629557, -0.17465837, -0.31475925, 0.23400037, 0.91987526, 0.9266692, -0.13401537, 0.35117525, -5.910654, 5.324602, 4.6082563)
 sky_mode = 1
 
-[node name="auto_prueba" parent="." unique_id=139441443 instance=ExtResource("2_3k7p4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3610058, -26)
-
 [node name="GameManager" parent="." unique_id=1561341929 instance=ExtResource("3_ioiu6")]
+
+[node name="vehiculoBase" parent="." unique_id=1847355715 instance=ExtResource("3_o2176")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.0122547, -15.390173)

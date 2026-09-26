@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://b3vttic065lnx"]
+
+[ext_resource type="Script" uid="uid://hduvmgc3o1am" path="res://autito.gd" id="1_cos02"]
+[ext_resource type="PackedScene" uid="uid://cxaro2aci7e0v" path="res://escenas/componentes/control_de_player/controlador_de_jugador.tscn" id="2_ra78n"]
+[ext_resource type="PackedScene" uid="uid://cldmjtak6b457" path="res://escenas/componentes/movimiento/movimiento.tscn" id="3_qgthi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_u5bk5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u5bk5"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kddjp"]
+height = 0.5888672
+
+[node name="VehicleBody3D" type="VehicleBody3D" unique_id=777574712]
+script = ExtResource("1_cos02")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=698399808]
+mesh = SubResource("BoxMesh_u5bk5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1515927789]
+shape = SubResource("BoxShape3D_u5bk5")
+
+[node name="VehicleWheel3D" type="VehicleWheel3D" parent="." unique_id=31087040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6577827, 0, 0)
+use_as_traction = true
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3D" unique_id=1734776186]
+transform = Transform3D(-0.004375249, -0.9999904, 0, 0.9999904, -0.004375249, 0, 0, 0, 1, 0, -0.18890256, 0)
+mesh = SubResource("CylinderMesh_kddjp")
+
+[node name="VehicleWheel3D2" type="VehicleWheel3D" parent="." unique_id=29143044]
+
+[node name="VehicleWheel3D3" type="VehicleWheel3D" parent="." unique_id=883028772]
+
+[node name="VehicleWheel3D4" type="VehicleWheel3D" parent="." unique_id=1002418704]
+
+[node name="controlador_de_jugador" parent="." unique_id=1153739361 node_paths=PackedStringArray("vehiculo") instance=ExtResource("2_ra78n")]
+vehiculo = NodePath("..")
+
+[node name="movimiento" parent="." unique_id=1595637067 node_paths=PackedStringArray("player") instance=ExtResource("3_qgthi")]
+player = NodePath("..")
