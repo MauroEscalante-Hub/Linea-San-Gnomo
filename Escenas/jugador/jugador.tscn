@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cldmjtak6b457" path="res://escenas/componentes/movimiento/movimiento.tscn" id="3_jkpmm"]
 [ext_resource type="PackedScene" uid="uid://ddrti2gwrh11m" path="res://escenas/componentes/deteccion_de_vehiculo/deteccion_de_vehiculo.tscn" id="4_3don6"]
 [ext_resource type="PackedScene" uid="uid://bjanlpui5kawe" path="res://escenas/componentes/camara/camara.tscn" id="5_jkpmm"]
+[ext_resource type="PackedScene" uid="uid://cxaro2aci7e0v" path="res://escenas/componentes/control_de_player/controlador_de_jugador.tscn" id="6_vkjxu"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_u5bk5"]
 size = Vector3(1, 1, 1.8329468)
@@ -29,6 +30,7 @@ center_of_mass_mode = 1
 can_sleep = false
 angular_damp = 3.0
 script = ExtResource("1_vquro")
+start_as_player = true
 bala = ExtResource("2_pxu2a")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=786756163]
@@ -86,16 +88,19 @@ target_position = Vector3(5, 0, 0)
 target_position = Vector3(-5, 0, 0)
 
 [node name="centro de masa" type="Node3D" parent="." unique_id=783383178]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17721605, -0.6891737)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17721605, -0.44497806)
 
 [node name="arma" type="Node3D" parent="." unique_id=1887910769]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2958343, 1.1924703, -0.93087983)
-
-[node name="movimiento" parent="." unique_id=1595637067 node_paths=PackedStringArray("player") instance=ExtResource("3_jkpmm")]
-player = NodePath("..")
 
 [node name="camara" parent="." unique_id=1265065216 node_paths=PackedStringArray("player") instance=ExtResource("5_jkpmm")]
 player = NodePath("..")
 
 [node name="deteccion_de_vehiculo" parent="." unique_id=2053109797 node_paths=PackedStringArray("auto_actual") instance=ExtResource("4_3don6")]
 auto_actual = NodePath("..")
+
+[node name="controlador_de_jugador" parent="." unique_id=1153739361 node_paths=PackedStringArray("vehiculo") instance=ExtResource("6_vkjxu")]
+vehiculo = NodePath("..")
+
+[node name="movimiento" parent="." unique_id=1595637067 node_paths=PackedStringArray("player") instance=ExtResource("3_jkpmm")]
+player = NodePath("..")
