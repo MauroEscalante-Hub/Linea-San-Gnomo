@@ -26,6 +26,10 @@ height = 0.31713867
 height = 0.3305664
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_3xd07"]
+radius = 0.59038913
+
+[sub_resource type="BoxMesh" id="BoxMesh_3xd07"]
+size = Vector3(0.65112305, 0.7139282, 0.69262695)
 
 [node name="jugador" type="VehicleBody3D" unique_id=1604139032]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8725266, 0)
@@ -90,6 +94,7 @@ target_position = Vector3(5, 0, 0)
 target_position = Vector3(-5, 0, 0)
 
 [node name="camara_player" type="Node3D" parent="." unique_id=1206531063 node_paths=PackedStringArray("player")]
+visible = false
 script = ExtResource("3_rp3b1")
 player = NodePath("..")
 
@@ -110,3 +115,7 @@ priority = 1
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1745212300]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
 shape = SubResource("SphereShape3D_3xd07")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=215055253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06628418, -0.033599854, -1.5442357)
+mesh = SubResource("BoxMesh_3xd07")
