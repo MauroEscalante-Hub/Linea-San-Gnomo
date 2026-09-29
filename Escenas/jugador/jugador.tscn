@@ -22,6 +22,9 @@ height = 0.31713867
 [sub_resource type="CylinderMesh" id="CylinderMesh_0ru8o"]
 height = 0.3305664
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pxu2a"]
+load_path = "res://.godot/imported/mira.png-19af8ce66048dc4daaed9d6e89cd33c3.s3tc.ctex"
+
 [node name="jugador" type="VehicleBody3D" unique_id=1604139032]
 can_sleep = false
 angular_damp = 3.0
@@ -90,6 +93,10 @@ player = NodePath("..")
 transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 1.5, 4)
 
 [node name="Camera3D" type="Camera3D" parent="camara_player/SpringArm3D" unique_id=1205624761]
+
+[node name="Sprite3D" type="Sprite3D" parent="camara_player/SpringArm3D/Camera3D" unique_id=289747444]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 4.326239, -18.950722)
+texture = SubResource("CompressedTexture2D_pxu2a")
 
 [node name="centro de masa" type="Node3D" parent="." unique_id=783383178]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17721605, -0.6891737)

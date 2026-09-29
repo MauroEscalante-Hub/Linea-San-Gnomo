@@ -12,5 +12,5 @@ func _physics_process(delta: float) -> void:
 
 	
 func _ready() -> void:
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(0.5).timeout
 	queue_free()

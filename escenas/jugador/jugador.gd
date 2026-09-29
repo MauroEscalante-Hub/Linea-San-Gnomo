@@ -11,6 +11,7 @@ var pegado_a_pared :bool = false
 
 @export var bala : PackedScene
 
+
 func _ready():
 	center_of_mass = centro_de_masa.position
 
@@ -52,6 +53,10 @@ func  _input(event: InputEvent) -> void:
 	if event.is_action_pressed("dispararbalas"):
 		disparo()
 		
+		
+		
+		
+	
 		
 func disparo():
 	var balita = bala.instantiate()
