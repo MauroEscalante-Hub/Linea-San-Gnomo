@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cu0nveryf7yao"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5cipi"]
+top_radius = 0.1
+bottom_radius = 0.1
+
+[node name="soga" type="Node3D" unique_id=283510190]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2128325769]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -1)
+mesh = SubResource("CylinderMesh_5cipi")

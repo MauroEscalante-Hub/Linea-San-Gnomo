@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://be2gt46i7eu8f"]
 
-[ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://escenas/jugador/jugador.tscn" id="1_r8nmx"]
+[ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://Escenas/jugador/jugador.tscn" id="1_r8nmx"]
+[ext_resource type="PackedScene" uid="uid://bhw4fsf0ug2a3" path="res://Escenas/componentes/gancho/ganchocontrol.tscn" id="2_221f6"]
 [ext_resource type="PackedScene" uid="uid://m5cg0va5pghb" path="res://auto_prueba.tscn" id="3_221f6"]
-[ext_resource type="PackedScene" uid="uid://cxmnfguj72fdi" path="res://escenas/componentes/game_manager.tscn" id="3_ioiu6"]
-[ext_resource type="PackedScene" uid="uid://b3vttic065lnx" path="res://autito.tscn" id="3_o2176"]
+[ext_resource type="PackedScene" uid="uid://cxmnfguj72fdi" path="res://Escenas/componentes/game_manager.tscn" id="3_ioiu6"]
+[ext_resource type="PackedScene" uid="uid://cu0nveryf7yao" path="res://Escenas/componentes/gancho/soga.tscn" id="3_r6wgb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8nmx"]
 albedo_color = Color(0.36862746, 0.64705884, 1, 1)
@@ -42,12 +43,24 @@ polygon = PackedVector2Array(0, 0, 0, 1, 1, 1, 11.949974, -1.3727918)
 [node name="jugador" parent="." unique_id=1604139032 instance=ExtResource("1_r8nmx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.784192, 2.198421, 1.4303617)
 
+[node name="Ganchocontrol" parent="jugador" unique_id=37022380 node_paths=PackedStringArray("ray", "soga") instance=ExtResource("2_221f6")]
+atraccion_base = 567
+ray = NodePath("../RayCast3D")
+soga = NodePath("../soga")
+longitud = 1000.0
+elasticidad = 1000.0
+amortiguacion = 0.0
+
+[node name="RayCast3D" type="RayCast3D" parent="jugador" unique_id=952074356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09039307, 0.05758667, -0.9637222)
+target_position = Vector3(0, 0, -20)
+
+[node name="soga" parent="jugador" unique_id=283510190 instance=ExtResource("3_r6wgb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.1103516)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=872906465]
 transform = Transform3D(0.20545253, 0.9629557, -0.17465837, -0.31475925, 0.23400037, 0.91987526, 0.9266692, -0.13401537, 0.35117525, -5.910654, 5.324602, 4.6082563)
 sky_mode = 1
-
-[node name="vehiculoBase" parent="." unique_id=1847355715 instance=ExtResource("3_o2176")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.19803, 4.0122547, -15.390173)
 
 [node name="jugador2" parent="." unique_id=725776 instance=ExtResource("1_r8nmx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6618633, 2.7476, -32.86785)
