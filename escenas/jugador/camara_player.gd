@@ -4,9 +4,8 @@ extends Node3D
 @export var smooth_speed := 0.9
 @export var player : VehicleBody3D
 var direccion = Vector3.FORWARD
-@export var zoom: float = 45.0
-@export var zoom_Speed: float =  8.0
-var zoom_activado = false
+
+
 
 func _ready():
 	if player == null:
