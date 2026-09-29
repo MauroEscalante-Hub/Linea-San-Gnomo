@@ -3,3 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://g3kof571e30v" path="res://Escenas/grayboxing/grayboxing_escenario1.tscn" id="1_ck2js"]
 
 [node name="GrayboxingEscenario1" unique_id=212315754 instance=ExtResource("1_ck2js")]
+
+[node name="jugador" parent="." index="6" unique_id=1604139032]
+transform = Transform3D(0.0752477, 0, -0.99716485, 0, 1, 0, 0.99716485, 0, 0.0752477, 0, 2.593481, 0)

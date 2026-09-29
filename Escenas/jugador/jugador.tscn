@@ -103,3 +103,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17721605, -0.6891737)
 
 [node name="arma" type="Node3D" parent="." unique_id=1887910769]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2958343, 1.1924703, -0.93087983)
+
+[node name="CameraDeApuntado" type="Camera3D" parent="." unique_id=209682488]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.136589, 1.3561683)
+visible = false
