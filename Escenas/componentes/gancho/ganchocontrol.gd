@@ -1,6 +1,7 @@
 extends Node
-
+@export var atraccion_base=15
 @export var ray: RayCast3D
+@export var soga:Node3D
 @export var longitud: float = 2.0
 @export var elasticidad: float = 100.0
 @export var amortiguacion: float = 10.0
@@ -19,14 +20,15 @@ func _physics_process(delta: float) -> void:
 		
 	if lanzado:
 		gancho_manual(delta)
-
+	actualizar_soga()
 
 func lanzar() -> void:
 	if ray.is_colliding():
 		target = ray.get_collision_point()
 		lanzado = true
-
-
+		print("[GANCHO] ¡choco!: ", target, " | con: ", ray.get_collider().name)
+	else:
+		print("[GANCHO] fallo: El RayCast no colisionó con ninguna superficie.")
 func atraer() -> void:
 	lanzado = false
 
@@ -42,5 +44,15 @@ func gancho_manual(delta: float) -> void:
 		var vel_dot = player.linear_velocity.dot(target_direc)
 		var fuerza_amortiguacion = target_direc * (-amortiguacion * vel_dot)
 		
-		var fuerza_total = fuerza_atraccion + fuerza_amortiguacion
+		var fuerza_total = (fuerza_atraccion + fuerza_amortiguacion) *(desplazamiento*atraccion_base)
 		player.apply_central_force(fuerza_total*delta)
+func actualizar_soga():
+	if not lanzado:
+		soga.visible = false
+		return
+		
+	soga.visible = true
+	var distancia = player.global_position.distance_to(target)
+	
+	soga.look_at(target)
+	soga.scale = Vector3(1, 1, distancia)

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://Escenas/jugador/jugador.tscn" id="1_r8nmx"]
 [ext_resource type="PackedScene" uid="uid://m5cg0va5pghb" path="res://auto_prueba.tscn" id="2_3k7p4"]
 [ext_resource type="PackedScene" uid="uid://bhw4fsf0ug2a3" path="res://Escenas/componentes/gancho/ganchocontrol.tscn" id="2_ioiu6"]
+[ext_resource type="PackedScene" uid="uid://cu0nveryf7yao" path="res://soga.tscn" id="2_o2176"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8nmx"]
 albedo_color = Color(0.36862746, 0.64705884, 1, 1)
@@ -42,12 +43,16 @@ polygon = PackedVector2Array(0, 0, 0, 1, 1, 1, 11.949974, -1.3727918)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.784192, 2.198421, 1.4303617)
 
 [node name="RayCast3D" type="RayCast3D" parent="jugador" unique_id=1667086560]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.018188477, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.018188477, 0.74957275, -1.4519653)
 target_position = Vector3(0, 0, -50)
 
-[node name="Ganchocontrol" parent="jugador" unique_id=37022380 node_paths=PackedStringArray("ray") instance=ExtResource("2_ioiu6")]
+[node name="soga" parent="jugador" unique_id=283510190 instance=ExtResource("2_o2176")]
+
+[node name="Ganchocontrol" parent="jugador" unique_id=37022380 node_paths=PackedStringArray("ray", "soga") instance=ExtResource("2_ioiu6")]
+atraccion_base = 67
 ray = NodePath("../RayCast3D")
-longitud = 32.57
+soga = NodePath("../soga")
+longitud = 100.0
 elasticidad = 500.0
 amortiguacion = 10.0
 
