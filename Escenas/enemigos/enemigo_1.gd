@@ -22,28 +22,22 @@ func _physics_process(delta):
 func seguir():
 	movimiento.set_target_position(jugador.position)
 	var next_path_poition:Vector3 = movimiento.get_next_path_position()
-	var walk_dir = next_path_poition - global_position
+	#var walk_dir = next_path_poition - global_position
 	pass
 
 func seguimiento(looker: Node3D, target: Node3D, delta):
-	#var jugador_posicion = target.global_position
-	var disntacia = looker.global_position.distance_to(target.global_position)
-	var x_target = looker.global_position.x - target.global_position.x
-	var z_target = looker.global_position.z - target.global_position.z
-	#looker.global_rotation.y = atan2(x_target, z_target)
-	var forward_2d = Vector2(global_transform.basis.z.x, global_transform.basis.z.z)
-	var direccion = (target.global_position - looker.global_position)
-	var direccion2d = Vector2(direccion.x , direccion.z)
-	var angulo_radianes = forward_2d.angle_to(direccion2d)
-	print("angulo", angulo_radianes)
-	steering = lerp(steering, clamp(angulo_radianes , -1.0 , 1.0) * max_steer, velocidad_de_giro * delta)
-	#print("rotacion", steering)
-	#engine_force = 3 * engine_power
-	if disntacia > 0:
-		engine_force = 2 * engine_power
-		#print("Distancia" , disntacia)
-	else:
-		engine_power = 0
-		#print("Lo vi")
+	var forward_2d = Vector2(-global_transform.basis.z.x, -global_transform.basis.z.z).normalized()
+	var target_direccion_global = (target.global_position - looker.global_position)
+	var direccion2d = Vector2(target_direccion_global.x , target_direccion_global.z).normalized()
+	var differencia_angulo_radianes = forward_2d.angle_to(direccion2d)
+	var dot_point = forward_2d.dot(direccion2d)
 	
-#steering, atan2(x_target, z_target) * max_steer,
+	var steering_lerp: float;
+	if dot_point > 0:
+		steering_lerp = lerp(steering, clamp(-differencia_angulo_radianes , -1.0 , 1.0), velocidad_de_giro * delta)
+	elif dot_point <= 0:
+		steering_lerp = lerp(steering, 1.0, 1 * delta)
+	steering = move_toward(steering, steering_lerp, 1 * delta)
+	engine_force = 2 * engine_power
+	
+	

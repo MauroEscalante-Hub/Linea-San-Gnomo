@@ -83,11 +83,12 @@ target_position = Vector3(5, 0, 0)
 target_position = Vector3(-5, 0, 0)
 
 [node name="camara_player" type="Node3D" parent="." unique_id=1206531063 node_paths=PackedStringArray("player")]
+visible = false
 script = ExtResource("2_8cmsc")
 player = NodePath("..")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="camara_player" unique_id=115857641]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 1.5, 4)
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 2.2919083, 6.385422)
 
 [node name="Camera3D" type="Camera3D" parent="camara_player/SpringArm3D" unique_id=1205624761]
 

@@ -94,7 +94,6 @@ target_position = Vector3(5, 0, 0)
 target_position = Vector3(-5, 0, 0)
 
 [node name="camara_player" type="Node3D" parent="." unique_id=1206531063 node_paths=PackedStringArray("player")]
-visible = false
 script = ExtResource("3_rp3b1")
 player = NodePath("..")
 
