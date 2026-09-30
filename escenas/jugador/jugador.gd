@@ -12,6 +12,7 @@ var nuevo_vehiculo: VehicleBody3D
 @export var bala : PackedScene
 @onready var camara = $camara
 
+
 func _ready() -> void:
 	area_del_vehiculo.vehiculo_encontrado.connect(_on_vehiculo_encontrado)
 	become_npc()
