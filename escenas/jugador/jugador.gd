@@ -2,7 +2,6 @@ class_name CocheJugador
 extends VehicleBody3D
 
 @export var start_as_player: bool = false
-
 @onready var centro_de_masa := $"centro de masa"
 @onready var area_del_vehiculo = $deteccion_de_vehiculo
 @onready var control_del_jugador = $controlador_de_jugador
