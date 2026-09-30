@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dxp4h38x38m4e" path="res://Escenas/Tren/ruta.tscn" id="2_3sjby"]
 [ext_resource type="Script" uid="uid://cmv6ib0nhjx2s" path="res://Escenas/path_follow_3d.gd" id="3_ls4l5"]
 [ext_resource type="PackedScene" uid="uid://pmc2plsrtcig" path="res://Escenas/Tren/Vagon.tscn" id="4_abgxn"]
+[ext_resource type="PackedScene" uid="uid://14tjj1vngcuo" path="res://Escenas/enemigos/enemigo_base.tscn" id="5_abgxn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdwd0"]
 albedo_color = Color(0.84356505, 0.46794945, 0, 1)
@@ -312,7 +313,7 @@ text = "CHECK POINT
 "
 
 [node name="jugador" parent="." unique_id=1604139032 instance=ExtResource("1_p7yi8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.593481, 11.576477)
+transform = Transform3D(0.091392085, 0, -0.995815, 0, 1, 0, 0.995815, 0, 0.091392085, -5.379789, 2.593481, 5.4448195)
 
 [node name="ruta" parent="." unique_id=622969983 instance=ExtResource("2_3sjby")]
 
@@ -321,3 +322,6 @@ transform = Transform3D(0.7464161, 0, 0.66547954, 0, 1, 0, -0.66547954, 0, 0.746
 script = ExtResource("3_ls4l5")
 
 [node name="VehicleBody3D" parent="ruta/PathFollow3D" unique_id=2072145692 instance=ExtResource("4_abgxn")]
+
+[node name="enemigo" parent="." unique_id=461994344 instance=ExtResource("5_abgxn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.113723, 2.3885264, 17.315716)
