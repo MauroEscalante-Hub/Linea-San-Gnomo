@@ -4,6 +4,7 @@
 
 [node name="Ganchocontrol" type="Node" unique_id=37022380]
 script = ExtResource("1_53eg8")
+atraccion_base = 4
 longitud = 1.725
-elasticidad = null
-amortiguacion = null
+elasticidad = 75.0
+amortiguacion = 25.8

@@ -3,7 +3,7 @@ extends PathFollow3D
 @export var VelocidadNormal :float=0.0199
 @export var Desaceleracion:float = 0.6
 @export var DistanciaMax: int=15
-@onready var jugador: Coche = $"../../jugador"
+@onready var jugador: VehicleBody3D = $"../../jugador"
 
 @onready var Locomotora: VehicleBody3D = $VehicleBody3D
 

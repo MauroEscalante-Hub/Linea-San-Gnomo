@@ -1,7 +1,7 @@
 extends Node
 @export var atraccion_base=15
-@export var ray: RayCast3D
-@export var soga:Node3D
+@onready var ray =$"../RayCast3D"
+@onready var soga=$"../soga"
 @export var longitud: float = 2.0
 @export var elasticidad: float = 100.0
 @export var amortiguacion: float = 10.0
@@ -11,7 +11,13 @@ extends Node
 var lanzado: bool = false
 var target: Vector3 = Vector3.ZERO
 
+func activate():
+	set_physics_process(true)
+	set_process(true)
 
+func desactivate():
+	set_physics_process(false)
+	set_process(false)
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("gancho"):
 		lanzar()
@@ -52,6 +58,7 @@ func actualizar_soga():
 		return
 		
 	soga.visible = true
+	
 	var distancia = player.global_position.distance_to(target)
 	
 	soga.look_at(target)
