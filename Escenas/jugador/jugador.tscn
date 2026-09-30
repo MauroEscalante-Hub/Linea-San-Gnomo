@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://bt4rtt2o18nfc"]
 
-[ext_resource type="Script" uid="uid://cqo31utn3jfmm" path="res://escenas/jugador/jugador.gd" id="1_vquro"]
-[ext_resource type="PackedScene" uid="uid://dqb7jkqihqm02" path="res://escenas/dispararbalas/balas.tscn" id="2_pxu2a"]
-[ext_resource type="PackedScene" uid="uid://cldmjtak6b457" path="res://escenas/componentes/movimiento/movimiento.tscn" id="3_jkpmm"]
-[ext_resource type="PackedScene" uid="uid://ddrti2gwrh11m" path="res://escenas/componentes/deteccion_de_vehiculo/deteccion_de_vehiculo.tscn" id="4_3don6"]
-[ext_resource type="PackedScene" uid="uid://bjanlpui5kawe" path="res://escenas/componentes/camara/camara.tscn" id="5_jkpmm"]
-[ext_resource type="PackedScene" uid="uid://cxaro2aci7e0v" path="res://escenas/componentes/control_de_player/controlador_de_jugador.tscn" id="6_vkjxu"]
+[ext_resource type="Script" uid="uid://cqo31utn3jfmm" path="res://Escenas/jugador/jugador.gd" id="1_vquro"]
+[ext_resource type="PackedScene" uid="uid://dqb7jkqihqm02" path="res://Escenas/dispararbalas/balas.tscn" id="2_pxu2a"]
+[ext_resource type="PackedScene" uid="uid://cldmjtak6b457" path="res://Escenas/componentes/movimiento/movimiento.tscn" id="3_jkpmm"]
+[ext_resource type="PackedScene" uid="uid://ddrti2gwrh11m" path="res://Escenas/componentes/deteccion_de_vehiculo/deteccion_de_vehiculo.tscn" id="4_3don6"]
+[ext_resource type="PackedScene" uid="uid://bjanlpui5kawe" path="res://Escenas/componentes/camara/camara.tscn" id="5_jkpmm"]
+[ext_resource type="PackedScene" uid="uid://cxaro2aci7e0v" path="res://Escenas/componentes/control_de_player/controlador_de_jugador.tscn" id="6_vkjxu"]
+[ext_resource type="PackedScene" uid="uid://bhw4fsf0ug2a3" path="res://Escenas/componentes/gancho/ganchocontrol.tscn" id="7_wd3tj"]
+[ext_resource type="PackedScene" uid="uid://cu0nveryf7yao" path="res://Escenas/componentes/gancho/soga.tscn" id="8_i2ues"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_u5bk5"]
 size = Vector3(1, 1, 1.8329468)
@@ -81,12 +83,6 @@ suspension_stiffness = 40.0
 transform = Transform3D(0.000577406, 0.9999998, -8.73723e-08, -0.9999998, 0.000577406, -8.742276e-08, -8.73723e-08, 8.742276e-08, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_0ru8o")
 
-[node name="RayCast_derecha" type="RayCast3D" parent="." unique_id=1435321909]
-target_position = Vector3(5, 0, 0)
-
-[node name="RayCast_izquierda" type="RayCast3D" parent="." unique_id=515453143]
-target_position = Vector3(-5, 0, 0)
-
 [node name="centro de masa" type="Node3D" parent="." unique_id=783383178]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17721605, -0.44497806)
 
@@ -104,3 +100,12 @@ vehiculo = NodePath("..")
 
 [node name="movimiento" parent="." unique_id=1595637067 node_paths=PackedStringArray("player") instance=ExtResource("3_jkpmm")]
 player = NodePath("..")
+
+[node name="Ganchocontrol" parent="." unique_id=37022380 instance=ExtResource("7_wd3tj")]
+
+[node name="soga" parent="." unique_id=283510190 instance=ExtResource("8_i2ues")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.71554923)
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1196462397]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, 0.75, -1.45)
+target_position = Vector3(0, -1, -50)
