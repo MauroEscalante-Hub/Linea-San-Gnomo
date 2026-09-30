@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bjanlpui5kawe"]
+
+[ext_resource type="Script" uid="uid://do35iw5b6opss" path="res://escenas/componentes/camara/camara.gd" id="1_hj3ts"]
+
+[node name="camara" type="Node3D" unique_id=1265065216]
+script = ExtResource("1_hj3ts")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=1731708205]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 1.5, 4)
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D" unique_id=1865971422]

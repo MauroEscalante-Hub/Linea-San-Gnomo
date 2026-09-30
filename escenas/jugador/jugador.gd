@@ -1,29 +1,47 @@
-class_name Coche
+class_name CocheJugador
 extends VehicleBody3D
 
-@export var max_steer := 0.5
-@export var velocidad_de_giro := 10
-@export var engine_power := 100
+@export var start_as_player: bool = false
+
 @onready var centro_de_masa := $"centro de masa"
-@onready var detector_derecho := $RayCast_derecha
-@onready var detector_izquierdo := $RayCast_izquierda
-var pegado_a_pared :bool = false
-
+@onready var area_del_vehiculo = $deteccion_de_vehiculo
+@onready var control_del_jugador = $controlador_de_jugador
+@onready var gancho=$Ganchocontrol
+var nuevo_vehiculo: VehicleBody3D
+@onready var movimiento:= $movimiento
 @export var bala : PackedScene
+@onready var camara = $camara
 
-func _ready():
-	center_of_mass = centro_de_masa.position
+func _ready() -> void:
+	area_del_vehiculo.vehiculo_encontrado.connect(_on_vehiculo_encontrado)
+	become_npc()
+	if start_as_player:
+		GameManager.set_player(self)
 
-func _physics_process(delta):
-	steering = lerp(steering, Input.get_axis("derecha","izquierda") * max_steer, velocidad_de_giro * delta)
-	engine_force = Input.get_axis("frenar", "avanzar") * engine_power
+
+
+func become_player() -> void:
+	control_del_jugador.activate()
+	movimiento.movimineto_activado()
+	camara.activate()
+	gancho.activate()
 	
+
+
+func become_npc() -> void:
+	control_del_jugador.deactivate()
+	movimiento.movimineto_desactivado()
+	camara.deactivate()
+	gancho.desactivate()
+
+func _on_vehiculo_encontrado(nuevo_auto: VehicleBody3D) -> void:
+	control_del_jugador.nuevo_vehiculo = nuevo_auto
 
 func  _input(event: InputEvent) -> void:
 	if event.is_action_pressed("dispararbalas"):
 		disparo()
-		
-		
+	
+
 func disparo():
 	var balita = bala.instantiate()
 	$arma.global_position = balita.global_position
