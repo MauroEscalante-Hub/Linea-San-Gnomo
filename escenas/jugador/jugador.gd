@@ -18,15 +18,11 @@ func _ready() -> void:
 	if start_as_player:
 		GameManager.set_player(self)
 
-
-
 func become_player() -> void:
 	control_del_jugador.activate()
 	movimiento.movimineto_activado()
 	camara.activate()
 	gancho.activate()
-	
-
 
 func become_npc() -> void:
 	control_del_jugador.deactivate()
@@ -40,11 +36,9 @@ func _on_vehiculo_encontrado(nuevo_auto: VehicleBody3D) -> void:
 func  _input(event: InputEvent) -> void:
 	if event.is_action_pressed("dispararbalas"):
 		disparo()
-	
 
 func disparo():
 	var balita = bala.instantiate()
 	$arma.global_position = balita.global_position
 	balita.direccion = -transform.basis.z.normalized()
 	add_child(balita)
-	

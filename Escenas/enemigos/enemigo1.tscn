@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dsbueowlsirn0"]
 
 [ext_resource type="Script" uid="uid://dxsryeaagnyy5" path="res://Escenas/enemigos/enemigo_1.gd" id="1_wypht"]
-[ext_resource type="Script" uid="uid://dmc10gvf5cawg" path="res://Escenas/jugador/camara_player.gd" id="3_rp3b1"]
+[ext_resource type="Script" uid="uid://cqo31utn3jfmm" path="res://Escenas/jugador/jugador.gd" id="3_rp3b1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wohnn"]
 albedo_color = Color(0.9760527, 0, 0.21563035, 1)
@@ -31,11 +31,12 @@ radius = 0.59038913
 [sub_resource type="BoxMesh" id="BoxMesh_3xd07"]
 size = Vector3(0.65112305, 0.7139282, 0.69262695)
 
-[node name="jugador" type="VehicleBody3D" unique_id=1604139032]
+[node name="jugador" type="VehicleBody3D" unique_id=1604139032 node_paths=PackedStringArray("jugador")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8725266, 0)
 can_sleep = false
 angular_damp = 3.0
 script = ExtResource("1_wypht")
+jugador = NodePath(".")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1823808637]
 
@@ -93,9 +94,8 @@ target_position = Vector3(5, 0, 0)
 [node name="RayCast_izquierda" type="RayCast3D" parent="." unique_id=515453143]
 target_position = Vector3(-5, 0, 0)
 
-[node name="camara_player" type="Node3D" parent="." unique_id=1206531063 node_paths=PackedStringArray("player")]
+[node name="camara_player" type="Node3D" parent="." unique_id=1206531063]
 script = ExtResource("3_rp3b1")
-player = NodePath("..")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="camara_player" unique_id=115857641]
 transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 1.5, 4)
