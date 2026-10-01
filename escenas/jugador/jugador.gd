@@ -7,14 +7,24 @@ extends VehicleBody3D
 
 @onready var centro_de_masa := $"centro de masa"
 @onready var area_del_vehiculo = $deteccion_de_vehiculo
+<<<<<<< Updated upstream
 signal nuevo_auto
 var auto_activado: bool = true
 @export var bala : PackedScene
+=======
+@onready var control_del_jugador = $controlador_de_jugador
+@onready var gancho=$Ganchocontrol
+var nuevo_vehiculo: VehicleBody3D
+@onready var movimiento:= $movimiento
+@export var bala : PackedScene
+@onready var camara = $camara
+>>>>>>> Stashed changes
 
 func _ready():
 	center_of_mass = centro_de_masa.position
 	area_del_vehiculo.listo_para_cambiar.connect(respuesta_)
 
+<<<<<<< Updated upstream
 func _physics_process(_delta):
 	if not auto_activado:
 		return
@@ -31,17 +41,44 @@ func respuesta_(Larespuesta: bool, Unauto: VehicleBody3D):
 	else:
 		print("no hay auto")
 	
+=======
+func _ready() -> void:
+	area_del_vehiculo.vehiculo_encontrado.connect(_on_vehiculo_encontrado)
+	become_npc()
+	if start_as_player:
+		GameManager.set_player(self)
+
+func become_player() -> void:
+	control_del_jugador.activate()
+	movimiento.movimineto_activado()
+	camara.activate()
+	gancho.activate()
+
+func become_npc() -> void:
+	control_del_jugador.deactivate()
+	movimiento.movimineto_desactivado()
+	camara.deactivate()
+	gancho.desactivate()
+
+func _on_vehiculo_encontrado(nuevo_auto: VehicleBody3D) -> void:
+	control_del_jugador.nuevo_vehiculo = nuevo_auto
+>>>>>>> Stashed changes
 
 func  _input(event: InputEvent) -> void:
 	if event.is_action_pressed("dispararbalas"):
 		disparo()
+<<<<<<< Updated upstream
 		
 		
+=======
+
+>>>>>>> Stashed changes
 func disparo():
 	var balita = bala.instantiate()
 	$arma.global_position = balita.global_position
 	balita.direccion = -transform.basis.z.normalized()
 	add_child(balita)
+<<<<<<< Updated upstream
 	
 
 #if detector_derecho.is_colliding() and !pegado_a_pared:
@@ -74,3 +111,5 @@ func disparo():
 		#apply_central_force(normal * fuerza_pared)
 		#pegado_a_pared = true
 	#
+=======
+>>>>>>> Stashed changes
