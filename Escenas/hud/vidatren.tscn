@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bchx6mnwvydew"]
+
+[ext_resource type="Script" uid="uid://dhajcl6c8v08h" path="res://Escenas/hud/vidatren.gd" id="1_s67wi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5cipi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mnkjj"]
+bg_color = Color(0.67567384, 0.6070776, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5cipi"]
+bg_color = Color(0.06666667, 0, 0, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(0, 0, 0, 0.02745098)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gyy1"]
+bg_color = Color(8.116523, 11.3562565, 18.892157, 1)
+
+[node name="vidabar" type="ProgressBar" unique_id=1383496892]
+z_index = 1
+offset_top = 61.0
+offset_right = 240.0
+offset_bottom = 88.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_5cipi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mnkjj")
+value = 60.0
+show_percentage = false
+script = ExtResource("1_s67wi")
+
+[node name="damagebar" type="ProgressBar" parent="." unique_id=1227738813]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_5cipi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2gyy1")
+value = 80.0
+show_percentage = false
+
+[node name="timer" type="Timer" parent="." unique_id=1419436635]
+wait_time = 0.4
+one_shot = true
+
+[node name="Label" type="Label" parent="." unique_id=2093256007]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "vida tren"
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
