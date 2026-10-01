@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://db0xp4k6m2u8a"]
+
+[ext_resource type="Script" uid="uid://bg7wplciv1p6o" path="res://escenas/componentes/arma/arma.gd" id="1_pdal0"]
+[ext_resource type="PackedScene" uid="uid://dqb7jkqihqm02" path="res://escenas/dispararbalas/balas.tscn" id="2_k60kx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pdal0"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u5bk5"]
+
+[node name="Arma" type="Node3D" unique_id=192237572]
+script = ExtResource("1_pdal0")
+bala = ExtResource("2_k60kx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=39034994]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+layers = 2
+mesh = SubResource("CapsuleMesh_pdal0")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1197176957]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2025413724]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+shape = SubResource("SphereShape3D_u5bk5")
+
+[node name="balas" parent="." unique_id=1497429755 instance=ExtResource("2_k60kx")]
+collision_layer = 4
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

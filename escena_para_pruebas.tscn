@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://be2gt46i7eu8f"]
 
-[ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://Escenas/jugador/jugador.tscn" id="1_r8nmx"]
-[ext_resource type="PackedScene" uid="uid://m5cg0va5pghb" path="res://auto_prueba.tscn" id="3_221f6"]
-[ext_resource type="PackedScene" uid="uid://cxmnfguj72fdi" path="res://Escenas/componentes/game_manager.tscn" id="3_ioiu6"]
+[ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://escenas/jugador/jugador.tscn" id="1_r8nmx"]
+[ext_resource type="PackedScene" uid="uid://cxmnfguj72fdi" path="res://escenas/componentes/game_manager.tscn" id="3_ioiu6"]
+[ext_resource type="PackedScene" uid="uid://14tjj1vngcuo" path="res://escenas/enemigos/enemigo_base.tscn" id="3_o2176"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8nmx"]
 albedo_color = Color(0.36862746, 0.64705884, 1, 1)
@@ -44,12 +44,12 @@ sky_mode = 1
 
 [node name="GameManager" parent="." unique_id=1561341929 instance=ExtResource("3_ioiu6")]
 
-[node name="auto_prueba" parent="." unique_id=139441443 instance=ExtResource("3_221f6")]
-transform = Transform3D(0.40639845, 0, 0.91369593, 0, 1, 0, -0.91369593, 0, 0.40639845, -3.389185, 2.7476, -14.790199)
-
 [node name="jugador" parent="." unique_id=1604139032 instance=ExtResource("1_r8nmx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4872077, 0)
 
 [node name="jugador2" parent="." unique_id=1607288817 instance=ExtResource("1_r8nmx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.141774, 1.671493, -24.384523)
 start_as_player = false
+
+[node name="enemigo" parent="." unique_id=1146014462 instance=ExtResource("3_o2176")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1680627, 2.9427462, -22.736616)
