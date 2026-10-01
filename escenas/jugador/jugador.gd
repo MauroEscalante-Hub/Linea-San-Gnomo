@@ -8,8 +8,8 @@ extends VehicleBody3D
 @onready var gancho=$Ganchocontrol
 var nuevo_vehiculo: VehicleBody3D
 @onready var movimiento:= $movimiento
-@export var bala : PackedScene
 @onready var camara = $camara
+@onready var arma_de_jugador = $Arma_de_jugador
 
 
 func _ready() -> void:
@@ -23,22 +23,14 @@ func become_player() -> void:
 	movimiento.movimineto_activado()
 	camara.activate()
 	gancho.activate()
-
+	arma_de_jugador.activate()
+	
 func become_npc() -> void:
 	control_del_jugador.deactivate()
 	movimiento.movimineto_desactivado()
 	camara.deactivate()
 	gancho.desactivate()
+	arma_de_jugador.desactivate()
 
 func _on_vehiculo_encontrado(nuevo_auto: VehicleBody3D) -> void:
 	control_del_jugador.nuevo_vehiculo = nuevo_auto
-
-func  _input(event: InputEvent) -> void:
-	if event.is_action_pressed("dispararbalas"):
-		disparo()
-
-func disparo():
-	var balita = bala.instantiate()
-	$arma.global_position = balita.global_position
-	balita.direccion = -transform.basis.z.normalized()
-	add_child(balita)

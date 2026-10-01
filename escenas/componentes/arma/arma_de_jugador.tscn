@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://w5tekxfxwx1x"]
+
+[ext_resource type="PackedScene" uid="uid://dqb7jkqihqm02" path="res://escenas/dispararbalas/balas.tscn" id="1_bt1rc"]
+[ext_resource type="Script" uid="uid://bqgk1jc6kvkgd" path="res://escenas/componentes/arma/arma_de_jugador.gd" id="1_u6bma"]
+[ext_resource type="Texture2D" uid="uid://ds07ucddxpnhw" path="res://mira.png" id="2_d7h27"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_u5bk5"]
+
+[node name="Arma_de_jugador" type="Node3D" unique_id=396609384]
+script = ExtResource("1_u6bma")
+balas = ExtResource("1_bt1rc")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1710126497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+texture = ExtResource("2_d7h27")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1752573686]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_u5bk5")
+
+[node name="balas" parent="." unique_id=1497429755 instance=ExtResource("1_bt1rc")]

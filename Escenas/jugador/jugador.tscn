@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://bt4rtt2o18nfc"]
 
-[ext_resource type="Script" uid="uid://cqo31utn3jfmm" path="res://Escenas/jugador/jugador.gd" id="1_vquro"]
-[ext_resource type="PackedScene" uid="uid://dqb7jkqihqm02" path="res://Escenas/dispararbalas/balas.tscn" id="2_pxu2a"]
-[ext_resource type="PackedScene" uid="uid://cldmjtak6b457" path="res://Escenas/componentes/movimiento/movimiento.tscn" id="3_jkpmm"]
-[ext_resource type="PackedScene" uid="uid://ddrti2gwrh11m" path="res://Escenas/componentes/deteccion_de_vehiculo/deteccion_de_vehiculo.tscn" id="4_3don6"]
-[ext_resource type="PackedScene" uid="uid://bjanlpui5kawe" path="res://Escenas/componentes/camara/camara.tscn" id="5_jkpmm"]
-[ext_resource type="PackedScene" uid="uid://cxaro2aci7e0v" path="res://Escenas/componentes/control_de_player/controlador_de_jugador.tscn" id="6_vkjxu"]
-[ext_resource type="PackedScene" uid="uid://bhw4fsf0ug2a3" path="res://Escenas/componentes/gancho/ganchocontrol.tscn" id="7_wd3tj"]
-[ext_resource type="PackedScene" uid="uid://cu0nveryf7yao" path="res://Escenas/componentes/gancho/soga.tscn" id="8_i2ues"]
+[ext_resource type="Script" uid="uid://cqo31utn3jfmm" path="res://escenas/jugador/jugador.gd" id="1_vquro"]
+[ext_resource type="PackedScene" uid="uid://cldmjtak6b457" path="res://escenas/componentes/movimiento/movimiento.tscn" id="3_jkpmm"]
+[ext_resource type="PackedScene" uid="uid://ddrti2gwrh11m" path="res://escenas/componentes/deteccion_de_vehiculo/deteccion_de_vehiculo.tscn" id="4_3don6"]
+[ext_resource type="PackedScene" uid="uid://bjanlpui5kawe" path="res://escenas/componentes/camara/camara.tscn" id="5_jkpmm"]
+[ext_resource type="PackedScene" uid="uid://cxaro2aci7e0v" path="res://escenas/componentes/control_de_player/controlador_de_jugador.tscn" id="6_vkjxu"]
+[ext_resource type="PackedScene" uid="uid://bhw4fsf0ug2a3" path="res://escenas/componentes/gancho/ganchocontrol.tscn" id="7_wd3tj"]
+[ext_resource type="PackedScene" uid="uid://db0xp4k6m2u8a" path="res://escenas/componentes/arma/arma.tscn" id="8_26844"]
+[ext_resource type="PackedScene" uid="uid://cu0nveryf7yao" path="res://escenas/componentes/gancho/soga.tscn" id="8_i2ues"]
+[ext_resource type="PackedScene" uid="uid://w5tekxfxwx1x" path="res://escenas/componentes/arma/arma_de_jugador.tscn" id="9_mnegl"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_u5bk5"]
 size = Vector3(1, 1, 1.8329468)
@@ -33,7 +34,6 @@ can_sleep = false
 angular_damp = 3.0
 script = ExtResource("1_vquro")
 start_as_player = true
-bala = ExtResource("2_pxu2a")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=786756163]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.4703977, 0, 0, -0.0024392535)
@@ -86,9 +86,6 @@ mesh = SubResource("CylinderMesh_0ru8o")
 [node name="centro de masa" type="Node3D" parent="." unique_id=783383178]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17721605, -0.44497806)
 
-[node name="arma" type="Node3D" parent="." unique_id=1887910769]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2958343, 1.1924703, -0.93087983)
-
 [node name="camara" parent="." unique_id=1265065216 node_paths=PackedStringArray("player") instance=ExtResource("5_jkpmm")]
 player = NodePath("..")
 
@@ -109,3 +106,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.71554923)
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=1196462397]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, 0.75, -1.45)
 target_position = Vector3(0, -1, -50)
+
+[node name="Arma" parent="." unique_id=192237572 node_paths=PackedStringArray("player") instance=ExtResource("8_26844")]
+player = NodePath("..")
+
+[node name="Arma_de_jugador" parent="." unique_id=396609384 node_paths=PackedStringArray("player") instance=ExtResource("9_mnegl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9907079, 0)
+player = NodePath("..")
