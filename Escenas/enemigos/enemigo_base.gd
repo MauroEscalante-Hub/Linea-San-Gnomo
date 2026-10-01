@@ -13,6 +13,7 @@ var velocidad_de_giro = 5
 @onready var camara = $camara
 @onready var engine_power = 25.0
 @onready var arma_ = $Arma
+@onready var arma_de_jugador = $Arma_de_jugador
 
 func _ready() -> void:
 	area_del_vehiculo.vehiculo_encontrado.connect(_on_vehiculo_encontrado)
@@ -42,12 +43,14 @@ func become_player() -> void:
 	camara.activate()
 	gancho.activate()
 	arma_.desactivate()
+	arma_de_jugador.activate()
 func become_npc() -> void:
 	control_del_jugador.deactivate()
 	movimiento.movimineto_desactivado()
 	camara.deactivate()
 	gancho.desactivate()
 	arma_.activate()
+	arma_de_jugador.desactivate()
 
 func _on_vehiculo_encontrado(nuevo_auto: VehicleBody3D) -> void:
 	control_del_jugador.nuevo_vehiculo = nuevo_auto
