@@ -30,3 +30,13 @@ func _process(delta):
 	
 	if posicion_mira:
 		sprite_mira.global_position = posicion_mira
+	
+	if Input.is_action_just_pressed("dispararbalas"):
+		disparo()
+
+func disparo():
+	var balita = balas.instantiate()
+	get_tree().current_scene.add_child(balita)
+	balita.global_position = global_position
+	balita.direccion = (sprite_mira.global_position - global_position).normalized()
+	

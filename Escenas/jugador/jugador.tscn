@@ -111,4 +111,5 @@ target_position = Vector3(0, -1, -50)
 player = NodePath("..")
 
 [node name="Arma_de_jugador" parent="." unique_id=396609384 node_paths=PackedStringArray("player") instance=ExtResource("9_mnegl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9907079, 0)
 player = NodePath("..")
