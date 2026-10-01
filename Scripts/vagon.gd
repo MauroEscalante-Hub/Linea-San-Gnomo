@@ -1,11 +1,19 @@
 extends VehicleBody3D
 
 
+@onready var barravida = $vidabar
+@export var vida: int = 20
 
 func _ready() -> void:
-	pass # Replace with function body.
+	barravida.vida_inicial(vida)
 
+func daño():
+	vida -= 2
+	if vida < 0:
+		vida = 0
+	if is_instance_valid(barravida):
+		barravida.vida = vida
 
-
-#func _process(delta: float) -> void:
-#	pass
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("daño"):
+		daño()
