@@ -89,3 +89,5 @@ transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, 0.69196355, -0.40561
 use_as_traction = true
 
 [node name="vidabar" parent="." unique_id=1383496892 instance=ExtResource("2_6wtur")]
+offset_left = 66.0
+offset_right = 306.0

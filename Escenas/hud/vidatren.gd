@@ -13,7 +13,7 @@ func _set_vida(nueva_vida):
 	if vida <= 0:
 		barradaño
 		text.text=str("tren muerto")
-		queue_free()
+		
 
 	if vida < vida_previa:
 		timer.start()
