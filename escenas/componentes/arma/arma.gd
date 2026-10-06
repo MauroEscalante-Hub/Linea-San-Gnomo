@@ -32,8 +32,9 @@ func disparo(objetivo: Node3D) -> void:
 	if not activa or not puede_disparar:
 		return
 	var balita = bala.instantiate()
-	add_child(balita)
+	get_tree().current_scene.add_child(balita)   
 	balita.global_position = global_position
+	balita.add_collision_exception_with(player) 
 	var direccion := (objetivo.global_position - global_position).normalized()
 	balita.set_direccion(direccion)
 	

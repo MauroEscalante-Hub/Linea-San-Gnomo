@@ -1,5 +1,5 @@
 extends VehicleBody3D
-
+@export var vida: int = 100
 @export var start_as_player: bool = false
 @onready var centro_de_masa := $"centro de masa"
 @onready var area_del_vehiculo = $deteccion_de_vehiculo
@@ -15,6 +15,11 @@ var velocidad_de_giro = 5
 @onready var arma_ = $Arma
 @onready var arma_de_jugador = $Arma_de_jugador
 
+func recibir_danio(cantidad: int) -> void:
+	vida -= cantidad
+	if vida <= 0:
+		queue_free() 
+
 func _ready() -> void:
 	area_del_vehiculo.vehiculo_encontrado.connect(_on_vehiculo_encontrado)
 	become_npc()
@@ -22,7 +27,11 @@ func _ready() -> void:
 		GameManager.set_player(self)
 		
 func _physics_process(delta: float):
-	seguimiento(self, Jugador, delta)
+	var objetivo = GameManager.current_player
+	if not is_instance_valid(objetivo) or objetivo == self:
+		engine_force = 0.0
+		return
+	seguimiento(self, objetivo, delta)
 
 func seguimiento(looker: Node3D, target: Node3D, delta):
 	var forward_2d = Vector2(-global_transform.basis.z.x, -global_transform.basis.z.z).normalized()
