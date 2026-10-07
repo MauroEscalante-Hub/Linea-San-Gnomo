@@ -121,3 +121,5 @@ player = NodePath("..")
 
 [node name="Mov_Auto" parent="." unique_id=1749187415 node_paths=PackedStringArray("player") instance=ExtResource("11_0ug0u")]
 player = NodePath("..")
+
+[connection signal="murio" from="Vida" to="." method="_on_vida_murio"]

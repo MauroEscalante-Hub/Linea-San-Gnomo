@@ -15,6 +15,7 @@ var nuevo_vehiculo: VehicleBody3D
 
 
 func _ready() -> void:
+	componente_vida.murio.connect(_on_vida_murio)
 	area_del_vehiculo.vehiculo_encontrado.connect(_on_vehiculo_encontrado)
 	become_npc()
 	if start_as_player:
@@ -43,3 +44,9 @@ func _on_vehiculo_encontrado(nuevo_auto: VehicleBody3D) -> void:
 
 func recibir_danio(cantidad: int):
 	componente_vida.recibir_danio(cantidad)
+
+
+func _on_vida_murio():
+	if self == GameManager.current_player:
+		GameManager.jugador_muerto()
+	pass # Replace with function body.

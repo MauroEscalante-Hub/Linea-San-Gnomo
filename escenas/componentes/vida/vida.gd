@@ -2,7 +2,8 @@ class_name ComponenteVida
 extends Node3D
 
 @export var player: VehicleBody3D
-@export var vida_max: int = 500
+@export var vida_max: int = 100
+signal murio
 #var vida_actual: int
 
 # Called when the node enters the scene tree for the first time.
@@ -19,7 +20,9 @@ func _desactivado():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if vida_max <= 0:
+		murio.emit()
 		player.engine_force = 0.0
+		
 	pass
 
 func recibir_danio(cantidad: int):
