@@ -313,7 +313,7 @@ text = "CHECK POINT
 "
 
 [node name="jugador" parent="." unique_id=1604139032 instance=ExtResource("1_p7yi8")]
-transform = Transform3D(0.091392085, 0, -0.995815, 0, 1, 0, 0.995815, 0, 0.091392085, -5.379789, 2.593481, 5.4448195)
+transform = Transform3D(0.091392085, 0, -0.995815, 0, 1, 0, 0.995815, 0, 0.091392085, -5.650948, 2.593481, 2.4506626)
 
 [node name="ruta" parent="." unique_id=622969983 instance=ExtResource("2_3sjby")]
 
@@ -324,4 +324,4 @@ script = ExtResource("3_ls4l5")
 [node name="VehicleBody3D" parent="ruta/PathFollow3D" unique_id=2072145692 instance=ExtResource("4_abgxn")]
 
 [node name="enemigo" parent="." unique_id=461994344 instance=ExtResource("5_abgxn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.113723, 2.3885264, 17.315716)
+transform = Transform3D(-0.00056056306, 0, -0.9999998, 0, 1, 0, 0.9999998, 0, -0.00056056306, 1.6574936, 2.5085883, 13.09869)
