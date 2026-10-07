@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://pka07c3fe5jd"]
+
+[ext_resource type="Script" uid="uid://c4pg63bg3uuba" path="res://escenas/componentes/vida/vida.gd" id="1_jnlar"]
+
+[node name="Vida" type="Node3D" unique_id=2126800800]
+script = ExtResource("1_jnlar")

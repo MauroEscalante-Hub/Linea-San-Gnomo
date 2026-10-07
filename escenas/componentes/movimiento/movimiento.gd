@@ -12,12 +12,10 @@ func _physics_process(delta):
 	pass
 
 func movimineto_activado():
-	print("MOVIMIENTO ACTIVADO: ", player.name)
 	set_physics_process(true)
 
 
 func movimineto_desactivado():
-	print("MOVIMIENTO DESACTIVADO: ", player.name)
 	set_physics_process(false)
 	player.steering = 0
 	player.engine_force = 0

@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://db0xp4k6m2u8a" path="res://escenas/componentes/arma/arma.tscn" id="8_26844"]
 [ext_resource type="PackedScene" uid="uid://cu0nveryf7yao" path="res://escenas/componentes/gancho/soga.tscn" id="8_i2ues"]
 [ext_resource type="PackedScene" uid="uid://w5tekxfxwx1x" path="res://escenas/componentes/arma/arma_de_jugador.tscn" id="9_mnegl"]
+[ext_resource type="PackedScene" uid="uid://pka07c3fe5jd" path="res://escenas/componentes/vida/vida.tscn" id="10_j2gbx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_u5bk5"]
 size = Vector3(1, 1, 1.8329468)
@@ -113,3 +114,5 @@ player = NodePath("..")
 [node name="Arma_de_jugador" parent="." unique_id=396609384 node_paths=PackedStringArray("player") instance=ExtResource("9_mnegl")]
 transform = Transform3D(1.0000001, 0, 0, 0, 0.99996203, 0.008726536, 0, -0.008726536, 0.99996203, 0, 0.9148152, -1.3896017)
 player = NodePath("..")
+
+[node name="Vida" parent="." unique_id=2126800800 instance=ExtResource("10_j2gbx")]
