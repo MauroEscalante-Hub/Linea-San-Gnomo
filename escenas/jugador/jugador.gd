@@ -1,6 +1,6 @@
 class_name CocheJugador
 extends VehicleBody3D
-
+@export var vida_jugador: int = 100
 @export var start_as_player: bool = false
 @onready var centro_de_masa := $"centro de masa"
 @onready var area_del_vehiculo = $deteccion_de_vehiculo
@@ -11,6 +11,10 @@ var nuevo_vehiculo: VehicleBody3D
 @onready var camara = $camara
 @onready var arma_de_jugador = $Arma_de_jugador
 
+func recibir_danio(cantidad: int) -> void:
+	vida_jugador -= cantidad
+	if vida_jugador <= 0:
+		queue_free() 
 
 func _ready() -> void:
 	area_del_vehiculo.vehiculo_encontrado.connect(_on_vehiculo_encontrado)

@@ -11,7 +11,7 @@ script = ExtResource("1_u6bma")
 balas = ExtResource("1_bt1rc")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1710126497]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+transform = Transform3D(0.61900085, 0, 0, 0, 0.57821804, 0, 0, 0, 1, 0, 0, -20)
 texture = ExtResource("2_d7h27")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1752573686]
@@ -19,3 +19,4 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0
 mesh = SubResource("CapsuleMesh_u5bk5")
 
 [node name="balas" parent="." unique_id=1497429755 instance=ExtResource("1_bt1rc")]
+transform = Transform3D(0.905, 0, 0, 0, 0.905, 0, 0, 0, 0.905, 0, 0, 0)

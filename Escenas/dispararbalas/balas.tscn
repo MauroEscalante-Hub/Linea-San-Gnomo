@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://yomqjiew2lde" path="res://escenas/dispararbalas/balas.gd" id="1_ipiei"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_yf5fn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u5bk5"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pxu2a"]
 albedo_color = Color(0.27244878, 0.1960508, 0.21024883, 1)
 metallic = 0.7
@@ -10,17 +14,25 @@ metallic_specular = 0.46
 [sub_resource type="SphereMesh" id="SphereMesh_g4v7s"]
 material = SubResource("StandardMaterial3D_pxu2a")
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_yf5fn"]
-
 [node name="balas" type="CharacterBody3D" unique_id=1497429755]
-collision_layer = 2
+collision_layer = 6
+collision_mask = 3
 script = ExtResource("1_ipiei")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1936619665]
-mesh = SubResource("SphereMesh_g4v7s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1720839794]
 shape = SubResource("SphereShape3D_yf5fn")
 
+[node name="Area3D" type="Area3D" parent="." unique_id=44605931]
+collision_layer = 6
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1013405988]
+shape = SubResource("SphereShape3D_u5bk5")
+
 [node name="Timer" type="Timer" parent="." unique_id=1967110370]
 wait_time = 3.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1936619665]
+mesh = SubResource("SphereMesh_g4v7s")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

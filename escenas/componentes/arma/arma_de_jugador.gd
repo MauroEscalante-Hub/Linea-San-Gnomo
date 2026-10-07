@@ -17,19 +17,13 @@ func desactivate():
 	sprite_mira.visible = false
 	set_process(false)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var camara = get_viewport().get_camera_3d()
-	if camara == null:
-		return
 	var mouse = get_viewport().get_mouse_position()
-	var origen = camara.project_ray_origin(mouse)
-	var direccion = camara.project_ray_normal(mouse)
-	var plano = Plane(Vector3.UP, global_position.y)
-	var posicion_mira = plano.intersects_ray(origen, direccion)
+	var centro = get_viewport().get_visible_rect().size / 2
+	var distancia = mouse - centro
+	distancia = distancia.limit_length(5)
 	
-	if posicion_mira:
-		sprite_mira.global_position = posicion_mira
+	sprite_mira.position = Vector3(distancia.x, 0, distancia.y)
 	
 	if Input.is_action_just_pressed("dispararbalas"):
 		disparo()
@@ -38,5 +32,7 @@ func disparo():
 	var balita = balas.instantiate()
 	get_tree().current_scene.add_child(balita)
 	balita.global_position = global_position
-	balita.direccion = (sprite_mira.global_position - global_position).normalized()
+	balita.add_collision_exception_with(player)
 	
+	var direccion = (sprite_mira.global_position - global_position).normalized()
+	balita.set_direccion(direccion)
