@@ -25,6 +25,7 @@ func become_player() -> void:
 	camara.activate()
 	gancho.activate()
 	arma_de_jugador.activate()
+	componente_vida._activado()
 	
 func become_npc() -> void:
 	control_del_jugador.deactivate()
@@ -32,6 +33,8 @@ func become_npc() -> void:
 	camara.deactivate()
 	gancho.desactivate()
 	arma_de_jugador.desactivate()
+	componente_vida._desactivado()
+	
 
 func _on_vehiculo_encontrado(nuevo_auto: VehicleBody3D) -> void:
 	control_del_jugador.nuevo_vehiculo = nuevo_auto

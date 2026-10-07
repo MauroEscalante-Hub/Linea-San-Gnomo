@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 var direccion: Vector3
 var velocidad: float = 100
-var danio: int = 100
+var danio: int = 10 
 @onready var tiempo_ = $Timer
 
 func set_direccion(nueva_direccion: Vector3) -> void:

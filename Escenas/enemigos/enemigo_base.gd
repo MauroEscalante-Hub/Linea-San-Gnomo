@@ -5,7 +5,6 @@ extends VehicleBody3D
 @onready var area_del_vehiculo = $deteccion_de_vehiculo
 @onready var control_del_jugador = $controlador_de_jugador
 @onready var gancho=$Ganchocontrol
-@onready var Jugador= $"../jugador"
 var nuevo_vehiculo: VehicleBody3D
 var steering_lerp = 3
 var velocidad_de_giro = 5
@@ -14,11 +13,6 @@ var velocidad_de_giro = 5
 @onready var engine_power = 25.0
 @onready var arma_ = $Arma
 @onready var arma_de_jugador = $Arma_de_jugador
-
-func recibir_danio(cantidad: int) -> void:
-	vida -= cantidad
-	if vida <= 0:
-		queue_free() 
 
 func _ready() -> void:
 	area_del_vehiculo.vehiculo_encontrado.connect(_on_vehiculo_encontrado)
@@ -53,6 +47,8 @@ func become_player() -> void:
 	gancho.activate()
 	arma_.desactivate()
 	arma_de_jugador.activate()
+	
+
 func become_npc() -> void:
 	control_del_jugador.deactivate()
 	movimiento.movimineto_desactivado()
