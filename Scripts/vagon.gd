@@ -7,6 +7,12 @@ extends VehicleBody3D
 func _ready() -> void:
 	barravida.vida_inicial(vida)
 
+func recibir_danio(cantidad: int) -> void:
+	vida -= cantidad
+	if vida < 0:
+		vida = 0
+	if is_instance_valid(barravida):
+		barravida.vida = vida
 func daño():
 	vida -= 2
 	if vida < 0:

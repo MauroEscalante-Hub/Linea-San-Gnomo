@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bv0mo455wfo0x" path="res://Scripts/vagon.gd" id="1_4b57l"]
 [ext_resource type="PackedScene" uid="uid://bchx6mnwvydew" path="res://Escenas/hud/vidatren.tscn" id="2_6wtur"]
-[ext_resource type="PackedScene" uid="uid://pka07c3fe5jd" path="res://Escenas/componentes/vida/vida.tscn" id="3_g4uj6"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_182kk"]
 _surfaces = [{
@@ -24,6 +23,7 @@ collision_layer = 7
 collision_mask = 7
 center_of_mass_mode = 1
 script = ExtResource("1_4b57l")
+vida = 500
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="." unique_id=1605239507]
 mesh = SubResource("ArrayMesh_182kk")
@@ -91,7 +91,5 @@ use_as_traction = true
 [node name="Track2" type="VehicleWheel3D" parent="." unique_id=1285573281]
 transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, 0.69196355, -0.40561992, -1.2129112)
 use_as_traction = true
-
-[node name="Vida" parent="." unique_id=2126800800 instance=ExtResource("3_g4uj6")]
 
 [node name="vidabar" parent="." unique_id=1383496892 instance=ExtResource("2_6wtur")]
