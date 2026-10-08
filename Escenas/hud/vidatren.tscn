@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bchx6mnwvydew"]
 
 [ext_resource type="Script" uid="uid://dhajcl6c8v08h" path="res://Escenas/hud/vidatren.gd" id="1_s67wi"]
+[ext_resource type="PackedScene" uid="uid://pka07c3fe5jd" path="res://Escenas/componentes/vida/vida.tscn" id="2_7xj8q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5cipi"]
 
@@ -52,5 +53,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "vida tren"
+
+[node name="Vida" parent="." unique_id=2126800800 instance=ExtResource("2_7xj8q")]
 
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
