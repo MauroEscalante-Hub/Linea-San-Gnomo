@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eja3876kt2wa"
-path="res://.godot/imported/barra_fondo.png-9dc9c76a49be862e72e8791599c97376.ctex"
+uid="uid://db0a12mbi3kjk"
+path="res://.godot/imported/tren blanco.png-b8fed2e6610832f55010eba54cf5edbe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Escenas/componentes/vida/barra_fondo.png"
-dest_files=["res://.godot/imported/barra_fondo.png-9dc9c76a49be862e72e8791599c97376.ctex"]
+source_file="res://Assets/sprites/tren blanco.png"
+dest_files=["res://.godot/imported/tren blanco.png-b8fed2e6610832f55010eba54cf5edbe.ctex"]
 
 [params]
 

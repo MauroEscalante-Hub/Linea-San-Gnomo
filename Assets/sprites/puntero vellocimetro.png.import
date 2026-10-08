@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eja3876kt2wa"
-path="res://.godot/imported/barra_fondo.png-9dc9c76a49be862e72e8791599c97376.ctex"
+uid="uid://wowhuyb5iocp"
+path="res://.godot/imported/puntero vellocimetro.png-572edd1834eb0a4e904a5c0132471565.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Escenas/componentes/vida/barra_fondo.png"
-dest_files=["res://.godot/imported/barra_fondo.png-9dc9c76a49be862e72e8791599c97376.ctex"]
+source_file="res://Assets/sprites/puntero vellocimetro.png"
+dest_files=["res://.godot/imported/puntero vellocimetro.png-572edd1834eb0a4e904a5c0132471565.ctex"]
 
 [params]
 

@@ -18,8 +18,12 @@ _surfaces = [{
 size = Vector3(0.9869995, 1.9107056, 2.462616)
 
 [node name="VehicleBody3D" type="VehicleBody3D" unique_id=2072145692]
+transform = Transform3D(2.655, 0, 0, 0, 2.655, 0, 0, 0, 2.655, 0, 0, 0)
+collision_layer = 7
+collision_mask = 7
 center_of_mass_mode = 1
 script = ExtResource("1_4b57l")
+vida = 500
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="." unique_id=1605239507]
 mesh = SubResource("ArrayMesh_182kk")
@@ -89,5 +93,3 @@ transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, 0.69196355, -0.40561
 use_as_traction = true
 
 [node name="vidabar" parent="." unique_id=1383496892 instance=ExtResource("2_6wtur")]
-offset_left = 66.0
-offset_right = 306.0

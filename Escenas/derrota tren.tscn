@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cnnda2jhequff"]
+
+[ext_resource type="Texture2D" uid="uid://d11xn2aocm0jk" path="res://Assets/sprites/imageen prueba.jpg" id="1_uarsk"]
+
+[node name="DerrotaTren" type="Node2D" unique_id=2086058692]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2044954353]
+position = Vector2(629, 381.00003)
+scale = Vector2(1.7002724, 1.7822967)
+texture = ExtResource("1_uarsk")

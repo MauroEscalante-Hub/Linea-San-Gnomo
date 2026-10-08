@@ -296,14 +296,14 @@ transform = Transform3D(0.9998473, 0, 0.017452398, 0, 0.99999994, 0, -0.01745239
 size = Vector3(20.734512, 1, 1)
 material = SubResource("StandardMaterial3D_dwbtc")
 
-[node name="CSGBox3D14" type="CSGBox3D" parent="Ramal" unique_id=977916931]
-transform = Transform3D(0.9889103, -0.13898234, -0.052335937, 0.13917302, 0.9902678, 0, 0.0518266, -0.007283756, 0.9986291, 408.73346, 33.40287, -591.012)
-size = Vector3(162.3116, 1, 1)
-material = SubResource("StandardMaterial3D_dwbtc")
-
 [node name="CSGBox3D15" type="CSGBox3D" parent="Ramal" unique_id=864186187]
 transform = Transform3D(0.9993904, 0, -0.03489948, 0, 0.99999994, 0, 0.03489948, 0, 0.9993904, 664.9891, 44.715534, -580.6208)
 size = Vector3(352.665, 1, 1)
+material = SubResource("StandardMaterial3D_dwbtc")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Ramal" unique_id=977916931]
+transform = Transform3D(0.9889103, -0.13898234, -0.052335937, 0.13917302, 0.9902678, 0, 0.0518266, -0.007283756, 0.9986291, 408.73346, 33.40287, -591.012)
+size = Vector3(162.3116, 1, 1)
 material = SubResource("StandardMaterial3D_dwbtc")
 
 [node name="Label3D" type="Label3D" parent="." unique_id=895454569]
@@ -322,6 +322,7 @@ transform = Transform3D(0.7464161, 0, 0.66547954, 0, 1, 0, -0.66547954, 0, 0.746
 script = ExtResource("3_ls4l5")
 
 [node name="VehicleBody3D" parent="ruta/PathFollow3D" unique_id=2072145692 instance=ExtResource("4_abgxn")]
+vida = 10
 
 [node name="enemigo" parent="." unique_id=461994344 instance=ExtResource("5_abgxn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.113723, 2.3885264, 17.315716)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eja3876kt2wa"
-path="res://.godot/imported/barra_fondo.png-9dc9c76a49be862e72e8791599c97376.ctex"
+uid="uid://ddedy3m8lrtp3"
+path="res://.godot/imported/gancho Auto lado_.png-415a3a83d781b0ad29fa83031f644fde.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Escenas/componentes/vida/barra_fondo.png"
-dest_files=["res://.godot/imported/barra_fondo.png-9dc9c76a49be862e72e8791599c97376.ctex"]
+source_file="res://Assets/sprites/gancho Auto lado_.png"
+dest_files=["res://.godot/imported/gancho Auto lado_.png-415a3a83d781b0ad29fa83031f644fde.ctex"]
 
 [params]
 

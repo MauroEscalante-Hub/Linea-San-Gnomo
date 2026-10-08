@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eja3876kt2wa"
-path="res://.godot/imported/barra_fondo.png-9dc9c76a49be862e72e8791599c97376.ctex"
+uid="uid://dxfmhmkh2gswp"
+path="res://.godot/imported/bala 1.png-c685a0668bb19b2b9a39ced211b46d36.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Escenas/componentes/vida/barra_fondo.png"
-dest_files=["res://.godot/imported/barra_fondo.png-9dc9c76a49be862e72e8791599c97376.ctex"]
+source_file="res://Assets/sprites/bala 1.png"
+dest_files=["res://.godot/imported/bala 1.png-c685a0668bb19b2b9a39ced211b46d36.ctex"]
 
 [params]
 

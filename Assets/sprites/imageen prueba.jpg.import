@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eja3876kt2wa"
-path="res://.godot/imported/barra_fondo.png-9dc9c76a49be862e72e8791599c97376.ctex"
+uid="uid://d11xn2aocm0jk"
+path="res://.godot/imported/imageen prueba.jpg-58772b402f86cb9f44d7bb8f3399af7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Escenas/componentes/vida/barra_fondo.png"
-dest_files=["res://.godot/imported/barra_fondo.png-9dc9c76a49be862e72e8791599c97376.ctex"]
+source_file="res://Assets/sprites/imageen prueba.jpg"
+dest_files=["res://.godot/imported/imageen prueba.jpg-58772b402f86cb9f44d7bb8f3399af7f.ctex"]
 
 [params]
 
