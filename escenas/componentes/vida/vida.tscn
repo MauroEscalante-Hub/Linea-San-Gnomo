@@ -3,17 +3,21 @@
 [ext_resource type="Script" uid="uid://c4pg63bg3uuba" path="res://escenas/componentes/vida/vida.gd" id="1_jnlar"]
 [ext_resource type="PackedScene" uid="uid://cvdaermcfffes" path="res://escenas/componentes/vida/barra_de_vida.tscn" id="2_p4oi6"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_u5bk5"]
-viewport_path = NodePath("SubViewport")
-
 [node name="Vida" type="Node3D" unique_id=2126800800]
 script = ExtResource("1_jnlar")
 
-[node name="SubViewport" type="SubViewport" parent="." unique_id=2142066692]
-disable_3d = true
-transparent_bg = true
+[node name="canvas" type="CanvasLayer" parent="." unique_id=1174388185]
 
-[node name="ProgressBar" parent="SubViewport" unique_id=516446245 instance=ExtResource("2_p4oi6")]
-
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1218181686]
-texture = SubResource("ViewportTexture_u5bk5")
+[node name="ProgressBar" parent="canvas" unique_id=516446245 instance=ExtResource("2_p4oi6")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -224.0
+offset_top = -27.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true

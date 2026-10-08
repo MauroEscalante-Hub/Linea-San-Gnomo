@@ -11,6 +11,7 @@ var nuevo_vehiculo: VehicleBody3D
 @onready var arma_de_jugador = $Arma_de_jugador
 @onready var componente_vida = $Vida
 @onready var mov_auto = $Mov_Auto
+@onready var arma = $Arma
 
 
 
@@ -27,17 +28,18 @@ func become_player() -> void:
 	camara.activate()
 	gancho.activate()
 	arma_de_jugador.activate()
-	componente_vida._activado()
+	componente_vida.activate()
 	mov_auto._desactivate()
-
+	arma.desactivate()
 func become_npc() -> void:
 	control_del_jugador.deactivate()
 	movimiento.movimineto_desactivado()
 	camara.deactivate()
 	gancho.desactivate()
 	arma_de_jugador.desactivate()
-	componente_vida._desactivado()
+	componente_vida.desactivate()
 	mov_auto._activate()
+	arma.activate()
 
 func _on_vehiculo_encontrado(nuevo_auto: VehicleBody3D) -> void:
 	control_del_jugador.nuevo_vehiculo = nuevo_auto
