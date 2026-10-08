@@ -1,6 +1,19 @@
 [gd_scene format=3 uid="uid://pka07c3fe5jd"]
 
 [ext_resource type="Script" uid="uid://c4pg63bg3uuba" path="res://escenas/componentes/vida/vida.gd" id="1_jnlar"]
+[ext_resource type="PackedScene" uid="uid://cvdaermcfffes" path="res://escenas/componentes/vida/barra_de_vida.tscn" id="2_p4oi6"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_u5bk5"]
+viewport_path = NodePath("SubViewport")
 
 [node name="Vida" type="Node3D" unique_id=2126800800]
 script = ExtResource("1_jnlar")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=2142066692]
+disable_3d = true
+transparent_bg = true
+
+[node name="ProgressBar" parent="SubViewport" unique_id=516446245 instance=ExtResource("2_p4oi6")]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1218181686]
+texture = SubResource("ViewportTexture_u5bk5")
