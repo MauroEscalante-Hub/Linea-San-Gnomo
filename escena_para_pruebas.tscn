@@ -53,3 +53,6 @@ start_as_player = false
 
 [node name="enemigo" parent="." unique_id=1146014462 instance=ExtResource("3_o2176")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1680627, 2.9427462, -22.736616)
+
+[node name="enemigo2" parent="." unique_id=777979052 instance=ExtResource("3_o2176")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2785, 2.2807236, -9.940325)

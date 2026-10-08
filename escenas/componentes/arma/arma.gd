@@ -7,7 +7,7 @@ extends Node3D
 @onready var area = $Area3D
 var activa: bool
 var puede_disparar := true
-@onready var mesh_instance_3d = $MeshInstance3D
+#@onready var mesh_instance_3d = $MeshInstance3D
 
 func _ready() -> void:
 	if player == null and get_parent() is VehicleBody3D:

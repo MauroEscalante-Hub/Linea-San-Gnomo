@@ -1,6 +1,5 @@
 class_name CocheJugador
 extends VehicleBody3D
-@export var vida_jugador: int = 100
 @export var start_as_player: bool = false
 @onready var centro_de_masa := $"centro de masa"
 @onready var area_del_vehiculo = $deteccion_de_vehiculo
@@ -10,13 +9,14 @@ var nuevo_vehiculo: VehicleBody3D
 @onready var movimiento:= $movimiento
 @onready var camara = $camara
 @onready var arma_de_jugador = $Arma_de_jugador
+@onready var componente_vida = $Vida
+@onready var mov_auto = $Mov_Auto
+@onready var arma = $Arma
 
-func recibir_danio(cantidad: int) -> void:
-	vida_jugador -= cantidad
-	if vida_jugador <= 0:
-		queue_free() 
+
 
 func _ready() -> void:
+	componente_vida.murio.connect(_on_vida_murio)
 	area_del_vehiculo.vehiculo_encontrado.connect(_on_vehiculo_encontrado)
 	become_npc()
 	if start_as_player:
@@ -28,13 +28,27 @@ func become_player() -> void:
 	camara.activate()
 	gancho.activate()
 	arma_de_jugador.activate()
-	
+	componente_vida.activate()
+	mov_auto._desactivate()
+	arma.desactivate()
 func become_npc() -> void:
 	control_del_jugador.deactivate()
 	movimiento.movimineto_desactivado()
 	camara.deactivate()
 	gancho.desactivate()
 	arma_de_jugador.desactivate()
+	componente_vida.desactivate()
+	mov_auto._activate()
+	arma.activate()
 
 func _on_vehiculo_encontrado(nuevo_auto: VehicleBody3D) -> void:
 	control_del_jugador.nuevo_vehiculo = nuevo_auto
+
+func recibir_danio(cantidad: int):
+	componente_vida.recibir_danio(cantidad)
+
+
+func _on_vida_murio():
+	if self == GameManager.current_player:
+		GameManager.jugador_muerto()
+	pass # Replace with function body.

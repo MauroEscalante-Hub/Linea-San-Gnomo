@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cu0nveryf7yao" path="res://escenas/componentes/gancho/soga.tscn" id="8_nvaha"]
 [ext_resource type="PackedScene" uid="uid://db0xp4k6m2u8a" path="res://escenas/componentes/arma/arma.tscn" id="8_qt12g"]
 [ext_resource type="PackedScene" uid="uid://w5tekxfxwx1x" path="res://escenas/componentes/arma/arma_de_jugador.tscn" id="9_f01sq"]
+[ext_resource type="PackedScene" uid="uid://b8n8hfvv4ppl1" path="res://escenas/componentes/movimiento_automatico/mov_auto.tscn" id="10_eml4n"]
+[ext_resource type="PackedScene" uid="uid://pka07c3fe5jd" path="res://escenas/componentes/vida/vida.tscn" id="11_78feh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cqhb5"]
 albedo_color = Color(0.7952375, 0, 0.17623618, 1)
@@ -32,7 +34,7 @@ height = 0.31713867
 height = 0.3305664
 
 [node name="enemigo" type="VehicleBody3D" unique_id=1604139032]
-collision_layer = 6
+collision_layer = 7
 collision_mask = 3
 center_of_mass_mode = 1
 can_sleep = false
@@ -118,3 +120,10 @@ player = NodePath("..")
 
 [node name="Arma_de_jugador" parent="." unique_id=396609384 instance=ExtResource("9_f01sq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0233383, 0)
+
+[node name="Mov_Auto" parent="." unique_id=1749187415 node_paths=PackedStringArray("player") instance=ExtResource("10_eml4n")]
+player = NodePath("..")
+
+[node name="Vida" parent="." unique_id=2126800800 instance=ExtResource("11_78feh")]
+
+[connection signal="murio" from="Vida" to="." method="_on_vida_murio"]

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b8n8hfvv4ppl1"]
+
+[ext_resource type="Script" uid="uid://bv2epbd0wu0al" path="res://escenas/componentes/movimiento_automatico/mov_auto.gd" id="1_frdq5"]
+
+[node name="Mov_Auto" type="Node3D" unique_id=1749187415]
+script = ExtResource("1_frdq5")
