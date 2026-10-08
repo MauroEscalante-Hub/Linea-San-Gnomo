@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eja3876kt2wa"
-path="res://.godot/imported/barra_fondo.png-9dc9c76a49be862e72e8791599c97376.ctex"
+uid="uid://breirq0u84hrl"
+path="res://.godot/imported/arpon 1 rojo.png-b54ac9c45c30771b9357096a56592de3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Escenas/componentes/vida/barra_fondo.png"
-dest_files=["res://.godot/imported/barra_fondo.png-9dc9c76a49be862e72e8791599c97376.ctex"]
+source_file="res://Assets/sprites/arpon 1 rojo.png"
+dest_files=["res://.godot/imported/arpon 1 rojo.png-b54ac9c45c30771b9357096a56592de3.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eja3876kt2wa"
-path="res://.godot/imported/barra_fondo.png-9dc9c76a49be862e72e8791599c97376.ctex"
+uid="uid://4ol3bg1vy2r5"
+path="res://.godot/imported/gancho 1 negro.png-e15a985415ab64e36c27190ca6c142d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Escenas/componentes/vida/barra_fondo.png"
-dest_files=["res://.godot/imported/barra_fondo.png-9dc9c76a49be862e72e8791599c97376.ctex"]
+source_file="res://Assets/sprites/gancho 1 negro.png"
+dest_files=["res://.godot/imported/gancho 1 negro.png-e15a985415ab64e36c27190ca6c142d0.ctex"]
 
 [params]
 

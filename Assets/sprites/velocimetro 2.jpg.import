@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eja3876kt2wa"
-path="res://.godot/imported/barra_fondo.png-9dc9c76a49be862e72e8791599c97376.ctex"
+uid="uid://cs00yhlcf6sph"
+path="res://.godot/imported/velocimetro 2.jpg-5164a7d13c3b9026a9141ce5a75f1704.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Escenas/componentes/vida/barra_fondo.png"
-dest_files=["res://.godot/imported/barra_fondo.png-9dc9c76a49be862e72e8791599c97376.ctex"]
+source_file="res://Assets/sprites/velocimetro 2.jpg"
+dest_files=["res://.godot/imported/velocimetro 2.jpg-5164a7d13c3b9026a9141ce5a75f1704.ctex"]
 
 [params]
 

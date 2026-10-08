@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bu6rkqt21goq6"
-path.s3tc="res://.godot/imported/mira.png-523b3a7fcbbf72fa7015d4a3a7da10ee.s3tc.ctex"
+path.s3tc="res://.godot/imported/mira.png-d25f5b69a658c605f1957352a7c77846.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://escenas/jugador/mira.png"
-dest_files=["res://.godot/imported/mira.png-523b3a7fcbbf72fa7015d4a3a7da10ee.s3tc.ctex"]
+source_file="res://Escenas/jugador/mira.png"
+dest_files=["res://.godot/imported/mira.png-d25f5b69a658c605f1957352a7c77846.s3tc.ctex"]
 
 [params]
 

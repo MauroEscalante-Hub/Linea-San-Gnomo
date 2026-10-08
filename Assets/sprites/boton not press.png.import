@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eja3876kt2wa"
-path="res://.godot/imported/barra_fondo.png-9dc9c76a49be862e72e8791599c97376.ctex"
+uid="uid://dln08mlv7gq80"
+path="res://.godot/imported/boton not press.png-e7bf81b219e999ecec593313c093a122.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Escenas/componentes/vida/barra_fondo.png"
-dest_files=["res://.godot/imported/barra_fondo.png-9dc9c76a49be862e72e8791599c97376.ctex"]
+source_file="res://Assets/sprites/boton not press.png"
+dest_files=["res://.godot/imported/boton not press.png-e7bf81b219e999ecec593313c093a122.ctex"]
 
 [params]
 
