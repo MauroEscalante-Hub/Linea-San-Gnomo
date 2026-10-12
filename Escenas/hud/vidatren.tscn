@@ -1,37 +1,23 @@
 [gd_scene format=3 uid="uid://bchx6mnwvydew"]
 
+[ext_resource type="Texture2D" uid="uid://4h3in4lof7xt" path="res://Assets/sprites/tren verde.png" id="1_80olq"]
+[ext_resource type="Texture2D" uid="uid://bg1mbtu5gju4j" path="res://Assets/sprites/tren negro.png" id="1_dal77"]
 [ext_resource type="Script" uid="uid://dhajcl6c8v08h" path="res://Escenas/hud/vidatren.gd" id="1_s67wi"]
 [ext_resource type="PackedScene" uid="uid://pka07c3fe5jd" path="res://Escenas/componentes/vida/vida.tscn" id="2_7xj8q"]
+[ext_resource type="Texture2D" uid="uid://db0a12mbi3kjk" path="res://Assets/sprites/tren blanco.png" id="3_dal77"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5cipi"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mnkjj"]
-bg_color = Color(0.67567384, 0.6070776, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5cipi"]
-bg_color = Color(0.06666667, 0, 0, 1)
-expand_margin_left = 1.0
-expand_margin_top = 1.0
-expand_margin_right = 1.0
-expand_margin_bottom = 1.0
-shadow_color = Color(0, 0, 0, 0.02745098)
-shadow_offset = Vector2(0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gyy1"]
-bg_color = Color(8.116523, 11.3562565, 18.892157, 1)
-
-[node name="vidabar" type="ProgressBar" unique_id=1383496892]
+[node name="vidabar" type="TextureProgressBar" unique_id=1810890390]
 z_index = 1
-offset_top = 61.0
-offset_right = 240.0
-offset_bottom = 88.0
-theme_override_styles/background = SubResource("StyleBoxEmpty_5cipi")
-theme_override_styles/fill = SubResource("StyleBoxFlat_mnkjj")
+offset_left = -2.0
+offset_top = 3.0000076
+offset_right = 1918.0
+offset_bottom = 1083.0
+scale = Vector2(0.11171947, 0.107425705)
 value = 60.0
-show_percentage = false
+texture_progress = ExtResource("1_80olq")
 script = ExtResource("1_s67wi")
 
-[node name="damagebar" type="ProgressBar" parent="." unique_id=1227738813]
+[node name="damagebar" type="TextureProgressBar" parent="." unique_id=1231230395]
 z_index = -2
 layout_mode = 1
 anchors_preset = 15
@@ -39,10 +25,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_5cipi")
-theme_override_styles/fill = SubResource("StyleBoxFlat_2gyy1")
 value = 80.0
-show_percentage = false
+texture_under = ExtResource("1_dal77")
+texture_progress = ExtResource("3_dal77")
 
 [node name="timer" type="Timer" parent="." unique_id=1419436635]
 wait_time = 0.4
@@ -50,8 +35,11 @@ one_shot = true
 
 [node name="Label" type="Label" parent="." unique_id=2093256007]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 170.06883
+offset_top = 418.8941
+offset_right = 240.06883
+offset_bottom = 441.8941
+scale = Vector2(9.28682, 8.047014)
 text = "vida tren"
 
 [node name="Vida" parent="." unique_id=2126800800 instance=ExtResource("2_7xj8q")]
