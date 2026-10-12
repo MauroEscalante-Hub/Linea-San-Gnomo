@@ -1,3 +1,16 @@
 [gd_scene format=3 uid="uid://d0gvlf4las4hv"]
 
+[ext_resource type="PackedScene" uid="uid://c5eysak6mhqym" path="res://Assets/models/MenuPrincipal.glb" id="1_bj1uy"]
+
 [node name="menu" type="Node3D" unique_id=639863238]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1193151305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -0.50049996, -0.5)
+use_collision = true
+size = Vector3(41, 0.001, 26)
+
+[node name="MenuPrincipal" parent="." unique_id=1909737281 instance=ExtResource("1_bj1uy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=110512985]
+transform = Transform3D(-2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, -2.9802322e-08, 9, 2, -3)
