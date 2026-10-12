@@ -29,6 +29,8 @@ albedo_color = Color(0.84356505, 0.46794945, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xd07"]
 albedo_color = Color(0, 0, 0, 1)
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_3xd07"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jcwe0"]
 albedo_color = Color(0.84356505, 0.46794945, 0, 1)
 
@@ -134,6 +136,10 @@ size = Vector3(35.129814, 0.30316162, 44.93747)
 transform = Transform3D(-0.99994516, 0, 0.0104717165, 0, 1, 0, -0.0104717165, 0, -0.99994516, 163.0035, -0.08214998, -12.264465)
 size = Vector3(31.625198, 0.30316162, 54.413857)
 material = SubResource("StandardMaterial3D_j0ogg")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Principio_y_Curva" unique_id=2061922880]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14738274, 0)
+navigation_mesh = SubResource("NavigationMesh_3xd07")
 
 [node name="Curva_y_final" type="CSGCombiner3D" parent="." unique_id=1458995158]
 use_collision = true
@@ -313,7 +319,7 @@ text = "CHECK POINT
 "
 
 [node name="jugador" parent="." unique_id=1604139032 instance=ExtResource("1_p7yi8")]
-transform = Transform3D(0.091392085, 0, -0.995815, 0, 1, 0, 0.995815, 0, 0.091392085, -5.379789, 2.593481, 5.4448195)
+transform = Transform3D(0.091392085, 0, -0.995815, 0, 1, 0, 0.995815, 0, 0.091392085, -5.650948, 2.593481, 2.4506626)
 
 [node name="ruta" parent="." unique_id=622969983 instance=ExtResource("2_3sjby")]
 
@@ -325,4 +331,4 @@ script = ExtResource("3_ls4l5")
 vida = 593
 
 [node name="enemigo" parent="." unique_id=461994344 instance=ExtResource("5_abgxn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.113723, 2.3885264, 17.315716)
+transform = Transform3D(-0.00056056306, 0, -0.9999998, 0, 1, 0, 0.9999998, 0, -0.00056056306, 1.6574936, 2.5085883, 13.09869)
