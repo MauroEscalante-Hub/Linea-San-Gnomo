@@ -35,6 +35,9 @@ albedo_color = Color(0.84356505, 0.46794945, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwbtc"]
 albedo_color = Color(0.09807681, 1.347661e-06, 0.5006515, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_2gyy1"]
+size = Vector3(32.309933, 0.23416138, 0.37797546)
+
 [node name="GrayboxingEscenario1" type="Node3D" unique_id=212315754]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1102800113]
@@ -323,6 +326,28 @@ script = ExtResource("3_ls4l5")
 
 [node name="VehicleBody3D" parent="ruta/PathFollow3D" unique_id=2072145692 instance=ExtResource("4_abgxn")]
 vida = 593
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ruta" unique_id=554817504]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ruta/StaticBody3D" unique_id=1921396999]
+transform = Transform3D(0.9992089, 0, 0.03976801, 0, 1, 0, -0.03976801, 0, 0.9992089, 18.677963, 0.2221632, 5.426568)
+shape = SubResource("BoxShape3D_2gyy1")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="ruta/StaticBody3D" unique_id=819695721]
+transform = Transform3D(0.9989185, -0.024116829, 0.039756455, 0.024097748, 0.99970907, 0.0009590784, -0.039768014, 9.8322545e-11, 0.999209, 38.44296, 0.1563584, 5.579477)
+shape = SubResource("BoxShape3D_2gyy1")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="ruta/StaticBody3D" unique_id=1935379562]
+transform = Transform3D(0.9989185, -0.024116829, 0.039756455, 0.024097748, 0.99970907, 0.0009590784, -0.039768014, 9.8322545e-11, 0.999209, 61.93403, 0.26960447, 5.3089437)
+shape = SubResource("BoxShape3D_2gyy1")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="ruta/StaticBody3D" unique_id=1662907289]
+transform = Transform3D(0.9996583, -0.024086768, -0.010167677, 0.024097748, 0.999709, 0.0009590784, 0.010141626, -0.0012037685, 0.99994785, 101.21391, 0.41273916, 4.8564253)
+shape = SubResource("BoxShape3D_2gyy1")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="ruta/StaticBody3D" unique_id=1057181789]
+transform = Transform3D(0.8194516, -0.043218415, 0.57151675, 0.009240342, 0.9980198, 0.062221777, -0.5730744, -0.045706708, 0.8182281, 138.13228, 0.25010687, -5.7952194)
+shape = SubResource("BoxShape3D_2gyy1")
 
 [node name="enemigo" parent="." unique_id=461994344 instance=ExtResource("5_abgxn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.113723, 2.3885264, 17.315716)
