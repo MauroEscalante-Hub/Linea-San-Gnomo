@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dgxt73bb5kkv7"]
+
+[ext_resource type="Script" uid="uid://bu1gn1a0oghyb" path="res://Escenas/componentes/levantar/levantar_auto.gd" id="1_pj5on"]
+
+[node name="LevantarAuto" type="Node3D" unique_id=1190442807]
+script = ExtResource("1_pj5on")
