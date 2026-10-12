@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bbsqmfxf0yc4c"]
+
+[ext_resource type="Script" uid="uid://bm6xiqp0ocu2e" path="res://Escenas/componentes/levantar/levantar.gd" id="1_35iwp"]
+
+[node name="Levantar" type="Node3D" unique_id=1499998198]
+script = ExtResource("1_35iwp")
+desplazamiento_rescate = Vector3(0.05, 2, 0.05)
