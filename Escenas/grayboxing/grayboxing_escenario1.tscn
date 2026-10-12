@@ -29,6 +29,8 @@ albedo_color = Color(0.84356505, 0.46794945, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xd07"]
 albedo_color = Color(0, 0, 0, 1)
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_3xd07"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jcwe0"]
 albedo_color = Color(0.84356505, 0.46794945, 0, 1)
 
@@ -134,6 +136,10 @@ size = Vector3(35.129814, 0.30316162, 44.93747)
 transform = Transform3D(-0.99994516, 0, 0.0104717165, 0, 1, 0, -0.0104717165, 0, -0.99994516, 163.0035, -0.08214998, -12.264465)
 size = Vector3(31.625198, 0.30316162, 54.413857)
 material = SubResource("StandardMaterial3D_j0ogg")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Principio_y_Curva" unique_id=2061922880]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14738274, 0)
+navigation_mesh = SubResource("NavigationMesh_3xd07")
 
 [node name="Curva_y_final" type="CSGCombiner3D" parent="." unique_id=1458995158]
 use_collision = true
