@@ -1,5 +1,5 @@
 
-extends ProgressBar
+extends TextureProgressBar
 @onready var timer = $timer
 @onready var barradaño =$damagebar
 @onready var text=$Label
