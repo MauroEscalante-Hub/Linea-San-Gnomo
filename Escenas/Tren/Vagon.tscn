@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bv0mo455wfo0x" path="res://Scripts/vagon.gd" id="1_4b57l"]
 [ext_resource type="PackedScene" uid="uid://bchx6mnwvydew" path="res://Escenas/hud/vidatren.tscn" id="2_6wtur"]
+[ext_resource type="PackedScene" uid="uid://dyyi3g7vk0p71" path="res://Escenas/audio/audio_manager.tscn" id="3_g4uj6"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_182kk"]
 _surfaces = [{
@@ -17,13 +18,14 @@ _surfaces = [{
 [sub_resource type="BoxShape3D" id="BoxShape3D_5cipi"]
 size = Vector3(0.9869995, 1.9107056, 2.462616)
 
-[node name="VehicleBody3D" type="VehicleBody3D" unique_id=2072145692]
+[node name="VehicleBody3D" type="VehicleBody3D" unique_id=2072145692 node_paths=PackedStringArray("audio_manager")]
 transform = Transform3D(2.655, 0, 0, 0, 2.655, 0, 0, 0, 2.655, 0, 0, 0)
 collision_layer = 7
 collision_mask = 7
 center_of_mass_mode = 1
 script = ExtResource("1_4b57l")
 vida = 500
+audio_manager = NodePath("AudioManager")
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="." unique_id=1605239507]
 mesh = SubResource("ArrayMesh_182kk")
@@ -93,3 +95,5 @@ transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, 0.69196355, -0.40561
 use_as_traction = true
 
 [node name="vidabar" parent="." unique_id=1383496892 instance=ExtResource("2_6wtur")]
+
+[node name="AudioManager" parent="." unique_id=1877271522 instance=ExtResource("3_g4uj6")]

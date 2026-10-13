@@ -5,9 +5,12 @@ extends VehicleBody3D
 @export var vida: int = 20
 var esta_muerto: bool = false
 @export var escena_derrota: String = "res://Escenas/derrota tren.tscn"
+@onready var audio_manager: AudioManager
+
 
 func _ready() -> void:
 	barravida.vida_inicial(vida)
+	audio_manager.Sonido_tren()
 
 func morir_tren() -> void:
 	esta_muerto = true

@@ -1,6 +1,7 @@
 class_name El_arma
 extends Node3D
 
+
 @export var player: VehicleBody3D
 @export var bala: PackedScene
 var cadencia := 1.0  
