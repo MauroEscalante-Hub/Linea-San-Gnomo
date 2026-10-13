@@ -3,6 +3,8 @@ extends Node3D
 
 @export var player: VehicleBody3D
 @onready var sprite_mira = $Sprite3D
+@export var danio_del_jugador: int
+@export var cadencia: float
 @export var balas: PackedScene
 
 # Called when the node enters the scene tree for the first time.
@@ -33,6 +35,6 @@ func disparo():
 	get_tree().current_scene.add_child(balita)
 	balita.global_position = global_position
 	balita.add_collision_exception_with(player)
-	
+	balita.danio = danio_del_jugador
 	var direccion = (sprite_mira.global_position - global_position).normalized()
 	balita.set_direccion(direccion)

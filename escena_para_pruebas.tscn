@@ -47,12 +47,10 @@ sky_mode = 1
 [node name="jugador" parent="." unique_id=1604139032 instance=ExtResource("1_r8nmx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4872077, 0)
 
-[node name="jugador2" parent="." unique_id=1607288817 instance=ExtResource("1_r8nmx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.141774, 1.671493, -24.384523)
-start_as_player = false
-
 [node name="enemigo" parent="." unique_id=1146014462 instance=ExtResource("3_o2176")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1680627, 2.9427462, -22.736616)
+danio_de_auto = 20
+tiempo_de_disparo = 3.0
 
 [node name="enemigo2" parent="." unique_id=777979052 instance=ExtResource("3_o2176")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2785, 2.2807236, -9.940325)

@@ -1,5 +1,7 @@
 extends VehicleBody3D
 @export var start_as_player: bool = false
+@export var danio_de_auto: int
+@export var tiempo_de_disparo: float
 @onready var centro_de_masa := $"centro de masa"
 @onready var area_del_vehiculo = $deteccion_de_vehiculo
 @onready var control_del_jugador = $controlador_de_jugador
@@ -15,7 +17,10 @@ var velocidad_de_giro = 5
 @onready var mov_auto = $Mov_Auto
 @onready var componentevida = $Vida
 @onready var levantar =$Levantar
+
 func _ready() -> void:
+	arma_.danio_de_arma = danio_de_auto
+	arma_.cadencia = tiempo_de_disparo
 	componentevida.murio.connect(_on_vida_murio)
 	area_del_vehiculo.vehiculo_encontrado.connect(_on_vehiculo_encontrado)
 	become_npc()
@@ -30,6 +35,8 @@ func become_player() -> void:
 	gancho.activate()
 	arma_.desactivate()
 	arma_de_jugador.activate()
+	arma_de_jugador.danio = arma_.danio
+	arma_de_jugador.cadencia = arma_.cadencia
 	mov_auto._desactivate()
 	componentevida.activate()
 	levantar.activate()
