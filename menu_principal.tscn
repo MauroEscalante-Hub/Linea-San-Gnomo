@@ -1,8 +1,84 @@
 [gd_scene format=3 uid="uid://d0gvlf4las4hv"]
 
 [ext_resource type="Texture2D" uid="uid://bmfhen5p1h6bf" path="res://Assets/models/MainMenu.jpg" id="1_bj1uy"]
+[ext_resource type="Script" uid="uid://cv8rvs4pxr7uc" path="res://pantalla_menu.gd" id="2_gmcsc"]
 
 [sub_resource type="FontVariation" id="FontVariation_yf5fn"]
+variation_face_index = 1
+spacing_space = -3
+spacing_top = -1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmcsc"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.49411765, 0.19215687, 0.15686275, 0.9019608)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ul6ys"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.3019608, 0.05882353, 0.039215688, 0.8862745)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ns3he"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.6745098, 0.19215687, 0.22352941, 0.83137256)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fa1tu"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.49411765, 0.19215687, 0.15686275, 0.9019608)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6518"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.30060667, 0.057241887, 0.038019598, 0.8862745)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxm4i"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.6745098, 0.19215687, 0.22352941, 0.83137256)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [node name="menu" type="Node3D" unique_id=639863238]
 
@@ -14,20 +90,58 @@ transform = Transform3D(0.99925095, 0.011975962, -0.036799833, -0.011967849, 0.9
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera3D" unique_id=1722911685]
 
-[node name="Control" type="Control" parent="Camera3D/CanvasLayer" unique_id=1810753603]
+[node name="pantalla_menu" type="Control" parent="Camera3D/CanvasLayer" unique_id=1810753603]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_gmcsc")
 
-[node name="Label" type="Label" parent="Camera3D/CanvasLayer/Control" unique_id=226446322]
+[node name="Label" type="Label" parent="Camera3D/CanvasLayer/pantalla_menu" unique_id=226446322]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.9999998, 0.9351468, 0.928436, 1)
+offset_left = 29.0
+offset_top = 42.0
+offset_right = 807.0
+offset_bottom = 273.0
+theme_override_colors/font_color = Color(0.105882354, 0.0627451, 0.15686275, 1)
 theme_override_fonts/font = SubResource("FontVariation_yf5fn")
 theme_override_font_sizes/font_size = 83
 text = "LINEA SAN GNOMO
 "
+
+[node name="play" type="Button" parent="Camera3D/CanvasLayer/pantalla_menu" unique_id=971028238]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.261
+anchor_bottom = 0.16100001
+offset_left = 46.0
+offset_top = 184.0
+offset_right = 62.328003
+offset_bottom = 183.672
+scale = Vector2(0.6800015, 0.64000034)
+theme_override_font_sizes/font_size = 74
+theme_override_styles/normal = SubResource("StyleBoxFlat_gmcsc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ul6ys")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ns3he")
+text = "Jugar"
+
+[node name="salir" type="Button" parent="Camera3D/CanvasLayer/pantalla_menu" unique_id=982242549]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.261
+anchor_bottom = 0.16100001
+offset_left = 45.0
+offset_top = 280.0
+offset_right = 61.328003
+offset_bottom = 285.672
+scale = Vector2(0.68, 0.64)
+theme_override_font_sizes/font_size = 74
+theme_override_styles/normal = SubResource("StyleBoxFlat_fa1tu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a6518")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yxm4i")
+text = "Salir"
+
+[connection signal="pressed" from="Camera3D/CanvasLayer/pantalla_menu/play" to="Camera3D/CanvasLayer/pantalla_menu" method="_on_play_pressed"]
+[connection signal="pressed" from="Camera3D/CanvasLayer/pantalla_menu/salir" to="Camera3D/CanvasLayer/pantalla_menu" method="_on_salir_pressed"]
