@@ -6,7 +6,7 @@ extends Node3D
 @export var danio_del_jugador: int
 @export var cadencia: float
 @export var balas: PackedScene
-
+var puede_disparar := true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -31,6 +31,9 @@ func _process(delta):
 		disparo()
 
 func disparo():
+	if not puede_disparar:
+		return
+	
 	var balita = balas.instantiate()
 	get_tree().current_scene.add_child(balita)
 	balita.global_position = global_position
@@ -38,3 +41,7 @@ func disparo():
 	balita.danio = danio_del_jugador
 	var direccion = (sprite_mira.global_position - global_position).normalized()
 	balita.set_direccion(direccion)
+	
+	puede_disparar = false
+	await get_tree().create_timer(cadencia).timeout
+	puede_disparar = true

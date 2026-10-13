@@ -35,7 +35,7 @@ func become_player() -> void:
 	gancho.activate()
 	arma_.desactivate()
 	arma_de_jugador.activate()
-	arma_de_jugador.danio = arma_.danio
+	arma_de_jugador.danio_del_jugador = arma_.danio_de_arma
 	arma_de_jugador.cadencia = arma_.cadencia
 	mov_auto._desactivate()
 	componentevida.activate()

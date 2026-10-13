@@ -120,6 +120,7 @@ player = NodePath("..")
 
 [node name="Vida" parent="." unique_id=2126800800 node_paths=PackedStringArray("player") instance=ExtResource("10_j2gbx")]
 player = NodePath("..")
+vida_max = 1000
 
 [node name="Mov_Auto" parent="." unique_id=1749187415 node_paths=PackedStringArray("player") instance=ExtResource("11_0ug0u")]
 player = NodePath("..")
