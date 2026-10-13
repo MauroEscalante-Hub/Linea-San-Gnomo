@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ch5rrkfuqjnqt"
-path.s3tc="res://.godot/imported/WhatsApp Image 2026-10-08 at 15.40.11.jpeg-292787de1d154b3b1195907b90d2b4f7.s3tc.ctex"
+path.s3tc="res://.godot/imported/WhatsApp Image 2026-10-08 at 15.40.11.jpeg-e8611d4a02842a825b66810b9effc3ba.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Escenas/escenas_contexto/WhatsApp Image 2026-10-08 at 15.40.11.jpeg"
-dest_files=["res://.godot/imported/WhatsApp Image 2026-10-08 at 15.40.11.jpeg-292787de1d154b3b1195907b90d2b4f7.s3tc.ctex"]
+source_file="res://escenas/escenas_contexto/WhatsApp Image 2026-10-08 at 15.40.11.jpeg"
+dest_files=["res://.godot/imported/WhatsApp Image 2026-10-08 at 15.40.11.jpeg-e8611d4a02842a825b66810b9effc3ba.s3tc.ctex"]
 
 [params]
 
