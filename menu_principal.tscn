@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bmfhen5p1h6bf" path="res://Assets/models/MainMenu.jpg" id="1_bj1uy"]
 
+[sub_resource type="FontVariation" id="FontVariation_yf5fn"]
+
 [node name="menu" type="Node3D" unique_id=639863238]
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=369117556]
@@ -9,3 +11,23 @@ texture = ExtResource("1_bj1uy")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=110512985]
 transform = Transform3D(0.99925095, 0.011975962, -0.036799833, -0.011967849, 0.9999283, 0.00044074492, 0.036802474, 6.854995e-11, 0.9993226, -0.499341, -0.07056713, 6.5717716)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera3D" unique_id=1722911685]
+
+[node name="Control" type="Control" parent="Camera3D/CanvasLayer" unique_id=1810753603]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Camera3D/CanvasLayer/Control" unique_id=226446322]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.9999998, 0.9351468, 0.928436, 1)
+theme_override_fonts/font = SubResource("FontVariation_yf5fn")
+theme_override_font_sizes/font_size = 83
+text = "LINEA SAN GNOMO
+"
