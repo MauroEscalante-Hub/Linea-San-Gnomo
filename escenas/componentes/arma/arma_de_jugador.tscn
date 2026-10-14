@@ -10,6 +10,7 @@
 [node name="Arma_de_jugador" type="Node3D" unique_id=396609384 node_paths=PackedStringArray("audio_manager")]
 script = ExtResource("1_u6bma")
 audio_manager = NodePath("AudioManager")
+danio_del_jugador = 20
 balas = ExtResource("1_bt1rc")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1710126497]

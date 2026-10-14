@@ -5,7 +5,8 @@ extends VehicleBody3D
 @export var vida: int = 20
 var esta_muerto: bool = false
 @export var escena_derrota: String = "res://Escenas/derrota tren.tscn"
-@onready var audio_manager: AudioManager
+@onready var audio_manager: AudioManager = $AudioManager
+
 
 
 func _ready() -> void:
@@ -31,6 +32,7 @@ func recibir_danio(cantidad: int) -> void:
 		morir_tren()
 func daño() -> void:
 	recibir_danio(2)
+	audio_manager.play_trenhit()
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("daño"):

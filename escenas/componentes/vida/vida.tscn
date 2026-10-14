@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://pka07c3fe5jd"]
 
-[ext_resource type="Script" uid="uid://c4pg63bg3uuba" path="res://escenas/componentes/vida/vida.gd" id="1_jnlar"]
-[ext_resource type="PackedScene" uid="uid://cvdaermcfffes" path="res://escenas/componentes/vida/barra_de_vida.tscn" id="2_p4oi6"]
-[ext_resource type="Texture2D" uid="uid://eja3876kt2wa" path="res://escenas/componentes/vida/barra_fondo.png" id="3_s8and"]
+[ext_resource type="Script" uid="uid://c4pg63bg3uuba" path="res://Escenas/componentes/vida/vida.gd" id="1_jnlar"]
+[ext_resource type="PackedScene" uid="uid://cvdaermcfffes" path="res://Escenas/componentes/vida/barra_de_vida.tscn" id="2_p4oi6"]
+[ext_resource type="Texture2D" uid="uid://eja3876kt2wa" path="res://Escenas/componentes/vida/barra_fondo.png" id="3_s8and"]
 
 [node name="Vida" type="Node3D" unique_id=2126800800]
 script = ExtResource("1_jnlar")
+vida_max = 100
 
 [node name="canvas" type="CanvasLayer" parent="." unique_id=1174388185]
 
