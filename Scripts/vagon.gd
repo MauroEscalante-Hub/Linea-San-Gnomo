@@ -23,6 +23,7 @@ func recibir_danio(cantidad: int) -> void:
 		return
 
 	vida -= cantidad
+	audio_manager.play_trenhit()
 
 	if is_instance_valid(barravida):
 		barravida.vida = vida
@@ -32,9 +33,9 @@ func recibir_danio(cantidad: int) -> void:
 		morir_tren()
 func daño() -> void:
 	recibir_danio(2)
-	audio_manager.play_trenhit()
+	
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("daño"):
 		daño()
-		
+		audio_manager.play_trenhit()
