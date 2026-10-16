@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://be2gt46i7eu8f"]
 
-[ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://escenas/jugador/jugador.tscn" id="1_r8nmx"]
-[ext_resource type="PackedScene" uid="uid://cxmnfguj72fdi" path="res://escenas/componentes/game_manager.tscn" id="3_ioiu6"]
-[ext_resource type="PackedScene" uid="uid://14tjj1vngcuo" path="res://escenas/enemigos/enemigo_base.tscn" id="3_o2176"]
+[ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://Escenas/jugador/jugador.tscn" id="1_r8nmx"]
+[ext_resource type="PackedScene" uid="uid://cxmnfguj72fdi" path="res://Escenas/componentes/game_manager.tscn" id="3_ioiu6"]
+[ext_resource type="PackedScene" uid="uid://14tjj1vngcuo" path="res://Escenas/enemigos/enemigo_base.tscn" id="3_o2176"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8nmx"]
 albedo_color = Color(0.36862746, 0.64705884, 1, 1)
@@ -46,7 +46,7 @@ sky_mode = 1
 
 [node name="enemigo" parent="." unique_id=1146014462 instance=ExtResource("3_o2176")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1680627, 2.9427462, -22.736616)
-danio_de_auto = 20
+danio_de_auto = 1
 tiempo_de_disparo = 3.0
 
 [node name="enemigo2" parent="." unique_id=777979052 instance=ExtResource("3_o2176")]

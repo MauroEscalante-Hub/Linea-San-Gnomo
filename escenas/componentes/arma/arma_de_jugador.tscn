@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://w5tekxfxwx1x"]
 
-[ext_resource type="PackedScene" uid="uid://dqb7jkqihqm02" path="res://escenas/dispararbalas/balas.tscn" id="1_bt1rc"]
-[ext_resource type="Script" uid="uid://bqgk1jc6kvkgd" path="res://escenas/componentes/arma/arma_de_jugador.gd" id="1_u6bma"]
+[ext_resource type="PackedScene" uid="uid://dqb7jkqihqm02" path="res://Escenas/dispararbalas/balas.tscn" id="1_bt1rc"]
+[ext_resource type="Script" uid="uid://bqgk1jc6kvkgd" path="res://Escenas/componentes/arma/arma_de_jugador.gd" id="1_u6bma"]
 [ext_resource type="Texture2D" uid="uid://ds07ucddxpnhw" path="res://mira.png" id="2_d7h27"]
+[ext_resource type="PackedScene" uid="uid://dyyi3g7vk0p71" path="res://Escenas/audio/audio_manager.tscn" id="4_3yuoy"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_u5bk5"]
 
-[node name="Arma_de_jugador" type="Node3D" unique_id=396609384]
+[node name="Arma_de_jugador" type="Node3D" unique_id=396609384 node_paths=PackedStringArray("audio_manager")]
 script = ExtResource("1_u6bma")
+audio_manager = NodePath("AudioManager")
+danio_del_jugador = 20
 balas = ExtResource("1_bt1rc")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1710126497]
@@ -20,3 +23,5 @@ mesh = SubResource("CapsuleMesh_u5bk5")
 
 [node name="balas" parent="." unique_id=1497429755 instance=ExtResource("1_bt1rc")]
 transform = Transform3D(0.905, 0, 0, 0, 0.905, 0, 0, 0, 0.905, 0, 0, 0)
+
+[node name="AudioManager" parent="." unique_id=159274933 instance=ExtResource("4_3yuoy")]

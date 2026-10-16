@@ -1,6 +1,8 @@
 class_name Arma_Jugador
 extends Node3D
 
+@export var audio_manager: AudioManager
+
 @export var player: VehicleBody3D
 @onready var sprite_mira = $Sprite3D
 @export var danio_del_jugador: int
@@ -29,6 +31,7 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("dispararbalas"):
 		disparo()
+		audio_manager.play_balazo()
 
 func disparo():
 	if not puede_disparar:
@@ -45,3 +48,7 @@ func disparo():
 	puede_disparar = false
 	await get_tree().create_timer(cadencia).timeout
 	puede_disparar = true
+
+
+func _on_dispa() -> void:
+	pass # Replace with function body.
