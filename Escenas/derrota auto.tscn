@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b556pb1u0reub"]
+
+[ext_resource type="Texture2D" uid="uid://dtdga0l1rlsns" path="res://Assets/models/DerrotaAuto.jpg" id="1_b6pww"]
+
+[node name="Node3D" type="Node3D" unique_id=77971564]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=699720684]
+texture = ExtResource("1_b6pww")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1584677942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.799284)
