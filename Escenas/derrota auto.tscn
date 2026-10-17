@@ -2,10 +2,24 @@
 
 [ext_resource type="Texture2D" uid="uid://dtdga0l1rlsns" path="res://Assets/models/DerrotaAuto.jpg" id="1_b6pww"]
 
-[node name="Node3D" type="Node3D" unique_id=77971564]
+[sub_resource type="GDScript" id="GDScript_b6pww"]
+script/source = "extends Node3D
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=699720684]
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="game_over_auto" type="Node2D" unique_id=317679837]
+script = SubResource("GDScript_b6pww")
+
+[node name="imagen_auto" type="Sprite2D" parent="." unique_id=644292233]
+position = Vector2(581, 322)
+scale = Vector2(0.5999988, 0.6000006)
 texture = ExtResource("1_b6pww")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1584677942]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.799284)
