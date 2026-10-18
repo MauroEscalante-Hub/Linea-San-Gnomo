@@ -32,6 +32,7 @@ func recibir_danio(cantidad: int) -> void:
 	
 	if vida_actual <= 0:
 		_morir()
+		get_tree().change_scene_to_file("res://Escenas/derrota auto.tscn")
 
 func _morir() -> void:
 	muerto = true
