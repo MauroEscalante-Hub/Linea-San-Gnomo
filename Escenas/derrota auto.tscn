@@ -3,17 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://dtdga0l1rlsns" path="res://Assets/models/DerrotaAuto.jpg" id="1_b6pww"]
 
 [sub_resource type="GDScript" id="GDScript_b6pww"]
-script/source = "extends Node3D
+script/source = "extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 "
 
 [node name="game_over_auto" type="Node2D" unique_id=317679837]
