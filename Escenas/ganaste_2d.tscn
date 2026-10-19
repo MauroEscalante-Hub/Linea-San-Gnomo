@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cqcnpr76fo56"]
+
+[ext_resource type="Texture2D" uid="uid://dyrnc4mo4h7mh" path="res://Assets/models/Victoria.png" id="1_fmsa2"]
+
+[node name="Node2D" type="Node2D" unique_id=2067807414]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1915297524]
+position = Vector2(605, 300)
+scale = Vector2(0.64, 0.64886427)
+texture = ExtResource("1_fmsa2")
