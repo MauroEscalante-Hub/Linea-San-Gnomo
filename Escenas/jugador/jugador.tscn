@@ -128,7 +128,4 @@ player = NodePath("..")
 [node name="Levantar" parent="." unique_id=1499998198 node_paths=PackedStringArray("jugador") instance=ExtResource("12_crx0k")]
 jugador = NodePath("..")
 
-[node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=202776894]
-current = true
-
 [connection signal="murio" from="Vida" to="." method="_on_vida_murio"]

@@ -230,10 +230,6 @@ size = Vector3(0.5175781, 14.997009, 243.48376)
 transform = Transform3D(0.036643714, 0, 0.999328, 0, 0.9999998, 0, -0.9993282, 0, 0.036643706, 603.24646, 50.974026, -572.3414)
 size = Vector3(0.5175781, 14.997009, 244.15204)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Curva_y_final/Cueva" unique_id=845900864]
-transform = Transform3D(-1.6017476e-09, -0.036643714, 0.999328, 0.9999998, -4.371138e-08, 0, 4.3682025e-08, 0.9993282, 0.036643706, 602.82, 57.600067, -582.5957)
-size = Vector3(0.5175781, 21.810165, 243.30276)
-
 [node name="Ramal" type="CSGCombiner3D" parent="." unique_id=555864309]
 visible = false
 
@@ -322,12 +318,14 @@ text = "CHECK POINT
 transform = Transform3D(0.091392085, 0, -0.995815, 0, 1, 0, 0.995815, 0, 0.091392085, 0.97023153, 2.593481, 19.38829)
 
 [node name="ruta" parent="." unique_id=622969983 instance=ExtResource("2_3sjby")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.30077934)
 
 [node name="PathFollow3D" type="PathFollow3D" parent="ruta" unique_id=1168567842]
-transform = Transform3D(0.7464161, 0, 0.66547954, 0, 1, 0, -0.66547954, 0, 0.7464161, -1e-45, 0, -1.0248778)
+transform = Transform3D(0.7464125, 0, 0.6654753, 0, 0.9999927, 0, -0.6654764, 0, 0.7464114, -1e-45, 0, -1.0248778)
 script = ExtResource("3_ls4l5")
 
 [node name="VehicleBody3D" parent="ruta/PathFollow3D" unique_id=2072145692 instance=ExtResource("4_abgxn")]
+transform = Transform3D(2.6550014, 0, 0, 1.937151e-07, 2.6549985, -8.731149e-11, 3.4924597e-10, 5.820766e-11, 2.655, 0.30541658, 0.88684875, 5.461153)
 vida = 593
 
 [node name="enemigo" parent="." unique_id=461994344 instance=ExtResource("5_abgxn")]
