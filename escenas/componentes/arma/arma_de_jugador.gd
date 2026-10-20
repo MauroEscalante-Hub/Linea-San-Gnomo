@@ -1,10 +1,14 @@
 class_name Arma_Jugador
 extends Node3D
 
+@export var audio_manager: AudioManager
+
 @export var player: VehicleBody3D
 @onready var sprite_mira = $Sprite3D
+@export var danio_del_jugador: int
+@export var cadencia: float
 @export var balas: PackedScene
-
+var puede_disparar := true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -27,12 +31,24 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("dispararbalas"):
 		disparo()
+		audio_manager.play_balazo()
 
 func disparo():
+	if not puede_disparar:
+		return
+	
 	var balita = balas.instantiate()
 	get_tree().current_scene.add_child(balita)
 	balita.global_position = global_position
 	balita.add_collision_exception_with(player)
-	
+	balita.danio = danio_del_jugador
 	var direccion = (sprite_mira.global_position - global_position).normalized()
 	balita.set_direccion(direccion)
+	
+	puede_disparar = false
+	await get_tree().create_timer(cadencia).timeout
+	puede_disparar = true
+
+
+func _on_dispa() -> void:
+	pass # Replace with function body.

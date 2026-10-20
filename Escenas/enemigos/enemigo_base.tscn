@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://w5tekxfxwx1x" path="res://Escenas/componentes/arma/arma_de_jugador.tscn" id="9_f01sq"]
 [ext_resource type="PackedScene" uid="uid://b8n8hfvv4ppl1" path="res://Escenas/componentes/movimiento_automatico/mov_auto.tscn" id="10_eml4n"]
 [ext_resource type="PackedScene" uid="uid://pka07c3fe5jd" path="res://Escenas/componentes/vida/vida.tscn" id="11_78feh"]
-[ext_resource type="Texture2D" uid="uid://b2mj6i7iwv5jo" path="res://Assets/sprites/Boton press.png" id="12_owptj"]
+[ext_resource type="PackedScene" uid="uid://bbsqmfxf0yc4c" path="res://Escenas/componentes/levantar/levantar.tscn" id="12_owptj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cqhb5"]
 albedo_color = Color(0.7952375, 0, 0.17623618, 1)
@@ -41,6 +41,8 @@ center_of_mass_mode = 1
 can_sleep = false
 angular_damp = 3.0
 script = ExtResource("1_t6476")
+danio_de_auto = 10
+tiempo_de_disparo = 1.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=786756163]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.4703977, 0, 0, -0.0024392535)
@@ -119,13 +121,19 @@ target_position = Vector3(0, -1, -50)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0233383, 0)
 player = NodePath("..")
 
-[node name="Arma_de_jugador" parent="." unique_id=396609384 instance=ExtResource("9_f01sq")]
+[node name="Arma_de_jugador" parent="." unique_id=396609384 node_paths=PackedStringArray("player") instance=ExtResource("9_f01sq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0233383, 0)
+player = NodePath("..")
 
 [node name="Mov_Auto" parent="." unique_id=1749187415 node_paths=PackedStringArray("player") instance=ExtResource("10_eml4n")]
 player = NodePath("..")
 
-[node name="Vida" parent="." unique_id=2126800800 instance=ExtResource("11_78feh")]
+[node name="Vida" parent="." unique_id=2126800800 node_paths=PackedStringArray("player") instance=ExtResource("11_78feh")]
+player = NodePath("..")
+vida_max = 100
+
+[node name="Levantar" parent="." unique_id=1499998198 node_paths=PackedStringArray("jugador") instance=ExtResource("12_owptj")]
+jugador = NodePath("..")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1788417323]
 transform = Transform3D(0.101436354, 0, 0, 0, 0.1200211, 0, 0, 0, 1, 0, 2.805974, 0)

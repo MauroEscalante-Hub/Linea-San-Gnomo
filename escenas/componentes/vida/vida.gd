@@ -2,7 +2,7 @@ class_name ComponenteVida
 extends Node3D
 
 @export var player: VehicleBody3D
-@export var vida_max: int = 100
+@export var vida_max: int
 @onready var progress_bar = $canvas/ProgressBar
 @onready var canvas: CanvasLayer = $canvas
 
@@ -30,8 +30,9 @@ func recibir_danio(cantidad: int) -> void:
 	vida_actual = maxi(vida_actual - cantidad, 0)
 	progress_bar.value = vida_actual
 	
-	if vida_actual == 0:
+	if vida_actual <= 0:
 		_morir()
+		get_tree().change_scene_to_file("res://Escenas/derrota auto.tscn")
 
 func _morir() -> void:
 	muerto = true

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dyyi3g7vk0p71"]
+
+[ext_resource type="Script" uid="uid://13xxwxpj8s2i" path="res://Escenas/audio/audio_manager.gd" id="1_tg4qe"]
+[ext_resource type="AudioStream" uid="uid://dv5mfobbtdcq0" path="res://Escenas/audio/sfx balas/Disparo.ogg" id="2_tg4qe"]
+[ext_resource type="AudioStream" uid="uid://cjm870jn1ynk5" path="res://Escenas/audio/enviorment/tren_mezcla.ogg" id="2_xb4g7"]
+[ext_resource type="AudioStream" uid="uid://dbusiltxft2jt" path="res://Escenas/audio/sonidos hits/Gancho Hit.ogg" id="4_vwuku"]
+[ext_resource type="AudioStream" uid="uid://d3o1osww3wk0q" path="res://Escenas/audio/sonidos hits/cartoon hit.ogg" id="5_hf0dv"]
+
+[node name="AudioManager" type="Node" unique_id=1877271522]
+script = ExtResource("1_tg4qe")
+
+[node name="sonidotren" type="AudioStreamPlayer3D" parent="." unique_id=32606381]
+stream = ExtResource("2_xb4g7")
+volume_db = -18.691
+stream_paused = true
+bus = &"ambiente"
+
+[node name="audio balas" type="AudioStreamPlayer3D" parent="." unique_id=1162060881]
+stream = ExtResource("2_tg4qe")
+bus = &"disparos"
+
+[node name="sonidogancho" type="AudioStreamPlayer3D" parent="." unique_id=40659546]
+stream = ExtResource("4_vwuku")
+volume_db = 11.963
+bus = &"hit"
+
+[node name="trenhit" type="AudioStreamPlayer3D" parent="." unique_id=1002356950]
+stream = ExtResource("5_hf0dv")
+bus = &"hit"

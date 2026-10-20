@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d3o1osww3wk0q"
+path="res://.godot/imported/cartoon hit.ogg-4b595da099c20f32c1ddf1f3a46d97a3.oggvorbisstr"
+
+[deps]
+
+source_file="res://Escenas/audio/sonidos hits/cartoon hit.ogg"
+dest_files=["res://.godot/imported/cartoon hit.ogg-4b595da099c20f32c1ddf1f3a46d97a3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

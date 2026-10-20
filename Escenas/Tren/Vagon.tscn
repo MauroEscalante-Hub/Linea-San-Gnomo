@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bv0mo455wfo0x" path="res://Scripts/vagon.gd" id="1_4b57l"]
 [ext_resource type="PackedScene" uid="uid://bchx6mnwvydew" path="res://Escenas/hud/vidatren.tscn" id="2_6wtur"]
+[ext_resource type="PackedScene" uid="uid://dyyi3g7vk0p71" path="res://Escenas/audio/audio_manager.tscn" id="3_g4uj6"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_182kk"]
 _surfaces = [{
@@ -93,3 +94,5 @@ transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, 0.69196355, -0.40561
 use_as_traction = true
 
 [node name="vidabar" parent="." unique_id=1383496892 instance=ExtResource("2_6wtur")]
+
+[node name="AudioManager" parent="." unique_id=1877271522 instance=ExtResource("3_g4uj6")]

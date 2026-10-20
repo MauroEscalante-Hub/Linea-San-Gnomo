@@ -1,9 +1,11 @@
 class_name El_arma
 extends Node3D
 
+
 @export var player: VehicleBody3D
 @export var bala: PackedScene
-@export var cadencia := 1.0  
+var cadencia := 1.0  
+var danio_de_arma: int
 @onready var area = $Area3D
 var activa: bool
 var puede_disparar := true
@@ -37,7 +39,7 @@ func disparo(objetivo: Node3D) -> void:
 	balita.add_collision_exception_with(player) 
 	var direccion := (objetivo.global_position - global_position).normalized()
 	balita.set_direccion(direccion)
-	
+	balita.danio = danio_de_arma
 	puede_disparar = false
 	await get_tree().create_timer(cadencia).timeout
 	puede_disparar = true
