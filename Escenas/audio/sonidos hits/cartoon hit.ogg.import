@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://d3o1osww3wk0q"
-path="res://.godot/imported/cartoon hit.ogg-4b595da099c20f32c1ddf1f3a46d97a3.oggvorbisstr"
+path="res://.godot/imported/cartoon hit.ogg-da0fab115260e0c33e638af1e058734b.oggvorbisstr"
 
 [deps]
 
-source_file="res://Escenas/audio/sonidos hits/cartoon hit.ogg"
-dest_files=["res://.godot/imported/cartoon hit.ogg-4b595da099c20f32c1ddf1f3a46d97a3.oggvorbisstr"]
+source_file="res://escenas/audio/sonidos hits/cartoon hit.ogg"
+dest_files=["res://.godot/imported/cartoon hit.ogg-da0fab115260e0c33e638af1e058734b.oggvorbisstr"]
 
 [params]
 

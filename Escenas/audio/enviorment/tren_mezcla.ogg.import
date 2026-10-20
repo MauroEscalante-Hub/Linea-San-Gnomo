@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cjm870jn1ynk5"
-path="res://.godot/imported/tren_mezcla.ogg-3ee4055128bbf46fc4fe7de9f4ba686d.oggvorbisstr"
+path="res://.godot/imported/tren_mezcla.ogg-b8700caac6c66f4ac77bb2cdc5d0c129.oggvorbisstr"
 
 [deps]
 
-source_file="res://Escenas/audio/enviorment/tren_mezcla.ogg"
-dest_files=["res://.godot/imported/tren_mezcla.ogg-3ee4055128bbf46fc4fe7de9f4ba686d.oggvorbisstr"]
+source_file="res://escenas/audio/enviorment/tren_mezcla.ogg"
+dest_files=["res://.godot/imported/tren_mezcla.ogg-b8700caac6c66f4ac77bb2cdc5d0c129.oggvorbisstr"]
 
 [params]
 

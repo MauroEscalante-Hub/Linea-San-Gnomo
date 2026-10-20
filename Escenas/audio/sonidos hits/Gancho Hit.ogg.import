@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dbusiltxft2jt"
-path="res://.godot/imported/Gancho Hit.ogg-d42d3ecaca10c634b5352cbcb2574361.oggvorbisstr"
+path="res://.godot/imported/Gancho Hit.ogg-74abbe2281369eb5f56ce0e3d44334a7.oggvorbisstr"
 
 [deps]
 
-source_file="res://Escenas/audio/sonidos hits/Gancho Hit.ogg"
-dest_files=["res://.godot/imported/Gancho Hit.ogg-d42d3ecaca10c634b5352cbcb2574361.oggvorbisstr"]
+source_file="res://escenas/audio/sonidos hits/Gancho Hit.ogg"
+dest_files=["res://.godot/imported/Gancho Hit.ogg-74abbe2281369eb5f56ce0e3d44334a7.oggvorbisstr"]
 
 [params]
 
