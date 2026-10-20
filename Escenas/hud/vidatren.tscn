@@ -5,6 +5,10 @@
 [ext_resource type="Script" uid="uid://dhajcl6c8v08h" path="res://Escenas/hud/vidatren.gd" id="1_s67wi"]
 [ext_resource type="PackedScene" uid="uid://pka07c3fe5jd" path="res://Escenas/componentes/vida/vida.tscn" id="2_7xj8q"]
 [ext_resource type="Texture2D" uid="uid://db0a12mbi3kjk" path="res://Assets/sprites/tren blanco.png" id="3_dal77"]
+[ext_resource type="Texture2D" uid="uid://bp2ne783mtgq2" path="res://Assets/sprites/linea san gnomo.png" id="5_x71yh"]
+[ext_resource type="Texture2D" uid="uid://duxaws04hjpng" path="res://Assets/sprites/linea san gnomo lleno.png" id="6_inwhe"]
+[ext_resource type="Texture2D" uid="uid://dxfmhmkh2gswp" path="res://Assets/sprites/bala 1.png" id="8_fskml"]
+[ext_resource type="Texture2D" uid="uid://4ol3bg1vy2r5" path="res://Assets/sprites/gancho 1 negro.png" id="9_x71yh"]
 
 [node name="vidabar" type="TextureProgressBar" unique_id=1810890390]
 z_index = 1
@@ -29,6 +33,15 @@ value = 80.0
 texture_under = ExtResource("1_dal77")
 texture_progress = ExtResource("3_dal77")
 
+[node name="ramal" type="TextureProgressBar" parent="." unique_id=173127857]
+layout_mode = 0
+offset_left = 2005.0222
+offset_top = 9.308685
+offset_right = 4377.035
+offset_bottom = 1089.3087
+texture_under = ExtResource("5_x71yh")
+texture_progress = ExtResource("6_inwhe")
+
 [node name="timer" type="Timer" parent="." unique_id=1419436635]
 wait_time = 0.4
 one_shot = true
@@ -43,5 +56,29 @@ scale = Vector2(9.28682, 8.047014)
 text = "vida tren"
 
 [node name="Vida" parent="." unique_id=2126800800 instance=ExtResource("2_7xj8q")]
+
+[node name="balas" type="Sprite2D" parent="." unique_id=1402106515]
+position = Vector2(7626.2446, 4905.716)
+texture = ExtResource("8_fskml")
+
+[node name="Label2" type="Label" parent="balas" unique_id=69007602]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -823.4914
+offset_top = -530.3229
+offset_right = -777.4999
+offset_bottom = -455.32285
+grow_vertical = 2
+scale = Vector2(10.315, 10.315)
+text = "100
+
+"
+horizontal_alignment = 1
+
+[node name="gancho" type="Sprite2D" parent="." unique_id=1067828003]
+visible = false
+position = Vector2(7572.539, 4877.7896)
+texture = ExtResource("9_x71yh")
 
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

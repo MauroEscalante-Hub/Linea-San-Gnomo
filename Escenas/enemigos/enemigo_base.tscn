@@ -135,4 +135,9 @@ vida_max = 100
 [node name="Levantar" parent="." unique_id=1499998198 node_paths=PackedStringArray("jugador") instance=ExtResource("12_owptj")]
 jugador = NodePath("..")
 
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1788417323]
+transform = Transform3D(0.101436354, 0, 0, 0, 0.1200211, 0, 0, 0, 1, 0, 2.805974, 0)
+visible = false
+texture = ExtResource("12_owptj")
+
 [connection signal="murio" from="Vida" to="." method="_on_vida_murio"]

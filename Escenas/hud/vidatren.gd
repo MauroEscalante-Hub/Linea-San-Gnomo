@@ -7,6 +7,28 @@ extends TextureProgressBar
 @onready var color_parpadeo: Color = Color.RED
 var tween_parpadeo: Tween
 var vida = 0: set = _set_vida
+@onready var hud_bala = $balas
+@onready var hud_gancho = $gancho
+@onready var bala_equipada = true
+@onready var gancho_equipado = false
+
+func _process(delta: float) -> void:
+	hud_arma()
+
+func hud_arma():
+	if Input.is_action_just_pressed("cambiar_a_gancho") and bala_equipada:
+		hud_bala.visible = not hud_bala.visible
+		hud_gancho.visible = true
+		bala_equipada = false
+		gancho_equipado = true
+		print ("toque la r")
+	if Input.is_action_just_pressed("cambiar_arma") and gancho_equipado:
+		hud_gancho.visible = false
+		hud_bala.visible = true
+		gancho_equipado = false
+		bala_equipada = true
+		print("toque la t")
+
 
 func _set_vida(nueva_vida):
 	var vida_previa = vida
