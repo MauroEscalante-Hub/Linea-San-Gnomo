@@ -319,7 +319,7 @@ text = "CHECK POINT
 "
 
 [node name="jugador" parent="." unique_id=1604139032 instance=ExtResource("1_p7yi8")]
-transform = Transform3D(0.091392085, 0, -0.995815, 0, 1, 0, 0.995815, 0, 0.091392085, -5.650948, 2.593481, 2.4506626)
+transform = Transform3D(0.091392085, 0, -0.995815, 0, 1, 0, 0.995815, 0, 0.091392085, 0.97023153, 2.593481, 19.38829)
 
 [node name="ruta" parent="." unique_id=622969983 instance=ExtResource("2_3sjby")]
 

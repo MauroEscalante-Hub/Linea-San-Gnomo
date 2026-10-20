@@ -11,7 +11,6 @@ var vida = 0: set = _set_vida
 @onready var hud_gancho = $gancho
 @onready var bala_equipada = true
 @onready var gancho_equipado = false
-@onready var aguja = $gnomo
 
 func _process(delta: float) -> void:
 	hud_arma()
@@ -30,8 +29,6 @@ func hud_arma():
 		bala_equipada = true
 		print("toque la t")
 
-func velocimetro():
-	aguja.rotation = 1.2/60
 
 func _set_vida(nueva_vida):
 	var vida_previa = vida

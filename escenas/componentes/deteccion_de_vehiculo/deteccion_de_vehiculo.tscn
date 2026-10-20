@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ddrti2gwrh11m"]
 
-[ext_resource type="Script" uid="uid://mca6wrjp0vuq" path="res://escenas/componentes/deteccion_de_vehiculo/deteccion_de_vehiculo.gd" id="1_8ylr4"]
+[ext_resource type="Script" uid="uid://mca6wrjp0vuq" path="res://Escenas/componentes/deteccion_de_vehiculo/deteccion_de_vehiculo.gd" id="1_8ylr4"]
+[ext_resource type="Texture2D" uid="uid://dln08mlv7gq80" path="res://Assets/sprites/boton not press.png" id="2_65qev"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_v5b0l"]
 radius = 2.0092773
@@ -12,6 +13,10 @@ script = ExtResource("1_8ylr4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=957383952]
 shape = SubResource("CylinderShape3D_v5b0l")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=679272067]
+transform = Transform3D(0.27271527, 0, 0, 0, 0.25521898, 0, 0, 0, 0.4712174, 0, 3.2321644, 0)
+texture = ExtResource("2_65qev")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

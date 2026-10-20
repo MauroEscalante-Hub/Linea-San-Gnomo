@@ -6,9 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://pka07c3fe5jd" path="res://Escenas/componentes/vida/vida.tscn" id="2_7xj8q"]
 [ext_resource type="Texture2D" uid="uid://db0a12mbi3kjk" path="res://Assets/sprites/tren blanco.png" id="3_dal77"]
 [ext_resource type="Texture2D" uid="uid://bp2ne783mtgq2" path="res://Assets/sprites/linea san gnomo.png" id="5_x71yh"]
-[ext_resource type="Texture2D" uid="uid://bkg7yxm2gwhy6" path="res://Assets/sprites/velocimetro 2.png" id="6_fcgwb"]
 [ext_resource type="Texture2D" uid="uid://duxaws04hjpng" path="res://Assets/sprites/linea san gnomo lleno.png" id="6_inwhe"]
-[ext_resource type="Texture2D" uid="uid://wowhuyb5iocp" path="res://Assets/sprites/puntero vellocimetro.png" id="7_or78e"]
 [ext_resource type="Texture2D" uid="uid://dxfmhmkh2gswp" path="res://Assets/sprites/bala 1.png" id="8_fskml"]
 [ext_resource type="Texture2D" uid="uid://4ol3bg1vy2r5" path="res://Assets/sprites/gancho 1 negro.png" id="9_x71yh"]
 
@@ -58,17 +56,6 @@ scale = Vector2(9.28682, 8.047014)
 text = "vida tren"
 
 [node name="Vida" parent="." unique_id=2126800800 instance=ExtResource("2_7xj8q")]
-
-[node name="velocimetro" type="Sprite2D" parent="." unique_id=734724131]
-position = Vector2(9192.669, 4728.8496)
-scale = Vector2(1.4650862, 1.3869475)
-texture = ExtResource("6_fcgwb")
-
-[node name="gnomo" type="Sprite2D" parent="." unique_id=1787715175]
-position = Vector2(9174.766, 4710.232)
-rotation = -2.6179938
-scale = Vector2(1.115, 1.398)
-texture = ExtResource("7_or78e")
 
 [node name="balas" type="Sprite2D" parent="." unique_id=1402106515]
 position = Vector2(7626.2446, 4905.716)
