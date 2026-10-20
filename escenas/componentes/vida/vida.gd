@@ -39,4 +39,5 @@ func _morir() -> void:
 	player.engine_force = 0.0
 	murio.emit()
 	if player != GameManager.current_player:
+		print("[soy enemigo] me mori")
 		player.queue_free()
