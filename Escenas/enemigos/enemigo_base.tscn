@@ -1,16 +1,17 @@
 [gd_scene format=3 uid="uid://14tjj1vngcuo"]
 
-[ext_resource type="Script" uid="uid://csqjjf38dlstk" path="res://escenas/enemigos/enemigo_base.gd" id="1_t6476"]
-[ext_resource type="PackedScene" uid="uid://bjanlpui5kawe" path="res://escenas/componentes/camara/camara.tscn" id="3_orrqs"]
-[ext_resource type="PackedScene" uid="uid://ddrti2gwrh11m" path="res://escenas/componentes/deteccion_de_vehiculo/deteccion_de_vehiculo.tscn" id="4_ayvn7"]
-[ext_resource type="PackedScene" uid="uid://cxaro2aci7e0v" path="res://escenas/componentes/control_de_player/controlador_de_jugador.tscn" id="5_m4p66"]
-[ext_resource type="PackedScene" uid="uid://cldmjtak6b457" path="res://escenas/componentes/movimiento/movimiento.tscn" id="6_3hm7h"]
-[ext_resource type="PackedScene" uid="uid://bhw4fsf0ug2a3" path="res://escenas/componentes/gancho/ganchocontrol.tscn" id="7_n8v6m"]
-[ext_resource type="PackedScene" uid="uid://cu0nveryf7yao" path="res://escenas/componentes/gancho/soga.tscn" id="8_nvaha"]
-[ext_resource type="PackedScene" uid="uid://db0xp4k6m2u8a" path="res://escenas/componentes/arma/arma.tscn" id="8_qt12g"]
-[ext_resource type="PackedScene" uid="uid://w5tekxfxwx1x" path="res://escenas/componentes/arma/arma_de_jugador.tscn" id="9_f01sq"]
-[ext_resource type="PackedScene" uid="uid://b8n8hfvv4ppl1" path="res://escenas/componentes/movimiento_automatico/mov_auto.tscn" id="10_eml4n"]
-[ext_resource type="PackedScene" uid="uid://pka07c3fe5jd" path="res://escenas/componentes/vida/vida.tscn" id="11_78feh"]
+[ext_resource type="Script" uid="uid://csqjjf38dlstk" path="res://Escenas/enemigos/enemigo_base.gd" id="1_t6476"]
+[ext_resource type="PackedScene" uid="uid://bjanlpui5kawe" path="res://Escenas/componentes/camara/camara.tscn" id="3_orrqs"]
+[ext_resource type="PackedScene" uid="uid://ddrti2gwrh11m" path="res://Escenas/componentes/deteccion_de_vehiculo/deteccion_de_vehiculo.tscn" id="4_ayvn7"]
+[ext_resource type="PackedScene" uid="uid://cxaro2aci7e0v" path="res://Escenas/componentes/control_de_player/controlador_de_jugador.tscn" id="5_m4p66"]
+[ext_resource type="PackedScene" uid="uid://cldmjtak6b457" path="res://Escenas/componentes/movimiento/movimiento.tscn" id="6_3hm7h"]
+[ext_resource type="PackedScene" uid="uid://bhw4fsf0ug2a3" path="res://Escenas/componentes/gancho/ganchocontrol.tscn" id="7_n8v6m"]
+[ext_resource type="PackedScene" uid="uid://cu0nveryf7yao" path="res://Escenas/componentes/gancho/soga.tscn" id="8_nvaha"]
+[ext_resource type="PackedScene" uid="uid://db0xp4k6m2u8a" path="res://Escenas/componentes/arma/arma.tscn" id="8_qt12g"]
+[ext_resource type="PackedScene" uid="uid://w5tekxfxwx1x" path="res://Escenas/componentes/arma/arma_de_jugador.tscn" id="9_f01sq"]
+[ext_resource type="PackedScene" uid="uid://b8n8hfvv4ppl1" path="res://Escenas/componentes/movimiento_automatico/mov_auto.tscn" id="10_eml4n"]
+[ext_resource type="PackedScene" uid="uid://pka07c3fe5jd" path="res://Escenas/componentes/vida/vida.tscn" id="11_78feh"]
+[ext_resource type="Texture2D" uid="uid://b2mj6i7iwv5jo" path="res://Assets/sprites/Boton press.png" id="12_owptj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cqhb5"]
 albedo_color = Color(0.7952375, 0, 0.17623618, 1)
@@ -125,5 +126,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0233383, 0)
 player = NodePath("..")
 
 [node name="Vida" parent="." unique_id=2126800800 instance=ExtResource("11_78feh")]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1788417323]
+transform = Transform3D(0.101436354, 0, 0, 0, 0.1200211, 0, 0, 0, 1, 0, 2.805974, 0)
+visible = false
+texture = ExtResource("12_owptj")
 
 [connection signal="murio" from="Vida" to="." method="_on_vida_murio"]
