@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://pmc2plsrtcig"]
 
-[ext_resource type="Script" uid="uid://bv0mo455wfo0x" path="res://Scripts/vagon.gd" id="1_4b57l"]
-[ext_resource type="PackedScene" uid="uid://bchx6mnwvydew" path="res://Escenas/hud/vidatren.tscn" id="2_6wtur"]
-[ext_resource type="PackedScene" uid="uid://dyyi3g7vk0p71" path="res://Escenas/audio/audio_manager.tscn" id="3_g4uj6"]
+[ext_resource type="Script" uid="uid://bv0mo455wfo0x" path="res://scripts/vagon.gd" id="1_4b57l"]
+[ext_resource type="PackedScene" uid="uid://bchx6mnwvydew" path="res://escenas/hud/vidatren.tscn" id="2_6wtur"]
+[ext_resource type="PackedScene" uid="uid://dyyi3g7vk0p71" path="res://escenas/audio/audio_manager.tscn" id="3_g4uj6"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_182kk"]
 _surfaces = [{

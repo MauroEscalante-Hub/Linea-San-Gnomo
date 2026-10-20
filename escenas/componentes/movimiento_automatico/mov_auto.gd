@@ -5,6 +5,7 @@ extends Node3D
 var steering_lerp = 3
 var velocidad_de_giro = 5
 var engine_power = 25.0
+var tren_nuevo: VehicleBody3D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if player == null and get_parent() is VehicleBody3D:
@@ -18,7 +19,7 @@ func _desactivate():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	var objetivo = GameManager.current_player
+	var objetivo = GameManager.current_player.get_node("Marker3D")
 	if not is_instance_valid(objetivo) or objetivo == self:
 		player.engine_force = 0.0
 		return
