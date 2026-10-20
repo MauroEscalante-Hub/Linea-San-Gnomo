@@ -23,6 +23,6 @@ func _ready() -> void:
 
 func _on_area_3d_body_entered(body):
 	if body.has_method("recibir_danio"):
-		print("es ",body.name)
+		print("[habla bala] di en ",body.name)
 		body.recibir_danio(danio)
 		queue_free()
