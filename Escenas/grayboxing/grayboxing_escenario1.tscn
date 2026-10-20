@@ -325,7 +325,7 @@ transform = Transform3D(0.7464125, 0, 0.6654753, 0, 0.9999927, 0, -0.6654764, 0,
 script = ExtResource("3_ls4l5")
 
 [node name="VehicleBody3D" parent="ruta/PathFollow3D" unique_id=2072145692 instance=ExtResource("4_abgxn")]
-transform = Transform3D(2.6550014, 0, 0, 1.937151e-07, 2.6549985, -8.731149e-11, 3.4924597e-10, 5.820766e-11, 2.655, 0.30541658, 0.88684875, 5.461153)
+transform = Transform3D(2.6550014, 0, 0, 1.937151e-07, 2.6549985, -8.731149e-11, 3.4924597e-10, 5.820766e-11, 2.655, 0, 0, 0)
 vida = 593
 
 [node name="enemigo" parent="." unique_id=461994344 instance=ExtResource("5_abgxn")]
