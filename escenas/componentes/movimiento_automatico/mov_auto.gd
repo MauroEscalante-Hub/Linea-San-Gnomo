@@ -19,7 +19,7 @@ func _desactivate():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	var objetivo = GameManager.current_player.get_node("Marker3D")
+	var objetivo = tren_nuevo.get_node("Marker3D")
 	if not is_instance_valid(objetivo) or objetivo == self:
 		player.engine_force = 0.0
 		return

@@ -51,7 +51,7 @@ func become_npc() -> void:
 	gancho.desactivate()
 	arma_.activate()
 	arma_de_jugador.desactivate()
-	mov_auto._activate()
+	
 	componentevida.desactivate()
 	levantar.desactivate()
 

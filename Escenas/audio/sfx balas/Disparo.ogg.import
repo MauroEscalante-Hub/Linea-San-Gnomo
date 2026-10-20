@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dv5mfobbtdcq0"
-path="res://.godot/imported/Disparo.ogg-d80a517e5543308a11178d5df5a0a09e.oggvorbisstr"
+path="res://.godot/imported/Disparo.ogg-83b540e06810fad9cebdf072875436c9.oggvorbisstr"
 
 [deps]
 
-source_file="res://escenas/audio/sfx balas/Disparo.ogg"
-dest_files=["res://.godot/imported/Disparo.ogg-d80a517e5543308a11178d5df5a0a09e.oggvorbisstr"]
+source_file="res://Escenas/audio/sfx balas/Disparo.ogg"
+dest_files=["res://.godot/imported/Disparo.ogg-83b540e06810fad9cebdf072875436c9.oggvorbisstr"]
 
 [params]
 

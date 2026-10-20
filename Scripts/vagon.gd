@@ -4,7 +4,6 @@ extends VehicleBody3D
 @onready var barravida = $vidabar
 @export var vida: int = 20
 var esta_muerto: bool = false
-@export var escena_derrota: String = "res://Escenas/derrota tren.tscn"
 @onready var audio_manager: AudioManager = $AudioManager
 
 
@@ -17,7 +16,8 @@ func morir_tren() -> void:
 	esta_muerto = true
 	set_physics_process(false)
 	await get_tree().create_timer(3.0).timeout
-	get_tree().change_scene_to_file(escena_derrota)
+	get_tree().change_scene_to_file("res://Escenas/derrota tren.tscn")
+
 func recibir_danio(cantidad: int) -> void:
 	if esta_muerto:
 		return
