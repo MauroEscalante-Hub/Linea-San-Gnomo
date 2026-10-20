@@ -12,7 +12,7 @@ curve = SubResource("Curve3D_07ysl")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="." unique_id=1912561931]
 autosmooth = true
-smoothing_angle = 136.5
+smoothing_angle = 134.8
 use_collision = true
 collision_layer = 0
 polygon = PackedVector2Array(0, 0, 0.0082092285, 0.26019287, 0.966568, 0.27575684, 1, 0)

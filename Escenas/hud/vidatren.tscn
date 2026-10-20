@@ -5,8 +5,6 @@
 [ext_resource type="Script" uid="uid://dhajcl6c8v08h" path="res://Escenas/hud/vidatren.gd" id="1_s67wi"]
 [ext_resource type="PackedScene" uid="uid://pka07c3fe5jd" path="res://Escenas/componentes/vida/vida.tscn" id="2_7xj8q"]
 [ext_resource type="Texture2D" uid="uid://db0a12mbi3kjk" path="res://Assets/sprites/tren blanco.png" id="3_dal77"]
-[ext_resource type="Texture2D" uid="uid://bp2ne783mtgq2" path="res://Assets/sprites/linea san gnomo.png" id="5_x71yh"]
-[ext_resource type="Texture2D" uid="uid://duxaws04hjpng" path="res://Assets/sprites/linea san gnomo lleno.png" id="6_inwhe"]
 [ext_resource type="Texture2D" uid="uid://dxfmhmkh2gswp" path="res://Assets/sprites/bala 1.png" id="8_fskml"]
 [ext_resource type="Texture2D" uid="uid://4ol3bg1vy2r5" path="res://Assets/sprites/gancho 1 negro.png" id="9_x71yh"]
 
@@ -32,15 +30,6 @@ grow_vertical = 2
 value = 80.0
 texture_under = ExtResource("1_dal77")
 texture_progress = ExtResource("3_dal77")
-
-[node name="ramal" type="TextureProgressBar" parent="." unique_id=173127857]
-layout_mode = 0
-offset_left = 2005.0222
-offset_top = 9.308685
-offset_right = 4377.035
-offset_bottom = 1089.3087
-texture_under = ExtResource("5_x71yh")
-texture_progress = ExtResource("6_inwhe")
 
 [node name="timer" type="Timer" parent="." unique_id=1419436635]
 wait_time = 0.4

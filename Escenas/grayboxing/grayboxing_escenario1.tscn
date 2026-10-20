@@ -3,8 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://Escenas/jugador/jugador.tscn" id="1_p7yi8"]
 [ext_resource type="PackedScene" uid="uid://dxp4h38x38m4e" path="res://Escenas/Tren/ruta.tscn" id="2_3sjby"]
 [ext_resource type="Script" uid="uid://cmv6ib0nhjx2s" path="res://Escenas/path_follow_3d.gd" id="3_ls4l5"]
+[ext_resource type="Texture2D" uid="uid://bp2ne783mtgq2" path="res://Assets/sprites/linea san gnomo.png" id="4_0eqow"]
 [ext_resource type="PackedScene" uid="uid://pmc2plsrtcig" path="res://Escenas/Tren/Vagon.tscn" id="4_abgxn"]
 [ext_resource type="PackedScene" uid="uid://14tjj1vngcuo" path="res://Escenas/enemigos/enemigo_base.tscn" id="5_abgxn"]
+[ext_resource type="Texture2D" uid="uid://duxaws04hjpng" path="res://Assets/sprites/linea san gnomo lleno.png" id="5_jdi07"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdwd0"]
 albedo_color = Color(0.84356505, 0.46794945, 0, 1)
@@ -324,8 +326,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.30077934)
 transform = Transform3D(0.7464125, 0, 0.6654753, 0, 0.9999927, 0, -0.6654764, 0, 0.7464114, -1e-45, 0, -1.0248778)
 script = ExtResource("3_ls4l5")
 
+[node name="ramal" type="TextureProgressBar" parent="ruta/PathFollow3D" unique_id=989707740]
+offset_left = 2005.0222
+offset_top = 9.308685
+offset_right = 4377.035
+offset_bottom = 1089.3087
+texture_under = ExtResource("4_0eqow")
+texture_progress = ExtResource("5_jdi07")
+
 [node name="VehicleBody3D" parent="ruta/PathFollow3D" unique_id=2072145692 instance=ExtResource("4_abgxn")]
-transform = Transform3D(2.6550014, 0, 0, 1.937151e-07, 2.6549985, -8.731149e-11, 3.4924597e-10, 5.820766e-11, 2.655, 0.30541658, 0.88684875, 5.461153)
+transform = Transform3D(-2.2698565, -3.019425e-11, -1.3772371, 1.9371511e-07, 2.6549988, -8.7311484e-11, 1.3772378, -4.9763832e-11, -2.2698555, -0.89182365, 0.17345323, -1.527697)
 vida = 593
 
 [node name="enemigo" parent="." unique_id=461994344 instance=ExtResource("5_abgxn")]
