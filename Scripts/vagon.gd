@@ -15,7 +15,7 @@ func _ready() -> void:
 func morir_tren() -> void:
 	esta_muerto = true
 	set_physics_process(false)
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file("res://Escenas/derrota tren.tscn")
 
 func recibir_danio(cantidad: int) -> void:
@@ -32,7 +32,7 @@ func recibir_danio(cantidad: int) -> void:
 		vida = 0
 		morir_tren()
 func daño() -> void:
-	recibir_danio(2)
+	recibir_danio(200)
 	
 
 func _physics_process(delta: float) -> void:

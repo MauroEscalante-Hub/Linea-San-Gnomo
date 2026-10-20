@@ -26,6 +26,7 @@ func _ready() -> void:
 	area_del_vehiculo.vehiculo_encontrado.connect(_on_vehiculo_encontrado)
 	mov_auto.tren_nuevo = tren
 	become_npc()
+	mov_auto._activate()
 	if start_as_player:
 		GameManager.set_player(self)
 		
@@ -51,7 +52,7 @@ func become_npc() -> void:
 	gancho.desactivate()
 	arma_.activate()
 	arma_de_jugador.desactivate()
-	
+	mov_auto._desactivate()
 	componentevida.desactivate()
 	levantar.desactivate()
 
