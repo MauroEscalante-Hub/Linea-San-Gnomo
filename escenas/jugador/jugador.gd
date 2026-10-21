@@ -1,6 +1,7 @@
 class_name CocheJugador
 extends VehicleBody3D
 @export var start_as_player: bool = false
+@export var tren: VehicleBody3D
 @onready var centro_de_masa := $"centro de masa"
 @onready var area_del_vehiculo = $deteccion_de_vehiculo
 @onready var control_del_jugador = $controlador_de_jugador
@@ -19,6 +20,7 @@ var nuevo_vehiculo: VehicleBody3D
 func _ready() -> void:
 	componente_vida.murio.connect(_on_vida_murio)
 	area_del_vehiculo.vehiculo_encontrado.connect(_on_vehiculo_encontrado)
+	mov_auto.tren_nuevo = tren
 	become_npc()
 	if start_as_player:
 		GameManager.set_player(self)
@@ -41,15 +43,17 @@ func become_npc() -> void:
 	gancho.desactivate()
 	arma_de_jugador.desactivate()
 	componente_vida.desactivate()
-	mov_auto._activate()
+	
 	arma.activate()
 	levantar.desactivate()
 
 func _on_vehiculo_encontrado(nuevo_auto: VehicleBody3D) -> void:
 	control_del_jugador.nuevo_vehiculo = nuevo_auto
 
-func recibir_danio(cantidad: int):
+func recibir_danio(cantidad: int, verificar_del_jugador: bool):
 	componente_vida.recibir_danio(cantidad)
+	if verificar_del_jugador:
+		arma.recibir_disparo_del_jugador()
 
 
 func _on_vida_murio():

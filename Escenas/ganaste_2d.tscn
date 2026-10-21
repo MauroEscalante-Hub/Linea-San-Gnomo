@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cqcnpr76fo56"]
+
+[ext_resource type="Script" uid="uid://ltmvsnm54c15" path="res://Escenas/ganaste_2d.gd" id="1_brne7"]
+[ext_resource type="Texture2D" uid="uid://dyrnc4mo4h7mh" path="res://Assets/models/Victoria.png" id="1_fmsa2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+bg_color = Color(0.16862746, 0.5803922, 0.6, 0.2901961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
+bg_color = Color(0.179959, 0.5001757, 0.83640337, 0.8117647)
+
+[node name="Node2D" type="Node2D" unique_id=2067807414]
+script = ExtResource("1_brne7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1915297524]
+position = Vector2(605, 300)
+scale = Vector2(0.64, 0.64886427)
+texture = ExtResource("1_fmsa2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=439367315]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1107606455]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1804489224]
+offset_left = 307.0
+offset_top = 217.0
+offset_right = 915.0
+offset_bottom = 402.0
+theme_override_colors/font_color = Color(0.93333334, 0.94509804, 0.49019608, 0.7882353)
+theme_override_font_sizes/font_size = 135
+text = "GANASTE"
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=1701851995]
+offset_left = 549.0
+offset_top = 496.0
+offset_right = 676.0
+offset_bottom = 581.0
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_g4v7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yf5fn")
+text = "Salir"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

@@ -2,6 +2,7 @@ extends VehicleBody3D
 @export var start_as_player: bool = false
 @export var danio_de_auto: int
 @export var tiempo_de_disparo: float
+@export var tren: VehicleBody3D
 @onready var centro_de_masa := $"centro de masa"
 @onready var area_del_vehiculo = $deteccion_de_vehiculo
 @onready var control_del_jugador = $controlador_de_jugador
@@ -23,7 +24,9 @@ func _ready() -> void:
 	arma_.cadencia = tiempo_de_disparo
 	componentevida.murio.connect(_on_vida_murio)
 	area_del_vehiculo.vehiculo_encontrado.connect(_on_vehiculo_encontrado)
+	mov_auto.tren_nuevo = tren
 	become_npc()
+	mov_auto._activate()
 	if start_as_player:
 		GameManager.set_player(self)
 		
@@ -49,14 +52,17 @@ func become_npc() -> void:
 	gancho.desactivate()
 	arma_.activate()
 	arma_de_jugador.desactivate()
-	mov_auto._activate()
+	mov_auto._desactivate()
 	componentevida.desactivate()
 	levantar.desactivate()
 
 func _on_vehiculo_encontrado(nuevo_auto: VehicleBody3D) -> void:
 	control_del_jugador.nuevo_vehiculo = nuevo_auto
-func recibir_danio(cantidad: int):
+func recibir_danio(cantidad: int, es_del_jugador: bool):
 	componentevida.recibir_danio(cantidad)
+	
+	if es_del_jugador:
+		arma_.recibir_disparo_del_jugador()
 
 
 func _on_vida_murio():

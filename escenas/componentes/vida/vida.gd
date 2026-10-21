@@ -32,11 +32,12 @@ func recibir_danio(cantidad: int) -> void:
 	
 	if vida_actual <= 0:
 		_morir()
-		get_tree().change_scene_to_file("res://Escenas/derrota auto.tscn")
+
 
 func _morir() -> void:
 	muerto = true
 	player.engine_force = 0.0
 	murio.emit()
 	if player != GameManager.current_player:
+		print("[soy enemigo] me mori")
 		player.queue_free()

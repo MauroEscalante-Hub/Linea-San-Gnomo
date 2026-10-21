@@ -11,7 +11,7 @@ extends Node3D
 var puede_disparar := true
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 func activate():
 	sprite_mira.visible = true
@@ -42,6 +42,8 @@ func disparo():
 	balita.global_position = global_position
 	balita.add_collision_exception_with(player)
 	balita.danio = danio_del_jugador
+	balita.bala_del_jugador = true
+	
 	var direccion = (sprite_mira.global_position - global_position).normalized()
 	balita.set_direccion(direccion)
 	

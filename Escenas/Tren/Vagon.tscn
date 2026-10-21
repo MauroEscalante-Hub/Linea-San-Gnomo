@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://pmc2plsrtcig"]
 
-[ext_resource type="Script" uid="uid://bv0mo455wfo0x" path="res://Scripts/vagon.gd" id="1_4b57l"]
-[ext_resource type="PackedScene" uid="uid://bchx6mnwvydew" path="res://Escenas/hud/vidatren.tscn" id="2_6wtur"]
-[ext_resource type="PackedScene" uid="uid://dyyi3g7vk0p71" path="res://Escenas/audio/audio_manager.tscn" id="3_g4uj6"]
+[ext_resource type="Script" uid="uid://bv0mo455wfo0x" path="res://scripts/vagon.gd" id="1_4b57l"]
+[ext_resource type="PackedScene" uid="uid://bchx6mnwvydew" path="res://escenas/hud/vidatren.tscn" id="2_0tn0r"]
+[ext_resource type="PackedScene" uid="uid://dyyi3g7vk0p71" path="res://escenas/audio/audio_manager.tscn" id="3_g0usk"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_182kk"]
 _surfaces = [{
@@ -93,6 +93,9 @@ use_as_traction = true
 transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, 0.69196355, -0.40561992, -1.2129112)
 use_as_traction = true
 
-[node name="vidabar" parent="." unique_id=1383496892 instance=ExtResource("2_6wtur")]
+[node name="vidabar" parent="." unique_id=1383496892 instance=ExtResource("2_0tn0r")]
 
-[node name="AudioManager" parent="." unique_id=1877271522 instance=ExtResource("3_g4uj6")]
+[node name="AudioManager" parent="." unique_id=1877271522 instance=ExtResource("3_g0usk")]
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=682563775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
