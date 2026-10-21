@@ -1,6 +1,19 @@
 [gd_scene format=3 uid="uid://cldmjtak6b457"]
 
-[ext_resource type="Script" uid="uid://bva7jpeuxmrjp" path="res://escenas/componentes/movimiento/movimiento.gd" id="1_48olf"]
+[ext_resource type="Script" uid="uid://bva7jpeuxmrjp" path="res://Escenas/componentes/movimiento/movimiento.gd" id="1_48olf"]
+[ext_resource type="Texture2D" uid="uid://bkg7yxm2gwhy6" path="res://Assets/sprites/velocimetro 2.png" id="2_sfb2l"]
+[ext_resource type="Texture2D" uid="uid://wowhuyb5iocp" path="res://Assets/sprites/puntero vellocimetro.png" id="3_ov6tw"]
 
 [node name="movimiento" type="Node3D" unique_id=1595637067]
 script = ExtResource("1_48olf")
+
+[node name="velocimetro" type="Sprite2D" parent="." unique_id=1039597152]
+position = Vector2(1025, 511.99997)
+scale = Vector2(0.16361335, 0.13171211)
+texture = ExtResource("2_sfb2l")
+
+[node name="aguja" type="Sprite2D" parent="velocimetro" unique_id=857199099]
+position = Vector2(0, -21)
+rotation = -2.7925267
+scale = Vector2(1, 1.0799992)
+texture = ExtResource("3_ov6tw")

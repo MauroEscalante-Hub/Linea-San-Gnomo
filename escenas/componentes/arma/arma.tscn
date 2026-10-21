@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://db0xp4k6m2u8a"]
 
-[ext_resource type="Script" uid="uid://bg7wplciv1p6o" path="res://escenas/componentes/arma/arma.gd" id="1_pdal0"]
-[ext_resource type="PackedScene" uid="uid://dqb7jkqihqm02" path="res://escenas/dispararbalas/balas.tscn" id="2_k60kx"]
+[ext_resource type="Script" uid="uid://bg7wplciv1p6o" path="res://Escenas/componentes/arma/arma.gd" id="1_pdal0"]
+[ext_resource type="PackedScene" uid="uid://dqb7jkqihqm02" path="res://Escenas/dispararbalas/balas.tscn" id="2_k60kx"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_pdal0"]
 
