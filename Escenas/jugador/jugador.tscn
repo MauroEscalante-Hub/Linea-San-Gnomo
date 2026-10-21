@@ -131,4 +131,6 @@ jugador = NodePath("..")
 [node name="Marker3D" type="Marker3D" parent="." unique_id=1975367186]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
 
+[node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=1480766247]
+
 [connection signal="murio" from="Vida" to="." method="_on_vida_murio"]

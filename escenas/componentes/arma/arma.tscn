@@ -28,5 +28,6 @@ transform = Transform3D(0.945, 0, 0, 0, 0.945, 0, 0, 0, 0.945, 0, 0, 0)
 
 [node name="disparoenemigo" type="AudioStreamPlayer3D" parent="." unique_id=1966568007]
 stream = ExtResource("3_3awrw")
+bus = &"disparo enemigo"
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
