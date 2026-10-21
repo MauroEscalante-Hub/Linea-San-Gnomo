@@ -1,6 +1,8 @@
 class_name El_arma
 extends Node3D
 
+@onready var disparoenemigo: AudioStreamPlayer3D = $disparoenemigo
+
 
 @export var player: VehicleBody3D
 @export var bala: PackedScene
@@ -66,6 +68,7 @@ func disparo(objetivo: Node3D) -> void:
 	puede_disparar = false
 	await get_tree().create_timer(cadencia).timeout
 	puede_disparar = true
+	disparoenemigo.play()
  
  
 func _on_area_3d_body_entered(body: Node) -> void:

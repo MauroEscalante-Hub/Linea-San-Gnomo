@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Tren Intento mil"
-run/main_scene="uid://g3kof571e30v"
+run/main_scene="uid://d0gvlf4las4hv"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://dtumkcjqnn6yu"
 
 [autoload]
 

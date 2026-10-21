@@ -1,8 +1,10 @@
 [gd_scene format=4 uid="uid://pmc2plsrtcig"]
 
-[ext_resource type="Script" uid="uid://bv0mo455wfo0x" path="res://scripts/vagon.gd" id="1_4b57l"]
-[ext_resource type="PackedScene" uid="uid://bchx6mnwvydew" path="res://escenas/hud/vidatren.tscn" id="2_0tn0r"]
-[ext_resource type="PackedScene" uid="uid://dyyi3g7vk0p71" path="res://escenas/audio/audio_manager.tscn" id="3_g0usk"]
+[ext_resource type="Script" uid="uid://bv0mo455wfo0x" path="res://Scripts/vagon.gd" id="1_4b57l"]
+[ext_resource type="PackedScene" uid="uid://bchx6mnwvydew" path="res://Escenas/hud/vidatren.tscn" id="2_0tn0r"]
+[ext_resource type="Script" uid="uid://fi6812bllct0" path="res://Escenas/Tren/sonidostren.gd" id="3_6xgrk"]
+[ext_resource type="AudioStream" uid="uid://cjm870jn1ynk5" path="res://Escenas/audio/enviorment/tren_mezcla.ogg" id="4_7lld6"]
+[ext_resource type="AudioStream" uid="uid://d3o1osww3wk0q" path="res://Escenas/audio/sonidos hits/cartoon hit.ogg" id="5_3g6mo"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_182kk"]
 _surfaces = [{
@@ -95,7 +97,17 @@ use_as_traction = true
 
 [node name="vidabar" parent="." unique_id=1383496892 instance=ExtResource("2_0tn0r")]
 
-[node name="AudioManager" parent="." unique_id=1877271522 instance=ExtResource("3_g0usk")]
-
 [node name="Marker3D" type="Marker3D" parent="." unique_id=682563775]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="sonidostren" type="Node3D" parent="." unique_id=1911575252 node_paths=PackedStringArray("sonido_loop", "sonidohit")]
+script = ExtResource("3_6xgrk")
+sonido_loop = NodePath("sonido_loop")
+sonidohit = NodePath("sonidohit")
+
+[node name="sonido_loop" type="AudioStreamPlayer3D" parent="sonidostren" unique_id=2033810817]
+stream = ExtResource("4_7lld6")
+parameters/looping = true
+
+[node name="sonidohit" type="AudioStreamPlayer3D" parent="sonidostren" unique_id=406317783]
+stream = ExtResource("5_3g6mo")
