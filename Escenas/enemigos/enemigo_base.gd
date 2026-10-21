@@ -58,8 +58,11 @@ func become_npc() -> void:
 
 func _on_vehiculo_encontrado(nuevo_auto: VehicleBody3D) -> void:
 	control_del_jugador.nuevo_vehiculo = nuevo_auto
-func recibir_danio(cantidad: int):
+func recibir_danio(cantidad: int, es_del_jugador: bool):
 	componentevida.recibir_danio(cantidad)
+	
+	if es_del_jugador:
+		arma_.recibir_disparo_del_jugador()
 
 
 func _on_vida_murio():

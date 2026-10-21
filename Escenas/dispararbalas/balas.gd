@@ -4,6 +4,7 @@ extends CharacterBody3D
 var direccion: Vector3
 var velocidad: float = 100
 var danio: int
+var bala_del_jugador: bool = false
 @onready var tiempo_ = $Timer
 
 func set_direccion(nueva_direccion: Vector3) -> void:
@@ -24,5 +25,5 @@ func _ready() -> void:
 func _on_area_3d_body_entered(body):
 	if body.has_method("recibir_danio"):
 		print("[habla bala] di en ",body.name)
-		body.recibir_danio(danio)
+		body.recibir_danio(danio, bala_del_jugador)
 		queue_free()
