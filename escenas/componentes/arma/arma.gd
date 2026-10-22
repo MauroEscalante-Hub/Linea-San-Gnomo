@@ -56,6 +56,7 @@ func disparo(objetivo: Node3D) -> void:
 	if not activa or not puede_disparar:
 		return
 	
+	
 	var balita = bala.instantiate()
 	get_tree().current_scene.add_child(balita)   
 	balita.global_position = global_position

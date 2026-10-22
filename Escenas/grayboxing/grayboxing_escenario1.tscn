@@ -365,4 +365,12 @@ tren = NodePath("../ruta/PathFollow3D/VehicleBody3D")
 transform = Transform3D(0.04439661, 0, -0.999014, 0, 1, 0, 0.999014, 0, 0.04439661, -27.008144, 3.385398, -2.6974137)
 tren = NodePath("../ruta/PathFollow3D/VehicleBody3D")
 
+[node name="enemigo3" parent="." unique_id=1454583338 node_paths=PackedStringArray("tren") instance=ExtResource("5_abgxn")]
+transform = Transform3D(-0.8872212, 0, 0.4613442, 0, 1, 0, -0.4613442, 0, -0.8872212, 195.45016, 25.472683, -474.61475)
+tren = NodePath("../ruta/PathFollow3D/VehicleBody3D")
+
+[node name="enemigo4" parent="." unique_id=1650145344 node_paths=PackedStringArray("tren") instance=ExtResource("5_abgxn")]
+transform = Transform3D(-0.99983937, 0, -0.017929852, 0, 1, 0, 0.017929852, 0, -0.99983937, 167.25671, 25.472683, -484.44293)
+tren = NodePath("../ruta/PathFollow3D/VehicleBody3D")
+
 [connection signal="body_entered" from="Curva_y_final/CSGBox3D13/Area3D" to="Curva_y_final/CSGBox3D13" method="_on_area_3d_body_entered"]
