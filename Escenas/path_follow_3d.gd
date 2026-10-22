@@ -15,4 +15,4 @@ func _process(delta: float):
 	else:
 		progress_ratio += VelocidadNormal*delta
 		
-	barra_de_tren.value = progreso.progress
+	barra_de_tren.value = progreso.progress / 15
