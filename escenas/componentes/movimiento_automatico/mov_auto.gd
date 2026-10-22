@@ -2,7 +2,7 @@ class_name Com_Mov_Automatico
 extends Node3D
 
 @export var player: VehicleBody3D
-
+var distancia_para_reducir: float = 15.0
 var steering_lerp = 3
 var velocidad_de_giro = 5
 var engine_power = 25.0
@@ -41,3 +41,6 @@ func seguimiento(looker: Node3D, target: Node3D, delta):
 
 	player.steering = move_toward(player.steering, steering_lerp, 1 * delta)
 	player.engine_force = 2 * engine_power
+	var distancia = Vector2(target_direccion_global.x,target_direccion_global.z).length()
+	var factor = clamp(distancia / distancia_para_reducir,0.5,1.0)
+	player.engine_force = 2.0 * engine_power * factor
