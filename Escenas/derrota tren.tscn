@@ -1,10 +1,26 @@
 [gd_scene format=3 uid="uid://cnnda2jhequff"]
 
+[ext_resource type="Script" uid="uid://bgknqasvsdt46" path="res://Escenas/derrota_tren.gd" id="1_5xok0"]
 [ext_resource type="Texture2D" uid="uid://d11xn2aocm0jk" path="res://Assets/sprites/imageen prueba.jpg" id="1_uarsk"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3xd07"]
+bg_color = Color(0.57694936, 0.16646573, 0.16812795, 1)
+
 [node name="DerrotaTren" type="Node2D" unique_id=2086058692]
+script = ExtResource("1_5xok0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2044954353]
 position = Vector2(629, 381.00003)
 scale = Vector2(1.7002724, 1.7822967)
 texture = ExtResource("1_uarsk")
+
+[node name="Button" type="Button" parent="." unique_id=926016097]
+offset_left = 136.0
+offset_top = 517.0
+offset_right = 342.0
+offset_bottom = 612.0
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_3xd07")
+text = "SALIR"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
