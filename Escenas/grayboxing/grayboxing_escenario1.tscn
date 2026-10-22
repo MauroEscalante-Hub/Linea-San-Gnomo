@@ -376,4 +376,9 @@ transform = Transform3D(-0.99983937, 0, -0.017929852, 0, 1, 0, 0.017929852, 0, -
 tiempo_de_disparo = 0.5
 tren = NodePath("../ruta/PathFollow3D/VehicleBody3D")
 
+[node name="enemigo5" parent="." unique_id=1206498695 node_paths=PackedStringArray("tren") instance=ExtResource("5_abgxn")]
+transform = Transform3D(-0.8734247, 0, 0.48695946, 0, 1, 0, -0.48695946, 0, -0.8734247, 214.68076, 27.802624, -558.3195)
+danio_de_auto = 20
+tren = NodePath("../ruta/PathFollow3D/VehicleBody3D")
+
 [connection signal="body_entered" from="Curva_y_final/CSGBox3D13/Area3D" to="Curva_y_final/CSGBox3D13" method="_on_area_3d_body_entered"]

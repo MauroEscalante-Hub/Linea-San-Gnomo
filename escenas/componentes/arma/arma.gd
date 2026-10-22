@@ -58,7 +58,8 @@ func disparo(objetivo: Node3D) -> void:
 	
 	
 	var balita = bala.instantiate()
-	get_tree().current_scene.add_child(balita)   
+	get_tree().current_scene.add_child(balita)
+	disparoenemigo.play()   
 	balita.global_position = global_position
 	balita.add_collision_exception_with(player) 
 	
@@ -68,8 +69,9 @@ func disparo(objetivo: Node3D) -> void:
 	
 	puede_disparar = false
 	await get_tree().create_timer(cadencia).timeout
+	
 	puede_disparar = true
-	disparoenemigo.play()
+	#disparoenemigo.play()
  
  
 func _on_area_3d_body_entered(body: Node) -> void:
