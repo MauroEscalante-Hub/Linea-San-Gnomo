@@ -51,6 +51,7 @@ position = Vector2(7626.2446, 4905.716)
 texture = ExtResource("8_fskml")
 
 [node name="Label2" type="Label" parent="balas" unique_id=69007602]
+visible = false
 anchors_preset = -1
 anchor_top = 0.5
 anchor_bottom = 0.5
