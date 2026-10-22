@@ -34,7 +34,7 @@ height = 0.31713867
 [sub_resource type="CylinderMesh" id="CylinderMesh_0ru8o"]
 height = 0.3305664
 
-[node name="enemigo" type="VehicleBody3D" unique_id=1604139032]
+[node name="enemigo" type="VehicleBody3D" unique_id=1604139032 groups=["enemigos"]]
 collision_layer = 7
 collision_mask = 3
 center_of_mass_mode = 1

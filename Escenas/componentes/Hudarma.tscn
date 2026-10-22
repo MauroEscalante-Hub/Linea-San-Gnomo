@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b0w31mc2k6qos"]
+
+[ext_resource type="Script" uid="uid://no4jq8fovj3" path="res://Escenas/componentes/hudarma.gd" id="1_2o31u"]
+[ext_resource type="Texture2D" uid="uid://dxfmhmkh2gswp" path="res://Assets/sprites/bala 1.png" id="1_5vkdq"]
+[ext_resource type="Texture2D" uid="uid://4ol3bg1vy2r5" path="res://Assets/sprites/gancho 1 negro.png" id="2_2o31u"]
+
+[node name="Hudarma" type="Control" unique_id=1431327253]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 9.0
+offset_right = 4.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2o31u")
+
+[node name="balas" type="Sprite2D" parent="." unique_id=2011029619]
+position = Vector2(840, 549)
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("1_5vkdq")
+
+[node name="gancho" type="Sprite2D" parent="." unique_id=477010507]
+position = Vector2(843, 530)
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("2_2o31u")
