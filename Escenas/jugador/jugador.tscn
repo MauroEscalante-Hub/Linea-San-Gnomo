@@ -117,10 +117,11 @@ player = NodePath("..")
 [node name="Arma_de_jugador" parent="." unique_id=396609384 node_paths=PackedStringArray("player") instance=ExtResource("9_mnegl")]
 transform = Transform3D(1.0000001, 0, 0, 0, 0.99996203, 0.008726536, 0, -0.008726536, 0.99996203, 0, 0.9148152, -1.3896017)
 player = NodePath("..")
+danio_del_jugador = 15
 
 [node name="Vida" parent="." unique_id=2126800800 node_paths=PackedStringArray("player") instance=ExtResource("10_j2gbx")]
 player = NodePath("..")
-vida_max = 1000
+vida_max = 200
 
 [node name="Mov_Auto" parent="." unique_id=1749187415 node_paths=PackedStringArray("player") instance=ExtResource("11_0ug0u")]
 player = NodePath("..")
