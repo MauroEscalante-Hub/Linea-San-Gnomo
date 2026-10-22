@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://pmc2plsrtcig"]
 
-[ext_resource type="Script" uid="uid://bv0mo455wfo0x" path="res://scripts/vagon.gd" id="1_4b57l"]
+[ext_resource type="Script" uid="uid://bv0mo455wfo0x" path="res://Scripts/vagon.gd" id="1_4b57l"]
 [ext_resource type="PackedScene" uid="uid://bchx6mnwvydew" path="res://Escenas/hud/vidatren.tscn" id="2_0tn0r"]
-[ext_resource type="Script" uid="uid://fi6812bllct0" path="res://Escenas/tren/sonidostren.gd" id="3_6xgrk"]
+[ext_resource type="Script" uid="uid://fi6812bllct0" path="res://Escenas/Tren/sonidostren.gd" id="3_6xgrk"]
 [ext_resource type="AudioStream" uid="uid://cjm870jn1ynk5" path="res://Escenas/audio/enviorment/tren_mezcla.ogg" id="4_7lld6"]
 [ext_resource type="AudioStream" uid="uid://d3o1osww3wk0q" path="res://Escenas/audio/sonidos hits/cartoon hit.ogg" id="5_3g6mo"]
 
@@ -20,7 +20,7 @@ _surfaces = [{
 [sub_resource type="BoxShape3D" id="BoxShape3D_5cipi"]
 size = Vector3(0.9869995, 1.9107056, 2.462616)
 
-[node name="VehicleBody3D" type="VehicleBody3D" unique_id=2072145692]
+[node name="VehicleBody3D" type="VehicleBody3D" unique_id=2072145692 groups=["tren"]]
 transform = Transform3D(2.655, 0, 0, 0, 2.655, 0, 0, 0, 2.655, 0, 0, 0)
 collision_layer = 7
 collision_mask = 7

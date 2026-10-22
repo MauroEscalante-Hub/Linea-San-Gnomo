@@ -34,6 +34,7 @@ func lanzar() -> void:
 	if ray.is_colliding():
 		target = ray.get_collision_point()
 		lanzado = true
+		
 		sonido_gancho.play()
 		print("[GANCHO] ¡choco!: ", target, " | con: ", ray.get_collider().name)
 	else:

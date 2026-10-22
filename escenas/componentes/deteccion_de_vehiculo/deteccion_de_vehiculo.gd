@@ -3,7 +3,10 @@ extends Node3D
 
 @export var auto_actual : VehicleBody3D = null 
 @onready var boton_saltar = $Sprite3D
+
+
 signal vehiculo_encontrado
+
 
 func _ready():
 	boton_saltar.visible = false
@@ -13,8 +16,11 @@ func _on_area_3d_body_entered(body):
 	if body is VehicleBody3D and body != get_parent():
 		auto_actual = body
 		print("Hay un auto adentro del area: ", auto_actual.name)
-		boton_saltar.visible = true
-		vehiculo_encontrado.emit(auto_actual)
+		if body.is_in_group("enemigos") or body.is_in_group("tren"):
+			boton_saltar.visible = false
+		else:
+			boton_saltar.visible=true
+	vehiculo_encontrado.emit(auto_actual)
 	
 
 func _on_area_3d_body_exited(body):
