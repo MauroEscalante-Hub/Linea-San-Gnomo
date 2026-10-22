@@ -1,3 +1,4 @@
+class_name Tren
 extends VehicleBody3D
 
 
@@ -11,7 +12,7 @@ var esta_muerto: bool = false
 
 func _ready() -> void:
 	barravida.vida_inicial(vida)
-	
+	# gamemanager no soy jugador ni quiero serlo
 
 func morir_tren() -> void:
 	esta_muerto = true

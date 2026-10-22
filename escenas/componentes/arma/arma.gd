@@ -41,7 +41,11 @@ func _physics_process(_delta):
 	objetivo_prioritario = null
 	for body in area.get_overlapping_bodies():
 		if body is VehicleBody3D and body != get_parent():
+			if body.get_node_or_null("Arma"):
+				continue
+		
 			disparo(body)
+			return
 	
 
 
@@ -69,12 +73,14 @@ func disparo(objetivo: Node3D) -> void:
 	
 	puede_disparar = false
 	await get_tree().create_timer(cadencia).timeout
-	
 	puede_disparar = true
-	#disparoenemigo.play()
+	
  
  
 func _on_area_3d_body_entered(body: Node) -> void:
 	if body is VehicleBody3D and body != get_parent():
+		if body == GameManager.current_player:
+			disparo(body)
+			return
 		if tiempo_restante <= 0.0:
 			disparo(body)

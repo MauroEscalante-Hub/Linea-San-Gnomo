@@ -10,7 +10,8 @@ func set_player(new_player: VehicleBody3D) -> void:
 		return
 	if current_player != null:
 		current_player.become_npc()
-	
+	# if sos iugual a tren
+	# segui de largo 
 	current_player = new_player
 	current_player.become_player()
 	player_changed.emit(current_player)
