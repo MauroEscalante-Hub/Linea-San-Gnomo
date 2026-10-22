@@ -28,7 +28,8 @@ perderás.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35466123, 0)
 text = "CONTROLES:
 Movimiento: WASD
-Disparar: Click derecho
+Disparar: Click izquierdo
+Zoom: Click derecho
 Gancho: ruda del raton
 Saltar de vehículo: E"
 
