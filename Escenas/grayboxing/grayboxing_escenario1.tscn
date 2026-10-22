@@ -340,7 +340,7 @@ script = ExtResource("3_ls4l5")
 
 [node name="VehicleBody3D" parent="ruta/PathFollow3D" unique_id=2072145692 instance=ExtResource("4_abgxn")]
 transform = Transform3D(2.6550014, 0, 0, 0, 2.6549988, 0, 0, 0, 2.6550002, 0, 0, 0)
-vida = 593
+vida = 400
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="ruta/PathFollow3D" unique_id=1518493746]
 anchors_preset = -1
