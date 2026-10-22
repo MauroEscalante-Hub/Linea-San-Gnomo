@@ -14,6 +14,7 @@ func set_player(new_player: VehicleBody3D) -> void:
 	# segui de largo 
 	current_player = new_player
 	current_player.become_player()
+	#current_player.remove_from_group("enemigos")
 	player_changed.emit(current_player)
 
 func jugador_muerto():
