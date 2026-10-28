@@ -1,6 +1,7 @@
 class_name Bala
 extends CharacterBody3D
 
+var duenio: VehicleBody3D
 var direccion: Vector3
 var velocidad: float = 100
 var danio: int
@@ -23,6 +24,8 @@ func _ready() -> void:
 
 
 func _on_area_3d_body_entered(body):
+	if body == duenio:
+		return
 	if body.has_method("recibir_danio"):
 		print("[habla bala] di en ",body.name)
 		body.recibir_danio(danio, bala_del_jugador)

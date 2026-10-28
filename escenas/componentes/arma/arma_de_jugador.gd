@@ -40,7 +40,8 @@ func disparo():
 	var balita = balas.instantiate()
 	get_tree().current_scene.add_child(balita)
 	balita.global_position = global_position
-	balita.add_collision_exception_with(player)
+	balita.duenio = get_parent()
+	balita.add_collision_exception_with(get_parent())
 	balita.danio = danio_del_jugador
 	balita.bala_del_jugador = true
 	
