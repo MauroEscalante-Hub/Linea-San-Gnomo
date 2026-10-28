@@ -30,7 +30,6 @@ func _process(delta):
 	distancia = distancia.limit_length(5)
 	
 	sprite_mira.position = Vector3(distancia.x, 0, distancia.y)
-	print(cantidad_de_balas)
 	
 	if Input.is_action_just_pressed("dispararbalas"):
 		disparo()
