@@ -7,9 +7,11 @@ extends Node3D
 @onready var sprite_mira = $Sprite3D
 @export var danio_del_jugador: int
 @export var cadencia: float
+@export var cantidad_de_balas: int
 @export var balas: PackedScene
 var puede_disparar := true
-# Called when the node enters the scene tree for the first time.
+
+
 func _ready():
 	pass
 
@@ -28,13 +30,13 @@ func _process(delta):
 	distancia = distancia.limit_length(5)
 	
 	sprite_mira.position = Vector3(distancia.x, 0, distancia.y)
+	print(cantidad_de_balas)
 	
 	if Input.is_action_just_pressed("dispararbalas"):
 		disparo()
-		
 
 func disparo():
-	if not puede_disparar:
+	if not puede_disparar or cantidad_de_balas <= 0:
 		return
 	
 	var balita = balas.instantiate()
@@ -47,6 +49,8 @@ func disparo():
 	
 	var direccion = (sprite_mira.global_position - global_position).normalized()
 	balita.set_direccion(direccion)
+	
+	cantidad_de_balas -= 1
 	
 	puede_disparar = false
 	await get_tree().create_timer(cadencia).timeout

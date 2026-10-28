@@ -55,6 +55,7 @@ suspension_stiffness = 40.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="derecha" unique_id=1807814371]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.019, 0, 0)
+layers = 16
 mesh = SubResource("CylinderMesh_8cmsc")
 
 [node name="izquierda" type="VehicleWheel3D" parent="." unique_id=1283648186]
@@ -65,6 +66,7 @@ suspension_stiffness = 40.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="izquierda" unique_id=879670267]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.002, 0, 0)
+layers = 16
 mesh = SubResource("CylinderMesh_qsk7m")
 
 [node name="derecha_atras" type="VehicleWheel3D" parent="." unique_id=368855817]
@@ -75,6 +77,7 @@ suspension_stiffness = 40.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="derecha_atras" unique_id=1545732869]
 transform = Transform3D(-4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0, 1, 0.017, 0, 0)
+layers = 16
 mesh = SubResource("CylinderMesh_kh5iw")
 
 [node name="izquierda_atras" type="VehicleWheel3D" parent="." unique_id=2090882324]
@@ -85,6 +88,7 @@ suspension_stiffness = 40.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="izquierda_atras" unique_id=222053733]
 transform = Transform3D(0.000577406, 0.9999998, -8.73723e-08, -0.9999998, 0.000577406, -8.742276e-08, -8.73723e-08, 8.742276e-08, 1, 0, 0, 0)
+layers = 16
 mesh = SubResource("CylinderMesh_0ru8o")
 
 [node name="centro de masa" type="Node3D" parent="." unique_id=783383178]
@@ -118,6 +122,7 @@ player = NodePath("..")
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0.195, -1)
 player = NodePath("..")
 danio_del_jugador = 15
+cantidad_de_balas = 3
 
 [node name="Vida" parent="." unique_id=2126800800 node_paths=PackedStringArray("player") instance=ExtResource("10_j2gbx")]
 player = NodePath("..")
