@@ -2,6 +2,7 @@ class_name Arma_Jugador
 extends Node3D
 
 @export var disparojugador: AudioStreamPlayer3D
+@export var puntero: RayCast3D
 
 @export var player: VehicleBody3D
 @onready var sprite_mira = $Sprite3D
@@ -22,12 +23,12 @@ func desactivate():
 	set_process(false)
 
 func _process(delta):
-	var mouse = get_viewport().get_mouse_position()
-	var centro = get_viewport().get_visible_rect().size / 2
-	var distancia = mouse - centro
-	distancia = distancia.limit_length(5)
-	
-	sprite_mira.position = Vector3(distancia.x, 0, distancia.y)
+	#var mouse = get_viewport().get_mouse_position()
+	#var centro = get_viewport().get_visible_rect().size / 2
+	#var distancia = mouse - centro
+	#distancia = distancia.limit_length(5)
+	#
+	#sprite_mira.position = Vector3(distancia.x, 0, distancia.y)
 	
 	if Input.is_action_just_pressed("dispararbalas"):
 		disparo()

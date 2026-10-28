@@ -6,6 +6,7 @@ extends Node
 @export var elasticidad: float = 100.0
 @export var amortiguacion: float = 10.0
 @export var sonido_gancho: AudioStreamPlayer3D
+@export var gancho:bool=false
 
 
 @onready var player: VehicleBody3D = get_parent()
@@ -23,6 +24,7 @@ func desactivate():
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("gancho"):
 		lanzar()
+		!lanzado
 	if Input.is_action_just_released("gancho"):
 		atraer()
 		

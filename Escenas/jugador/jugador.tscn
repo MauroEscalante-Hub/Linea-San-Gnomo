@@ -108,7 +108,7 @@ player = NodePath("..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.71554923)
 
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=1196462397]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, 0.75, -1.45)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018756509, -0.01797095, -1.45)
 target_position = Vector3(0, -1, -50)
 
 [node name="Arma" parent="." unique_id=192237572 node_paths=PackedStringArray("player") instance=ExtResource("8_26844")]
