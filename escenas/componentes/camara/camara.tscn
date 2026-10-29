@@ -12,3 +12,4 @@ transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.965
 
 [node name="Camera2" type="Camera3D" parent="." unique_id=397099821]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.017190337, -1.5653133)
+visible = false
