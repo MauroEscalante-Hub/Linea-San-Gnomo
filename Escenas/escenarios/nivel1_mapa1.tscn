@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://jt5p78g5kf7x"]
+
+[ext_resource type="Texture2D" uid="uid://ddprscrpsofah" path="res://Assets/3d/textures/ground037_alb_ht.png" id="1_ieg26"]
+[ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://Escenas/jugador/jugador.tscn" id="2_1gonj"]
+[ext_resource type="Texture2D" uid="uid://c1ots7w6i0i1q" path="res://Assets/3d/textures/ground037_nrm_rgh.png" id="2_qvli7"]
+[ext_resource type="Texture2D" uid="uid://c88j3oj0lf6om" path="res://Assets/3d/textures/rock023_alb_ht.png" id="3_eu80k"]
+[ext_resource type="Texture2D" uid="uid://c307hdmos4gtm" path="res://Assets/3d/textures/rock023_nrm_rgh.png" id="4_kj5fr"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_084nl"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_g7di0"]
+sky_material = SubResource("ProceduralSkyMaterial_084nl")
+
+[sub_resource type="Environment" id="Environment_ieg26"]
+background_mode = 2
+sky = SubResource("Sky_g7di0")
+
+[sub_resource type="Gradient" id="Gradient_1gonj"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_u3u07"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qvli7"]
+noise = SubResource("FastNoiseLite_u3u07")
+color_ramp = SubResource("Gradient_1gonj")
+seamless = true
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_eu80k"]
+_shader_parameters = {
+&"bias_distance": null,
+&"blend_sharpness": null,
+&"depth_blur": null,
+&"enable_macro_variation": null,
+&"enable_projection": null,
+&"flat_terrain_normals": null,
+&"macro_variation1": null,
+&"macro_variation2": null,
+&"macro_variation_slope": null,
+&"mipmap_bias": null,
+&"noise1_angle": null,
+&"noise1_offset": null,
+&"noise1_scale": null,
+&"noise2_scale": null,
+&"noise_texture": SubResource("NoiseTexture2D_qvli7"),
+&"projection_threshold": null
+}
+world_background = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kj5fr"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 96.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_yvhl4"]
+generated_type = 1
+height_offset = 0.5
+material_override = SubResource("StandardMaterial3D_kj5fr")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_yvhl4"]
+name = "ground037_alb_ht"
+albedo_texture = ExtResource("1_ieg26")
+normal_texture = ExtResource("2_qvli7")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_6uqdc"]
+name = "rock023_alb_ht"
+id = 1
+albedo_texture = ExtResource("3_eu80k")
+normal_texture = ExtResource("4_kj5fr")
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_6uqdc"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_yvhl4")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_yvhl4"), SubResource("Terrain3DTextureAsset_6uqdc")])
+
+[node name="Nivel1Mapa1" type="Node3D" unique_id=148612818]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1558179221]
+environment = SubResource("Environment_ieg26")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=879195568]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, -122.105194, 83.507126, -41.938057)
+shadow_enabled = true
+
+[node name="Terrain3D" type="Terrain3D" parent="." unique_id=532217389]
+data_directory = "res://Escenas/escenarios/data_de_mapas"
+material = SubResource("Terrain3DMaterial_eu80k")
+assets = SubResource("Terrain3DAssets_6uqdc")
+collision_mode = 3
+collision_layer = 3
+collision_mask = 3
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="jugador" parent="." unique_id=1604139032 instance=ExtResource("2_1gonj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -119.49986, 2.990591, 163.65393)
