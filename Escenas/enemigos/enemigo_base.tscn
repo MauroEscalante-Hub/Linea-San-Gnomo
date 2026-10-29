@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b8n8hfvv4ppl1" path="res://Escenas/componentes/movimiento_automatico/mov_auto.tscn" id="10_eml4n"]
 [ext_resource type="PackedScene" uid="uid://pka07c3fe5jd" path="res://Escenas/componentes/vida/vida.tscn" id="11_78feh"]
 [ext_resource type="PackedScene" uid="uid://bbsqmfxf0yc4c" path="res://Escenas/componentes/levantar/levantar.tscn" id="12_owptj"]
+[ext_resource type="PackedScene" uid="uid://d2lj1mpyv0yln" path="res://Escenas/componentes/DeteccionGancho.tscn" id="13_nlq4t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cqhb5"]
 albedo_color = Color(0.7952375, 0, 0.17623618, 1)
@@ -137,5 +138,7 @@ jugador = NodePath("..")
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1788417323]
 transform = Transform3D(0.101436354, 0, 0, 0, 0.1200211, 0, 0, 0, 1, 0, 2.805974, 0)
 visible = false
+
+[node name="DeteccionGancho" parent="." unique_id=627201305 instance=ExtResource("13_nlq4t")]
 
 [connection signal="murio" from="Vida" to="." method="_on_vida_murio"]
