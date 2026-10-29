@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="MetricsResource" format=3 uid="uid://2d6dobp1lpx8"]
+
+[ext_resource type="Script" uid="uid://d0rhmy7dfjibk" path="res://addons/local_metrics/metric_item.gd" id="1_jmfum"]
+[ext_resource type="Script" uid="uid://u3ruhi6dfjny" path="res://addons/local_metrics/metrics_resouce.gd" id="2_48xfr"]
+
+[sub_resource type="Resource" id="Resource_nn3v5"]
+script = ExtResource("1_jmfum")
+name = "Jumps Count"
+metric_id = "jumps"
+value = 0
+metadata/_custom_type_script = "uid://d0rhmy7dfjibk"
+
+[sub_resource type="Resource" id="Resource_2jas5"]
+script = ExtResource("1_jmfum")
+name = "Player Died"
+metric_id = "died"
+data_type = 3
+value = false
+metadata/_custom_type_script = "uid://d0rhmy7dfjibk"
+
+[sub_resource type="Resource" id="Resource_gy0xu"]
+script = ExtResource("1_jmfum")
+name = "Player Map Seed"
+metric_id = "map_seed"
+data_type = 2
+value = ""
+metadata/_custom_type_script = "uid://d0rhmy7dfjibk"
+
+[sub_resource type="Resource" id="Resource_y4eud"]
+script = ExtResource("1_jmfum")
+name = "Win Position 2D"
+metric_id = "win_2d_position"
+data_type = 4
+value = Vector2(0, 0)
+metadata/_custom_type_script = "uid://d0rhmy7dfjibk"
+
+[sub_resource type="Resource" id="Resource_8clfc"]
+script = ExtResource("1_jmfum")
+name = "Win Position 3D"
+metric_id = "win_3d_position"
+data_type = 5
+value = Vector3(0, 0, 0)
+metadata/_custom_type_script = "uid://d0rhmy7dfjibk"
+
+[sub_resource type="Resource" id="Resource_s5fnn"]
+script = ExtResource("1_jmfum")
+name = "·d player heat map"
+metric_id = "3d_heat_map"
+data_type = 6
+value = []
+metadata/_custom_type_script = "uid://d0rhmy7dfjibk"
+
+[resource]
+script = ExtResource("2_48xfr")
+metrics = Array[ExtResource("1_jmfum")]([SubResource("Resource_nn3v5"), SubResource("Resource_2jas5"), SubResource("Resource_gy0xu"), SubResource("Resource_y4eud"), SubResource("Resource_8clfc"), SubResource("Resource_s5fnn")])
+metadata/_custom_type_script = "uid://u3ruhi6dfjny"
