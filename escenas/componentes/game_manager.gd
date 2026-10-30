@@ -1,10 +1,15 @@
 class_name Manager
 extends Node
- 
+const METRICAS = preload("uid://ofka2avl4rqs")
+
 signal player_changed(new_player: VehicleBody3D)
 var current_player: VehicleBody3D = null
  
- 
+func _ready() -> void:
+	Metrics.register_metrics(METRICAS)
+	
+	
+
 func set_player(new_player: VehicleBody3D) -> void:
 	if new_player == current_player:
 		return
