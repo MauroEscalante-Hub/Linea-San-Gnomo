@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://Escenas/jugador/jugador.tscn" id="1_p7yi8"]
 [ext_resource type="Script" uid="uid://cfvgp2c7kn8pi" path="res://Escenas/grayboxing/csg_box_3d_13.gd" id="1_ubdkq"]
-[ext_resource type="PackedScene" uid="uid://dxp4h38x38m4e" path="res://Escenas/Tren/ruta.tscn" id="2_3sjby"]
+[ext_resource type="PackedScene" uid="uid://dxp4h38x38m4e" path="res://Escenas/tren/ruta.tscn" id="2_3sjby"]
 [ext_resource type="Script" uid="uid://cmv6ib0nhjx2s" path="res://Escenas/path_follow_3d.gd" id="3_ls4l5"]
-[ext_resource type="PackedScene" uid="uid://pmc2plsrtcig" path="res://Escenas/Tren/Vagon.tscn" id="4_abgxn"]
+[ext_resource type="PackedScene" uid="uid://pmc2plsrtcig" path="res://Escenas/tren/Vagon.tscn" id="4_abgxn"]
 [ext_resource type="PackedScene" uid="uid://14tjj1vngcuo" path="res://Escenas/enemigos/enemigo_base.tscn" id="5_abgxn"]
 [ext_resource type="Texture2D" uid="uid://bp2ne783mtgq2" path="res://Assets/sprites/linea san gnomo.png" id="6_jdi07"]
 [ext_resource type="Texture2D" uid="uid://duxaws04hjpng" path="res://Assets/sprites/linea san gnomo lleno.png" id="7_v08ue"]
