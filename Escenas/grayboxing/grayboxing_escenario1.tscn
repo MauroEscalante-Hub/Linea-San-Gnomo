@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://bp2ne783mtgq2" path="res://Assets/sprites/linea san gnomo.png" id="6_jdi07"]
 [ext_resource type="Texture2D" uid="uid://duxaws04hjpng" path="res://Assets/sprites/linea san gnomo lleno.png" id="7_v08ue"]
 [ext_resource type="PackedScene" uid="uid://b0w31mc2k6qos" path="res://Escenas/componentes/Hudarma.tscn" id="9_v08ue"]
-[ext_resource type="PackedScene" uid="uid://sgw42646g0wk" path="res://Assets/models/tren_con_gnomos.fbx" id="10_l4vq8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdwd0"]
 albedo_color = Color(0.84356505, 0.46794945, 0, 1)
@@ -389,8 +388,5 @@ danio_de_auto = 20
 tren = NodePath("../ruta/PathFollow3D/VehicleBody3D")
 
 [node name="Hudarma" parent="." unique_id=1431327253 instance=ExtResource("9_v08ue")]
-
-[node name="tren_con_gnomos" parent="." unique_id=147751641 instance=ExtResource("10_l4vq8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 859.6694, 44.514507, -556.3841)
 
 [connection signal="body_entered" from="Curva_y_final/CSGBox3D13/Area3D" to="Curva_y_final/CSGBox3D13" method="_on_area_3d_body_entered"]
