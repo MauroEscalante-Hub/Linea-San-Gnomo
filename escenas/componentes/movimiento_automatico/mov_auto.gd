@@ -19,12 +19,12 @@ func _desactivate():
 	set_physics_process(false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
-	var objetivo = tren_nuevo.get_node("Marker3D")
-	if not is_instance_valid(objetivo) or objetivo == self:
-		player.engine_force = 0.0
-		return
-	seguimiento(self, objetivo, delta)
+#func _physics_process(delta):
+	#var objetivo = tren_nuevo.get_node("Marker3D")
+	#if not is_instance_valid(objetivo) or objetivo == self:
+		#player.engine_force = 0.0
+		#return
+	#seguimiento(self, objetivo, delta)
 
 
 func seguimiento(looker: Node3D, target: Node3D, delta):
