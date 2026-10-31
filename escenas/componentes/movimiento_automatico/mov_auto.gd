@@ -8,6 +8,7 @@ var distancia_para_reducir: float = 15.0
 var velocidad_de_giro = 3.0
 var engine_power = 25.0
 var tren_nuevo: VehicleBody3D
+var objetivo: Node3D
 
 func _ready():
 	if player == null and get_parent() is VehicleBody3D:
@@ -24,10 +25,11 @@ func _physics_process(delta):
 		player.engine_force = 0.0
 		return
 	
-	var objetivo = tren_nuevo.get_node("Marker3D")
-	if not is_instance_valid(objetivo) or objetivo == self:
-		player.engine_force = 0.0
-		return
+	if not is_instance_valid(objetivo):
+		objetivo = tren_nuevo.obtener_marker()
+		if objetivo == null:
+			player.engine_force = 0.0
+			return
 	
 	seguimiento(self, objetivo, delta)
 
