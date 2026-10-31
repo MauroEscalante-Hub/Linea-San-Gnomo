@@ -4,6 +4,7 @@ extends VehicleBody3D
 
 @onready var barravida = $vidabar
 @export var vida: int = 20
+@onready var marcadores: Array[Marker3D] = []
 var esta_muerto: bool = false
 
 @onready var sonidostren: Node3D = $sonidostren
@@ -12,7 +13,8 @@ var esta_muerto: bool = false
 
 func _ready() -> void:
 	barravida.vida_inicial(vida)
-	# gamemanager no soy jugador ni quiero serlo
+	for i in $marcador.get_children():
+		marcadores.append(i)
 
 func morir_tren() -> void:
 	esta_muerto = true
@@ -23,7 +25,6 @@ func morir_tren() -> void:
 func recibir_danio(cantidad: int, es_del_jugador: bool = false) -> void:
 	if esta_muerto:
 		return
-
 	vida -= cantidad
 	sonidostren.play_hit()
 
@@ -41,3 +42,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("daño"):
 		daño()
 		sonidostren.play_hit()
+
+func obtener_marker():
+	if marcadores.is_empty():
+		return null
+	return marcadores.pick_random()
