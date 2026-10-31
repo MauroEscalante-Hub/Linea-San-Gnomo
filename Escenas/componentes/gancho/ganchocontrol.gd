@@ -2,6 +2,8 @@ extends Node
 @export var atraccion_base=15
 @onready var ray =$"../RayCast3D"
 @onready var soga=$"../soga"
+@export var detector: DeteccionDeVehiculo
+
 @export var longitud: float = 2.0
 @export var elasticidad: float = 100.0
 @export var amortiguacion: float = 10.0
@@ -13,6 +15,7 @@ extends Node
 
 var lanzado: bool = false
 var target: Vector3 = Vector3.ZERO
+var auto_objetivo: VehicleBody3D = null
 
 func activate():
 	set_physics_process(true)
@@ -29,10 +32,18 @@ func _physics_process(delta: float) -> void:
 		atraer()
 		
 	if lanzado:
+		if is_instance_valid(auto_objetivo):
+			target = auto_objetivo.global_position
 		gancho_manual(delta)
 	actualizar_soga()
 
 func lanzar() -> void:
+	if is_instance_valid(auto_objetivo):
+		target = auto_objetivo.global_position
+		lanzado = true
+		if sonido_gancho: sonido_gancho.play()
+		print("[GANCHO] ¡Enganchado al vehículo: ", auto_objetivo.name, "!")
+		return
 	if ray.is_colliding():
 		target = ray.get_collision_point()
 		lanzado = true
