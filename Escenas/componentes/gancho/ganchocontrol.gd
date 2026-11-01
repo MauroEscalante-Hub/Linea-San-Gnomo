@@ -2,7 +2,7 @@ extends Node
 @export var atraccion_base=15
 @onready var ray =$"../RayCast3D"
 @onready var soga=$"../soga"
-@export var detector: DeteccionDeVehiculo
+@onready var detector=$"../DeteccionGancho"
 
 @export var longitud: float = 2.0
 @export var elasticidad: float = 100.0
@@ -20,14 +20,19 @@ var auto_objetivo: VehicleBody3D = null
 func activate():
 	set_physics_process(true)
 	set_process(true)
+	if detector and not detector.vehiculo_enganchable.is_connected(vehiculo_enganchable):
+		detector.vehiculo_enganchable.connect(vehiculo_enganchable)
 
 func desactivate():
 	set_physics_process(false)
 	set_process(false)
+	atraer()
+	if detector and detector.vehiculo_enganchable.is_connected(vehiculo_enganchable):
+		detector.vehiculo_enganchable.disconnect(vehiculo_enganchable)
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("gancho"):
 		lanzar()
-		!lanzado
+		
 	if Input.is_action_just_released("gancho"):
 		atraer()
 		
@@ -36,6 +41,9 @@ func _physics_process(delta: float) -> void:
 			target = auto_objetivo.global_position
 		gancho_manual(delta)
 	actualizar_soga()
+func vehiculo_enganchable(vehiculo: VehicleBody3D) -> void:
+	auto_objetivo = vehiculo
+
 
 func lanzar() -> void:
 	if is_instance_valid(auto_objetivo):
@@ -54,6 +62,7 @@ func lanzar() -> void:
 		print("[GANCHO] fallo: El RayCast no colisionó con ninguna superficie.")
 func atraer() -> void:
 	lanzado = false
+	auto_objetivo = null
 
 
 func gancho_manual(delta: float) -> void:
