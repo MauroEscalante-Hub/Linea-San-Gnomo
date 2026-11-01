@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://jt5p78g5kf7x"]
 
+[ext_resource type="PackedScene" uid="uid://pmc2plsrtcig" path="res://Escenas/Tren/Vagon.tscn" id="1_83n1h"]
 [ext_resource type="Texture2D" uid="uid://ddprscrpsofah" path="res://Assets/3d/textures/ground037_alb_ht.png" id="1_ieg26"]
+[ext_resource type="Script" uid="uid://cmv6ib0nhjx2s" path="res://Escenas/path_follow_3d.gd" id="1_j5g2l"]
 [ext_resource type="PackedScene" uid="uid://c0nrh27b7fyac" path="res://Assets/3d/models/Grass_1.fbx" id="1_yvhl4"]
 [ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://Escenas/jugador/jugador.tscn" id="2_1gonj"]
 [ext_resource type="PackedScene" uid="uid://dvpxhrcghlpod" path="res://Assets/3d/models/Grass_2.fbx" id="2_p5k44"]
@@ -12,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://duhswckhasixx" path="res://Assets/3d/models/002_Pine_Tree.fbx" id="7_j5g2l"]
 [ext_resource type="Texture2D" uid="uid://cyr5gcnw480v" path="res://Assets/3d/textures/41_1024x1024.png" id="10_p5k44"]
 [ext_resource type="Texture2D" uid="uid://baci1qup0gmod" path="res://Assets/3d/textures/44_1024x1024.png" id="11_jg37s"]
+[ext_resource type="Material" uid="uid://d35brrdubjnxg" path="res://Assets/shaders/new_shader_material.tres" id="13_dup8j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_084nl"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -23,6 +26,13 @@ sky_material = SubResource("ProceduralSkyMaterial_084nl")
 [sub_resource type="Environment" id="Environment_ieg26"]
 background_mode = 2
 sky = SubResource("Sky_g7di0")
+
+[sub_resource type="Curve3D" id="Curve3D_dup8j"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.7182617, -0.4663682, -0.21139526, 0, 0, 0, 0, 0, 0, -0.9620056, -0.46638346, -42.622253, 0, 0, 0, 0, 0, 0, -1.2299347, -0.46638346, -101.90518, 0, 0, 0, 0, 0, 0, -2.3365784, -0.46638346, -185.4431, 0, 0, 0, 0, 0, 0, -3.0225372, -0.46638346, -267.15887, 0, 0, 0, 0, 0, 0, -3.2493286, -0.46638346, -341.99734, 0, 0, 0, 0, 0, 0, -1.7937012, -0.46638346, -411.5322, 0, 0, 0, 0, 0, 0, -1.3211517, -0.46638346, -485.6598, 0, 0, 0, 0, 0, 0, -6.3180847, -0.46638346, -517.02997, 0, 0, 0, 0, 0, 0, -20.13263, -0.46638346, -534.72986, 0, 0, 0, 0, 0, 0, -44.52394, -0.46638346, -544.4432, 0, 0, 0, 0, 0, 0, -81.2294, -0.46638346, -557.4542, 0, 0, 0, 0, 0, 0, -114.90234, -0.46638346, -580.5504, 0, 0, 0, 0, 0, 0, -160.07431, -0.46638346, -614.3481, 0, 0, 0, 0, 0, 0, -205.38864, -0.46638346, -654.15674, 0, 0, 0, 0, 0, 0, -249.30145, -0.46638346, -699.7682, 0, 0, 0, 0, 0, 0, -263.28134, -0.46638346, -733.41254, 0, 0, 0, 0, 0, 0, -270.9644, -0.46638346, -768.03394, 0, 0, 0, 0, 0, 0, -276.17325, -0.46638346, -809.10974, 0, 0, 0, 0, 0, 0, -278.01688, -0.46638346, -851.67896, 0, 0, 0, 0, 0, 0, -280.26962, -0.46638346, -894.14905, 0, 0, 0, 0, 0, 0, -283.17947, -0.46638346, -944.4985, 0, 0, 0, 0, 0, 0, -285.3243, -0.46638346, -986.1803, 0, 0, 0, 0, 0, 0, -287.68768, -0.46638346, -1036.4615, 0, 0, 0, 0, 0, 0, -291.68845, -0.46638346, -1117.7085, 0, 0, 0, 0, 0, 0, -294.5307, -0.46638346, -1163.2533, 0, 0, 0, 0, 0, 0, -295.72354, -0.46638346, -1222.4905, 0, 0, 0, 0, 0, 0, -297.04175, -0.46638346, -1282.8252, 0, 0, 0, 0, 0, 0, -297.71567, -0.46638346, -1332.8741, 0, 0, 0, 0, 0, 0, -297.5658, -0.46638346, -1373.6202, 0, 0, 0, 0, 0, 0, -297.81027, -0.46638346, -1434.9807, 0, 0, 0, 0, 0, 0, -298.58847, -0.46638346, -1478.4923, 0, 0, 0, 0, 0, 0, -299.10706, -0.46638346, -1528.0173, 0, 0, 0, 0, 0, 0, -297.993, -0.46638346, -1591.7761, 0, 0, 0, 0, 0, 0, -296.2869, -0.46638346, -1635.1515),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 35
 
 [sub_resource type="Gradient" id="Gradient_1gonj"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -179,26 +189,9 @@ normal_texture = SubResource("ImageTexture_rk4vk")
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_eu80k"), SubResource("Terrain3DMeshAsset_jg37s"), SubResource("Terrain3DMeshAsset_dup8j"), SubResource("Terrain3DMeshAsset_rk4vk"), SubResource("Terrain3DMeshAsset_g68db"), SubResource("Terrain3DMeshAsset_peni2")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_83n1h"), SubResource("Terrain3DTextureAsset_7kk6f"), SubResource("Terrain3DTextureAsset_kj5fr"), SubResource("Terrain3DTextureAsset_g68db")])
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_dwbtc"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6fhyq"]
-noise = SubResource("FastNoiseLite_dwbtc")
-seamless = true
-as_normal_map = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jq8tk"]
-transparency = 1
-depth_draw_mode = 1
-albedo_color = Color(0.2, 0.53333336, 0.6627451, 0.43529412)
-roughness = 0.03
-normal_enabled = true
-normal_texture = SubResource("NoiseTexture2D_6fhyq")
-refraction_enabled = true
-refraction_texture = SubResource("NoiseTexture2D_6fhyq")
-
 [sub_resource type="BoxMesh" id="BoxMesh_3xd07"]
-material = SubResource("StandardMaterial3D_jq8tk")
-size = Vector3(70.29286, 1, 118.26902)
+material = ExtResource("13_dup8j")
+size = Vector3(70.29286, 1, 273.6246)
 
 [node name="Nivel1Mapa1" type="Node3D" unique_id=148612818]
 
@@ -206,8 +199,19 @@ size = Vector3(70.29286, 1, 118.26902)
 environment = SubResource("Environment_ieg26")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=879195568]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, -122.105194, 83.507126, -41.938057)
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, -122.105194, 162.0508, -41.938057)
 shadow_enabled = true
+
+[node name="Path3D" type="Path3D" parent="." unique_id=1219090153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134.11093, 0.09236002, 439.32382)
+curve = SubResource("Curve3D_dup8j")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=276881758]
+transform = Transform3D(0.9998279, 6.413465e-09, -0.017828511, 2.2204172e-16, 0.99999017, 3.5972135e-07, 0.017828599, -3.5966715e-07, 0.999823, -1.7182617, -0.4663682, -0.21139526)
+script = ExtResource("1_j5g2l")
+
+[node name="VehicleBody3D" parent="Path3D/PathFollow3D" unique_id=2072145692 instance=ExtResource("1_83n1h")]
+transform = Transform3D(2.655, 1.7763568e-15, 3.7252903e-09, 0, 2.6549997, 0, 0, 1.1368684e-13, 2.6550002, 0, 2.0360365, 0)
 
 [node name="Terrain3D" type="Terrain3D" parent="." unique_id=532217389]
 data_directory = "res://Escenas/escenarios/data_de_mapas"
@@ -219,12 +223,12 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="jugador" parent="." unique_id=1604139032 instance=ExtResource("2_1gonj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.5538, 2.990591, 464.5974)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -118.75624, 2.990591, 449.13754)
 
 [node name="agua" type="MeshInstance3D" parent="." unique_id=562420754]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -384.9355, -10.316027, -460.61987)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -384.9355, -10.316027, -470.48602)
 mesh = SubResource("BoxMesh_3xd07")
 
 [node name="agua2" type="MeshInstance3D" parent="." unique_id=796989597]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -432.52078, -1.3828335, -974.52954)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -432.52078, -1.3828335, -972.60223)
 mesh = SubResource("BoxMesh_3xd07")
