@@ -22,6 +22,8 @@ func _physics_process(delta: float) -> void:
 	if is_instance_valid(player):
 		
 		global_position = player.global_position
+		global_rotation = player.global_rotation
+		rotate_object_local(Vector3.RIGHT, deg_to_rad(-5.0))
 func _on_area_3d_body_entered(body) -> void:
 	var duenio_del_area = get_parent()
 	
