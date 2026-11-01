@@ -10,6 +10,7 @@ longitud = 1.725
 elasticidad = 75.0
 amortiguacion = 25.8
 sonido_gancho = NodePath("sonido_gancho")
+velocidad_maxima = 41.21
 
 [node name="sonido_gancho" type="AudioStreamPlayer3D" parent="." unique_id=404040508]
 stream = ExtResource("2_51vw3")

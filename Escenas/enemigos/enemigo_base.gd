@@ -7,6 +7,8 @@ extends VehicleBody3D
 @onready var area_del_vehiculo = $deteccion_de_vehiculo
 @onready var control_del_jugador = $controlador_de_jugador
 @onready var gancho=$Ganchocontrol
+@onready var areagancho = $DeteccionGancho
+
 var nuevo_vehiculo: VehicleBody3D
 var steering_lerp = 3
 var velocidad_de_giro = 5
@@ -35,6 +37,7 @@ func become_player() -> void:
 	control_del_jugador.activate()
 	movimiento.movimineto_activado()
 	camara.activate()
+	areagancho.activate()
 	gancho.activate()
 	arma_.desactivate()
 	arma_de_jugador.activate()
@@ -49,6 +52,7 @@ func become_npc() -> void:
 	control_del_jugador.deactivate()
 	movimiento.movimineto_desactivado()
 	camara.deactivate()
+	areagancho.desactivate()
 	gancho.desactivate()
 	arma_.activate()
 	arma_de_jugador.desactivate()
