@@ -9,6 +9,9 @@ extends Node
 @export var amortiguacion: float = 10.0
 @export var sonido_gancho: AudioStreamPlayer3D
 @export var gancho:bool=false
+@export var velocidad_maxima: float = 35.0
+@export var fuerza_maxima_permitida = 9000.0
+
 
 
 @onready var player: VehicleBody3D = get_parent()
@@ -50,8 +53,9 @@ func lanzar() -> void:
 		target = auto_objetivo.global_position
 		lanzado = true
 		if sonido_gancho: sonido_gancho.play()
-		print("[GANCHO] ¡Enganchado al vehículo: ", auto_objetivo.name, "!")
+		print("[GANCHO] ¡Enganchado! Velocidad lineal al lanzar: ", player.linear_velocity, " | Rapidez: ", player.linear_velocity.length())
 		return
+		
 	if ray.is_colliding():
 		target = ray.get_collision_point()
 		lanzado = true
@@ -70,14 +74,20 @@ func gancho_manual(delta: float) -> void:
 	var target_direc = global_pos.direction_to(target)
 	var target_dis = global_pos.distance_to(target)
 	var desplazamiento = target_dis - longitud
+
 	
 	if desplazamiento > 0:
+		desplazamiento = min(desplazamiento, 14)
 		var fuerza_atraccion = target_direc * (elasticidad * desplazamiento)
 		var vel_dot = player.linear_velocity.dot(target_direc)
 		var fuerza_amortiguacion = target_direc * (-amortiguacion * vel_dot)
 		
 		var fuerza_total = (fuerza_atraccion + fuerza_amortiguacion) *(desplazamiento*atraccion_base)
+		if fuerza_total.length() > fuerza_maxima_permitida:
+			fuerza_total = fuerza_total.normalized() * fuerza_maxima_permitida
 		player.apply_central_force(fuerza_total*delta)
+		if player.linear_velocity.length() > velocidad_maxima:
+			player.linear_velocity = player.linear_velocity.normalized() * velocidad_maxima
 func actualizar_soga():
 	if not lanzado:
 		soga.visible = false
