@@ -77,14 +77,14 @@ func gancho_manual(delta: float) -> void:
 
 	
 	if desplazamiento > 0:
-		desplazamiento = min(desplazamiento, 14)
+		desplazamiento = min(desplazamiento, 15)
 		var fuerza_atraccion = target_direc * (elasticidad * desplazamiento)
 		var vel_dot = player.linear_velocity.dot(target_direc)
 		var fuerza_amortiguacion = target_direc * (-amortiguacion * vel_dot)
 		
 		var fuerza_total = (fuerza_atraccion + fuerza_amortiguacion) *(desplazamiento*atraccion_base)
-		if fuerza_total.length() > fuerza_maxima_permitida:
-			fuerza_total = fuerza_total.normalized() * fuerza_maxima_permitida
+		#if fuerza_total.length() > fuerza_maxima_permitida:
+			#fuerza_total = fuerza_total.normalized() * fuerza_maxima_permitida
 		player.apply_central_force(fuerza_total*delta)
 		if player.linear_velocity.length() > velocidad_maxima:
 			player.linear_velocity = player.linear_velocity.normalized() * velocidad_maxima
