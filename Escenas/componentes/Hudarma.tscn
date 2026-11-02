@@ -18,11 +18,11 @@ grow_vertical = 2
 script = ExtResource("1_2o31u")
 
 [node name="balas" type="Sprite2D" parent="." unique_id=2011029619]
-position = Vector2(840, 549)
-scale = Vector2(0.155, 0.155)
+position = Vector2(832.39, 549)
+scale = Vector2(0.075, 0.075)
 texture = ExtResource("1_5vkdq")
 
 [node name="gancho" type="Sprite2D" parent="." unique_id=477010507]
-position = Vector2(843, 530)
-scale = Vector2(0.155, 0.155)
+position = Vector2(902.025, 541.025)
+scale = Vector2(0.075, 0.075)
 texture = ExtResource("2_2o31u")

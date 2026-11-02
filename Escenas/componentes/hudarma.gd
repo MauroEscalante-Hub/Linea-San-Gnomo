@@ -8,7 +8,7 @@ extends Control
 
 func _ready() -> void:
 	hud_bala.visible=true
-	hud_gancho.visible=false
+	hud_gancho.visible=true
 func _process(delta: float) -> void:
 	
 	hud_arma()

@@ -10,12 +10,13 @@ extends Node
 @export var sonido_gancho: AudioStreamPlayer3D
 @export var gancho:bool=false
 @export var velocidad_maxima: float = 35.0
-@export var fuerza_maxima_permitida = 9000.0
+#@export var fuerza_maxima_permitida = 9000.0
+@export var cooldown: float = 5.0
 
 
 
 @onready var player: VehicleBody3D = get_parent()
-
+var cooldown_actual: float = 0.0
 var lanzado: bool = false
 var target: Vector3 = Vector3.ZERO
 var auto_objetivo: VehicleBody3D = null
@@ -33,7 +34,9 @@ func desactivate():
 	if detector and detector.vehiculo_enganchable.is_connected(vehiculo_enganchable):
 		detector.vehiculo_enganchable.disconnect(vehiculo_enganchable)
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("gancho"):
+	if cooldown_actual > 0:
+		cooldown_actual -= delta
+	if Input.is_action_just_pressed("gancho") and not lanzado and cooldown_actual <= 0:
 		lanzar()
 		
 	if Input.is_action_just_released("gancho"):
@@ -65,6 +68,7 @@ func lanzar() -> void:
 	else:
 		print("[GANCHO] fallo: El RayCast no colisionó con ninguna superficie.")
 func atraer() -> void:
+	if lanzado:cooldown_actual = cooldown
 	lanzado = false
 	auto_objetivo = null
 
