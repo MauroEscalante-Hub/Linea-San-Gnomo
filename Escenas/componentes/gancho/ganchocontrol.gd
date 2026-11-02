@@ -20,7 +20,7 @@ var cooldown_actual: float = 0.0
 var lanzado: bool = false
 var target: Vector3 = Vector3.ZERO
 var auto_objetivo: VehicleBody3D = null
-
+var objetivo_previo: VehicleBody3D = null
 func activate():
 	set_physics_process(true)
 	set_process(true)
@@ -46,7 +46,14 @@ func _physics_process(delta: float) -> void:
 		if is_instance_valid(auto_objetivo):
 			target = auto_objetivo.global_position
 		gancho_manual(delta)
-		
+	if auto_objetivo != objetivo_previo:
+		if auto_objetivo != null:
+			print("[EVENTBUS] Auto detectado -> Emitiendo TRUE")
+			
+		else:
+			print("[EVENTBUS] Auto salió de la zona -> Emitiendo FALSE")
+			
+		objetivo_previo = auto_objetivo
 	actualizar_soga()
 func vehiculo_enganchable(vehiculo: VehicleBody3D) -> void:
 	auto_objetivo = vehiculo
