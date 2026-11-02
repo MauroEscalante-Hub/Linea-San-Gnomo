@@ -39,13 +39,14 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("gancho") and not lanzado and cooldown_actual <= 0:
 		lanzar()
 		
-	if Input.is_action_just_released("gancho"):
+	if Input.is_action_just_released("gancho")and lanzado:
 		atraer()
 		
 	if lanzado:
 		if is_instance_valid(auto_objetivo):
 			target = auto_objetivo.global_position
 		gancho_manual(delta)
+		
 	actualizar_soga()
 func vehiculo_enganchable(vehiculo: VehicleBody3D) -> void:
 	auto_objetivo = vehiculo
