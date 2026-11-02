@@ -15,6 +15,7 @@ func _ready() -> void:
 	cooldown.visible=false
 	EventBus.cooldown_cambiado.connect(_on_cooldown_cambiado)
 	EventBus.actualizar_cooldown.connect(_on_actualizar_cooldown)
+	EventBus.reset_gancho.connect(_on_reset_gancho)
 	if hud_gancho:
 		escala_original = hud_gancho.scale
 	EventBus.objetivo_cambiado.connect(_on_objetivo_cambiado)
@@ -50,13 +51,16 @@ func _on_objetivo_cambiado(tiene_objetivo: bool) -> void:
 
 
 func _on_cooldown_cambiado(activo: bool) -> void:
+	print("[HUD] _on_cooldown_cambiado recibido con valor: ", activo)
 	if not hud_gancho:
 		return
-	var tween_cooldown = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-
+		
+	if tween_actual and tween_actual.is_running():
+		tween_actual.kill()
+		
+	tween_actual = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	var alfa_final = 0.4 if activo else 1.0
-	
-	tween_cooldown.tween_property(hud_gancho, "modulate:a", alfa_final, 0.2)
+	tween_actual.tween_property(hud_gancho, "modulate:a", alfa_final, 0.2)
 func _on_actualizar_cooldown(tiempo_restante: float) -> void:
 	if not cooldown:
 		return
@@ -68,3 +72,13 @@ func _on_actualizar_cooldown(tiempo_restante: float) -> void:
 		cooldown.text = str(segundos)
 	else:
 		cooldown.visible = false
+func _on_reset_gancho() -> void:
+	if tween_actual and tween_actual.is_running():
+		tween_actual.kill()
+		
+	if hud_gancho:
+		hud_gancho.scale = escala_original
+		hud_gancho.modulate.a = 1.0 
+		
+	if cooldown:
+		cooldown.visible = false 

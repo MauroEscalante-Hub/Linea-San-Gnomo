@@ -22,6 +22,11 @@ var target: Vector3 = Vector3.ZERO
 var auto_objetivo: VehicleBody3D = null
 var objetivo_previo: VehicleBody3D = null
 var estaba_en_cooldown: bool = false
+
+func _ready() -> void:
+	if not EventBus.reset_gancho.is_connected(_on_reset_gancho):
+		EventBus.reset_gancho.connect(_on_reset_gancho)
+
 func activate():
 	set_physics_process(true)
 	set_process(true)
@@ -88,6 +93,12 @@ func atraer() -> void:
 	EventBus.emit_signal("cooldown_cambiado", true)
 	lanzado = false
 	auto_objetivo = null
+func _on_reset_gancho() -> void:
+	cooldown_actual = 0.0
+	estaba_en_cooldown = false
+	auto_objetivo = null
+	objetivo_previo = null
+	lanzado = false
 
 
 func gancho_manual(delta: float) -> void:

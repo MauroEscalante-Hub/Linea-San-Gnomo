@@ -8,6 +8,15 @@ class_name DeteccionGanchovehiculo
 
 
 signal vehiculo_enganchable
+func _ready() -> void:
+	if not EventBus.reset_gancho.is_connected(_on_reset_gancho):
+		EventBus.reset_gancho.connect(_on_reset_gancho)
+func _on_reset_gancho() -> void:
+	auto_actual = null
+	if area_3d:
+		area_3d.monitoring = false
+		area_3d.monitoring = true 
+	EventBus.emit_signal("objetivo_cambiado", false)
 func activate():
 	set_physics_process(true)
 	set_process(true)
