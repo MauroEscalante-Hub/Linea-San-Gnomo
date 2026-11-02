@@ -17,6 +17,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2o31u")
 
+[node name="Label" type="Label" parent="." unique_id=217398349]
+z_index = 1
+layout_mode = 0
+offset_left = 896.0
+offset_top = 508.0
+offset_right = 955.0
+offset_bottom = 651.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0.73333335, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 47
+text = "5"
+
 [node name="balas" type="Sprite2D" parent="." unique_id=2011029619]
 position = Vector2(832.39, 549)
 scale = Vector2(0.075, 0.075)

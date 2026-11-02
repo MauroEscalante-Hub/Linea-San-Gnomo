@@ -21,6 +21,7 @@ var lanzado: bool = false
 var target: Vector3 = Vector3.ZERO
 var auto_objetivo: VehicleBody3D = null
 var objetivo_previo: VehicleBody3D = null
+var estaba_en_cooldown: bool = false
 func activate():
 	set_physics_process(true)
 	set_process(true)
@@ -36,6 +37,13 @@ func desactivate():
 func _physics_process(delta: float) -> void:
 	if cooldown_actual > 0:
 		cooldown_actual -= delta
+		EventBus.emit_signal("actualizar_cooldown", cooldown_actual)
+	if cooldown_actual > 0 and not estaba_en_cooldown:
+		estaba_en_cooldown = true
+		EventBus.emit_signal("cooldown_cambiado", true)
+	elif cooldown_actual <= 0 and estaba_en_cooldown:
+		estaba_en_cooldown = false
+		EventBus.emit_signal("cooldown_cambiado", false)
 	if Input.is_action_just_pressed("gancho") and not lanzado and cooldown_actual <= 0:
 		lanzar()
 		
@@ -77,6 +85,7 @@ func lanzar() -> void:
 		print("[GANCHO] fallo: El RayCast no colisionó con ninguna superficie.")
 func atraer() -> void:
 	if lanzado:cooldown_actual = cooldown
+	EventBus.emit_signal("cooldown_cambiado", true)
 	lanzado = false
 	auto_objetivo = null
 

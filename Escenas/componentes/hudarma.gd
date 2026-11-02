@@ -1,6 +1,7 @@
 extends Control
 @onready var hud_bala: Sprite2D = $balas
 @onready var hud_gancho: Sprite2D = $gancho
+@onready var cooldown: Label = $Label
 
 
 @onready var bala_equipada = true
@@ -11,6 +12,9 @@ var tween_actual: Tween
 func _ready() -> void:
 	hud_bala.visible=true
 	hud_gancho.visible=true
+	cooldown.visible=false
+	EventBus.cooldown_cambiado.connect(_on_cooldown_cambiado)
+	EventBus.actualizar_cooldown.connect(_on_actualizar_cooldown)
 	if hud_gancho:
 		escala_original = hud_gancho.scale
 	EventBus.objetivo_cambiado.connect(_on_objetivo_cambiado)
@@ -42,3 +46,25 @@ func _on_objetivo_cambiado(tiene_objetivo: bool) -> void:
 	
 	tween_actual = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	tween_actual.tween_property(hud_gancho, "scale", escala_final, 0.03)
+
+
+
+func _on_cooldown_cambiado(activo: bool) -> void:
+	if not hud_gancho:
+		return
+	var tween_cooldown = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+	var alfa_final = 0.4 if activo else 1.0
+	
+	tween_cooldown.tween_property(hud_gancho, "modulate:a", alfa_final, 0.2)
+func _on_actualizar_cooldown(tiempo_restante: float) -> void:
+	if not cooldown:
+		return
+		
+	var segundos: int = ceili(tiempo_restante)
+	
+	if segundos > 0:
+		cooldown.visible = true
+		cooldown.text = str(segundos)
+	else:
+		cooldown.visible = false
