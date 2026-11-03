@@ -3,6 +3,7 @@ extends VehicleBody3D
 @export var danio_de_auto: int
 @export var tiempo_de_disparo: float
 @export var tren: VehicleBody3D
+@export var cantidad_de_municion: int
 @onready var centro_de_masa := $"centro de masa"
 @onready var area_del_vehiculo = $deteccion_de_vehiculo
 @onready var control_del_jugador = $controlador_de_jugador
@@ -27,6 +28,7 @@ func _ready() -> void:
 	componentevida.murio.connect(_on_vida_murio)
 	area_del_vehiculo.vehiculo_encontrado.connect(_on_vehiculo_encontrado)
 	mov_auto.tren_nuevo = tren
+	arma_de_jugador.cantidad_de_balas = cantidad_de_municion
 	become_npc()
 	mov_auto._activate()
 	if start_as_player:
