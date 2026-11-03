@@ -206,6 +206,12 @@ size = Vector3(271.48657, 0.021129882, 788.06006)
 [sub_resource type="BoxShape3D" id="BoxShape3D_3xd07"]
 size = Vector3(33.961884, 0.25976563, 26.441162)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6fhyq"]
+size = Vector3(270.72998, 0.052001953, 219.50269)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dwbtc"]
+size = Vector3(87.63916, 0.001, 201.65375)
+
 [node name="Nivel1Mapa1" type="Node3D" unique_id=148612818]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1558179221]
@@ -217,21 +223,21 @@ light_bake_mode = 1
 shadow_enabled = true
 
 [node name="Path3D" type="Path3D" parent="." unique_id=1219090153]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134.11093, 0.09236002, 439.32382)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134.11093, 0.072271824, 439.32382)
 curve = SubResource("Curve3D_dup8j")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=276881758]
-transform = Transform3D(0.9998192, 6.413465e-09, -0.017828401, 2.2203979e-16, 0.99999017, 3.5971917e-07, 0.017828444, -3.5966715e-07, 0.99981683, -1.7182617, -0.4663682, -0.21139526)
+transform = Transform3D(0.9998144, 6.413465e-09, -0.017828355, 2.2203872e-16, 0.99999017, 3.5971823e-07, 0.017828358, -3.5966715e-07, 0.9998142, -1.7182617, -0.4663682, -0.21139526)
 script = ExtResource("1_j5g2l")
 
 [node name="VehicleBody3D" parent="Path3D/PathFollow3D" unique_id=2072145692 instance=ExtResource("1_83n1h")]
-transform = Transform3D(2.655, 1.7763568e-15, 3.7252903e-09, 0, 2.6549997, 0, 0, 1.1368684e-13, 2.6550002, 0, 2.0360365, 0)
+transform = Transform3D(2.6550007, 1.7763568e-15, -7.450581e-09, 5.3290705e-15, 2.6549997, 3.410605e-13, -7.450581e-09, -2.2737368e-13, 2.6550002, 0, 2.1388679, 0)
 
 [node name="Terrain3D" type="Terrain3D" parent="." unique_id=532217389]
 data_directory = "res://Escenas/escenarios/data_de_mapas"
 material = SubResource("Terrain3DMaterial_eu80k")
 assets = SubResource("Terrain3DAssets_6uqdc")
-collision_shape_size = 24
+collision_mode = 3
 collision_layer = 7
 collision_mask = 3
 cast_shadows = 0
@@ -240,7 +246,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="jugador" parent="." unique_id=1604139032 instance=ExtResource("2_1gonj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.24106, 2.990591, 445.13596)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.24106, 1.4823804, 445.13596)
 
 [node name="agua" type="MeshInstance3D" parent="." unique_id=562420754]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -384.9355, -10.316027, -470.48602)
@@ -273,6 +279,31 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.175842, -0.010585789, 132.68665)
 shape = SubResource("BoxShape3D_jq8tk")
 
+[node name="Piso_2" type="StaticBody3D" parent="." unique_id=50313697]
+collision_layer = 7
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Piso_2" unique_id=635688232]
+transform = Transform3D(0.7117434, 0, -0.70243955, 0, 1, 0, 0.70243955, 0, 0.7117434, -55.634037, 9.824863, -172.71175)
+shape = SubResource("BoxShape3D_3xd07")
+
+[node name="Piso_3" type="StaticBody3D" parent="." unique_id=1071469375]
+collision_layer = 7
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Piso_3" unique_id=834611128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -401.25146, -0.47399902, -225.20978)
+shape = SubResource("BoxShape3D_6fhyq")
+
+[node name="Piso_4" type="StaticBody3D" parent="." unique_id=1253449168]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -353.46423, -20.453384, -482.0088)
+collision_layer = 7
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Piso_4" unique_id=761748569]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.3729384, -9.238861, 9.85385, 11.089752)
+shape = SubResource("BoxShape3D_dwbtc")
+
 [node name="Hudarma" parent="." unique_id=1431327253 instance=ExtResource("18_fon06")]
 
 [node name="Despertar_enemigos" parent="." unique_id=1136637638 node_paths=PackedStringArray("enemigos") instance=ExtResource("19_peni2")]
@@ -282,14 +313,6 @@ enemigos = [NodePath("../enemigo")]
 [node name="Despertar_enemigos2" parent="." unique_id=141201125 node_paths=PackedStringArray("enemigos") instance=ExtResource("19_peni2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -136.64357, 7.8408184, -19.352234)
 enemigos = [NodePath("../enemigo2")]
-
-[node name="Piso_2" type="StaticBody3D" parent="." unique_id=50313697]
-collision_layer = 7
-collision_mask = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Piso_2" unique_id=635688232]
-transform = Transform3D(0.7117434, 0, -0.70243955, 0, 1, 0, 0.70243955, 0, 0.7117434, -55.634037, 9.824863, -172.71175)
-shape = SubResource("BoxShape3D_3xd07")
 
 [node name="enemigo2" parent="." unique_id=1008029146 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
 transform = Transform3D(-0.6854163, 0, 0.72815144, 0, 1, 0, -0.72815144, 0, -0.6854163, -58.825607, 11.65085, -170.37921)
