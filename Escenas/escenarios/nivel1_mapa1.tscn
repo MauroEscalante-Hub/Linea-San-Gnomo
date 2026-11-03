@@ -200,7 +200,7 @@ size = Vector3(70.29286, 1, 273.6246)
 size = Vector3(3.169983, 2.6669922, 3.7095947)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jq8tk"]
-size = Vector3(96.10726, 0.021129882, 922.91797)
+size = Vector3(91.99856, 0.021129882, 922.91797)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6fhyq"]
 size = Vector3(42.158463, 0.16552734, 49.74353)
@@ -286,7 +286,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Piso_invisible3" unique_id=1276917500]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -355.1324, -0.010585789, -36.047363)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -357.1867, -0.010585789, -36.047363)
 shape = SubResource("BoxShape3D_jq8tk")
 
 [node name="Hudarma" parent="." unique_id=1431327253 instance=ExtResource("18_fon06")]
