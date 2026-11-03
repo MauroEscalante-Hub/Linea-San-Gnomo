@@ -75,6 +75,8 @@ func vehiculo_enganchable(vehiculo: VehicleBody3D) -> void:
 func lanzar() -> void:
 	if is_instance_valid(auto_objetivo):
 		target = auto_objetivo.global_position
+		if player.global_position.distance_to(target) > 60:
+			return
 		lanzado = true
 		if sonido_gancho: sonido_gancho.play()
 		print("[GANCHO] ¡Enganchado! Velocidad lineal al lanzar: ", player.linear_velocity, " | Rapidez: ", player.linear_velocity.length())
