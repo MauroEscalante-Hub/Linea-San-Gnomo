@@ -51,3 +51,8 @@ func get_relations_from_direction(direction: Vector3) -> Basis:
 	direction = direction.normalized()
 	var x_axis = direction.cross(Vector3.UP).normalized()
 	return Basis(x_axis, Vector3.UP, -direction)
+	
+func _input(event):
+	if event is InputEventMouseMotion:
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+			rotate_y(deg_to_rad(-event.relative.x * sensivilidad_horizontal))
