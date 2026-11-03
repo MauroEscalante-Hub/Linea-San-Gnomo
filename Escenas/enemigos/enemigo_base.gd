@@ -30,7 +30,6 @@ func _ready() -> void:
 	mov_auto.tren_nuevo = tren
 	arma_de_jugador.cantidad_de_balas = cantidad_de_municion
 	become_npc()
-	mov_auto._activate()
 	if start_as_player:
 		GameManager.set_player(self)
 		
