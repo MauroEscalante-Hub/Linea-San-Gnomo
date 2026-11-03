@@ -22,6 +22,7 @@ func deactivate() -> void:
 
 func _process(delta):
 	if Input.is_action_just_pressed("cambiar_de_auto") and nuevo_vehiculo:
+		EventBus.emit_signal("reset_gancho")
 		print("CONTROL: input detectado, nuevo_vehiculo = ", nuevo_vehiculo)
 		GameManager.set_player(nuevo_vehiculo)
 		Metrics.record_add("saltos",1)

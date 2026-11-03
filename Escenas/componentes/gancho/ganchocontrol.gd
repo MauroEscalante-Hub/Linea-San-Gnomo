@@ -10,15 +10,22 @@ extends Node
 @export var sonido_gancho: AudioStreamPlayer3D
 @export var gancho:bool=false
 @export var velocidad_maxima: float = 35.0
-@export var fuerza_maxima_permitida = 9000.0
+#@export var fuerza_maxima_permitida = 9000.0
+@export var cooldown: float = 5.0
 
 
 
 @onready var player: VehicleBody3D = get_parent()
-
+var cooldown_actual: float = 0.0
 var lanzado: bool = false
 var target: Vector3 = Vector3.ZERO
 var auto_objetivo: VehicleBody3D = null
+var objetivo_previo: VehicleBody3D = null
+var estaba_en_cooldown: bool = false
+
+func _ready() -> void:
+	if not EventBus.reset_gancho.is_connected(_on_reset_gancho):
+		EventBus.reset_gancho.connect(_on_reset_gancho)
 
 func activate():
 	set_physics_process(true)
@@ -33,16 +40,33 @@ func desactivate():
 	if detector and detector.vehiculo_enganchable.is_connected(vehiculo_enganchable):
 		detector.vehiculo_enganchable.disconnect(vehiculo_enganchable)
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("gancho"):
+	if cooldown_actual > 0:
+		cooldown_actual -= delta
+		EventBus.emit_signal("actualizar_cooldown", cooldown_actual)
+	if cooldown_actual > 0 and not estaba_en_cooldown:
+		estaba_en_cooldown = true
+		EventBus.emit_signal("cooldown_cambiado", true)
+	elif cooldown_actual <= 0 and estaba_en_cooldown:
+		estaba_en_cooldown = false
+		EventBus.emit_signal("cooldown_cambiado", false)
+	if Input.is_action_just_pressed("gancho") and not lanzado and cooldown_actual <= 0:
 		lanzar()
 		
-	if Input.is_action_just_released("gancho"):
+	if Input.is_action_just_released("gancho")and lanzado:
 		atraer()
 		
 	if lanzado:
 		if is_instance_valid(auto_objetivo):
 			target = auto_objetivo.global_position
 		gancho_manual(delta)
+	if auto_objetivo != objetivo_previo:
+		if auto_objetivo != null:
+			print("[EVENTBUS] Auto detectado -> Emitiendo TRUE")
+			
+		else:
+			print("[EVENTBUS] Auto salió de la zona -> Emitiendo FALSE")
+			
+		objetivo_previo = auto_objetivo
 	actualizar_soga()
 func vehiculo_enganchable(vehiculo: VehicleBody3D) -> void:
 	auto_objetivo = vehiculo
@@ -65,8 +89,16 @@ func lanzar() -> void:
 	else:
 		print("[GANCHO] fallo: El RayCast no colisionó con ninguna superficie.")
 func atraer() -> void:
+	if lanzado:cooldown_actual = cooldown
+	EventBus.emit_signal("cooldown_cambiado", true)
 	lanzado = false
 	auto_objetivo = null
+func _on_reset_gancho() -> void:
+	cooldown_actual = 0.0
+	estaba_en_cooldown = false
+	auto_objetivo = null
+	objetivo_previo = null
+	lanzado = false
 
 
 func gancho_manual(delta: float) -> void:

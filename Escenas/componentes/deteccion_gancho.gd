@@ -8,6 +8,15 @@ class_name DeteccionGanchovehiculo
 
 
 signal vehiculo_enganchable
+func _ready() -> void:
+	if not EventBus.reset_gancho.is_connected(_on_reset_gancho):
+		EventBus.reset_gancho.connect(_on_reset_gancho)
+func _on_reset_gancho() -> void:
+	auto_actual = null
+	if area_3d:
+		area_3d.monitoring = false
+		area_3d.monitoring = true 
+	EventBus.emit_signal("objetivo_cambiado", false)
 func activate():
 	set_physics_process(true)
 	set_process(true)
@@ -18,6 +27,7 @@ func desactivate():
 	set_process(false)
 	area_3d.monitoring = false
 	auto_actual = null
+	EventBus.emit_signal("objetivo_cambiado", false)
 func _physics_process(delta: float) -> void:
 	if is_instance_valid(player):
 		
@@ -34,6 +44,7 @@ func _on_area_3d_body_entered(body) -> void:
 		
 		if body.is_in_group("enemigos") or body.is_in_group("tren"):
 			vehiculo_enganchable.emit(auto_actual)
+			EventBus.emit_signal("objetivo_cambiado", false)
 		else:
 			return
 
@@ -48,3 +59,4 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 		if auto_actual == body:
 			auto_actual = null
 			print("[GANCHO] Objetivo totalmente desvinculado.")
+			EventBus.emit_signal("objetivo_cambiado", true)

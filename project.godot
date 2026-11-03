@@ -23,6 +23,7 @@ buses/default_bus_layout="uid://dtumkcjqnn6yu"
 
 GameManager="*uid://cxmnfguj72fdi"
 Metrics="*uid://brjgfifo5jchv"
+EventBus="*uid://dh7mdysjlh5uj"
 
 [display]
 
