@@ -2,7 +2,7 @@ class_name CocheJugador
 extends VehicleBody3D
 @export var start_as_player: bool = false
 @export var tren: VehicleBody3D
-@onready var centro_de_masa := $"centro de masa"
+@onready var centro_de_masa = Vector3(0, 0, 0)
 @onready var area_del_vehiculo = $deteccion_de_vehiculo
 @onready var control_del_jugador = $controlador_de_jugador
 @onready var gancho=$Ganchocontrol
@@ -19,6 +19,7 @@ var nuevo_vehiculo: VehicleBody3D
 
 
 func _ready() -> void:
+	center_of_mass = centro_de_masa
 	componente_vida.murio.connect(_on_vida_murio)
 	area_del_vehiculo.vehiculo_encontrado.connect(_on_vehiculo_encontrado)
 	mov_auto.tren_nuevo = tren

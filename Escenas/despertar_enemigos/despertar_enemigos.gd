@@ -9,6 +9,7 @@ func _ready():
 
 func _process(delta):
 	#ALGO que diga, dormir enemigos hasta que pase la funcion de despertar enemigos
+	#ya está
 	pass
 
 func dormir_enemigos():
@@ -18,7 +19,6 @@ func dormir_enemigos():
 
 func despertar_enemigos():
 	print("DESPERTANDO ENEMIGOS")
-
 	for enemigo in enemigos:
 		if is_instance_valid(enemigo):
 			print("Despertando: ", enemigo.name)

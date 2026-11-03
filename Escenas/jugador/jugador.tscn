@@ -96,7 +96,7 @@ layers = 16
 mesh = SubResource("CylinderMesh_0ru8o")
 
 [node name="centro de masa" type="Node3D" parent="." unique_id=783383178]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17721605, -0.44497806)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.367051, -0.25693512)
 
 [node name="camara" parent="." unique_id=1265065216 node_paths=PackedStringArray("player") instance=ExtResource("5_jkpmm")]
 player = NodePath("..")
@@ -126,7 +126,6 @@ player = NodePath("..")
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0.195, -1)
 player = NodePath("..")
 danio_del_jugador = 15
-cantidad_de_balas = 3
 
 [node name="Vida" parent="." unique_id=2126800800 node_paths=PackedStringArray("player") instance=ExtResource("10_j2gbx")]
 player = NodePath("..")
