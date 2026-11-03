@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://pmc2plsrtcig" path="res://Escenas/Tren/Vagon.tscn" id="1_83n1h"]
 [ext_resource type="Texture2D" uid="uid://ddprscrpsofah" path="res://Assets/3d/textures/ground037_alb_ht.png" id="1_ieg26"]
 [ext_resource type="Script" uid="uid://cmv6ib0nhjx2s" path="res://Escenas/path_follow_3d.gd" id="1_j5g2l"]
-[ext_resource type="PackedScene" uid="uid://dxp4h38x38m4e" path="res://Escenas/Tren/ruta.tscn" id="1_poqtm"]
 [ext_resource type="PackedScene" uid="uid://c0nrh27b7fyac" path="res://Assets/3d/models/Grass_1.fbx" id="1_yvhl4"]
 [ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://Escenas/jugador/jugador.tscn" id="2_1gonj"]
 [ext_resource type="PackedScene" uid="uid://dvpxhrcghlpod" path="res://Assets/3d/models/Grass_2.fbx" id="2_p5k44"]
@@ -224,7 +223,7 @@ light_bake_mode = 1
 shadow_enabled = true
 
 [node name="Path3D" type="Path3D" parent="." unique_id=1219090153]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134.11093, 0.072271824, 439.32382)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.82, 0.16, 219.745)
 curve = SubResource("Curve3D_dup8j")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D" unique_id=1008634163]
@@ -242,14 +241,11 @@ path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
 
-[node name="ruta" parent="." unique_id=622969983 instance=ExtResource("1_poqtm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134.11093, 0.072271824, 439.32382)
-
-[node name="PathFollow3D" type="PathFollow3D" parent="ruta" unique_id=276881758]
-transform = Transform3D(0.7463962, 0, 0.6654617, 0, 0.99999017, 0, -0.66546184, 0, 0.74639606, -1e-45, 0, -1.0248778)
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=276881758]
+transform = Transform3D(0.9998144, 6.413465e-09, -0.017828355, 2.2203872e-16, 0.99999017, 3.5971823e-07, 0.017828358, -3.5966715e-07, 0.9998142, -1.7182617, -0.4663682, -0.21139526)
 script = ExtResource("1_j5g2l")
 
-[node name="VehicleBody3D" parent="ruta/PathFollow3D" unique_id=2072145692 instance=ExtResource("1_83n1h")]
+[node name="VehicleBody3D" parent="Path3D/PathFollow3D" unique_id=2072145692 instance=ExtResource("1_83n1h")]
 transform = Transform3D(2.6550007, 1.7763568e-15, -7.450581e-09, 5.3290705e-15, 2.6549997, 3.410605e-13, -7.450581e-09, -2.2737368e-13, 2.6550002, 0, 2.1388679, 0)
 
 [node name="Terrain3D" type="Terrain3D" parent="." unique_id=532217389]
@@ -280,7 +276,7 @@ mesh = SubResource("BoxMesh_3xd07")
 [node name="enemigo" parent="." unique_id=983398332 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
 transform = Transform3D(0.6920651, 0, -0.7218351, 0, 1, 0, 0.7218351, 0, 0.6920651, -200.06577, 2.7313004, 252.87859)
 danio_de_auto = 1
-tren = NodePath("../ruta/PathFollow3D/VehicleBody3D")
+tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 10
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1125904984]
@@ -337,9 +333,9 @@ enemigos = [NodePath("../enemigo2")]
 
 [node name="enemigo2" parent="." unique_id=1008029146 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
 transform = Transform3D(-0.6854163, 0, 0.72815144, 0, 1, 0, -0.72815144, 0, -0.6854163, -58.825607, 11.65085, -170.37921)
-tren = NodePath("../ruta/PathFollow3D/VehicleBody3D")
+tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 10
 
 [connection signal="area_entered" from="Area3D" to="Area3D" method="_on_area_entered"]
-[connection signal="body_entered" from="Area3D" to="ruta/PathFollow3D" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Area3D" to="Path3D/PathFollow3D" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
