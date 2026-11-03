@@ -313,7 +313,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -138
 enemigos = [NodePath("../enemigo")]
 
 [node name="despertar_enemigos2" parent="." unique_id=306366141 node_paths=PackedStringArray("enemigos") instance=ExtResource("19_peni2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111.11812, 0, 8.702118)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -133.37032, 0, 8.702118)
 enemigos = [NodePath("../enemigo2")]
 
 [connection signal="area_entered" from="Area3D" to="Area3D" method="_on_area_entered"]
