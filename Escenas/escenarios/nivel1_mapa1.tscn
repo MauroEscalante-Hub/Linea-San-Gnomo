@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://14tjj1vngcuo" path="res://Escenas/enemigos/enemigo_base.tscn" id="16_rk4vk"]
 [ext_resource type="Script" uid="uid://qrsyxphpdw6t" path="res://Escenas/escenarios/final_nivel1.gd" id="17_g68db"]
 [ext_resource type="PackedScene" uid="uid://b0w31mc2k6qos" path="res://Escenas/componentes/Hudarma.tscn" id="18_fon06"]
+[ext_resource type="PackedScene" uid="uid://bmt7dendj5og2" path="res://Escenas/despertar_enemigos/despertar_enemigos.tscn" id="19_peni2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_084nl"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -200,10 +201,10 @@ size = Vector3(70.29286, 1, 273.6246)
 size = Vector3(3.169983, 2.6669922, 3.7095947)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jq8tk"]
-size = Vector3(91.99856, 0.021129882, 922.91797)
+size = Vector3(271.48657, 0.021129882, 788.06006)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_6fhyq"]
-size = Vector3(42.158463, 0.16552734, 49.74353)
+[sub_resource type="BoxShape3D" id="BoxShape3D_3xd07"]
+size = Vector3(33.961884, 0.25976563, 26.441162)
 
 [node name="Nivel1Mapa1" type="Node3D" unique_id=148612818]
 
@@ -220,7 +221,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134.11093, 0.09236002, 439.3
 curve = SubResource("Curve3D_dup8j")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=276881758]
-transform = Transform3D(0.9998273, 6.413465e-09, -0.017828511, 2.2204159e-16, 0.99999017, 3.5972135e-07, 0.01782859, -3.5966715e-07, 0.999823, -1.7182617, -0.4663682, -0.21139526)
+transform = Transform3D(0.9998192, 6.413465e-09, -0.017828401, 2.2203979e-16, 0.99999017, 3.5971917e-07, 0.017828444, -3.5966715e-07, 0.99981683, -1.7182617, -0.4663682, -0.21139526)
 script = ExtResource("1_j5g2l")
 
 [node name="VehicleBody3D" parent="Path3D/PathFollow3D" unique_id=2072145692 instance=ExtResource("1_83n1h")]
@@ -239,7 +240,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="jugador" parent="." unique_id=1604139032 instance=ExtResource("2_1gonj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.24106, 2.990591, 426.4402)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.24106, 2.990591, 445.13596)
 
 [node name="agua" type="MeshInstance3D" parent="." unique_id=562420754]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -384.9355, -10.316027, -470.48602)
@@ -250,9 +251,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.585297, 8.933193, -502.11
 mesh = SubResource("BoxMesh_3xd07")
 
 [node name="enemigo" parent="." unique_id=983398332 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
-transform = Transform3D(0.6920651, 0, -0.7218351, 0, 1, 0, 0.7218351, 0, 0.6920651, -141.7541, 4.489004, 389.22498)
+transform = Transform3D(0.6920651, 0, -0.7218351, 0, 1, 0, 0.7218351, 0, 0.6920651, -200.06577, 2.7313004, 252.87859)
 danio_de_auto = 1
 tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
+cantidad_de_municion = 10
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1125904984]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -430.9635, 1.9043074, -1202.707)
@@ -264,32 +266,35 @@ shape = SubResource("BoxShape3D_g68db")
 
 [node name="Piso_invisible1" type="StaticBody3D" parent="." unique_id=14207858]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101.59822, 0, 0)
-collision_layer = 3
+collision_layer = 7
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Piso_invisible1" unique_id=1169056475]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -146.16374, -0.010585789, 65.25769)
-shape = SubResource("BoxShape3D_jq8tk")
-
-[node name="Piso_invisible2" type="StaticBody3D" parent="." unique_id=494339054]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.56476, 15.429794, -168.56017)
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Piso_invisible2" unique_id=554726763]
-transform = Transform3D(0.72818995, 0, 0.68537533, 0, 1, 0, -0.68537533, 0, 0.72818995, 15.027344, -5.526532, -5.024292)
-shape = SubResource("BoxShape3D_6fhyq")
-
-[node name="Piso_invisible3" type="StaticBody3D" parent="." unique_id=622485487]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101.59822, 0, -768.59607)
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Piso_invisible3" unique_id=1276917500]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -357.1867, -0.010585789, -36.047363)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.175842, -0.010585789, 132.68665)
 shape = SubResource("BoxShape3D_jq8tk")
 
 [node name="Hudarma" parent="." unique_id=1431327253 instance=ExtResource("18_fon06")]
+
+[node name="Despertar_enemigos" parent="." unique_id=1136637638 node_paths=PackedStringArray("enemigos") instance=ExtResource("19_peni2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -137.11014, 2.5532322, 242.3836)
+enemigos = [NodePath("../enemigo")]
+
+[node name="Despertar_enemigos2" parent="." unique_id=141201125 node_paths=PackedStringArray("enemigos") instance=ExtResource("19_peni2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -136.64357, 7.8408184, -19.352234)
+enemigos = [NodePath("../enemigo2")]
+
+[node name="Piso_2" type="StaticBody3D" parent="." unique_id=50313697]
+collision_layer = 7
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Piso_2" unique_id=635688232]
+transform = Transform3D(0.7117434, 0, -0.70243955, 0, 1, 0, 0.70243955, 0, 0.7117434, -55.634037, 9.824863, -172.71175)
+shape = SubResource("BoxShape3D_3xd07")
+
+[node name="enemigo2" parent="." unique_id=1008029146 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
+transform = Transform3D(-0.6854163, 0, 0.72815144, 0, 1, 0, -0.72815144, 0, -0.6854163, -58.825607, 11.65085, -170.37921)
+tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
+cantidad_de_municion = 10
 
 [connection signal="area_entered" from="Area3D" to="Area3D" method="_on_area_entered"]
 [connection signal="body_entered" from="Area3D" to="Path3D/PathFollow3D" method="_on_area_3d_body_entered"]
