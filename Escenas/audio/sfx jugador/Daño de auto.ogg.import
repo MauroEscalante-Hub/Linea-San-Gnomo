@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cfqgjplptgbgt"
+path="res://.godot/imported/Daño de auto.ogg-82302e12027ce6d59991b9edd561654a.oggvorbisstr"
+
+[deps]
+
+source_file="res://Escenas/audio/sfx jugador/Daño de auto.ogg"
+dest_files=["res://.godot/imported/Daño de auto.ogg-82302e12027ce6d59991b9edd561654a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

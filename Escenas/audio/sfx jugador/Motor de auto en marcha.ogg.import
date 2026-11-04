@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cpita2lu6rm20"
+path="res://.godot/imported/Motor de auto en marcha.ogg-84aac8f1cdc3e0813f2bd0e6361f3d46.oggvorbisstr"
+
+[deps]
+
+source_file="res://Escenas/audio/sfx jugador/Motor de auto en marcha.ogg"
+dest_files=["res://.godot/imported/Motor de auto en marcha.ogg-84aac8f1cdc3e0813f2bd0e6361f3d46.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

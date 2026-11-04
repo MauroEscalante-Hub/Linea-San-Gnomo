@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cxxyhwd4p2ytd"
+path="res://.godot/imported/Motor de auto quieto.ogg-7f1283e57f12054554ca15a5c915f1cc.oggvorbisstr"
+
+[deps]
+
+source_file="res://Escenas/audio/sfx jugador/Motor de auto quieto.ogg"
+dest_files=["res://.godot/imported/Motor de auto quieto.ogg-7f1283e57f12054554ca15a5c915f1cc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
