@@ -11,16 +11,19 @@ var tren_nuevo: VehicleBody3D
 var objetivo: Node3D
 
 func _ready():
+	set_physics_process(false)
 	if player == null and get_parent() is VehicleBody3D:
 		player = get_parent() as VehicleBody3D
 
 func _activate():
+	print("ACTIVANDO: ", player.name, " | Componente: ", get_instance_id())
 	set_physics_process(true)
 
 func _desactivate():
 	set_physics_process(false)
 
 func _physics_process(delta):
+	print("MOVIÉNDOSE: ", player.name)
 	if tren_nuevo == null:
 		player.engine_force = 0.0
 		return

@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://Escenas/jugador/jugador.tscn" id="1_p7yi8"]
 [ext_resource type="Script" uid="uid://cfvgp2c7kn8pi" path="res://Escenas/grayboxing/csg_box_3d_13.gd" id="1_ubdkq"]
-[ext_resource type="PackedScene" uid="uid://dxp4h38x38m4e" path="res://Escenas/Tren/ruta.tscn" id="2_3sjby"]
+[ext_resource type="PackedScene" uid="uid://dxp4h38x38m4e" path="res://Escenas/tren/ruta.tscn" id="2_3sjby"]
 [ext_resource type="Script" uid="uid://cmv6ib0nhjx2s" path="res://Escenas/path_follow_3d.gd" id="3_ls4l5"]
-[ext_resource type="PackedScene" uid="uid://pmc2plsrtcig" path="res://Escenas/Tren/Vagon.tscn" id="4_abgxn"]
+[ext_resource type="PackedScene" uid="uid://pmc2plsrtcig" path="res://Escenas/tren/Vagon.tscn" id="4_abgxn"]
 [ext_resource type="PackedScene" uid="uid://14tjj1vngcuo" path="res://Escenas/enemigos/enemigo_base.tscn" id="5_abgxn"]
 [ext_resource type="Texture2D" uid="uid://bp2ne783mtgq2" path="res://Assets/sprites/linea san gnomo.png" id="6_jdi07"]
 [ext_resource type="Texture2D" uid="uid://duxaws04hjpng" path="res://Assets/sprites/linea san gnomo lleno.png" id="7_v08ue"]
@@ -369,30 +369,22 @@ transform = Transform3D(0.04439661, 0, -0.999014, 0, 1, 0, 0.999014, 0, 0.044396
 danio_de_auto = 15
 tren = NodePath("../ruta/PathFollow3D/VehicleBody3D")
 
-[node name="enemigo3" parent="." unique_id=1454583338 node_paths=PackedStringArray("tren") instance=ExtResource("5_abgxn")]
-transform = Transform3D(-0.8872212, 0, 0.4613442, 0, 1, 0, -0.4613442, 0, -0.8872212, 191.0878, 25.472683, -456.92255)
-danio_de_auto = 20
-tren = NodePath("../ruta/PathFollow3D/VehicleBody3D")
-
-[node name="enemigo4" parent="." unique_id=1650145344 node_paths=PackedStringArray("tren") instance=ExtResource("5_abgxn")]
-transform = Transform3D(-0.99983937, 0, -0.017929852, 0, 1, 0, 0.017929852, 0, -0.99983937, 164.8659, 24.569557, -486.742)
-tiempo_de_disparo = 0.5
-tren = NodePath("../ruta/PathFollow3D/VehicleBody3D")
-
-[node name="enemigo5" parent="." unique_id=1206498695 node_paths=PackedStringArray("tren") instance=ExtResource("5_abgxn")]
-transform = Transform3D(-0.8734247, 0, 0.48695946, 0, 1, 0, -0.48695946, 0, -0.8734247, 214.68076, 27.802624, -558.3195)
-danio_de_auto = 20
-tren = NodePath("../ruta/PathFollow3D/VehicleBody3D")
-
-[node name="enemigo6" parent="." unique_id=1367795055 node_paths=PackedStringArray("tren") instance=ExtResource("5_abgxn")]
-transform = Transform3D(-0.99895257, 0, 0.0457606, 0, 1, 0, -0.0457606, 0, -0.99895257, 183.12628, 22.240501, -396.76956)
-danio_de_auto = 20
-tren = NodePath("../ruta/PathFollow3D/VehicleBody3D")
-
 [node name="Hudarma" parent="." unique_id=1431327253 instance=ExtResource("9_v08ue")]
 
-[node name="Despertar_enemigos2" parent="." unique_id=1207850807 node_paths=PackedStringArray("enemigos") instance=ExtResource("10_l4vq8")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 67.233536, 0.93242264, 4.6753616)
-enemigos = [NodePath("../enemigo2"), NodePath("../enemigo")]
+[node name="Area3D" parent="." unique_id=487979080 node_paths=PackedStringArray("enemigos") instance=ExtResource("10_l4vq8")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 64.547455, 0.8776188, 6.163803)
+enemigos = [NodePath("../enemigo"), NodePath("../enemigo2")]
+
+[node name="despertar_enemigos" parent="." unique_id=104979705 node_paths=PackedStringArray("enemigos") instance=ExtResource("10_l4vq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 174.76422, 0.91320896, -118.33864)
+enemigos = [NodePath("../enemigo3"), NodePath("../enemigo4")]
+
+[node name="enemigo3" parent="." unique_id=1364654135 node_paths=PackedStringArray("tren") instance=ExtResource("5_abgxn")]
+transform = Transform3D(-0.9991813, 0, 0.04045797, 0, 1, 0, -0.04045797, 0, -0.9991813, 177.22755, 29.335876, -457.2716)
+tren = NodePath("../ruta/PathFollow3D/VehicleBody3D")
+
+[node name="enemigo4" parent="." unique_id=1611452678 node_paths=PackedStringArray("tren") instance=ExtResource("5_abgxn")]
+transform = Transform3D(-0.9835469, 0, 0.18065298, 0, 1, 0, -0.18065298, 0, -0.9835469, 192.80675, 29.335876, -496.83273)
+tren = NodePath("../ruta/PathFollow3D/VehicleBody3D")
 
 [connection signal="body_entered" from="Curva_y_final/CSGBox3D13/Area3D" to="Curva_y_final/CSGBox3D13" method="_on_area_3d_body_entered"]
