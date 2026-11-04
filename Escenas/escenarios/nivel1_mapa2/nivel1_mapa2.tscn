@@ -4,13 +4,18 @@
 [ext_resource type="Script" uid="uid://cmv6ib0nhjx2s" path="res://Escenas/path_follow_3d.gd" id="1_lsltb"]
 [ext_resource type="PackedScene" uid="uid://pmc2plsrtcig" path="res://Escenas/Tren/Vagon.tscn" id="1_u7ql4"]
 [ext_resource type="PackedScene" uid="uid://duhswckhasixx" path="res://Assets/3d/models/002_Pine_Tree.fbx" id="2_ott3n"]
+[ext_resource type="Texture2D" uid="uid://b08mhytstwmjr" path="res://Assets/sprites/linea san gnomo mapa2.png" id="3_0b23c"]
 [ext_resource type="Texture2D" uid="uid://cd5egavsecmpd" path="res://Assets/3d/textures/1_1024x1024.png" id="3_b60p1"]
 [ext_resource type="PackedScene" uid="uid://dvpxhrcghlpod" path="res://Assets/3d/models/Grass_2.fbx" id="3_ka7gl"]
+[ext_resource type="Texture2D" uid="uid://cyb6iqlumk8qf" path="res://Assets/sprites/linea san gnomo mapa2 lleno.png" id="4_6e6np"]
 [ext_resource type="Texture2D" uid="uid://cyr5gcnw480v" path="res://Assets/3d/textures/41_1024x1024.png" id="4_namh5"]
 [ext_resource type="PackedScene" uid="uid://c8t6xx27byp3q" path="res://Assets/3d/models/Plant_1.fbx" id="4_u7ql4"]
 [ext_resource type="PackedScene" uid="uid://srwpnqxvjnft" path="res://Assets/3d/models/Rock_1.fbx" id="5_lsltb"]
 [ext_resource type="Texture2D" uid="uid://c88j3oj0lf6om" path="res://Assets/3d/textures/rock023_alb_ht.png" id="5_namh5"]
 [ext_resource type="Material" uid="uid://d35brrdubjnxg" path="res://Assets/shaders/new_shader_material.tres" id="6_xnbar"]
+[ext_resource type="Script" uid="uid://e44ibaa2s7vf" path="res://Escenas/escenarios/nivel1_mapa2/final_nivel1_mapa2.gd" id="12_5qsy4"]
+[ext_resource type="PackedScene" uid="uid://14tjj1vngcuo" path="res://Escenas/enemigos/enemigo_base.tscn" id="13_fr77n"]
+[ext_resource type="PackedScene" uid="uid://b0w31mc2k6qos" path="res://Escenas/componentes/Hudarma.tscn" id="14_f7jbi"]
 
 [sub_resource type="Curve3D" id="Curve3D_lsltb"]
 _data = {
@@ -161,6 +166,9 @@ size = Vector3(0.8031006, 7.720703, 152.73853)
 [sub_resource type="BoxShape3D" id="BoxShape3D_jq8tk"]
 size = Vector3(24.422089, 6.040039, 24.481834)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6fhyq"]
+size = Vector3(3.5825195, 5.818222, 3.390564)
+
 [node name="Nivel1Mapa2" type="Node3D" unique_id=178108371]
 
 [node name="Path3D" type="Path3D" parent="." unique_id=1484183513]
@@ -168,10 +176,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.54568, 0.39843845, 1738.32
 curve = SubResource("Curve3D_lsltb")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1142436273]
-transform = Transform3D(0.99999213, 0, 0.0039647054, 0, 1, 0, -0.0039647054, 0, 0.99999213, 0.016105652, -9.536743e-07, -13.675903)
+transform = Transform3D(0.9999908, 0, 0.0039647003, 0, 1, 0, -0.0039647003, 0, 0.9999908, 0.016105652, -9.536743e-07, -13.675903)
 script = ExtResource("1_lsltb")
 
 [node name="VehicleBody3D" parent="Path3D/PathFollow3D" unique_id=2072145692 instance=ExtResource("1_u7ql4")]
+transform = Transform3D(2.655, 0, 0, 0, 2.6545956, 0.046336137, 0, -0.046336137, 2.6545956, 0, 0, 0)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Path3D/PathFollow3D" unique_id=65218588]
+offset_left = 214.0
+offset_top = -15.0
+offset_right = 2134.0
+offset_bottom = 1065.0
+scale = Vector2(0.16, 0.16)
+texture_under = ExtResource("3_0b23c")
+texture_progress = ExtResource("4_6e6np")
 
 [node name="jugador" parent="." unique_id=1604139032 instance=ExtResource("1_byw73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.448524, 3.3419847, 1738.3246)
@@ -185,7 +203,6 @@ data_directory = "res://Escenas/escenarios/nivel1_mapa2/data_mapa2/"
 material = SubResource("Terrain3DMaterial_xnbar")
 assets = SubResource("Terrain3DAssets_fr77n")
 label_distance = 1.0
-collision_mode = 3
 collision_layer = 7
 collision_mask = 3
 top_level = true
@@ -212,3 +229,19 @@ collision_mask = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=1554041239]
 transform = Transform3D(1.5925674, 0, 0, 0, 1, 0, 0, 0, 7.480861, -17.936089, 2.5200195, -41.752075)
 shape = SubResource("BoxShape3D_jq8tk")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1654097813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.347897, 3.0414224, 174.60567)
+script = ExtResource("12_5qsy4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1267800944]
+transform = Transform3D(1.48, 0, 0, 0, 1.48, 0, 0, 0, 1.48, 5.5975533, 1.0559254, 3.1720276)
+shape = SubResource("BoxShape3D_6fhyq")
+
+[node name="enemigo" parent="." unique_id=31478625 node_paths=PackedStringArray("tren") instance=ExtResource("13_fr77n")]
+transform = Transform3D(0.58500564, 0, -0.81102926, 0, 1, 0, 0.81102926, 0, 0.58500564, 14.961712, 2.5752258, 1316.0933)
+tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
+
+[node name="Hudarma" parent="." unique_id=1431327253 instance=ExtResource("14_f7jbi")]
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
