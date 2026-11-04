@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cxjgukrweax0e"]
 
-[ext_resource type="Texture2D" uid="uid://ch5rrkfuqjnqt" path="res://Escenas/escenas_contexto/WhatsApp Image 2026-10-08 at 15.40.11.jpeg" id="1_4dcxp"]
 [ext_resource type="Texture2D" uid="uid://dfga1u6022wag" path="res://Escenas/escenas_contexto/WhatsApp Image 2026-10-20 at 23.57.13.jpeg" id="1_mtb87"]
 [ext_resource type="Script" uid="uid://bbr0ri7xqm2t7" path="res://Escenas/escenas_contexto/contexto.gd" id="1_r0bnu"]
+[ext_resource type="Texture2D" uid="uid://btbrudxovnrql" path="res://Assets/models/fototren.jpeg" id="3_r0bnu"]
 
 [node name="Contexto" type="Sprite3D" unique_id=1475658816]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3730092, 0)
@@ -12,7 +12,7 @@ script = ExtResource("1_r0bnu")
 transform = Transform3D(0.98604053, 0, 0.16650552, 0, 1, 0, -0.16650552, 0, 0.98604053, 2.8070173, 0.3014233, 2.2134204)
 
 [node name="Label3D" type="Label3D" parent="." unique_id=1766513332]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.050544262, 1.3288517, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26906228, 1.0146983, 0)
 outline_modulate = Color(0.06469653, 0.06469653, 0.06469653, 1)
 text = "Mision:
 Debes escoltar al tren hasta que
@@ -26,15 +26,9 @@ perderás.
 
 [node name="Label3D3" type="Label3D" parent="." unique_id=1100420061]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35466123, 0)
-text = "CONTROLES:
-Movimiento: WASD
-Disparar: Click izquierdo
-Zoom: Click derecho
-Gancho: ruda del raton
-Saltar de vehículo: E"
 
 [node name="Sprite3D2" type="Sprite3D" parent="." unique_id=635951676]
-transform = Transform3D(0.2994939, 0, 0, 0, 0.32037684, 0, 0, 0, 1.2010105, 2.4689746, -0.53317726, -0.12250924)
+transform = Transform3D(0.2994939, 0, 0, 0, 0.32037684, 0, 0, 0, 1.2010105, 1.2292941, -0.79955816, -0.12250924)
 texture = ExtResource("1_mtb87")
 
 [node name="Label3D2" type="Label3D" parent="Sprite3D2" unique_id=1411219103]
@@ -43,8 +37,8 @@ fixed_size = true
 text = "Enemigo"
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1213638917]
-transform = Transform3D(0.3938504, 0, 0, 0, 0.40480536, 0, 0, 0, 1.2010105, 3.0763083, 1.0448117, -0.35016298)
-texture = ExtResource("1_4dcxp")
+transform = Transform3D(0.3938504, 0, 0, 0, 0.40480536, 0, 0, 0, 1.2010105, 3.2112474, 0.696398, -0.35016298)
+texture = ExtResource("3_r0bnu")
 
 [node name="Label3D2" type="Label3D" parent="Sprite3D" unique_id=932221519]
 transform = Transform3D(1.8955599, 0, 0, 0, 1.9450707, 0, 0, 0, 0.8326321, -0.24939394, 1.6386104, 0.29155695)
