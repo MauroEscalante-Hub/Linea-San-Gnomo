@@ -26,7 +26,6 @@ func despertar_enemigos():
 
 
 func _on_area_3d_body_entered(body):
-	print("entro algo, soy area de activacion ", body.name)
 	var vehiculo = body.get_parent()
 	if vehiculo is VehicleBody3D:
 		print("ES EL VEHÍCULO: ", vehiculo.name)

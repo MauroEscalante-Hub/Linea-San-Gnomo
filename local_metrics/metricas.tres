@@ -5,16 +5,23 @@
 
 [sub_resource type="Resource" id="Resource_dhv6p"]
 script = ExtResource("1_bd08t")
-metric_id = "saltos"
+metric_id = "saltos_por_boton "
 value = 0
 metadata/_custom_type_script = "uid://d0rhmy7dfjibk"
 
 [sub_resource type="Resource" id="Resource_t36d1"]
 script = ExtResource("1_bd08t")
+metric_id = "saltos_por_vida "
+value = 0
+metadata/_custom_type_script = "uid://d0rhmy7dfjibk"
+
+[sub_resource type="Resource" id="Resource_j3pel"]
+script = ExtResource("1_bd08t")
+metric_id = "saltos_por_balas "
 value = 0
 metadata/_custom_type_script = "uid://d0rhmy7dfjibk"
 
 [resource]
 script = ExtResource("2_ogc6w")
-metrics = Array[ExtResource("1_bd08t")]([SubResource("Resource_dhv6p"), SubResource("Resource_t36d1")])
+metrics = Array[ExtResource("1_bd08t")]([SubResource("Resource_dhv6p"), SubResource("Resource_t36d1"), SubResource("Resource_j3pel")])
 metadata/_custom_type_script = "uid://u3ruhi6dfjny"
