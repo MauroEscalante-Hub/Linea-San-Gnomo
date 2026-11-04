@@ -79,6 +79,8 @@ func lanzar() -> void:
 		if player.global_position.distance_to(target) > 60:
 			return
 		lanzado = true
+		Metrics.record_add("nroGanchos",1)
+		Metrics.record_add("Contra",auto_objetivo.name)
 		if sonido_gancho: sonido_gancho.play()
 		print("[GANCHO] ¡Enganchado! Velocidad lineal al lanzar: ", player.linear_velocity, " | Rapidez: ", player.linear_velocity.length())
 		return
@@ -86,9 +88,10 @@ func lanzar() -> void:
 	if ray.is_colliding():
 		target = ray.get_collision_point()
 		lanzado = true
-		
+		Metrics.record_add("nroGanchos",1)
+		Metrics.record_add("Contra",ray.get_collider().name)
 		sonido_gancho.play()
-		print("[GANCHO] ¡choco!: ", target, " | con: ", ray.get_collider().name)
+		#print("[GANCHO] ¡choco!: ", target, " | con: ", ray.get_collider().name)
 	else:
 		print("[GANCHO] fallo: El RayCast no colisionó con ninguna superficie.")
 func atraer() -> void:
