@@ -30,8 +30,8 @@ theme_override_font_sizes/font_size = 47
 text = "5"
 
 [node name="balas" type="Sprite2D" parent="." unique_id=2011029619]
-position = Vector2(832.39, 549)
-scale = Vector2(0.075, 0.075)
+position = Vector2(807, 546.00006)
+scale = Vector2(0.105, 0.105)
 texture = ExtResource("1_5vkdq")
 
 [node name="gancho" type="Sprite2D" parent="." unique_id=477010507]
@@ -39,20 +39,31 @@ position = Vector2(902.025, 541.025)
 scale = Vector2(0.075, 0.075)
 texture = ExtResource("2_2o31u")
 
-[node name="cantidadBalas" type="Label" parent="." unique_id=693006818]
+[node name="Balacontainer" type="HSplitContainer" parent="." unique_id=297902017]
 layout_mode = 0
-offset_left = 826.0
-offset_top = 561.0
-offset_right = 866.0
-offset_bottom = 597.0
+offset_left = 772.0
+offset_top = 533.0
+offset_right = 833.0
+offset_bottom = 617.0
+split_offsets = PackedInt32Array(15, 34)
+split_offset = 15
+
+[node name="cantidadBalas" type="Label" parent="Balacontainer" unique_id=693006818]
+layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="balasRestantes" type="Label" parent="." unique_id=1426035401]
-layout_mode = 0
-offset_left = 804.0
-offset_top = 560.0
-offset_right = 844.0
-offset_bottom = 596.0
+[node name="barra" type="Label" parent="Balacontainer" unique_id=57643667]
+layout_mode = 2
+text = "/"
+vertical_alignment = 3
+
+[node name="balasRestantes" type="Label" parent="Balacontainer" unique_id=1426035401]
+layout_mode = 2
+size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 26
 text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1

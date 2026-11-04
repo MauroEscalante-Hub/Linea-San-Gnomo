@@ -2,8 +2,9 @@ extends Control
 @onready var hud_bala: Sprite2D = $balas
 @onready var hud_gancho: Sprite2D = $gancho
 @onready var cooldown: Label = $cooldownGancho
-@onready var cantidad_balas: Label = $cantidadBalas
-@onready var balas_restantes: Label = $balasRestantes
+
+@onready var balas_restantes: Label = $Balacontainer/balasRestantes
+@onready var cantidad_balas: Label = $Balacontainer/cantidadBalas
 
 
 @onready var bala_equipada = true
@@ -87,7 +88,7 @@ func _on_reset_gancho() -> void:
 	if cooldown:
 		cooldown.visible = false 
 func _on_tamaño_cargador(cantidadbalas: int) -> void:
-	$cantidadBalas.text = str(cantidadbalas)
+	$Balacontainer/balasRestantes.text = str(cantidadbalas)
 
 func _on_balas_actuales(balarestantes: int) -> void:
-	$balasRestantes.text = str(balarestantes) 
+	$Balacontainer/cantidadBalas.text = str(balarestantes) 
