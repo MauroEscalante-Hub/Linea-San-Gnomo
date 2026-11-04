@@ -30,5 +30,7 @@ func _on_tuto_4_body_entered(body: Node3D) -> void:
 	texto5.visible = false
 	chuchu.play("textofinal")
 	await  chuchu.animation_finished
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().change_scene_to_file("res://Escenas/escenas_contexto/contexto.tscn")
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	pass # Replace with function body.

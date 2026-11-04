@@ -237,7 +237,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134.11093, 0.072271824, 439.
 curve = SubResource("Curve3D_dup8j")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=276881758]
-transform = Transform3D(0.9998144, 6.413465e-09, -0.017828355, 2.2203872e-16, 0.99999017, 3.5971823e-07, 0.017828358, -3.5966715e-07, 0.9998142, -1.7182617, -0.4663682, -0.21139526)
+transform = Transform3D(0.99981385, 6.413465e-09, -0.017828349, 2.220386e-16, 0.99999017, 3.597181e-07, 0.017828349, -3.5966715e-07, 0.99981385, -1.7182617, -0.4663682, -0.21139526)
 script = ExtResource("1_j5g2l")
 
 [node name="VehicleBody3D" parent="Path3D/PathFollow3D" unique_id=2072145692 instance=ExtResource("1_83n1h")]

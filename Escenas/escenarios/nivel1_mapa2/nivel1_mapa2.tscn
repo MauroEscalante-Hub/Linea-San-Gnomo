@@ -177,7 +177,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.54568, 0.39843845, 1738.32
 curve = SubResource("Curve3D_lsltb")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1142436273]
-transform = Transform3D(0.9999904, 0, 0.0039646984, 0, 1, 0, -0.0039646984, 0, 0.9999904, 0.016105652, -9.536743e-07, -13.675903)
+transform = Transform3D(0.99998987, 0, 0.0039646965, 0, 1, 0, -0.0039646965, 0, 0.99998987, 0.016105652, -9.536743e-07, -13.675903)
 script = ExtResource("1_lsltb")
 
 [node name="VehicleBody3D" parent="Path3D/PathFollow3D" unique_id=2072145692 instance=ExtResource("1_u7ql4")]
@@ -200,7 +200,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="Label3D" type="Label3D" parent="." unique_id=1346867736]
-transform = Transform3D(-0.19024928, 0, -0.90018904, 0, 1.7093334, 0, 1.9944792, 0, -0.08586719, 139.47931, 2.2628727, 1223.6937)
+transform = Transform3D(-0.40346667, 0, -0.80395544, 0, 3.3447523, 0, 4.2297444, 0, -0.076687664, 139.47931, 2.2628727, 1223.6937)
 modulate = Color(0.67306656, 0.051422648, 0.22002602, 1)
 text = "<3"
 font_size = 200
