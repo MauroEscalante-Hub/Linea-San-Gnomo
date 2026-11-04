@@ -17,7 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2o31u")
 
-[node name="Label" type="Label" parent="." unique_id=217398349]
+[node name="cooldownGancho" type="Label" parent="." unique_id=217398349]
 z_index = 1
 layout_mode = 0
 offset_left = 896.0

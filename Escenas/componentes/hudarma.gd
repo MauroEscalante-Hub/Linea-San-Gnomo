@@ -1,7 +1,7 @@
 extends Control
 @onready var hud_bala: Sprite2D = $balas
 @onready var hud_gancho: Sprite2D = $gancho
-@onready var cooldown: Label = $Label
+@onready var cooldown: Label = $cooldownGancho
 
 
 @onready var bala_equipada = true
