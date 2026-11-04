@@ -8,7 +8,7 @@ extends PathFollow3D
 @onready var barra_de_tren = $TextureProgressBar
 @onready var progreso = $"."
 func _process(delta: float):
-	var distancia=Locomotora.global_position.distance_to(jugador.global_position)
+	var distancia=Locomotora.global_position.distance_to(GameManager.current_player.global_position)
 	if  distancia >=  DistanciaMax:
 		progress_ratio += (VelocidadNormal-(VelocidadNormal*Desaceleracion))*delta
 	else:
