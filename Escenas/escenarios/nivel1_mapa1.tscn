@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://pmc2plsrtcig" path="res://Escenas/Tren/Vagon.tscn" id="1_83n1h"]
 [ext_resource type="Texture2D" uid="uid://ddprscrpsofah" path="res://Assets/3d/textures/ground037_alb_ht.png" id="1_ieg26"]
 [ext_resource type="Script" uid="uid://cmv6ib0nhjx2s" path="res://Escenas/path_follow_3d.gd" id="1_j5g2l"]
+[ext_resource type="Script" uid="uid://csy1o0jeb104u" path="res://Escenas/escenarios/nivel_1_mapa_1.gd" id="1_poqtm"]
 [ext_resource type="PackedScene" uid="uid://c0nrh27b7fyac" path="res://Assets/3d/models/Grass_1.fbx" id="1_yvhl4"]
 [ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://Escenas/jugador/jugador.tscn" id="2_1gonj"]
 [ext_resource type="PackedScene" uid="uid://dvpxhrcghlpod" path="res://Assets/3d/models/Grass_2.fbx" id="2_p5k44"]
@@ -64,6 +65,10 @@ _shader_parameters = {
 &"bias_distance": null,
 &"blend_sharpness": null,
 &"depth_blur": null,
+&"dual_scale_far": null,
+&"dual_scale_near": null,
+&"dual_scale_reduction": null,
+&"dual_scale_texture": null,
 &"enable_macro_variation": null,
 &"enable_projection": null,
 &"flat_terrain_normals": null,
@@ -76,9 +81,11 @@ _shader_parameters = {
 &"noise1_scale": null,
 &"noise2_scale": null,
 &"noise_texture": SubResource("NoiseTexture2D_qvli7"),
-&"projection_threshold": null
+&"projection_threshold": null,
+&"tri_scale_reduction": null
 }
 world_background = 0
+dual_scaling = true
 
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_eu80k"]
 name = "RockB"
@@ -213,6 +220,7 @@ size = Vector3(270.72998, 0.052001953, 219.50269)
 size = Vector3(87.63916, 0.001, 201.65375)
 
 [node name="Nivel1Mapa1" type="Node3D" unique_id=148612818]
+script = ExtResource("1_poqtm")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1558179221]
 environment = SubResource("Environment_ieg26")
@@ -238,10 +246,10 @@ data_directory = "res://Escenas/escenarios/data_de_mapas"
 material = SubResource("Terrain3DMaterial_eu80k")
 assets = SubResource("Terrain3DAssets_6uqdc")
 collision_mode = 3
-collision_shape_size = 48
 collision_radius = 80
 collision_layer = 7
 collision_mask = 3
+mesh_size = 52
 cast_shadows = 0
 gi_mode = 0
 top_level = true
