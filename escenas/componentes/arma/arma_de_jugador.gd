@@ -9,6 +9,7 @@ extends Node3D
 @export var danio_del_jugador: int
 @export var cadencia: float
 @export var cantidad_de_balas: int
+var cargador:int=0
 @export var balas: PackedScene
 var puede_disparar := true
 
@@ -19,6 +20,11 @@ func _ready():
 func activate():
 	sprite_mira.visible = true
 	set_process(true)
+	cargador=cantidad_de_balas
+	_emitir_datos_hud.call_deferred()
+func _emitir_datos_hud() -> void:
+	EventBus.emit_signal("tamañodecargador", cantidad_de_balas)
+	EventBus.emit_signal("balasactuales", cantidad_de_balas)
 
 func desactivate():
 	sprite_mira.visible = false
@@ -51,6 +57,7 @@ func disparo():
 	balita.set_direccion(direccion)
 	
 	cantidad_de_balas -= 1
+	EventBus.emit_signal("balasactuales", cantidad_de_balas)
 	
 	puede_disparar = false
 	await get_tree().create_timer(cadencia).timeout

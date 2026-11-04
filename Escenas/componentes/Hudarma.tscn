@@ -38,3 +38,21 @@ texture = ExtResource("1_5vkdq")
 position = Vector2(902.025, 541.025)
 scale = Vector2(0.075, 0.075)
 texture = ExtResource("2_2o31u")
+
+[node name="cantidadBalas" type="Label" parent="." unique_id=693006818]
+layout_mode = 0
+offset_left = 826.0
+offset_top = 561.0
+offset_right = 866.0
+offset_bottom = 597.0
+theme_override_font_sizes/font_size = 26
+text = "0"
+
+[node name="balasRestantes" type="Label" parent="." unique_id=1426035401]
+layout_mode = 0
+offset_left = 804.0
+offset_top = 560.0
+offset_right = 844.0
+offset_bottom = 596.0
+theme_override_font_sizes/font_size = 26
+text = "3"

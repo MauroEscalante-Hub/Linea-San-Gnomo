@@ -2,6 +2,8 @@ extends Control
 @onready var hud_bala: Sprite2D = $balas
 @onready var hud_gancho: Sprite2D = $gancho
 @onready var cooldown: Label = $cooldownGancho
+@onready var cantidad_balas: Label = $cantidadBalas
+@onready var balas_restantes: Label = $balasRestantes
 
 
 @onready var bala_equipada = true
@@ -16,6 +18,8 @@ func _ready() -> void:
 	EventBus.cooldown_cambiado.connect(_on_cooldown_cambiado)
 	EventBus.actualizar_cooldown.connect(_on_actualizar_cooldown)
 	EventBus.reset_gancho.connect(_on_reset_gancho)
+	EventBus.balasactuales.connect(_on_balas_actuales)
+	EventBus.tamañodecargador.connect(_on_tamaño_cargador)
 	if hud_gancho:
 		escala_original = hud_gancho.scale
 	EventBus.objetivo_cambiado.connect(_on_objetivo_cambiado)
@@ -82,3 +86,8 @@ func _on_reset_gancho() -> void:
 		
 	if cooldown:
 		cooldown.visible = false 
+func _on_tamaño_cargador(cantidadbalas: int) -> void:
+	$cantidadBalas.text = str(cantidadbalas)
+
+func _on_balas_actuales(balarestantes: int) -> void:
+	$balasRestantes.text = str(balarestantes) 
