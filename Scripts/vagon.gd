@@ -8,7 +8,7 @@ extends VehicleBody3D
 var esta_muerto: bool = false
 
 @onready var sonidostren: Node3D = $sonidostren
-
+@onready var explota= $sonidostren/Muerte
 
 
 func _ready() -> void:
@@ -17,16 +17,16 @@ func _ready() -> void:
 		marcadores.append(i)
 
 func morir_tren() -> void:
+	explota.play()
 	esta_muerto = true
 	set_physics_process(false)
-	Metrics.record_add("muertes_tren", 1)
-	Metrics.record_add("donde_murio_tren", self.global_position)
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(3.0).timeout
 	get_tree().change_scene_to_file("res://Escenas/derrota tren.tscn")
 
 func recibir_danio(cantidad: int, es_del_jugador: bool = false) -> void:
 	if esta_muerto:
 		return
+		
 	vida -= cantidad
 	sonidostren.play_hit()
 

@@ -6,11 +6,30 @@ extends Node3D
 @export var velocidad_de_giro := 10
 @export var engine_power := 100
 @onready var aguja = $velocimetro/aguja
+@onready var motor_marcha= $en_marcha
+@onready var motor_quieto= $quieto
+@onready var frenando = $freno
 
+
+	
 func _physics_process(delta):
 	player.steering = lerp(player.steering, Input.get_axis("derecha","izquierda") * max_steer, velocidad_de_giro * delta)
 	player.engine_force = Input.get_axis("frenar", "avanzar") * engine_power
 	movimiento_aguja(player)
+	if !Input.is_action_pressed("avanzar") and !Input.is_action_pressed("frenar"):
+		motor_quieto.play()
+	if Input.is_action_pressed("avanzar"):
+		if !motor_marcha.playing:
+			motor_quieto.stop()
+			motor_marcha.play()
+	if !Input.is_action_pressed("avanzar"):
+		motor_quieto.play()
+	if Input.is_action_pressed("frenar"):
+		motor_marcha.stop()
+		frenando.play()
+	
+		
+	
 	pass
 
 func movimineto_activado():

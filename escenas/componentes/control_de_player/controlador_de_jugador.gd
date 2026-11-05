@@ -3,6 +3,7 @@ extends Node
 
 @export var vehiculo: VehicleBody3D
 var nuevo_vehiculo: VehicleBody3D
+@onready var sonido_motor: AudioStreamPlayer3D=$"auto quieto"
 
 func _ready() -> void:
 	if vehiculo == null and get_parent() is VehicleBody3D:
@@ -16,9 +17,11 @@ func activate() -> void:
 	set_physics_process(true)
 	set_process(true)
 
+
 func deactivate() -> void:
 	set_physics_process(false)
 	set_process(false)
+	
 
 func _process(delta):
 	if Input.is_action_just_pressed("cambiar_de_auto") and nuevo_vehiculo:

@@ -18,6 +18,7 @@ var nuevo_vehiculo: VehicleBody3D
 
 
 
+
 func _ready() -> void:
 	center_of_mass = centro_de_masa
 	componente_vida.murio.connect(_on_vida_murio)
@@ -26,6 +27,7 @@ func _ready() -> void:
 	become_npc()
 	if start_as_player:
 		GameManager.set_player(self)
+	
 
 func become_player() -> void:
 	control_del_jugador.activate()

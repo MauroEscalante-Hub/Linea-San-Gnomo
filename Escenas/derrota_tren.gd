@@ -1,4 +1,5 @@
 extends Node2D
+#@onready var se_mato = $sonidostren/Muerte
 
 @export var escenario_actual = PackedScene
 
