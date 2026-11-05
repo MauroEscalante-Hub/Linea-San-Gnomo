@@ -34,15 +34,6 @@ sky_material = SubResource("ProceduralSkyMaterial_084nl")
 background_mode = 2
 sky = SubResource("Sky_g7di0")
 
-[sub_resource type="Curve3D" id="Curve3D_dup8j"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.7182617, -0.4663682, -0.21139526, 0, 0, 0, 0, 0, 0, -0.9620056, -0.46638346, -42.622253, 0, 0, 0, 0, 0, 0, -1.2299347, -0.46638346, -101.90518, 0, 0, 0, 0, 0, 0, -3.0225372, -0.46638346, -267.15887, 0, 0, 0, 0, 0, 0, -1.7937012, -0.46638346, -411.5322, 0, 0, 0, 0, 0, 0, -1.3211517, -0.46638346, -485.6598, 0, 0, 0, 0, 0, 0, -6.3180847, -0.46638346, -517.02997, 0, 0, 0, 0, 0, 0, -20.13263, -0.46638346, -534.72986, 0, 0, 0, 0, 0, 0, -44.52394, -0.46638346, -544.4432, 0, 0, 0, 0, 0, 0, -81.2294, -0.46638346, -557.4542, 0, 0, 0, 0, 0, 0, -114.90234, -0.46638346, -580.5504, 0, 0, 0, 0, 0, 0, -205.38864, -0.46638346, -654.15674, 0, 0, 0, 0, 0, 0, -249.30145, -0.46638346, -699.7682, 0, 0, 0, 0, 0, 0, -263.28134, -0.46638346, -733.41254, 0, 0, 0, 0, 0, 0, -276.17325, -0.46638346, -809.10974, 0, 0, 0, 0, 0, 0, -280.26962, -0.46638346, -894.14905, 0, 0, 0, 0, 0, 0, -285.3243, -0.46638346, -986.1803, 0, 0, 0, 0, 0, 0, -291.68845, -0.46638346, -1117.7085, 0, 0, 0, 0, 0, 0, -295.72354, -0.46638346, -1222.4905, 0, 0, 0, 0, 0, 0, -297.71567, -0.46638346, -1332.8741, 0, 0, 0, 0, 0, 0, -298.58847, -0.46638346, -1478.4923, 0, 0, 0, 0, 0, 0, -297.993, -0.46638346, -1591.7761, 0, 0, 0, 0, 0, 0, -296.2869, -0.46638346, -1642.4924, 0, 0, 0, 0, 0, 0, -550.0558, -75.133446, -1723.8027),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-}
-point_count = 24
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_j3pel"]
-
 [sub_resource type="Gradient" id="Gradient_1gonj"]
 offsets = PackedFloat32Array(0.2, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -217,6 +208,13 @@ size = Vector3(270.72998, 0.052001953, 219.50269)
 [sub_resource type="BoxShape3D" id="BoxShape3D_dwbtc"]
 size = Vector3(87.63916, 0.001, 201.65375)
 
+[sub_resource type="Curve3D" id="Curve3D_ydg2l"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.17575073, 0.00012207031, -0.24935913, 0, 0, 0, 0, 0, 0, -0.9442749, 0.00012207031, -64.64633, 0, 0, 0, 0, 0, 0, -0.89082336, 0, -239.38892, 0, 0, 0, 0, 0, 0, 0.672699, -3.0517578e-05, -349.49976, 0, 0, 0, 0, 0, 0, 3.4537354, -3.0517578e-05, -468.59494, 0, 0, 0, 0, 0, 0, -16.165863, -1.5258789e-05, -523.38104, 0, 0, 0, 0, 0, 0, -49.65512, -1.5258789e-05, -551.37, 0, 0, 0, 0, 0, 0, -79.9391, 0, -575.07587, 0, 0, 0, 0, 0, 0, -136.38599, -0.44799805, -615.25507, 0, 0, 0, 0, 0, 0, -202.54138, -0.4479828, -664.6036, 0, 0, 0, 0, 0, 0, -234.27466, -0.4479828, -701.4835, 0, 0, 0, 0, 0, 0, -263.57104, -0.4479828, -743.38477, 0, 0, 0, 0, 0, 0, -284.92798, -0.19551086, -808.58575, 0, 0, 0, 0, 0, 0, -289.21503, -0.09374595, -852.43994, 0, 0, 0, 0, 0, 0, -287.4212, 0.37843132, -1040.2223, 0, 0, 0, 0, 0, 0, -290.15057, 0.32047844, -1159.0957, 0, 0, 0, 0, 0, 0, -290.24817, 0.39123344, -1252.5432, 0, 0, 0, 0, 0, 0, -295.48364, -0.26966858, -1337.4144, 0, 0, 0, 0, 0, 0, -298.55975, -0.13226128, -1484.1034, 0, 0, 0, 0, 0, 0, -294.1077, 0.74713135, -1642.9955),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 20
+
 [node name="Nivel1Mapa1" type="Node3D" unique_id=148612818]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1558179221]
@@ -226,42 +224,6 @@ environment = SubResource("Environment_ieg26")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, -122.105194, 162.0508, -41.938057)
 light_bake_mode = 1
 shadow_enabled = true
-
-[node name="Path3D" type="Path3D" parent="." unique_id=1219090153]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134.165, 0.495, 437.875)
-curve = SubResource("Curve3D_dup8j")
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D" unique_id=1008634163]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, -1.8626451e-09, -2.842171e-14, 0.99999994, 133.67, 0.535, -434.75)
-polygon = PackedVector2Array(-0.048858643, 0.1495325, -0.020477295, 0.24938178, 0.61680603, 0.2571237, 0.7118988, 0.1711964)
-mode = 2
-path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 0.53
-path_simplify_angle = 0.0
-path_rotation = 2
-path_rotation_accurate = false
-path_local = false
-path_continuous_u = true
-path_u_distance = 1.0
-path_joined = false
-material = SubResource("ShaderMaterial_j3pel")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=276881758 node_paths=PackedStringArray("barrita_tren")]
-transform = Transform3D(0.9998119, 6.4134573e-09, -0.01782833, 2.2203816e-16, 0.999989, 3.597177e-07, 0.017828314, -3.596667e-07, 0.9998128, -1.7182617, -0.4663682, -0.21139526)
-script = ExtResource("1_j5g2l")
-barrita_tren = NodePath("../TextureProgressBar")
-
-[node name="VehicleBody3D" parent="Path3D/PathFollow3D" unique_id=2072145692 instance=ExtResource("1_83n1h")]
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Path3D" unique_id=1687710927]
-offset_left = 216.0
-offset_top = -20.0
-offset_right = 2136.0
-offset_bottom = 1060.0
-scale = Vector2(0.16, 0.16)
-texture_under = ExtResource("3_0akap")
-texture_progress = ExtResource("4_wd27f")
 
 [node name="Terrain3D" type="Terrain3D" parent="." unique_id=532217389]
 data_directory = "res://Escenas/escenarios/data_de_mapas"
@@ -289,12 +251,6 @@ mesh = SubResource("BoxMesh_3xd07")
 [node name="agua2" type="MeshInstance3D" parent="agua" unique_id=796989597]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.585297, 8.933193, -502.1162)
 mesh = SubResource("BoxMesh_3xd07")
-
-[node name="enemigo" parent="." unique_id=983398332 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
-transform = Transform3D(0.6920651, 0, -0.7218351, 0, 1, 0, 0.7218351, 0, 0.6920651, -200.06577, 2.7313004, 252.87859)
-danio_de_auto = 12
-tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
-cantidad_de_municion = 15
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1125904984]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -430.9635, 1.9043074, -1202.707)
@@ -348,46 +304,52 @@ enemigos = [NodePath("../enemigo4"), NodePath("../enemigo5"), NodePath("../enemi
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -425.68735, 3.8166094, -649.4864)
 enemigos = [NodePath("../enemigo7"), NodePath("../enemigo8")]
 
+[node name="enemigo" parent="." unique_id=983398332 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
+transform = Transform3D(0.6920651, 0, -0.7218351, 0, 1, 0, 0.7218351, 0, 0.6920651, -186.36212, 2.7313004, 241.29501)
+danio_de_auto = 12
+tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
+cantidad_de_municion = 15
+
 [node name="enemigo3" parent="." unique_id=109289377 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
-transform = Transform3D(-0.6854163, 0, 0.72815144, 0, 1, 0, -0.72815144, 0, -0.6854163, -48.393425, 11.65085, -172.03096)
+transform = Transform3D(-0.6854163, 0, 0.72815144, 0, 1, 0, -0.72815144, 0, -0.6854163, -56.915077, 11.65085, -165.83519)
 danio_de_auto = 6
 tiempo_de_disparo = 0.1
 tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 10
 
 [node name="enemigo2" parent="." unique_id=1008029146 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
-transform = Transform3D(-0.6854163, 0, 0.72815144, 0, 1, 0, -0.72815144, 0, -0.6854163, -58.825607, 11.65085, -170.37921)
+transform = Transform3D(-0.6854163, 0, 0.72815144, 0, 1, 0, -0.72815144, 0, -0.6854163, -62.875927, 11.65085, -167.87668)
 danio_de_auto = 15
 tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 20
 
 [node name="enemigo4" parent="." unique_id=1748169763 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
-transform = Transform3D(0.7751453, -0.03189542, -0.6309773, -1.69e-09, 0.9987249, -0.050484776, 0.631783, 0.03913304, 0.7741568, -434.74643, 3.327857, -237.90732)
+transform = Transform3D(0.7751453, -0.03189542, -0.6309773, -1.69e-09, 0.9987249, -0.050484776, 0.631783, 0.03913304, 0.7741568, -427.88068, 3.327857, -247.38838)
 danio_de_auto = 16
 tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 25
 
 [node name="enemigo5" parent="." unique_id=2054652360 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
-transform = Transform3D(0.77389723, 0, -0.6333112, 0, 1, 0, 0.6333112, 0, 0.77389723, -432.76648, 3.6565928, -229.5711)
+transform = Transform3D(0.77389723, 0, -0.6333112, 0, 1, 0, 0.6333112, 0, 0.77389723, -425.08435, 3.6565928, -239.39244)
 danio_de_auto = 15
 tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 20
 
 [node name="enemigo6" parent="." unique_id=1728780624 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
-transform = Transform3D(0.77389723, 0, -0.6333112, 0, 1, 0, 0.6333112, 0, 0.77389723, -432.76648, 3.6565928, -248.13284)
+transform = Transform3D(0.77389723, 0, -0.6333112, 0, 1, 0, 0.6333112, 0, 0.77389723, -427.66324, 3.6565928, -256.70544)
 danio_de_auto = 15
 tiempo_de_disparo = 2.0
 tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 7
 
 [node name="enemigo7" parent="." unique_id=1451317321 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
-transform = Transform3D(0.68080723, 0, 0.7324627, 0, 1, 0, -0.7324627, 0, 0.68080723, -368.90802, 2.888907, -811.2721)
+transform = Transform3D(0.68080723, 0, 0.7324627, 0, 1, 0, -0.7324627, 0, 0.68080723, -387.72934, 2.888907, -819.48413)
 tiempo_de_disparo = 0.5
 tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 15
 
 [node name="enemigo8" parent="." unique_id=853247696 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
-transform = Transform3D(0.70652294, 0, 0.7076902, 0, 1, 0, -0.7076902, 0, 0.70652294, -373.68176, 2.5765905, -800.77295)
+transform = Transform3D(0.70652294, 0, 0.7076902, 0, 1, 0, -0.7076902, 0, 0.70652294, -389.50757, 2.5765905, -804.41364)
 danio_de_auto = 25
 tiempo_de_disparo = 4.0
 tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
@@ -401,6 +363,25 @@ enemigos = [NodePath("../enemigo2"), NodePath("../enemigo3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -137.20372, 2.568544, 304.97662)
 enemigos = [NodePath("../enemigo")]
 
+[node name="Path3D" type="Path3D" parent="." unique_id=1089647206]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135.2992, 0, 445.36758)
+curve = SubResource("Curve3D_ydg2l")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=532694705 node_paths=PackedStringArray("barrita_tren")]
+transform = Transform3D(0.99988437, 0, 0.011932787, 0, 1, 0, -0.011932787, 0, 0.99988437, -0.17575073, 0.00012207031, -0.24935913)
+script = ExtResource("1_j5g2l")
+barrita_tren = NodePath("TextureProgressBar")
+
+[node name="VehicleBody3D" parent="Path3D/PathFollow3D" unique_id=2072145692 instance=ExtResource("1_83n1h")]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Path3D/PathFollow3D" unique_id=612170537]
+offset_left = 219.0
+offset_top = -14.0
+offset_right = 2139.0
+offset_bottom = 1066.0
+scale = Vector2(0.16, 0.16)
+texture_under = ExtResource("3_0akap")
+texture_progress = ExtResource("4_wd27f")
+
 [connection signal="area_entered" from="Area3D" to="Area3D" method="_on_area_entered"]
-[connection signal="body_entered" from="Area3D" to="Path3D/PathFollow3D" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
