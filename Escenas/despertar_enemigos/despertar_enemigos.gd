@@ -33,8 +33,8 @@ func despertar_enemigos():
 	set_deferred("monitoring", false)
 
 
-func _on_body_entered(body):
-	print("entro algo, soy area de activacion ", body.name)
-	if body is VehicleBody3D:
-		print("ES EL VEHÍCULO: ", body.name)
+func _on_area_3d_body_entered(body):
+	var vehiculo = body.get_parent()
+	if vehiculo is VehicleBody3D:
+		print("ES EL VEHÍCULO: ", vehiculo.name)
 		despertar_enemigos()
