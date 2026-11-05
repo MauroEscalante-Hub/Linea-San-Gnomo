@@ -194,7 +194,7 @@ texture_under = ExtResource("3_0b23c")
 texture_progress = ExtResource("4_6e6np")
 
 [node name="jugador" parent="." unique_id=1604139032 instance=ExtResource("1_byw73")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.448524, 3.3419847, 1738.3246)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.448524, 3.3419847, 1721.5841)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1301377698]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -250,12 +250,25 @@ shape = SubResource("BoxShape3D_6fhyq")
 
 [node name="enemigo" parent="." unique_id=31478625 node_paths=PackedStringArray("tren") instance=ExtResource("13_fr77n")]
 transform = Transform3D(0.58500564, 0, -0.81102926, 0, 1, 0, 0.81102926, 0, 0.58500564, 14.961712, 2.5752258, 1316.0933)
+danio_de_auto = 13
 tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
+cantidad_de_municion = 12
+
+[node name="enemigo2" parent="." unique_id=1013898319 node_paths=PackedStringArray("tren") instance=ExtResource("13_fr77n")]
+transform = Transform3D(0.59108186, 0, 0.8066116, 0, 1, 0, -0.8066116, 0, 0.59108186, 122.36734, 1.6141534, 1164.3198)
+danio_de_auto = 15
+tiempo_de_disparo = 0.5
+tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
+cantidad_de_municion = 20
 
 [node name="Hudarma" parent="." unique_id=1431327253 instance=ExtResource("14_f7jbi")]
 
-[node name="Despertar_enemigos" parent="." unique_id=1136637638 node_paths=PackedStringArray("enemigos") instance=ExtResource("17_6e6np")]
-transform = Transform3D(0.58500564, 0, -0.81102926, 0, 1, 0, 0.81102926, 0, 0.58500564, 71.076035, 1.3208609, 1325.8682)
+[node name="despertar_enemigos" parent="." unique_id=487979080 node_paths=PackedStringArray("enemigos") instance=ExtResource("17_6e6np")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.88297, 1.6141534, 1362.1714)
 enemigos = [NodePath("../enemigo")]
+
+[node name="despertar_enemigos2" parent="." unique_id=1092981296 node_paths=PackedStringArray("enemigos") instance=ExtResource("17_6e6np")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.257, 1.6, 1193.962)
+enemigos = [NodePath("../enemigo2")]
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

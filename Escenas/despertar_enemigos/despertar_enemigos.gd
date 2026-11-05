@@ -33,8 +33,16 @@ func despertar_enemigos():
 	set_deferred("monitoring", false)
 
 
-func _on_area_3d_body_entered(body):
+#func _on_area_3d_body_entered(body):
+	#var vehiculo = body.get_parent()
+	#if vehiculo is VehicleBody3D:
+		#print("ES EL VEHÍCULO: ", vehiculo.name)
+		#despertar_enemigos()
+
+
+func _on_body_entered(body: Node3D) -> void:
 	var vehiculo = body.get_parent()
 	if vehiculo is VehicleBody3D:
 		print("ES EL VEHÍCULO: ", vehiculo.name)
 		despertar_enemigos()
+	pass # Replace with function body.
