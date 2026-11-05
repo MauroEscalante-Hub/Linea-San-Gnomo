@@ -19,9 +19,8 @@ func _ready() -> void:
 func morir_tren() -> void:
 	explota.play()
 	esta_muerto = true
-	
 	set_physics_process(false)
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(3.0).timeout
 	get_tree().change_scene_to_file("res://Escenas/derrota tren.tscn")
 
 func recibir_danio(cantidad: int, es_del_jugador: bool = false) -> void:

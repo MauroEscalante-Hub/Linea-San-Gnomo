@@ -1,4 +1,5 @@
 extends Node2D
+#@onready var se_mato = $sonidostren/Muerte
 
 
 func _on_button_pressed() -> void:

@@ -275,9 +275,10 @@ mesh = SubResource("BoxMesh_3xd07")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.585297, 8.933193, -502.1162)
 mesh = SubResource("BoxMesh_3xd07")
 
-[node name="enemigo" parent="." unique_id=983398332 instance=ExtResource("16_rk4vk")]
-transform = Transform3D(0.6920651, 0, -0.7218351, 0, 1, 0, 0.7218351, 0, 0.6920651, -200.06577, 2.7313004, 252.87859)
+[node name="enemigo" parent="." unique_id=983398332 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
+transform = Transform3D(0.6920651, 0, -0.7218351, 0, 1, 0, 0.7218351, 0, 0.6920651, -141.64343, 20.369385, 355.74097)
 danio_de_auto = 1
+tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 10
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1125904984]
@@ -332,9 +333,14 @@ enemigos = [NodePath("../enemigo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -136.64357, 7.8408184, -19.352234)
 enemigos = [NodePath("../enemigo2")]
 
-[node name="enemigo2" parent="." unique_id=1008029146 instance=ExtResource("16_rk4vk")]
-transform = Transform3D(-0.6854163, 0, 0.72815144, 0, 1, 0, -0.72815144, 0, -0.6854163, -58.825607, 11.65085, -170.37921)
+[node name="enemigo2" parent="." unique_id=1008029146 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
+transform = Transform3D(-0.6854163, 0, 0.72815144, 0, 1, 0, -0.72815144, 0, -0.6854163, -157.07439, 21.900995, 222.65384)
+tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 10
+
+[node name="enemigo3" parent="." unique_id=1382423712 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125.47012, 21.308002, 407.45117)
+tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 
 [connection signal="area_entered" from="Area3D" to="Area3D" method="_on_area_entered"]
 [connection signal="body_entered" from="Area3D" to="Path3D/PathFollow3D" method="_on_area_3d_body_entered"]
