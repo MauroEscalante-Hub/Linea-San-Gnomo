@@ -3,9 +3,10 @@ extends PathFollow3D
 @export var VelocidadNormal :float=0.0199
 @export var Desaceleracion:float = 0.6
 @export var DistanciaMax: int=15
+@export var barrita_tren : TextureProgressBar
 @onready var jugador: VehicleBody3D = $"../../jugador"
 @onready var Locomotora: VehicleBody3D = $VehicleBody3D
-@onready var barra_de_tren = $TextureProgressBar
+#@onready var barra_de_tren = TextureProgressBar
 @onready var progreso = $"."
 func _process(delta: float):
 	var distancia=Locomotora.global_position.distance_to(GameManager.current_player.global_position)
@@ -14,4 +15,4 @@ func _process(delta: float):
 	else:
 		progress_ratio += VelocidadNormal*delta
 		
-	barra_de_tren.value = progreso.progress / 15
+	barrita_tren.value = progreso.progress / 15
