@@ -43,8 +43,8 @@ metadata/_custom_type_script = "uid://d0rhmy7dfjibk"
 [sub_resource type="Resource" id="Resource_8g45m"]
 script = ExtResource("1_bd08t")
 metric_id = "Contra"
-data_type = 2
-value = ""
+data_type = 6
+value = []
 metadata/_custom_type_script = "uid://d0rhmy7dfjibk"
 
 [sub_resource type="Resource" id="Resource_b6pww"]
