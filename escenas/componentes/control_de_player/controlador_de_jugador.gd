@@ -28,7 +28,7 @@ func _process(delta):
 		if vehiculo.get_node("Arma_de_jugador").cantidad_de_balas == 0:
 			Metrics.record_add("saltos_por_balas ", 1)
 		
-		if vehiculo.get_node("Vida").vida_actual <= 80:
+		if vehiculo.get_node("Vida").vida_actual <= 15:
 			Metrics.record_add("saltos_por_vida ", 1)
 		
 		GameManager.set_player(nuevo_vehiculo)
