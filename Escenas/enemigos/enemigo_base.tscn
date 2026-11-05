@@ -131,6 +131,7 @@ player = NodePath("..")
 
 [node name="Vida" parent="." unique_id=2126800800 node_paths=PackedStringArray("player") instance=ExtResource("11_78feh")]
 player = NodePath("..")
+vida_max = 50
 
 [node name="Levantar" parent="." unique_id=1499998198 node_paths=PackedStringArray("jugador") instance=ExtResource("12_owptj")]
 jugador = NodePath("..")

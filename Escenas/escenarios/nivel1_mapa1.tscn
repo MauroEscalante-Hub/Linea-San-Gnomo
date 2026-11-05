@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://baci1qup0gmod" path="res://Assets/3d/textures/44_1024x1024.png" id="11_jg37s"]
 [ext_resource type="Material" uid="uid://d35brrdubjnxg" path="res://Assets/shaders/new_shader_material.tres" id="13_dup8j"]
 [ext_resource type="PackedScene" uid="uid://14tjj1vngcuo" path="res://Escenas/enemigos/enemigo_base.tscn" id="16_rk4vk"]
+[ext_resource type="Script" uid="uid://dgjyvm4vujet6" path="res://Escenas/escenarios/terrain_3d.gd" id="16_wd27f"]
 [ext_resource type="Script" uid="uid://qrsyxphpdw6t" path="res://Escenas/escenarios/final_nivel1.gd" id="17_g68db"]
 [ext_resource type="PackedScene" uid="uid://b0w31mc2k6qos" path="res://Escenas/componentes/Hudarma.tscn" id="18_fon06"]
 [ext_resource type="PackedScene" uid="uid://bmt7dendj5og2" path="res://Escenas/despertar_enemigos/despertar_enemigos.tscn" id="19_peni2"]
@@ -271,9 +272,11 @@ collision_shape_size = 48
 collision_radius = 80
 collision_layer = 7
 collision_mask = 3
+mesh_lods = 10
 cast_shadows = 0
 gi_mode = 0
 top_level = true
+script = ExtResource("16_wd27f")
 metadata/_edit_lock_ = true
 
 [node name="jugador" parent="." unique_id=1604139032 instance=ExtResource("2_1gonj")]
@@ -287,10 +290,11 @@ mesh = SubResource("BoxMesh_3xd07")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.585297, 8.933193, -502.1162)
 mesh = SubResource("BoxMesh_3xd07")
 
-[node name="enemigo" parent="." unique_id=983398332 instance=ExtResource("16_rk4vk")]
+[node name="enemigo" parent="." unique_id=983398332 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
 transform = Transform3D(0.6920651, 0, -0.7218351, 0, 1, 0, 0.7218351, 0, 0.6920651, -200.06577, 2.7313004, 252.87859)
-danio_de_auto = 1
-cantidad_de_municion = 10
+danio_de_auto = 12
+tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
+cantidad_de_municion = 15
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1125904984]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -430.9635, 1.9043074, -1202.707)
@@ -336,17 +340,66 @@ shape = SubResource("BoxShape3D_dwbtc")
 
 [node name="Hudarma" parent="." unique_id=1431327253 instance=ExtResource("18_fon06")]
 
-[node name="Despertar_enemigos" parent="." unique_id=1136637638 node_paths=PackedStringArray("enemigos") instance=ExtResource("19_peni2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -137.11014, 2.5532322, 242.3836)
-enemigos = [NodePath("../enemigo")]
+[node name="despertar_enemigos3" parent="." unique_id=487979080 node_paths=PackedStringArray("enemigos") instance=ExtResource("19_peni2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.8308, 3.8166094, -200.99612)
+enemigos = [NodePath("../enemigo4"), NodePath("../enemigo5"), NodePath("../enemigo6")]
 
-[node name="Despertar_enemigos2" parent="." unique_id=141201125 node_paths=PackedStringArray("enemigos") instance=ExtResource("19_peni2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -136.64357, 7.8408184, -19.352234)
-enemigos = [NodePath("../enemigo2")]
+[node name="despertar_enemigos4" parent="." unique_id=329785120 node_paths=PackedStringArray("enemigos") instance=ExtResource("19_peni2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -425.68735, 3.8166094, -649.4864)
+enemigos = [NodePath("../enemigo7"), NodePath("../enemigo8")]
 
-[node name="enemigo2" parent="." unique_id=1008029146 instance=ExtResource("16_rk4vk")]
-transform = Transform3D(-0.6854163, 0, 0.72815144, 0, 1, 0, -0.72815144, 0, -0.6854163, -58.825607, 11.65085, -170.37921)
+[node name="enemigo3" parent="." unique_id=109289377 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
+transform = Transform3D(-0.6854163, 0, 0.72815144, 0, 1, 0, -0.72815144, 0, -0.6854163, -48.393425, 11.65085, -172.03096)
+danio_de_auto = 6
+tiempo_de_disparo = 0.1
+tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 10
+
+[node name="enemigo2" parent="." unique_id=1008029146 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
+transform = Transform3D(-0.6854163, 0, 0.72815144, 0, 1, 0, -0.72815144, 0, -0.6854163, -58.825607, 11.65085, -170.37921)
+danio_de_auto = 15
+tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
+cantidad_de_municion = 20
+
+[node name="enemigo4" parent="." unique_id=1748169763 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
+transform = Transform3D(0.7751453, -0.03189542, -0.6309773, -1.69e-09, 0.9987249, -0.050484776, 0.631783, 0.03913304, 0.7741568, -434.74643, 3.327857, -237.90732)
+danio_de_auto = 16
+tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
+cantidad_de_municion = 25
+
+[node name="enemigo5" parent="." unique_id=2054652360 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
+transform = Transform3D(0.77389723, 0, -0.6333112, 0, 1, 0, 0.6333112, 0, 0.77389723, -432.76648, 3.6565928, -229.5711)
+danio_de_auto = 15
+tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
+cantidad_de_municion = 20
+
+[node name="enemigo6" parent="." unique_id=1728780624 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
+transform = Transform3D(0.77389723, 0, -0.6333112, 0, 1, 0, 0.6333112, 0, 0.77389723, -432.76648, 3.6565928, -248.13284)
+danio_de_auto = 15
+tiempo_de_disparo = 2.0
+tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
+cantidad_de_municion = 7
+
+[node name="enemigo7" parent="." unique_id=1451317321 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
+transform = Transform3D(0.68080723, 0, 0.7324627, 0, 1, 0, -0.7324627, 0, 0.68080723, -368.90802, 2.888907, -811.2721)
+tiempo_de_disparo = 0.5
+tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
+cantidad_de_municion = 15
+
+[node name="enemigo8" parent="." unique_id=853247696 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
+transform = Transform3D(0.70652294, 0, 0.7076902, 0, 1, 0, -0.7076902, 0, 0.70652294, -373.68176, 2.5765905, -800.77295)
+danio_de_auto = 25
+tiempo_de_disparo = 4.0
+tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
+cantidad_de_municion = 28
+
+[node name="despertar_enemigos2" parent="." unique_id=1888103106 node_paths=PackedStringArray("enemigos") instance=ExtResource("19_peni2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -137.20372, 2.568544, 51.231255)
+enemigos = [NodePath("../enemigo2"), NodePath("../enemigo3")]
+
+[node name="despertar_enemigos" parent="." unique_id=326533967 node_paths=PackedStringArray("enemigos") instance=ExtResource("19_peni2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -137.20372, 2.568544, 304.97662)
+enemigos = [NodePath("../enemigo")]
 
 [connection signal="area_entered" from="Area3D" to="Area3D" method="_on_area_entered"]
 [connection signal="body_entered" from="Area3D" to="Path3D/PathFollow3D" method="_on_area_3d_body_entered"]

@@ -15,6 +15,7 @@
 [ext_resource type="Material" uid="uid://d35brrdubjnxg" path="res://Assets/shaders/new_shader_material.tres" id="6_xnbar"]
 [ext_resource type="Script" uid="uid://e44ibaa2s7vf" path="res://Escenas/escenarios/nivel1_mapa2/final_nivel1_mapa2.gd" id="12_5qsy4"]
 [ext_resource type="PackedScene" uid="uid://14tjj1vngcuo" path="res://Escenas/enemigos/enemigo_base.tscn" id="13_fr77n"]
+[ext_resource type="Script" uid="uid://dgjyvm4vujet6" path="res://Escenas/escenarios/terrain_3d.gd" id="13_lnp1g"]
 [ext_resource type="PackedScene" uid="uid://b0w31mc2k6qos" path="res://Escenas/componentes/Hudarma.tscn" id="14_f7jbi"]
 [ext_resource type="PackedScene" uid="uid://bmt7dendj5og2" path="res://Escenas/despertar_enemigos/despertar_enemigos.tscn" id="17_6e6np"]
 
@@ -216,6 +217,7 @@ collision_mode = 3
 collision_layer = 7
 collision_mask = 3
 top_level = true
+script = ExtResource("13_lnp1g")
 metadata/_edit_lock_ = true
 
 [node name="agua" type="MeshInstance3D" parent="." unique_id=163637495]
