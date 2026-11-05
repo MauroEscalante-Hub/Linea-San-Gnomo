@@ -123,7 +123,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0579548, -1.239)
 player = NodePath("..")
 
 [node name="Arma_de_jugador" parent="." unique_id=396609384 node_paths=PackedStringArray("player") instance=ExtResource("9_f01sq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0579548, -1.239)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.195, -1)
 player = NodePath("..")
 
 [node name="Mov_Auto" parent="." unique_id=1749187415 node_paths=PackedStringArray("player") instance=ExtResource("10_eml4n")]

@@ -174,7 +174,7 @@ size = Vector3(3.5825195, 5.818222, 3.390564)
 [node name="Nivel1Mapa2" type="Node3D" unique_id=178108371]
 
 [node name="Path3D" type="Path3D" parent="." unique_id=1484183513]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.54568, 0.39843845, 1738.3246)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.546, 1.8, 1738.325)
 curve = SubResource("Curve3D_lsltb")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1142436273 node_paths=PackedStringArray("barrita_tren")]
@@ -251,20 +251,20 @@ transform = Transform3D(1.48, 0, 0, 0, 1.48, 0, 0, 0, 1.48, 5.5975533, 3.1444817
 shape = SubResource("BoxShape3D_6fhyq")
 
 [node name="enemigo" parent="." unique_id=31478625 node_paths=PackedStringArray("tren") instance=ExtResource("13_fr77n")]
-transform = Transform3D(0.58500564, 0, -0.81102926, 0, 1, 0, 0.81102926, 0, 0.58500564, 14.961712, 2.5752258, 1316.0933)
+transform = Transform3D(0.58500564, 0, -0.81102926, 0, 1, 0, 0.81102926, 0, 0.58500564, 18.322147, 2.5752258, 1310.1007)
 danio_de_auto = 13
 tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 12
 
 [node name="enemigo2" parent="." unique_id=1013898319 node_paths=PackedStringArray("tren") instance=ExtResource("13_fr77n")]
-transform = Transform3D(0.59108186, 0, 0.8066116, 0, 1, 0, -0.8066116, 0, 0.59108186, 122.36734, 1.6141534, 1164.3198)
+transform = Transform3D(0.59108186, 0, 0.8066116, 0, 1, 0, -0.8066116, 0, 0.59108186, 115.345085, 1.6141534, 1164.3198)
 danio_de_auto = 15
 tiempo_de_disparo = 0.5
 tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 20
 
 [node name="enemigo3" parent="." unique_id=1856160825 node_paths=PackedStringArray("tren") instance=ExtResource("13_fr77n")]
-transform = Transform3D(0.51929665, 0, 0.85459405, 0, 1, 0, -0.85459405, 0, 0.51929665, 122.459724, 3.169302, 1158.3246)
+transform = Transform3D(0.51929665, 0, 0.85459405, 0, 1, 0, -0.85459405, 0, 0.51929665, 115.373856, 3.169302, 1154.1823)
 danio_de_auto = 27
 tiempo_de_disparo = 1.5
 tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
@@ -278,46 +278,46 @@ tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 30
 
 [node name="enemigo5" parent="." unique_id=18444448 node_paths=PackedStringArray("tren") instance=ExtResource("13_fr77n")]
-transform = Transform3D(0.9990841, 0, -0.04278803, 0, 1, 0, 0.04278803, 0, 0.9990841, 30.38815, 1.0495844, 967.1145)
+transform = Transform3D(0.9990841, 0, -0.04278803, 0, 1, 0, 0.04278803, 0, 0.9990841, 38.99226, 1.0495844, 967.1145)
 danio_de_auto = 15
 tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 13
 
 [node name="enemigo6" parent="." unique_id=1855191169 node_paths=PackedStringArray("tren") instance=ExtResource("13_fr77n")]
-transform = Transform3D(0.79682475, 0, 0.6042103, 0, 1, 0, -0.6042103, 0, 0.79682475, 63.857098, 1.0495844, 870.2979)
+transform = Transform3D(0.28568697, 0, 0.958323, 0, 1, 0, -0.958323, 0, 0.28568697, 58.053944, 1.0495844, 867.36285)
 danio_de_auto = 9
 tiempo_de_disparo = 0.5
 tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 18
 
 [node name="enemigo7" parent="." unique_id=959307534 node_paths=PackedStringArray("tren") instance=ExtResource("13_fr77n")]
-transform = Transform3D(0.79682475, 0, 0.6042103, 0, 1, 0, -0.6042103, 0, 0.79682475, 63.857098, 1.0495844, 863.4911)
+transform = Transform3D(0.22819132, 0, 0.97361624, 0, 1, 0, -0.97361624, 0, 0.22819132, 59.041874, 1.0495844, 855.00037)
 danio_de_auto = 13
 tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 10
 
 [node name="enemigo8" parent="." unique_id=1168553599 node_paths=PackedStringArray("tren") instance=ExtResource("13_fr77n")]
-transform = Transform3D(0.91861737, 0, 0.39514786, 0, 1, 0, -0.39514786, 0, 0.91861737, 87.45328, 1.0495844, 731.6313)
+transform = Transform3D(0.91861737, 0, 0.39514786, 0, 1, 0, -0.39514786, 0, 0.91861737, 82.32031, 1.0495844, 721.6197)
 danio_de_auto = 13
 tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 14
 
 [node name="enemigo9" parent="." unique_id=112382872 node_paths=PackedStringArray("tren") instance=ExtResource("13_fr77n")]
-transform = Transform3D(0.91861737, 0, 0.39514786, 0, 1, 0, -0.39514786, 0, 0.91861737, 82.110435, 0.88216877, 734.2663)
+transform = Transform3D(0.91861737, 0, 0.39514786, 0, 1, 0, -0.39514786, 0, 0.91861737, 75.67223, 0.88216877, 725.4145)
 danio_de_auto = 25
 tiempo_de_disparo = 1.5
 tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 5
 
 [node name="enemigo10" parent="." unique_id=2002167979 node_paths=PackedStringArray("tren") instance=ExtResource("13_fr77n")]
-transform = Transform3D(0.9701096, 0, 0.24266723, 0, 1, 0, -0.24266723, 0, 0.9701096, 92.26958, 1.0495844, 547.803)
+transform = Transform3D(0.9701096, 0, 0.24266723, 0, 1, 0, -0.24266723, 0, 0.9701096, 90.45139, 1.2409678, 529.8883)
 danio_de_auto = 13
 tiempo_de_disparo = 0.8
 tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 12
 
 [node name="enemigo11" parent="." unique_id=529929492 node_paths=PackedStringArray("tren") instance=ExtResource("13_fr77n")]
-transform = Transform3D(0.9984248, 0, 0.05610603, 0, 1, 0, -0.05610603, 0, 0.9984248, 43.75368, 1.0495844, 463.18787)
+transform = Transform3D(0.9984248, 0, 0.05610603, 0, 1, 0, -0.05610603, 0, 0.9984248, 43.75368, 1.0495844, 448.66663)
 tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 6
 
