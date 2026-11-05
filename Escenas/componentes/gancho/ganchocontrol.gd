@@ -23,7 +23,7 @@ var target: Vector3 = Vector3.ZERO
 var auto_objetivo: VehicleBody3D = null
 var objetivo_previo: VehicleBody3D = null
 var estaba_en_cooldown: bool = false
-
+var colisiones=[]
 func _ready() -> void:
 	if not EventBus.reset_gancho.is_connected(_on_reset_gancho):
 		EventBus.reset_gancho.connect(_on_reset_gancho)
@@ -79,8 +79,9 @@ func lanzar() -> void:
 		if player.global_position.distance_to(target) > 60:
 			return
 		lanzado = true
+		colisiones.append(auto_objetivo)
 		Metrics.record_add("nroGanchos",1)
-		Metrics.record_add("Contra",auto_objetivo.name)
+		Metrics.record_set("Contra",colisiones)
 		if sonido_gancho: sonido_gancho.play()
 		print("[GANCHO] ¡Enganchado! Velocidad lineal al lanzar: ", player.linear_velocity, " | Rapidez: ", player.linear_velocity.length())
 		return
@@ -88,8 +89,9 @@ func lanzar() -> void:
 	if ray.is_colliding():
 		target = ray.get_collision_point()
 		lanzado = true
+		colisiones.append(ray.get_collider().name)
 		Metrics.record_add("nroGanchos",1)
-		Metrics.record_add("Contra",ray.get_collider().name)
+		Metrics.record_set("Contra",colisiones)
 		sonido_gancho.play()
 		#print("[GANCHO] ¡choco!: ", target, " | con: ", ray.get_collider().name)
 	else:
