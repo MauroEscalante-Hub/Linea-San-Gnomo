@@ -7,7 +7,7 @@ class_name DeteccionGanchovehiculo
 @export var area_3d: Area3D
 
 
-signal vehiculo_enganchable
+signal vehiculo_enganchable(vehiculo: VehicleBody3D)
 func _ready() -> void:
 	if not EventBus.reset_gancho.is_connected(_on_reset_gancho):
 		EventBus.reset_gancho.connect(_on_reset_gancho)
@@ -16,6 +16,7 @@ func _on_reset_gancho() -> void:
 	if area_3d:
 		area_3d.monitoring = false
 		area_3d.monitoring = true 
+		vehiculo_enganchable.emit(null)
 	EventBus.emit_signal("objetivo_cambiado", false)
 func activate():
 	set_physics_process(true)
@@ -27,6 +28,7 @@ func desactivate():
 	set_process(false)
 	area_3d.monitoring = false
 	auto_actual = null
+	vehiculo_enganchable.emit(null)
 	EventBus.emit_signal("objetivo_cambiado", false)
 func _physics_process(delta: float) -> void:
 	if is_instance_valid(player):

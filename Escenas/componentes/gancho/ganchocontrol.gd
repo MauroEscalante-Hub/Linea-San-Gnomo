@@ -12,7 +12,8 @@ extends Node
 @export var velocidad_maxima: float = 35.0
 #@export var fuerza_maxima_permitida = 9000.0
 @export var cooldown: float = 5.0
-
+var tiempo_transcurrido: float = 0.0
+@export var tiempo_limite: float = 2.0
 
 
 @onready var player: VehicleBody3D = get_parent()
@@ -75,6 +76,8 @@ func vehiculo_enganchable(vehiculo: VehicleBody3D) -> void:
 func lanzar() -> void:
 	if is_instance_valid(auto_objetivo):
 		target = auto_objetivo.global_position
+		if player.global_position.distance_to(target) > 60:
+			return
 		lanzado = true
 		if sonido_gancho: sonido_gancho.play()
 		print("[GANCHO] ¡Enganchado! Velocidad lineal al lanzar: ", player.linear_velocity, " | Rapidez: ", player.linear_velocity.length())
@@ -99,6 +102,7 @@ func _on_reset_gancho() -> void:
 	auto_objetivo = null
 	objetivo_previo = null
 	lanzado = false
+	tiempo_transcurrido = 0.0
 
 
 func gancho_manual(delta: float) -> void:
