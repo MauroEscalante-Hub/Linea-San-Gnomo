@@ -68,6 +68,7 @@ func detener_parpadeo():
 	if tween_parpadeo:
 		tween_parpadeo.kill()
 		tween_parpadeo = null
+	
 	modulate = color_normal
 
 

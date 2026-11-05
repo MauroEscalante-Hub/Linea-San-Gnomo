@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://fi6812bllct0" path="res://Escenas/Tren/sonidostren.gd" id="3_6xgrk"]
 [ext_resource type="AudioStream" uid="uid://cjm870jn1ynk5" path="res://Escenas/audio/enviorment/tren_mezcla.ogg" id="4_7lld6"]
 [ext_resource type="AudioStream" uid="uid://d3o1osww3wk0q" path="res://Escenas/audio/sonidos hits/cartoon hit.ogg" id="5_3g6mo"]
+[ext_resource type="AudioStream" uid="uid://cqx3acuij73u8" path="res://Escenas/audio/tren/ExplosionTren.ogg" id="7_3g6mo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5cipi"]
 size = Vector3(0.9869995, 1.9107056, 2.462616)
@@ -111,3 +112,6 @@ parameters/looping = true
 
 [node name="sonidohit" type="AudioStreamPlayer3D" parent="sonidostren" unique_id=406317783]
 stream = ExtResource("5_3g6mo")
+
+[node name="Muerte" type="AudioStreamPlayer3D" parent="sonidostren" unique_id=208757579]
+stream = ExtResource("7_3g6mo")

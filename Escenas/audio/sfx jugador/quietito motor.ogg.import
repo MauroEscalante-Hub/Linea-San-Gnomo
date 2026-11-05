@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b26ldha2pnqyh"
+path="res://.godot/imported/quietito motor.ogg-f4636e9bc8b9a45c1929efec84f833ac.oggvorbisstr"
+
+[deps]
+
+source_file="res://Escenas/audio/sfx jugador/quietito motor.ogg"
+dest_files=["res://.godot/imported/quietito motor.ogg-f4636e9bc8b9a45c1929efec84f833ac.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
