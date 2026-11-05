@@ -81,7 +81,7 @@ func lanzar() -> void:
 		lanzado = true
 		colisiones.append(auto_objetivo)
 		Metrics.record_add("nroGanchos",1)
-		Metrics.record_set("Contra",colisiones)
+		Metrics.record_add("Contra",colisiones)
 		if sonido_gancho: sonido_gancho.play()
 		print("[GANCHO] ¡Enganchado! Velocidad lineal al lanzar: ", player.linear_velocity, " | Rapidez: ", player.linear_velocity.length())
 		return
@@ -91,7 +91,7 @@ func lanzar() -> void:
 		lanzado = true
 		colisiones.append(ray.get_collider().name)
 		Metrics.record_add("nroGanchos",1)
-		Metrics.record_set("Contra",colisiones)
+		Metrics.record_add("Contra",colisiones)
 		sonido_gancho.play()
 		#print("[GANCHO] ¡choco!: ", target, " | con: ", ray.get_collider().name)
 	else:
