@@ -27,6 +27,8 @@ func set_player(new_player: VehicleBody3D) -> void:
 func jugador_muerto():
 	#cosa que sea como get_tree bla bla bla para lo que tiene que ver con la pantalla de derrota
 	#get_tree().change_scene_to_file("res:pantalla_derrota.tscn") algo asi supongo
-	print("se murio") ##Era para probar si sale y si funca luego podemos meterle la demas escenas
+	print("se murio")
+	Metrics.record_add("jugador_muerto ", 1) ##Era para probar si sale y si funca luego podemos meterle la demas escenas
+	Metrics.record_add("posicion_de_muerte_jugador ", current_player.global_position)
 	get_tree().change_scene_to_file("res://Escenas/derrota auto.tscn")
 	pass

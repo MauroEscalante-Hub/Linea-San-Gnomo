@@ -24,5 +24,12 @@ func _process(delta):
 	if Input.is_action_just_pressed("cambiar_de_auto") and nuevo_vehiculo:
 		EventBus.emit_signal("reset_gancho")
 		print("CONTROL: input detectado, nuevo_vehiculo = ", nuevo_vehiculo)
+		
+		if vehiculo.get_node("Arma_de_jugador").cantidad_de_balas == 0:
+			Metrics.record_add("saltos_por_balas ", 1)
+		
+		if vehiculo.get_node("Vida").vida_actual <= 80:
+			Metrics.record_add("saltos_por_vida ", 1)
+		
 		GameManager.set_player(nuevo_vehiculo)
-		Metrics.record_add("saltos",1)
+		Metrics.record_add("saltos_por_boton ",1)

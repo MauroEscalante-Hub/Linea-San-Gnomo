@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://jt5p78g5kf7x"]
 
-[ext_resource type="PackedScene" uid="uid://pmc2plsrtcig" path="res://Escenas/Tren/Vagon.tscn" id="1_83n1h"]
+[ext_resource type="PackedScene" uid="uid://pmc2plsrtcig" path="res://Escenas/tren/Vagon.tscn" id="1_83n1h"]
 [ext_resource type="Texture2D" uid="uid://ddprscrpsofah" path="res://Assets/3d/textures/ground037_alb_ht.png" id="1_ieg26"]
 [ext_resource type="Script" uid="uid://cmv6ib0nhjx2s" path="res://Escenas/path_follow_3d.gd" id="1_j5g2l"]
 [ext_resource type="PackedScene" uid="uid://c0nrh27b7fyac" path="res://Assets/3d/models/Grass_1.fbx" id="1_yvhl4"]
