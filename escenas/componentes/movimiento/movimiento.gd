@@ -10,7 +10,8 @@ extends Node3D
 @onready var motor_quieto= $quieto
 @onready var frenando = $freno
 
-
+func _ready() -> void:
+	motor_quieto.play()
 	
 func _physics_process(delta):
 	player.steering = lerp(player.steering, Input.get_axis("derecha","izquierda") * max_steer, velocidad_de_giro * delta)
@@ -20,13 +21,14 @@ func _physics_process(delta):
 		motor_quieto.play()
 	if Input.is_action_pressed("avanzar"):
 		if !motor_marcha.playing:
-			motor_quieto.stop()
+			#motor_quieto.stop()
 			motor_marcha.play()
 	if !Input.is_action_pressed("avanzar"):
 		motor_quieto.play()
 	if Input.is_action_pressed("frenar"):
-		motor_marcha.stop()
 		frenando.play()
+		motor_marcha.stop()
+		
 	
 		
 	
