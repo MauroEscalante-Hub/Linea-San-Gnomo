@@ -6,6 +6,8 @@ class_name AudioManager
 @onready var sonidogancho: AudioStreamPlayer3D = $sonidogancho
 @onready var trenhit: AudioStreamPlayer3D = $trenhit
 
+
+	
 func play_balazo():
 	Audiobalas.play()
 func Sonido_tren():
