@@ -14,7 +14,7 @@ position = Vector2(629, 381.00003)
 scale = Vector2(1.7002724, 1.7822967)
 texture = ExtResource("1_uarsk")
 
-[node name="Button" type="Button" parent="." unique_id=926016097]
+[node name="Salir" type="Button" parent="." unique_id=926016097]
 offset_left = 136.0
 offset_top = 517.0
 offset_right = 342.0
@@ -23,4 +23,14 @@ theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_3xd07")
 text = "SALIR"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Reintentar" type="Button" parent="." unique_id=711261285]
+offset_left = 84.0
+offset_top = 407.0
+offset_right = 393.0
+offset_bottom = 502.0
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_3xd07")
+text = "Reintentar"
+
+[connection signal="button_down" from="Salir" to="." method="_on_salir_button_down"]
+[connection signal="button_down" from="Reintentar" to="." method="_on_reintentar_button_down"]

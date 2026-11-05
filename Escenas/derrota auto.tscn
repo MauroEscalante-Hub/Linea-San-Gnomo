@@ -13,7 +13,8 @@ func _on_button_reinicio_pressed() -> void:
 	get_tree().change_scene_to_file(\"res://Escenas/escenarios/nivel1_mapa1.tscn\")
 
 func _on_button_salir_pressed() -> void:
-	get_tree().quit()
+	Metrics.export_to_csv()
+	get_tree().change_scene_to_file(\"res://menu_principal.tscn\")
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_226jn"]
