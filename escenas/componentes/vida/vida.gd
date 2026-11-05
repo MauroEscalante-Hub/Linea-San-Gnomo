@@ -6,6 +6,7 @@ extends Node3D
 @onready var progress_bar = $canvas/ProgressBar
 @onready var canvas: CanvasLayer = $canvas
 @onready var danio_de_auto= $danio_auto
+@onready var poca_vida=  $AudioStreamPlayer3D
 
 signal murio
 var vida_actual: int
@@ -32,13 +33,17 @@ func recibir_danio(cantidad: int) -> void:
 	progress_bar.value = vida_actual
 	danio_de_auto.play()
 	if vida_actual <= 0:
+		poca_vida.play()
 		_morir()
+		
 
 
 func _morir() -> void:
 	muerto = true
+	
 	player.engine_force = 0.0
 	murio.emit()
 	if player != GameManager.current_player:
 		print("[soy enemigo] me mori")
+		
 		player.queue_free()

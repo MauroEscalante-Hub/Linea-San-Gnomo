@@ -34,7 +34,9 @@ stream = ExtResource("4_77i4e")
 
 [node name="quieto" type="AudioStreamPlayer3D" parent="." unique_id=825229522]
 stream = SubResource("AudioStreamOggVorbis_xk6cb")
+volume_db = 6.234
 
 [node name="freno" type="AudioStreamPlayer3D" parent="." unique_id=225233165]
 stream = ExtResource("5_hvqda")
 attenuation_model = 1
+volume_db = -33.247
