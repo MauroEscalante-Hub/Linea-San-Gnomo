@@ -370,6 +370,7 @@ cantidad_de_municion = 5
 [node name="enemigo2" parent="." unique_id=1243421404 node_paths=PackedStringArray("tren") instance=ExtResource("5_abgxn")]
 transform = Transform3D(0.04439661, 0, -0.999014, 0, 1, 0, 0.999014, 0, 0.04439661, -60.571484, 3.385398, -2.6974137)
 danio_de_auto = 100
+tiempo_de_disparo = 3.0
 tren = NodePath("../ruta/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 3
 

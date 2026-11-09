@@ -38,7 +38,7 @@ func _process(delta):
 	#
 	#sprite_mira.position = Vector3(distancia.x, 0, distancia.y)
 	
-	if Input.is_action_just_pressed("dispararbalas"):
+	if Input.is_action_pressed("dispararbalas"):
 		disparo()
 
 func disparo():
