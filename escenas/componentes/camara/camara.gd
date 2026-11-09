@@ -1,14 +1,14 @@
 class_name Camara
 extends Node3D
  
-@export var smooth_speed := 0.9
+@export var smooth_speed := 1.5
 @export var player: VehicleBody3D = get_parent()
  
 @onready var spring_arm: SpringArm3D = $SpringArm3D
 @onready var camera_3d: Camera3D = $SpringArm3D/Camera3D
 #@onready var camara_2= $Camera2
 var direccion = Vector3.FORWARD
-var sensivilidad_horizontal = 0.01 
+var sensivilidad_horizontal = 0.1 
  
 func _ready() -> void:
 	if player == null:
