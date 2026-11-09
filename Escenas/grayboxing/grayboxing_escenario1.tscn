@@ -337,7 +337,7 @@ tren = NodePath("../ruta/PathFollow3D/VehicleBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.30077934)
 
 [node name="PathFollow3D" type="PathFollow3D" parent="ruta" unique_id=1168567842 node_paths=PackedStringArray("barrita_tren")]
-transform = Transform3D(-0.0006972616, -6.089787e-05, -0.99997973, -0.08698368, 0.9962016, -1.62189e-08, 0.99620163, 0.08698363, -0.00069990737, 36.087612, 0.06945801, 4.8151245)
+transform = Transform3D(-0.0006972616, -6.089787e-05, -0.99997973, -0.08698367, 0.9962016, -1.62189e-08, 0.99620163, 0.08698363, -0.00069990737, 36.087612, 0.06945801, 4.8151245)
 progress = 41.1
 script = ExtResource("3_ls4l5")
 barrita_tren = NodePath("TextureProgressBar")
