@@ -6,10 +6,11 @@ extends Node3D
  
 @onready var spring_arm: SpringArm3D = $SpringArm3D
 @onready var camera_3d: Camera3D = $SpringArm3D/Camera3D
-@onready var camara_2= $Camera2
+@onready var camara_2 = $cmara2/camara2
 var direccion = Vector3.FORWARD
 var sensivilidad_horizontal = 0.1 
- 
+
+
 func _ready() -> void:
 	if player == null:
 		print("no hay vehiculo")
