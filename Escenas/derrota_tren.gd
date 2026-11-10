@@ -2,7 +2,7 @@ extends Node2D
 #@onready var se_mato = $sonidostren/Muerte
 
 @export var escenario_actual = PackedScene
-
+var escena=GameManager.escenaactual
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
@@ -12,5 +12,7 @@ func _on_salir_button_down() -> void:
 	pass # Replace with function body.
 
 func _on_reintentar_button_down() -> void:
-	get_tree().change_scene_to_file("res://Escenas/escenarios/nivel1_mapa1.tscn")
-	pass # Replace with function body.
+	if escena==1:
+		get_tree().change_scene_to_file("res://Escenas/escenarios/nivel1_mapa1.tscn")
+	else:
+		get_tree().change_scene_to_file("res://Escenas/escenarios/nivel1_mapa2/nivel1_mapa2.tscn")
