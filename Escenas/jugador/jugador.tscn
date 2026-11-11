@@ -123,9 +123,10 @@ target_position = Vector3(0, -1, -50)
 [node name="Arma" parent="." unique_id=192237572 node_paths=PackedStringArray("player") instance=ExtResource("8_26844")]
 player = NodePath("..")
 
-[node name="Arma_de_jugador" parent="." unique_id=396609384 node_paths=PackedStringArray("player") instance=ExtResource("9_mnegl")]
+[node name="Arma_de_jugador" parent="." unique_id=396609384 node_paths=PackedStringArray("player", "ray") instance=ExtResource("9_mnegl")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0.195, -1)
 player = NodePath("..")
+ray = NodePath("../ray_suelo")
 danio_del_jugador = 15
 cantidad_de_balas = 30
 
@@ -138,5 +139,8 @@ player = NodePath("..")
 
 [node name="Levantar" parent="." unique_id=1499998198 node_paths=PackedStringArray("jugador") instance=ExtResource("12_crx0k")]
 jugador = NodePath("..")
+
+[node name="ray_suelo" type="RayCast3D" parent="." unique_id=2102386825]
+target_position = Vector3(0, -5, 0)
 
 [connection signal="murio" from="Vida" to="." method="_on_vida_murio"]

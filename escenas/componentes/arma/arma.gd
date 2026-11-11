@@ -25,6 +25,7 @@ func _ready() -> void:
 
 func activate():
 	activa = true
+	self.visible = true
 	set_physics_process(true)
 	
 func desactivate():

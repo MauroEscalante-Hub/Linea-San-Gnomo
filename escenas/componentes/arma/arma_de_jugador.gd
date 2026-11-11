@@ -4,6 +4,7 @@ extends Node3D
 @export var disparojugador: AudioStreamPlayer3D
 
 @export var player: VehicleBody3D
+@export var ray :RayCast3D
 @onready var molde_de_arma = $MeshInstance3D
 @onready var sprite_mira = $Sprite3D
 @export var danio_del_jugador: int
@@ -17,9 +18,13 @@ var disparando_hacia_atras:= false
 
 
 func _ready():
-	pass
+	if player == null:
+		player = get_parent() as VehicleBody3D
+	
+	self.visible = player == GameManager.current_player
 
 func activate():
+	self.visible = true
 	sprite_mira.visible = true
 	set_process(true)
 	_emitir_datos_hud.call_deferred()
@@ -29,6 +34,7 @@ func _emitir_datos_hud() -> void:
 
 func desactivate():
 	sprite_mira.visible = false
+	self.visible = false
 	set_process(false)
 
 func _process(delta):
@@ -59,9 +65,15 @@ func disparo():
 	if disparando_hacia_atras:
 		origen = posicion_2
 	
-	var direccion = -player.global_transform.basis.z
+	var direccion = -player.global_basis.z
 	direccion.y = 0
 	direccion = direccion.normalized()
+	
+	if ray.is_colliding():
+		var normal = ray.get_collision_normal()
+		direccion.y = -direccion.dot(normal) / normal.y
+		direccion = direccion.normalized()
+	
 	if disparando_hacia_atras:
 		direccion = -direccion
 	
