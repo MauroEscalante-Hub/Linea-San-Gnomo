@@ -71,6 +71,7 @@ func disparo(objetivo: Node3D) -> void:
 	get_tree().current_scene.add_child(balita)
 	disparoenemigo.play()   
 	balita.global_position = global_position
+	balita.duenio = player
 	balita.add_collision_exception_with(player) 
 	
 	var direccion := (objetivo.global_position - global_position).normalized()
