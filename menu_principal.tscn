@@ -112,6 +112,7 @@ text = "LINEA SAN GNOMO
 "
 
 [node name="play" type="Button" parent="Camera3D/CanvasLayer/pantalla_menu" unique_id=971028238]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.261
@@ -128,6 +129,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ns3he")
 text = "Jugar"
 
 [node name="salir" type="Button" parent="Camera3D/CanvasLayer/pantalla_menu" unique_id=982242549]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.261
