@@ -10,6 +10,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.965
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D" unique_id=1865971422]
 
-[node name="Camera2" type="Camera3D" parent="." unique_id=397099821]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.017190337, -1.5653133)
-visible = false
+[node name="cmara2" type="SpringArm3D" parent="." unique_id=1451596046]
+transform = Transform3D(-1, 2.2626677e-08, -8.444391e-08, 0, 0.96592575, 0.258819, 8.742278e-08, 0.258819, -0.96592575, 0, 1.5, -3)
+
+[node name="camara2" type="Camera3D" parent="cmara2" unique_id=1119251482]

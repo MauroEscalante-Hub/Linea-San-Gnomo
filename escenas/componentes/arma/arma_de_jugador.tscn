@@ -27,3 +27,9 @@ transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, -0.65032625)
 
 [node name="disparojugador" type="AudioStreamPlayer3D" parent="." unique_id=1279051330]
 stream = ExtResource("4_3yuoy")
+
+[node name="pos_1" type="Marker3D" parent="." unique_id=1820874112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="pos_2" type="Marker3D" parent="." unique_id=722248064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.195, 2.253)

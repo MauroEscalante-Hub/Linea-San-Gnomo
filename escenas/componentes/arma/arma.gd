@@ -17,15 +17,22 @@ var tiempo_restante: float = 0.0
 
 
 func _ready() -> void:
+	self.visible = true
+	area.monitoring = true
+	area.monitorable = true
 	if player == null and get_parent() is VehicleBody3D:
 		player = get_parent() as VehicleBody3D
 
 func activate():
 	activa = true
+	self.visible = true
 	set_physics_process(true)
 	
 func desactivate():
+	self.visible = false
 	activa = false
+	area.monitoring = false
+	area.monitorable = false
 	set_physics_process(false)
 
 func _physics_process(_delta):
@@ -65,6 +72,7 @@ func disparo(objetivo: Node3D) -> void:
 	get_tree().current_scene.add_child(balita)
 	disparoenemigo.play()   
 	balita.global_position = global_position
+	balita.duenio = player
 	balita.add_collision_exception_with(player) 
 	
 	var direccion := (objetivo.global_position - global_position).normalized()

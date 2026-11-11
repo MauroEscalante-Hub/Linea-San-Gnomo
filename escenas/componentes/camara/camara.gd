@@ -1,15 +1,16 @@
 class_name Camara
 extends Node3D
  
-@export var smooth_speed := 0.9
+@export var smooth_speed := 1.5
 @export var player: VehicleBody3D = get_parent()
- 
+@export var arma: Arma_Jugador
 @onready var spring_arm: SpringArm3D = $SpringArm3D
 @onready var camera_3d: Camera3D = $SpringArm3D/Camera3D
-#@onready var camara_2= $Camera2
+@onready var camara_2 = $cmara2/camara2
 var direccion = Vector3.FORWARD
-var sensivilidad_horizontal = 0.01 
- 
+var sensivilidad_horizontal = 0.1 
+
+
 func _ready() -> void:
 	if player == null:
 		print("no hay vehiculo")
@@ -30,20 +31,21 @@ func deactivate() -> void:
 func _physics_process(delta: float) -> void:
 	var current_velocity = player.linear_velocity
 	current_velocity.y = 0
-	#if Input.is_action_just_pressed("apuntar"):
-		#_cambio()
+	if Input.is_action_just_pressed("cambiar_camara"):
+		_cambio()
+		
 	if current_velocity.length() > 0.1:
 		direccion = lerp(direccion, current_velocity.normalized(), smooth_speed * delta)
 	#global_transform.basis = get_relations_from_direction(direccion)
 	
 
-#func _cambio():
-	
-	#camara_2.visible = not camara_2.visible
-	#if camara_2.visible:
-	#	camara_2.make_current()
-	#else:
-	#	camera_3d.make_current()
+func _cambio():
+	if camara_2.current:
+		camera_3d.make_current()
+		arma.cambiar_direccion(false)
+	else:
+		camara_2.make_current()
+		arma.cambiar_direccion(true)
 
  
 #func get_relations_from_direction(direction: Vector3) -> Basis:
