@@ -17,6 +17,7 @@ var tiempo_restante: float = 0.0
 
 
 func _ready() -> void:
+	self.visible = true
 	area.monitoring = true
 	area.monitorable = true
 	if player == null and get_parent() is VehicleBody3D:
@@ -27,6 +28,7 @@ func activate():
 	set_physics_process(true)
 	
 func desactivate():
+	self.visible = false
 	activa = false
 	area.monitoring = false
 	area.monitorable = false

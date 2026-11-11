@@ -98,8 +98,9 @@ mesh = SubResource("CylinderMesh_0ru8o")
 [node name="centro de masa" type="Node3D" parent="." unique_id=783383178]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.367051, -0.25693512)
 
-[node name="camara" parent="." unique_id=1265065216 node_paths=PackedStringArray("player") instance=ExtResource("5_jkpmm")]
+[node name="camara" parent="." unique_id=1265065216 node_paths=PackedStringArray("player", "arma") instance=ExtResource("5_jkpmm")]
 player = NodePath("..")
+arma = NodePath("../Arma_de_jugador")
 
 [node name="deteccion_de_vehiculo" parent="." unique_id=2053109797 node_paths=PackedStringArray("auto_actual") instance=ExtResource("4_3don6")]
 auto_actual = NodePath("..")
@@ -136,8 +137,5 @@ player = NodePath("..")
 
 [node name="Levantar" parent="." unique_id=1499998198 node_paths=PackedStringArray("jugador") instance=ExtResource("12_crx0k")]
 jugador = NodePath("..")
-
-[node name="Marker3D" type="Marker3D" parent="." unique_id=1975367186]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
 
 [connection signal="murio" from="Vida" to="." method="_on_vida_murio"]

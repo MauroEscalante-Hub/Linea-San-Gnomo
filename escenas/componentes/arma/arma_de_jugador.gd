@@ -2,16 +2,18 @@ class_name Arma_Jugador
 extends Node3D
 
 @export var disparojugador: AudioStreamPlayer3D
-@export var puntero: RayCast3D
 
 @export var player: VehicleBody3D
+@onready var molde_de_arma = $MeshInstance3D
 @onready var sprite_mira = $Sprite3D
 @export var danio_del_jugador: int
 @export var cadencia: float
 @export var cantidad_de_balas: int
-var cargador:int=0
 @export var balas: PackedScene
 var puede_disparar := true
+var disparando_hacia_atras:= false
+@onready var posicion_1 = $pos_1
+@onready var posicion_2 = $pos_2
 
 
 func _ready():
@@ -20,7 +22,6 @@ func _ready():
 func activate():
 	sprite_mira.visible = true
 	set_process(true)
-	cargador=cantidad_de_balas
 	_emitir_datos_hud.call_deferred()
 func _emitir_datos_hud() -> void:
 	EventBus.emit_signal("tamañodecargador", cantidad_de_balas)
@@ -41,21 +42,35 @@ func _process(delta):
 	if Input.is_action_pressed("dispararbalas"):
 		disparo()
 
+func cambiar_direccion(cambio: bool):
+	disparando_hacia_atras = cambio
+	if disparando_hacia_atras:
+		sprite_mira.position = Vector3(0,0, 20)
+		molde_de_arma.position = Vector3(0, 0.195, 2)
+	else:
+		sprite_mira.position = Vector3(0,0, -20)
+		molde_de_arma.position = Vector3(0, 0.195, 0.0)
+		
+	
 func disparo():
 	if not puede_disparar or cantidad_de_balas <= 0:
 		return
 	
+	var origen = posicion_1
+	var direccion = -player.global_transform.basis.z
+	if disparando_hacia_atras:
+		origen = posicion_2
+		direccion = player.global_transform.basis.z
+	
 	var balita = balas.instantiate()
 	get_tree().current_scene.add_child(balita)
-	balita.global_position = global_position
-	balita.duenio = get_parent()
-	balita.add_collision_exception_with(get_parent())
+	
+	balita.global_position = origen.global_position
+	balita.duenio = player
+	balita.add_collision_exception_with(player)
 	balita.danio = danio_del_jugador
 	balita.bala_del_jugador = true
-	
-	var direccion = (sprite_mira.global_position - global_position).normalized()
 	balita.set_direccion(direccion)
-	
 	cantidad_de_balas -= 1
 	EventBus.emit_signal("balasactuales", cantidad_de_balas)
 	

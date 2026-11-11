@@ -3,7 +3,7 @@ extends Node3D
  
 @export var smooth_speed := 1.5
 @export var player: VehicleBody3D = get_parent()
- 
+@export var arma: Arma_Jugador
 @onready var spring_arm: SpringArm3D = $SpringArm3D
 @onready var camera_3d: Camera3D = $SpringArm3D/Camera3D
 @onready var camara_2 = $cmara2/camara2
@@ -33,6 +33,7 @@ func _physics_process(delta: float) -> void:
 	current_velocity.y = 0
 	if Input.is_action_just_pressed("cambiar_camara"):
 		_cambio()
+		
 	if current_velocity.length() > 0.1:
 		direccion = lerp(direccion, current_velocity.normalized(), smooth_speed * delta)
 	#global_transform.basis = get_relations_from_direction(direccion)
@@ -41,8 +42,10 @@ func _physics_process(delta: float) -> void:
 func _cambio():
 	if camara_2.current:
 		camera_3d.make_current()
+		arma.cambiar_direccion(false)
 	else:
 		camara_2.make_current()
+		arma.cambiar_direccion(true)
 
  
 #func get_relations_from_direction(direction: Vector3) -> Basis:

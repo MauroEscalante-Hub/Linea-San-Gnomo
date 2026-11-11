@@ -97,8 +97,9 @@ mesh = SubResource("CylinderMesh_0ru8o")
 [node name="centro de masa" type="Node3D" parent="." unique_id=783383178]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17721605, -0.44497806)
 
-[node name="camara" parent="." unique_id=1265065216 node_paths=PackedStringArray("player") instance=ExtResource("3_orrqs")]
+[node name="camara" parent="." unique_id=1265065216 node_paths=PackedStringArray("player", "arma") instance=ExtResource("3_orrqs")]
 player = NodePath("..")
+arma = NodePath("../Arma_de_jugador")
 
 [node name="deteccion_de_vehiculo" parent="." unique_id=2053109797 node_paths=PackedStringArray("auto_actual") instance=ExtResource("4_ayvn7")]
 auto_actual = NodePath("..")
