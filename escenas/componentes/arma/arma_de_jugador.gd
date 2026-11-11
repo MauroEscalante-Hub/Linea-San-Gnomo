@@ -38,7 +38,6 @@ func _process(delta):
 	#distancia = distancia.limit_length(5)
 	#
 	#sprite_mira.position = Vector3(distancia.x, 0, distancia.y)
-	
 	if Input.is_action_pressed("dispararbalas"):
 		disparo()
 
@@ -57,10 +56,14 @@ func disparo():
 		return
 	
 	var origen = posicion_1
-	var direccion = -player.global_transform.basis.z
 	if disparando_hacia_atras:
 		origen = posicion_2
-		direccion = player.global_transform.basis.z
+	
+	var direccion = -player.global_transform.basis.z
+	direccion.y = 0
+	direccion = direccion.normalized()
+	if disparando_hacia_atras:
+		direccion = -direccion
 	
 	var balita = balas.instantiate()
 	get_tree().current_scene.add_child(balita)

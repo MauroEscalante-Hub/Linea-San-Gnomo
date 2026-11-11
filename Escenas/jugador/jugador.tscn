@@ -127,6 +127,7 @@ player = NodePath("..")
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0.195, -1)
 player = NodePath("..")
 danio_del_jugador = 15
+cantidad_de_balas = 30
 
 [node name="Vida" parent="." unique_id=2126800800 node_paths=PackedStringArray("player") instance=ExtResource("10_j2gbx")]
 player = NodePath("..")
