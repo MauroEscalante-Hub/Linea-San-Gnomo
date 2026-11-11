@@ -9,6 +9,7 @@ func _ready() -> void:
 	Metrics.register_metrics(METRICAS)
 	
 	
+	
 
 func set_player(new_player: VehicleBody3D) -> void:
 	if new_player == current_player:

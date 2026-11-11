@@ -12,6 +12,7 @@ func _on_salir_button_down() -> void:
 	pass # Replace with function body.
 
 func _on_reintentar_button_down() -> void:
+	Metrics._save_current_session()
 	if escena==1:
 		get_tree().change_scene_to_file("res://Escenas/escenarios/nivel1_mapa1.tscn")
 	else:
