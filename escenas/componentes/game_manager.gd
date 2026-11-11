@@ -4,9 +4,10 @@ const METRICAS = preload("uid://ofka2avl4rqs")
 
 signal player_changed(new_player: VehicleBody3D)
 var current_player: VehicleBody3D = null
- 
+var escenaactual:int=1
 func _ready() -> void:
 	Metrics.register_metrics(METRICAS)
+	
 	
 	
 

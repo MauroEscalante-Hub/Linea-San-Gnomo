@@ -14,4 +14,5 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
+	Metrics.export_to_csv()
 	get_tree().change_scene_to_file("res://menu_principal.tscn")
