@@ -35,6 +35,7 @@ script = ExtResource("1_jnlar")
 vida_max = 100
 
 [node name="canvas" type="CanvasLayer" parent="." unique_id=1174388185]
+follow_viewport_enabled = true
 
 [node name="ProgressBar" parent="canvas" unique_id=516446245 instance=ExtResource("2_p4oi6")]
 anchors_preset = 3

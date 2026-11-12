@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://da0ye1sfq87vc"]
+
+[ext_resource type="Script" uid="uid://yfxcms7iq05l" path="res://Escenas/componentes/deteccion_hud_enemigo.gd" id="1_bpihs"]
+[ext_resource type="PackedScene" uid="uid://cjgv2qs0vn2wi" path="res://Escenas/componentes/vidaHudEnemigo.tscn" id="2_x5sbd"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5cipi"]
+height = 6.6104736
+radius = 15.888184
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_x5sbd"]
+viewport_path = NodePath("SubViewport")
+
+[node name="DeteccionHudEnemigo" type="Node3D" unique_id=720868625]
+script = ExtResource("1_bpihs")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=180616164]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1770537409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5752563, 0)
+shape = SubResource("CylinderShape3D_5cipi")
+
+[node name="VidaHudEnemigo" parent="." unique_id=846224132 instance=ExtResource("2_x5sbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5565057, 0)
+texture = SubResource("ViewportTexture_x5sbd")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

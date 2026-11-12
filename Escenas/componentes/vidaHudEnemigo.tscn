@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cjgv2qs0vn2wi"]
+
+[ext_resource type="PackedScene" uid="uid://pka07c3fe5jd" path="res://Escenas/componentes/vida/vida.tscn" id="1_gqyqy"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5cipi"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Sprite3D" type="Sprite3D" unique_id=846224132]
+texture = SubResource("ViewportTexture_5cipi")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=622209401]
+transparent_bg = true
+size = Vector2i(263, 413)
+
+[node name="Vida" parent="SubViewport" unique_id=2126800800 instance=ExtResource("1_gqyqy")]
