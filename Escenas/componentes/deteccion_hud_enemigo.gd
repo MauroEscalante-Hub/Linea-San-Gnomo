@@ -5,10 +5,19 @@ extends Node3D
 @export var auto_actual : VehicleBody3D = null 
 
 signal vehiculo_encontrado
+func activate():
+	set_physics_process(true)
+	set_process(true)
+	canvas.visible=false
+	
 
+func desactivate():
+	set_physics_process(false)
+	set_process(false)
+	canvas.visible=false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	canvas.visible = true
+	canvas.visible = false
 	auto_actual = null
 
 

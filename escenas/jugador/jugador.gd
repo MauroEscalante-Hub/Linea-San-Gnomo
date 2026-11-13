@@ -15,6 +15,7 @@ var nuevo_vehiculo: VehicleBody3D
 @onready var mov_auto = $Mov_Auto
 @onready var arma = $Arma
 @onready var levantar=$Levantar
+@onready var deteccionhud = $DeteccionHudEnemigo
 
 
 
@@ -40,6 +41,7 @@ func become_player() -> void:
 	mov_auto._desactivate()
 	arma.desactivate()
 	levantar.activate()
+	deteccionhud.activate()
 	
 func become_npc() -> void:
 	control_del_jugador.deactivate()
@@ -49,6 +51,7 @@ func become_npc() -> void:
 	areagancho.desactivate()
 	arma_de_jugador.desactivate()
 	componente_vida.desactivate()
+	deteccionhud.desactivate()
 	
 	arma.activate()
 	levantar.desactivate()
