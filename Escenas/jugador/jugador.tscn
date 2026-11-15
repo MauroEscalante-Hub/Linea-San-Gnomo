@@ -47,6 +47,7 @@ start_as_player = true
 
 [node name="VidaHudEnemigo" parent="." unique_id=846224132 instance=ExtResource("2_xonte")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4119644, 0)
+visible = false
 texture = SubResource("ViewportTexture_ink1f")
 
 [node name="DeteccionGancho" parent="." unique_id=1525103931 node_paths=PackedStringArray("auto_actual") instance=ExtResource("6_c0rcm")]

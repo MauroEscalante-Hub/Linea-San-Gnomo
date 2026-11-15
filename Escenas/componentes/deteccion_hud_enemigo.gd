@@ -31,6 +31,9 @@ func _process(_delta: float) -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if not (body is VehicleBody3D and body != get_parent()):
 		return
+
+	if body.name == "jugador" or body.is_in_group("jugador"):
+		return
 		
 	auto_actual = body
 	componente_vida_enemigo = body.get_node_or_null("Vida")
@@ -38,7 +41,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	
 	var canvas = _obtener_canvas()
 	if canvas:
-		canvas.visible = true
+		canvas.visible = true # Solo se muestra si es un enemigo válido
 		if componente_vida_enemigo:
 			var barra_progreso = canvas.get_node_or_null("ProgressBar")
 			if barra_progreso:
@@ -54,6 +57,7 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 	_cambiar_visibilidad_canvas(false)
 	_reiniciar_referencias()
 	vehiculo_encontrado.emit(auto_actual)
+
 func _obtener_canvas() -> Node:
 	if not sprite_vida_enemigo:
 		return null
