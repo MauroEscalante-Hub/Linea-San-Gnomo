@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bbsqmfxf0yc4c" path="res://Escenas/componentes/levantar/levantar.tscn" id="12_owptj"]
 [ext_resource type="PackedScene" uid="uid://d2lj1mpyv0yln" path="res://Escenas/componentes/DeteccionGancho.tscn" id="13_nlq4t"]
 [ext_resource type="PackedScene" uid="uid://da0ye1sfq87vc" path="res://Escenas/componentes/deteccionHudEnemigo.tscn" id="14_n58r8"]
+[ext_resource type="PackedScene" uid="uid://cjgv2qs0vn2wi" path="res://Escenas/componentes/vidaHudEnemigo.tscn" id="15_efa2v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cqhb5"]
 albedo_color = Color(0.7952375, 0, 0.17623618, 1)
@@ -35,6 +36,9 @@ height = 0.31713867
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_0ru8o"]
 height = 0.3305664
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_efa2v"]
+viewport_path = NodePath("SubViewport")
 
 [node name="enemigo" type="VehicleBody3D" unique_id=1604139032 groups=["enemigos"]]
 collision_layer = 7
@@ -132,21 +136,19 @@ ray = NodePath("../RayCast3D")
 [node name="Mov_Auto" parent="." unique_id=1749187415 node_paths=PackedStringArray("player") instance=ExtResource("10_eml4n")]
 player = NodePath("..")
 
-[node name="Vida" parent="." unique_id=2126800800 node_paths=PackedStringArray("player") instance=ExtResource("11_78feh")]
-player = NodePath("..")
+[node name="Vida" parent="." unique_id=2126800800 instance=ExtResource("11_78feh")]
 vida_max = 50
 
 [node name="Levantar" parent="." unique_id=1499998198 node_paths=PackedStringArray("jugador") instance=ExtResource("12_owptj")]
 jugador = NodePath("..")
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1788417323]
-transform = Transform3D(0.101436354, 0, 0, 0, 0.1200211, 0, 0, 0, 1, 0, 2.805974, 0)
-visible = false
-
 [node name="DeteccionGancho" parent="." unique_id=627201305 instance=ExtResource("13_nlq4t")]
 
-[node name="DeteccionHudEnemigo" parent="." unique_id=720868625 node_paths=PackedStringArray("auto_actual") instance=ExtResource("14_n58r8")]
+[node name="DeteccionHudEnemigo" parent="." unique_id=720868625 instance=ExtResource("14_n58r8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.28902757, 0)
-auto_actual = NodePath("..")
+
+[node name="VidaHudEnemigo" parent="." unique_id=846224132 instance=ExtResource("15_efa2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13962626, 1.7157774, 0.89378166)
+texture = SubResource("ViewportTexture_efa2v")
 
 [connection signal="murio" from="Vida" to="." method="_on_vida_murio"]

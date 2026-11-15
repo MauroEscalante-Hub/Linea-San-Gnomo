@@ -41,7 +41,7 @@ func become_player() -> void:
 	mov_auto._desactivate()
 	arma.desactivate()
 	levantar.activate()
-	deteccionhud.activate()
+	deteccionhud.activar()
 	
 func become_npc() -> void:
 	control_del_jugador.deactivate()
@@ -51,7 +51,7 @@ func become_npc() -> void:
 	areagancho.desactivate()
 	arma_de_jugador.desactivate()
 	componente_vida.desactivate()
-	deteccionhud.desactivate()
+	deteccionhud.desactivar()
 	
 	arma.activate()
 	levantar.desactivate()
