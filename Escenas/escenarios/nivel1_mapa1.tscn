@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cmv6ib0nhjx2s" path="res://Escenas/path_follow_3d.gd" id="1_j5g2l"]
 [ext_resource type="PackedScene" uid="uid://c0nrh27b7fyac" path="res://Assets/3d/models/Grass_1.fbx" id="1_yvhl4"]
 [ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://Escenas/jugador/jugador.tscn" id="2_1gonj"]
+[ext_resource type="Texture2D" uid="uid://b46xniu0toggu" path="res://Assets/3d/textures/DaySkyHDRI063B_1K_TONEMAPPED.jpg" id="2_770bd"]
 [ext_resource type="PackedScene" uid="uid://dvpxhrcghlpod" path="res://Assets/3d/models/Grass_2.fbx" id="2_p5k44"]
 [ext_resource type="Texture2D" uid="uid://bp2ne783mtgq2" path="res://Assets/sprites/linea san gnomo.png" id="3_0akap"]
 [ext_resource type="PackedScene" uid="uid://8fb5n0gthe4j" path="res://Assets/3d/models/Plant_3.fbx" id="3_7kk6f"]
@@ -24,12 +25,11 @@
 [ext_resource type="PackedScene" uid="uid://b0w31mc2k6qos" path="res://Escenas/componentes/Hudarma.tscn" id="18_fon06"]
 [ext_resource type="PackedScene" uid="uid://bmt7dendj5og2" path="res://Escenas/despertar_enemigos/despertar_enemigos.tscn" id="19_peni2"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_084nl"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_7rrox"]
+panorama = ExtResource("2_770bd")
 
 [sub_resource type="Sky" id="Sky_g7di0"]
-sky_material = SubResource("ProceduralSkyMaterial_084nl")
+sky_material = SubResource("PanoramaSkyMaterial_7rrox")
 
 [sub_resource type="Environment" id="Environment_ieg26"]
 background_mode = 2
@@ -375,7 +375,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135.2992, 0, 445.36758)
 curve = SubResource("Curve3D_ydg2l")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=532694705 node_paths=PackedStringArray("barrita_tren")]
-transform = Transform3D(0.9998831, 0, 0.011932772, 0, 1, 0, -0.011932772, 0, 0.9998831, -0.17575073, 0.00012207031, -0.24935913)
+transform = Transform3D(0.9998818, 0, 0.011932756, 0, 1, 0, -0.011932756, 0, 0.9998818, -0.17575073, 0.00012207031, -0.24935913)
 script = ExtResource("1_j5g2l")
 barrita_tren = NodePath("TextureProgressBar")
 
@@ -389,6 +389,21 @@ offset_bottom = 1066.0
 scale = Vector2(0.16, 0.16)
 texture_under = ExtResource("3_0akap")
 texture_progress = ExtResource("4_wd27f")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D" unique_id=186464751]
+autosmooth = true
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 1
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_rotation_accurate = true
+path_local = false
+path_continuous_u = false
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
 
 [connection signal="area_entered" from="Area3D" to="Area3D" method="_on_area_entered"]
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
