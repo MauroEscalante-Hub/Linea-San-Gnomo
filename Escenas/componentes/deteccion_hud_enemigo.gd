@@ -11,16 +11,16 @@ func activar() -> void:
 
 func desactivar() -> void:
 	set_process(false)
-	_cambiar_visibilidad_canvas(false)
+	visibilidadBarra(false)
 
 func _ready() -> void:
-	_reiniciar_referencias()
+	reiniciarbarra()
 
 func _process(_delta: float) -> void:
 	if not componente_vida_enemigo or not sprite_vida_enemigo:
 		return
 		
-	var canvas = _obtener_canvas()
+	var canvas = obtenerbarra()
 	if not canvas or not canvas.visible:
 		return
 		
@@ -39,7 +39,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	componente_vida_enemigo = body.get_node_or_null("Vida")
 	sprite_vida_enemigo = body.get_node_or_null("VidaHudEnemigo")
 	
-	var canvas = _obtener_canvas()
+	var canvas = obtenerbarra()
 	if not canvas:
 		return
 		
@@ -55,21 +55,21 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body != auto_actual:
 		return
 		
-	_cambiar_visibilidad_canvas(false)
-	_reiniciar_referencias()
+	visibilidadBarra(false)
+	reiniciarbarra()
 	vehiculo_encontrado.emit(auto_actual)
 
-func _obtener_canvas() -> Node:
+func obtenerbarra() -> Node:
 	if not sprite_vida_enemigo:
 		return null
 	return sprite_vida_enemigo.get_node_or_null("SubViewport/Vida/canvas")
 
-func _cambiar_visibilidad_canvas(es_visible: bool) -> void:
-	var canvas = _obtener_canvas()
+func visibilidadBarra(es_visible: bool) -> void:
+	var canvas = obtenerbarra()
 	if canvas:
 		canvas.visible = es_visible
 
-func _reiniciar_referencias() -> void:
+func reiniciarbarra() -> void:
 	auto_actual = null
 	componente_vida_enemigo = null
 	sprite_vida_enemigo = null
