@@ -10,7 +10,7 @@
 [node name="Arma_de_jugador" type="Node3D" unique_id=396609384 node_paths=PackedStringArray("disparojugador")]
 script = ExtResource("1_u6bma")
 disparojugador = NodePath("disparojugador")
-danio_del_jugador = 20
+danio_del_jugador = 5
 cantidad_de_balas = 3
 balas = ExtResource("1_bt1rc")
 

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bt4rtt2o18nfc"]
 
 [ext_resource type="Script" uid="uid://cqo31utn3jfmm" path="res://Escenas/jugador/jugador.gd" id="1_vquro"]
+[ext_resource type="PackedScene" uid="uid://cjgv2qs0vn2wi" path="res://Escenas/componentes/vidaHudEnemigo.tscn" id="2_xonte"]
 [ext_resource type="PackedScene" uid="uid://cldmjtak6b457" path="res://Escenas/componentes/movimiento/movimiento.tscn" id="3_jkpmm"]
 [ext_resource type="PackedScene" uid="uid://ddrti2gwrh11m" path="res://Escenas/componentes/deteccion_de_vehiculo/deteccion_de_vehiculo.tscn" id="4_3don6"]
 [ext_resource type="PackedScene" uid="uid://bjanlpui5kawe" path="res://Escenas/componentes/camara/camara.tscn" id="5_jkpmm"]
@@ -13,6 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://pka07c3fe5jd" path="res://Escenas/componentes/vida/vida.tscn" id="10_j2gbx"]
 [ext_resource type="PackedScene" uid="uid://b8n8hfvv4ppl1" path="res://Escenas/componentes/movimiento_automatico/mov_auto.tscn" id="11_0ug0u"]
 [ext_resource type="PackedScene" uid="uid://bbsqmfxf0yc4c" path="res://Escenas/componentes/levantar/levantar.tscn" id="12_crx0k"]
+[ext_resource type="PackedScene" uid="uid://da0ye1sfq87vc" path="res://Escenas/componentes/deteccionHudEnemigo.tscn" id="14_sptr8"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ink1f"]
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxMesh" id="BoxMesh_u5bk5"]
 size = Vector3(1, 1, 1.8329468)
@@ -39,6 +44,11 @@ can_sleep = false
 angular_damp = 3.0
 script = ExtResource("1_vquro")
 start_as_player = true
+
+[node name="VidaHudEnemigo" parent="." unique_id=846224132 instance=ExtResource("2_xonte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4119644, 0)
+visible = false
+texture = SubResource("ViewportTexture_ink1f")
 
 [node name="DeteccionGancho" parent="." unique_id=1525103931 node_paths=PackedStringArray("auto_actual") instance=ExtResource("6_c0rcm")]
 auto_actual = NodePath("..")
@@ -127,12 +137,11 @@ player = NodePath("..")
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0.195, -1)
 player = NodePath("..")
 ray = NodePath("../ray_suelo")
-danio_del_jugador = 15
+danio_del_jugador = 1
 cantidad_de_balas = 30
 
-[node name="Vida" parent="." unique_id=2126800800 node_paths=PackedStringArray("player") instance=ExtResource("10_j2gbx")]
-player = NodePath("..")
-vida_max = 200
+[node name="Vida" parent="." unique_id=2126800800 instance=ExtResource("10_j2gbx")]
+vida_max = 400
 
 [node name="Mov_Auto" parent="." unique_id=1749187415 node_paths=PackedStringArray("player") instance=ExtResource("11_0ug0u")]
 player = NodePath("..")
@@ -142,5 +151,7 @@ jugador = NodePath("..")
 
 [node name="ray_suelo" type="RayCast3D" parent="." unique_id=2102386825]
 target_position = Vector3(0, -5, 0)
+
+[node name="DeteccionHudEnemigo" parent="." unique_id=720868625 instance=ExtResource("14_sptr8")]
 
 [connection signal="murio" from="Vida" to="." method="_on_vida_murio"]

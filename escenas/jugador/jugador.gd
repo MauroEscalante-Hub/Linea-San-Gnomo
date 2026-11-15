@@ -15,6 +15,7 @@ var nuevo_vehiculo: VehicleBody3D
 @onready var mov_auto = $Mov_Auto
 @onready var arma = $Arma
 @onready var levantar=$Levantar
+@onready var deteccionhud = $DeteccionHudEnemigo
 
 
 
@@ -24,6 +25,7 @@ func _ready() -> void:
 	componente_vida.murio.connect(_on_vida_murio)
 	area_del_vehiculo.vehiculo_encontrado.connect(_on_vehiculo_encontrado)
 	mov_auto.tren_nuevo = tren
+	
 	become_npc()
 	if start_as_player:
 		GameManager.set_player(self)
@@ -40,6 +42,7 @@ func become_player() -> void:
 	mov_auto._desactivate()
 	arma.desactivate()
 	levantar.activate()
+	deteccionhud.desactivar()
 	
 func become_npc() -> void:
 	control_del_jugador.deactivate()
@@ -49,6 +52,7 @@ func become_npc() -> void:
 	areagancho.desactivate()
 	arma_de_jugador.desactivate()
 	componente_vida.desactivate()
+	deteccionhud.desactivar()
 	
 	arma.activate()
 	levantar.desactivate()
