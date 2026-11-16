@@ -18,7 +18,6 @@
 [ext_resource type="Script" uid="uid://dgjyvm4vujet6" path="res://Escenas/escenarios/terrain_3d.gd" id="13_lnp1g"]
 [ext_resource type="PackedScene" uid="uid://b0w31mc2k6qos" path="res://Escenas/componentes/Hudarma.tscn" id="14_f7jbi"]
 [ext_resource type="PackedScene" uid="uid://bmt7dendj5og2" path="res://Escenas/despertar_enemigos/despertar_enemigos.tscn" id="17_6e6np"]
-[ext_resource type="PackedScene" uid="uid://viuay4xvn0hv" path="res://Escenas/ariel_vfx/lluviaFinal.tscn" id="19_5u1b1"]
 
 [sub_resource type="Curve3D" id="Curve3D_lsltb"]
 _data = {
@@ -347,7 +346,5 @@ enemigos = [NodePath("../enemigo10"), null]
 [node name="despertar_enemigos6" parent="." unique_id=768328074 node_paths=PackedStringArray("enemigos") instance=ExtResource("17_6e6np")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.655716, 0, 509.7521)
 enemigos = [NodePath("../enemigo11")]
-
-[node name="Lluvia" parent="." unique_id=2096706937 instance=ExtResource("19_5u1b1")]
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
