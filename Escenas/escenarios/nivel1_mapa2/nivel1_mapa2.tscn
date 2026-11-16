@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://cgjcrslqmtfxy"]
 
-[ext_resource type="Script" uid="uid://ynooc24xjr0v" path="res://Escenas/escenarios/nivel1_mapa2/nivel_1_mapa_2.gd" id="1_5u1b1"]
 [ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://Escenas/jugador/jugador.tscn" id="1_byw73"]
 [ext_resource type="Script" uid="uid://cmv6ib0nhjx2s" path="res://Escenas/path_follow_3d.gd" id="1_lsltb"]
 [ext_resource type="PackedScene" uid="uid://pmc2plsrtcig" path="res://Escenas/Tren/Vagon.tscn" id="1_u7ql4"]
@@ -172,8 +171,42 @@ size = Vector3(24.422089, 6.040039, 24.481834)
 [sub_resource type="BoxShape3D" id="BoxShape3D_6fhyq"]
 size = Vector3(3.5825195, 5.818222, 3.390564)
 
+[sub_resource type="Gradient" id="Gradient_lnp1g"]
+offsets = PackedFloat32Array(0.23787528, 0.5704388, 0.891455)
+colors = PackedColorArray(0.24652417, 0.2395063, 0.4832863, 1, 0.5868575, 0.49443933, 0.57658887, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lnp1g"]
+gradient = SubResource("Gradient_lnp1g")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5cipi"]
+emission_shape_scale = Vector3(4.14, 1, 3.965)
+emission_shape = 3
+emission_box_extents = Vector3(3.225, 0.5, 1)
+direction = Vector3(-0.94, -1, 1.705)
+spread = 5.0
+angular_velocity_min = 2.399984
+angular_velocity_max = 2.399984
+color_initial_ramp = SubResource("GradientTexture1D_lnp1g")
+collision_mode = 2
+
+[sub_resource type="Curve" id="Curve_lnp1g"]
+_limits = [0.0, 0.1, 0.0, 1.0]
+_data = [Vector2(0.004073318, 0.0004950464), 0.0, 0.0, 0, 0, Vector2(0.17311609, 0.05247524), 0.39611295, 0.39611295, 0, 0, Vector2(1, 0.0024752468), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lnp1g"]
+shading_mode = 0
+vertex_color_use_as_albedo = true
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_lnp1g"]
+material = SubResource("StandardMaterial3D_lnp1g")
+size = 1.5
+sections = 13
+section_length = 2.5
+curve = SubResource("Curve_lnp1g")
+
 [node name="Nivel1Mapa2" type="Node3D" unique_id=178108371]
-script = ExtResource("1_5u1b1")
 
 [node name="Path3D" type="Path3D" parent="." unique_id=1484183513]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.546, 1.8, 1738.325)
@@ -346,7 +379,22 @@ transform = Transform3D(0.91861737, 0, 0.39514786, 0, 1, 0, -0.39514786, 0, 0.91
 enemigos = [NodePath("../enemigo10"), null]
 
 [node name="despertar_enemigos6" parent="." unique_id=768328074 node_paths=PackedStringArray("enemigos") instance=ExtResource("17_6e6np")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.704388, 0, 509.7521)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.655716, 0, 509.7521)
 enemigos = [NodePath("../enemigo11")]
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="." unique_id=1644962857]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.03125, 3.559723, 967.49854)
+size = Vector3(263.3798, 2, 1614.468)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=2045380609]
+transform = Transform3D(10.989204, 0, 0, 0, 1.4025825, 0, 0, 0, 213.53722, 27.273743, 20.786621, 933.94543)
+amount = 2800
+lifetime = 3.3499999999999996
+speed_scale = 23.75
+randomness = 0.25
+visibility_aabb = AABB(-4, -4, -4, 100, 41.01, 100)
+trail_enabled = true
+process_material = SubResource("ParticleProcessMaterial_5cipi")
+draw_pass_1 = SubResource("RibbonTrailMesh_lnp1g")
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

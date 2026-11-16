@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bhi5kx46hwr1o"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5cipi"]
+emission_shape_offset = Vector3(0, 3.85, 0)
+emission_shape = 3
+emission_box_extents = Vector3(10, 0.5, 10)
+direction = Vector3(0, -1, 0)
+spread = 50.0
+initial_velocity_min = 9.099999
+initial_velocity_max = 9.099999
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="Curve" id="Curve_lana2"]
+_limits = [0.0, 0.22277224, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.20162934, 0.057347313), 0.12376937, 0.12376937, 0, 0, Vector2(1, 0.012376189), -1.2051716, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_075i1"]
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_mnkjj"]
+material = SubResource("StandardMaterial3D_075i1")
+sections = 7
+section_length = 0.775
+curve = SubResource("Curve_lana2")
+
+[node name="Lluvia" type="Node3D" unique_id=1549745703]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=11020618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86384845, 0)
+amount = 100
+lifetime = 2.0
+randomness = 0.8
+trail_enabled = true
+trail_lifetime = 0.2
+process_material = SubResource("ParticleProcessMaterial_5cipi")
+draw_pass_1 = SubResource("RibbonTrailMesh_mnkjj")
