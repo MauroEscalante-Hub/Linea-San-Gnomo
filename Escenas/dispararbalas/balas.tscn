@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dqb7jkqihqm02"]
 
 [ext_resource type="Script" uid="uid://yomqjiew2lde" path="res://Escenas/dispararbalas/balas.gd" id="1_ipiei"]
+[ext_resource type="PackedScene" uid="uid://cnyntjgoerbn0" path="res://Assets/particulas_mauro/efectodisparo.tscn" id="2_4145m"]
+[ext_resource type="PackedScene" uid="uid://dbarboeu3fjrl" path="res://Assets/particulas_mauro/particulas.tscn" id="3_37fko"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_yf5fn"]
 
@@ -35,5 +37,11 @@ wait_time = 3.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1936619665]
 mesh = SubResource("SphereMesh_g4v7s")
+
+[node name="Efectodisparo" parent="." unique_id=1134621795 instance=ExtResource("2_4145m")]
+transform = Transform3D(3.9002888, 0, 0, 0, 3.443377, 0, 0, 0, 0.9999996, 0, 0, 0)
+
+[node name="particuladaño" parent="." unique_id=812034665 instance=ExtResource("3_37fko")]
+visible = false
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

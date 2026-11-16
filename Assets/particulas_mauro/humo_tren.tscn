@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bjxhkcwh46jm0"]
+
+[sub_resource type="Curve" id="Curve_k2wi6"]
+_data = [Vector2(0, 0.5725806), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_5y0e1"]
+curve = SubResource("Curve_k2wi6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6fhyq"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+angle_min = 1.0728835e-05
+angle_max = 1.0728835e-05
+direction = Vector3(0, 1, 0)
+spread = 5.0
+initial_velocity_min = 0.099999994
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = 12.309998
+scale_max = 1.4
+scale_curve = SubResource("CurveTexture_5y0e1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jq8tk"]
+transparency = 1
+albedo_color = Color(0.34509805, 0.34509805, 0.34509805, 0.7137255)
+normal_enabled = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_3xd07"]
+material = SubResource("StandardMaterial3D_jq8tk")
+radius = 0.415
+height = 0.54
+
+[node name="HumoTren" type="Node3D" unique_id=295196964]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=386335351]
+transform = Transform3D(0.41833928, 0, 0, 0, 0.24915324, 0, 0, 0, 0.24133408, 0, 0, 0)
+amount = 40
+lifetime = 0.8
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_6fhyq")
+draw_pass_1 = SubResource("SphereMesh_3xd07")

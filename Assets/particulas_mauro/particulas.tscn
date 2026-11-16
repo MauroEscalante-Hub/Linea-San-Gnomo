@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dbarboeu3fjrl"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8g45m"]
+particle_flag_align_y = true
+spread = 180.0
+initial_velocity_min = 15.0
+initial_velocity_max = 18.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lki27"]
+albedo_color = Color(0.89411765, 1, 0, 1)
+emission_enabled = true
+emission = Color(0.7149475, 0.7715544, 0, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="PrismMesh" id="PrismMesh_3xd07"]
+material = SubResource("StandardMaterial3D_lki27")
+size = Vector3(0.08, 0.135, 0.055)
+
+[node name="particuladaño" type="Node3D" unique_id=812034665]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1659645884]
+amount = 30
+lifetime = 0.2
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_8g45m")
+draw_pass_1 = SubResource("PrismMesh_3xd07")

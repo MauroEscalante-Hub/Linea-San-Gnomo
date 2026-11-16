@@ -7,6 +7,7 @@ var velocidad: float = 100
 var danio: int
 var bala_del_jugador: bool = false
 @onready var tiempo_ = $Timer
+@onready var chispa = $"particuladaño"
 
 func set_direccion(nueva_direccion: Vector3) -> void:
 	direccion = nueva_direccion
@@ -16,6 +17,7 @@ func set_direccion(nueva_direccion: Vector3) -> void:
  
 func _physics_process(delta: float) -> void:
 	global_position += direccion * velocidad * delta
+	
 
 func _ready() -> void:
 	await get_tree().create_timer(1).timeout
@@ -28,5 +30,6 @@ func _on_area_3d_body_entered(body):
 		return
 	if body.has_method("recibir_danio"):
 		print("[habla bala] di en ",body.name)
+		
 		body.recibir_danio(danio, bala_del_jugador)
 		queue_free()

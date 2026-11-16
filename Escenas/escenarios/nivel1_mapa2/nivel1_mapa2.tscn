@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://Escenas/jugador/jugador.tscn" id="1_byw73"]
 [ext_resource type="Script" uid="uid://cmv6ib0nhjx2s" path="res://Escenas/path_follow_3d.gd" id="1_lsltb"]
 [ext_resource type="PackedScene" uid="uid://pmc2plsrtcig" path="res://Escenas/Tren/Vagon.tscn" id="1_u7ql4"]
+[ext_resource type="Texture2D" uid="uid://w43040m8wr1f" path="res://Assets/3d/textures/DaySkyHDRI069A_1K_TONEMAPPED.jpg" id="1_yht4a"]
 [ext_resource type="PackedScene" uid="uid://duhswckhasixx" path="res://Assets/3d/models/002_Pine_Tree.fbx" id="2_ott3n"]
 [ext_resource type="Texture2D" uid="uid://b08mhytstwmjr" path="res://Assets/sprites/linea san gnomo mapa2.png" id="3_0b23c"]
 [ext_resource type="Texture2D" uid="uid://cd5egavsecmpd" path="res://Assets/3d/textures/1_1024x1024.png" id="3_b60p1"]
@@ -19,8 +20,20 @@
 [ext_resource type="Script" uid="uid://dgjyvm4vujet6" path="res://Escenas/escenarios/terrain_3d.gd" id="13_lnp1g"]
 [ext_resource type="PackedScene" uid="uid://b0w31mc2k6qos" path="res://Escenas/componentes/Hudarma.tscn" id="14_f7jbi"]
 [ext_resource type="PackedScene" uid="uid://bmt7dendj5og2" path="res://Escenas/despertar_enemigos/despertar_enemigos.tscn" id="17_6e6np"]
+[ext_resource type="AudioStream" uid="uid://df12fxoqloxcn" path="res://Escenas/audio/enviorment/The-Simpsons-Hit-_-Run-Soundtrack.ogg.ogg" id="19_5u1b1"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wlc8u"]
+panorama = ExtResource("1_yht4a")
+
+[sub_resource type="Sky" id="Sky_ydg2l"]
+sky_material = SubResource("PanoramaSkyMaterial_wlc8u")
+
+[sub_resource type="Environment" id="Environment_rmie6"]
+background_mode = 2
+sky = SubResource("Sky_ydg2l")
 
 [sub_resource type="Curve3D" id="Curve3D_lsltb"]
+closed = true
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.016105652, -9.536743e-07, -13.675903, 0, 0, 0, 0, 0, 0, -0.43174744, -9.536743e-07, -126.63501, 0, 0, 0, 0, 0, 0, 6.3275757, -0.00012302399, -359.8015, 0, 0, 0, 0, 0, 0, 5.6361923, -0.00012302399, -496.4917, 0, 0, 0, 0, 0, 0, 4.9042435, -0.00012302399, -662.9099, 0, 0, 0, 0, 0, 0, 7.1179657, -0.00012302399, -746.0828, 0, 0, 0, 0, 0, 0, 5.2378235, -0.00012302399, -758.49176, 0, 0, 0, 0, 0, 0, -2.6587677, -0.00012302399, -774.2849, 0, 0, 0, 0, 0, 0, -10.931381, -0.00012302399, -787.82196, 0, 0, 0, 0, 0, 0, -17.323868, -0.00012302399, -801.735, 0, 0, 0, 0, 0, 0, -22.212234, -0.00012302399, -829.18506, 0, 0, 0, 0, 0, 0, -23.71634, -0.00012302399, -854.3789, 0, 0, 0, 0, 0, 0, -26.423752, -0.00012302399, -896.6183, 0, 0, 0, 0, 0, 0, -26.79979, -0.00012302399, -942.4937, 0, 0, 0, 0, 0, 0, -23.448727, -0.00012302399, -1006.0013, 0, 0, 0, 0, 0, 0, -5.9832573, -0.00012302399, -1051.4355, 0, 0, 0, 0, 0, 0, -1.8469658, -0.00012302399, -1092.4226, 0, 0, 0, 0, 0, 0, -1.5895653, -0.00012302399, -1139.2891, 0, 0, 0, 0, 0, 0, -0.5449295, -0.00012302399, -1434.6005, 0, 0, 0, 0, 0, 0, -1.5818062, -0.00012302399, -1560.2009),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -174,6 +187,9 @@ size = Vector3(3.5825195, 5.818222, 3.390564)
 
 [node name="Nivel1Mapa2" type="Node3D" unique_id=178108371]
 script = ExtResource("1_5u1b1")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1413725266]
+environment = SubResource("Environment_rmie6")
 
 [node name="Path3D" type="Path3D" parent="." unique_id=1484183513]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.546, 1.8, 1738.325)
@@ -348,5 +364,11 @@ enemigos = [NodePath("../enemigo10"), null]
 [node name="despertar_enemigos6" parent="." unique_id=768328074 node_paths=PackedStringArray("enemigos") instance=ExtResource("17_6e6np")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.704388, 0, 509.7521)
 enemigos = [NodePath("../enemigo11")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1946097671]
+stream = ExtResource("19_5u1b1")
+volume_db = -18.0
+autoplay = true
+parameters/looping = false
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
