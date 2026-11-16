@@ -157,6 +157,5 @@ target_position = Vector3(0, -5, 0)
 
 [node name="Fuegodaño" parent="." unique_id=730807165 instance=ExtResource("16_ink1f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.79913497, 1.1073003)
-visible = false
 
 [connection signal="murio" from="Vida" to="." method="_on_vida_murio"]
