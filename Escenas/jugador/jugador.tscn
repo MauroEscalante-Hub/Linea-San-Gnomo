@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b8n8hfvv4ppl1" path="res://Escenas/componentes/movimiento_automatico/mov_auto.tscn" id="11_0ug0u"]
 [ext_resource type="PackedScene" uid="uid://bbsqmfxf0yc4c" path="res://Escenas/componentes/levantar/levantar.tscn" id="12_crx0k"]
 [ext_resource type="PackedScene" uid="uid://da0ye1sfq87vc" path="res://Escenas/componentes/deteccionHudEnemigo.tscn" id="14_sptr8"]
-[ext_resource type="PackedScene" uid="uid://np3pk2ahj6go" path="res://Escenas/fuegodaño.tscn" id="16_ink1f"]
+[ext_resource type="PackedScene" uid="uid://np3pk2ahj6go" path="res://Escenas/ariel_vfx/fuegodaño.tscn" id="16_ink1f"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ink1f"]
 viewport_path = NodePath("SubViewport")

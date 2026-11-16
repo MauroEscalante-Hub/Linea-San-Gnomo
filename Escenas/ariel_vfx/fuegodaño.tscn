@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://np3pk2ahj6go"]
 
-[ext_resource type="Texture2D" uid="uid://cdss8fyycu11c" path="res://Assets/sprites/flame_01.png" id="1_j8spx"]
-[ext_resource type="Texture2D" uid="uid://vi0ddepl1lmo" path="res://Assets/sprites/smoke_07.png" id="2_b607d"]
+[ext_resource type="Texture2D" uid="uid://cdss8fyycu11c" path="res://Assets/sprites/flame_01.png" id="1_swr3c"]
+[ext_resource type="Texture2D" uid="uid://vi0ddepl1lmo" path="res://Assets/sprites/smoke_07.png" id="2_w233r"]
 
 [sub_resource type="Curve" id="Curve_ncusr"]
 _data = [Vector2(0.004357297, 0.09574473), 0.0, 0.0, 0, 0, Vector2(0.5882353, 0.9787234), -0.7972208, -0.7972208, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -28,7 +28,7 @@ blend_mode = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.32598224, 0.6862715, 7.315874e-06, 1)
-albedo_texture = ExtResource("1_j8spx")
+albedo_texture = ExtResource("1_swr3c")
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
@@ -64,7 +64,7 @@ shading_mode = 0
 diffuse_mode = 3
 specular_mode = 1
 albedo_color = Color(0.3803856, 0.31186965, 0.33388624, 1)
-albedo_texture = ExtResource("2_b607d")
+albedo_texture = ExtResource("2_w233r")
 albedo_texture_msdf = true
 billboard_mode = 1
 billboard_keep_scale = true
@@ -84,6 +84,7 @@ draw_pass_1 = SubResource("QuadMesh_mnkjj")
 
 [node name="humo" type="GPUParticles3D" parent="." unique_id=1755568124]
 transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 1.9861844, 0)
+sorting_offset = 0.1
 amount = 10
 explosiveness = 0.64
 randomness = 0.3
