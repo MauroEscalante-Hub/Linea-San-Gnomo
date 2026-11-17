@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ldm3ywmn1y0j"
+path="res://.godot/imported/Explosion del auto.ogg-27ed346de4a198d5a19ffa34b30711c7.oggvorbisstr"
+
+[deps]
+
+source_file="res://Escenas/audio/sfx jugador/Explosion del auto.ogg"
+dest_files=["res://.godot/imported/Explosion del auto.ogg-27ed346de4a198d5a19ffa34b30711c7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
