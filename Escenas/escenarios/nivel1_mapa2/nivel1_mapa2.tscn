@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://cgjcrslqmtfxy"]
 
-[ext_resource type="Script" uid="uid://ynooc24xjr0v" path="res://Escenas/escenarios/nivel1_mapa2/nivel_1_mapa_2.gd" id="1_5u1b1"]
 [ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://Escenas/jugador/jugador.tscn" id="1_byw73"]
 [ext_resource type="Script" uid="uid://cmv6ib0nhjx2s" path="res://Escenas/path_follow_3d.gd" id="1_lsltb"]
 [ext_resource type="PackedScene" uid="uid://pmc2plsrtcig" path="res://Escenas/Tren/Vagon.tscn" id="1_u7ql4"]
@@ -186,7 +185,6 @@ size = Vector3(24.422089, 6.040039, 24.481834)
 size = Vector3(3.5825195, 5.818222, 3.390564)
 
 [node name="Nivel1Mapa2" type="Node3D" unique_id=178108371]
-script = ExtResource("1_5u1b1")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1413725266]
 environment = SubResource("Environment_rmie6")
