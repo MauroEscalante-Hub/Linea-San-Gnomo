@@ -76,6 +76,7 @@ material = SubResource("StandardMaterial3D_rmie6")
 transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 0, 0, 0)
 
 [node name="fuego" type="GPUParticles3D" parent="." unique_id=1913825268]
+emitting = false
 amount = 22
 explosiveness = 0.35
 randomness = 0.3
@@ -85,6 +86,7 @@ draw_pass_1 = SubResource("QuadMesh_mnkjj")
 [node name="humo" type="GPUParticles3D" parent="." unique_id=1755568124]
 transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 1.9861844, 0)
 sorting_offset = 0.1
+emitting = false
 amount = 10
 explosiveness = 0.64
 randomness = 0.3

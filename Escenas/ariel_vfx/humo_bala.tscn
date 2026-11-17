@@ -120,8 +120,10 @@ draw_pass_1 = SubResource("QuadMesh_fd1bh")
 
 [node name="onda_espanciva" type="GPUParticles3D" parent="." unique_id=1678976566]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0696404, -0.047040462, -0.53762054)
+emitting = false
 amount = 1
 lifetime = 0.5
+one_shot = true
 process_material = SubResource("ParticleProcessMaterial_5cipi")
 draw_pass_1 = SubResource("PlaneMesh_mnkjj")
 
