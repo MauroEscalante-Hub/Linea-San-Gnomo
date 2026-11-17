@@ -36,11 +36,14 @@ func recibir_danio(cantidad: int, es_del_jugador: bool = false) -> void:
 	if is_instance_valid(barravida):
 		barravida.vida = vida
 	
-	var porcentaje_vida = float(vida) / float(barravida.max_value)
-	
-	fuegoDaño1.encender(porcentaje_vida <= 0.75)
-	fuegoDaño2.encender(porcentaje_vida <= 0.50)
-	fuegoDaño3.encender(porcentaje_vida <= 0.25)
+	if barravida:
+		if vida <= barravida.max_value * 0.75:
+			fuegoDaño1.encender()
+		if vida <= barravida.max_value * 0.50:
+			fuegoDaño2.encender()
+		if vida <= barravida.max_value * 0.25:
+			fuegoDaño3.encender()
+		fuegoDaño3.encender()
 	if vida <= 0:
 		vida = 0
 		morir_tren()
