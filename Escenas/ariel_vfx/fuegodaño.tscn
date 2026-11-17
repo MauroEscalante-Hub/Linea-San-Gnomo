@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://np3pk2ahj6go"]
 
 [ext_resource type="Texture2D" uid="uid://cdss8fyycu11c" path="res://Assets/sprites/flame_01.png" id="1_swr3c"]
+[ext_resource type="Script" uid="uid://cu13fnoq0kkbn" path="res://Escenas/ariel_vfx/fuegodaño.gd" id="1_w233r"]
 [ext_resource type="Texture2D" uid="uid://vi0ddepl1lmo" path="res://Assets/sprites/smoke_07.png" id="2_w233r"]
 
 [sub_resource type="Curve" id="Curve_ncusr"]
@@ -74,6 +75,7 @@ material = SubResource("StandardMaterial3D_rmie6")
 
 [node name="Fuegodaño" type="Node3D" unique_id=730807165]
 transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 0, 0, 0)
+script = ExtResource("1_w233r")
 
 [node name="fuego" type="GPUParticles3D" parent="." unique_id=1913825268]
 emitting = false
