@@ -15,9 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://b8n8hfvv4ppl1" path="res://Escenas/componentes/movimiento_automatico/mov_auto.tscn" id="11_0ug0u"]
 [ext_resource type="PackedScene" uid="uid://bbsqmfxf0yc4c" path="res://Escenas/componentes/levantar/levantar.tscn" id="12_crx0k"]
 [ext_resource type="PackedScene" uid="uid://da0ye1sfq87vc" path="res://Escenas/componentes/deteccionHudEnemigo.tscn" id="14_sptr8"]
-[ext_resource type="PackedScene" uid="uid://7spm35rdp5vh" path="res://Escenas/ariel_vfx/derrapeNube.tscn" id="18_5rlq8"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ink1f"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_xonte"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxMesh" id="BoxMesh_u5bk5"]
@@ -49,7 +48,7 @@ start_as_player = true
 [node name="VidaHudEnemigo" parent="." unique_id=846224132 instance=ExtResource("2_xonte")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4119644, 0)
 visible = false
-texture = SubResource("ViewportTexture_ink1f")
+texture = SubResource("ViewportTexture_xonte")
 
 [node name="DeteccionGancho" parent="." unique_id=1525103931 node_paths=PackedStringArray("auto_actual") instance=ExtResource("6_c0rcm")]
 auto_actual = NodePath("..")
@@ -154,11 +153,5 @@ jugador = NodePath("..")
 target_position = Vector3(0, -5, 0)
 
 [node name="DeteccionHudEnemigo" parent="." unique_id=720868625 instance=ExtResource("14_sptr8")]
-
-[node name="DerrapeNube" parent="." unique_id=406359603 instance=ExtResource("18_5rlq8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0031406, 0, 1.2925882)
-
-[node name="DerrapeNube2" parent="." unique_id=538803165 instance=ExtResource("18_5rlq8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0729991, -0.30577266, 0.95215964)
 
 [connection signal="murio" from="Vida" to="." method="_on_vida_murio"]

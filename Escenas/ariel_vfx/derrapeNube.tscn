@@ -44,6 +44,7 @@ size = Vector2(1.5, 1.5)
 [node name="DerrapeNube" type="Node3D" unique_id=406359603]
 
 [node name="derrape" type="GPUParticles3D" parent="." unique_id=247027562]
+emitting = false
 amount = 100
 lifetime = 2.0
 process_material = SubResource("ParticleProcessMaterial_5cipi")
