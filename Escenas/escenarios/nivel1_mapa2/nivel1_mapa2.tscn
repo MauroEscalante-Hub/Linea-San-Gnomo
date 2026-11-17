@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://Escenas/jugador/jugador.tscn" id="1_byw73"]
 [ext_resource type="Script" uid="uid://cmv6ib0nhjx2s" path="res://Escenas/path_follow_3d.gd" id="1_lsltb"]
+[ext_resource type="Texture2D" uid="uid://clauofp52b0pq" path="res://Assets/3d/textures/DaySkyHDRI020A_1K_TONEMAPPED.jpg" id="1_rmie6"]
 [ext_resource type="PackedScene" uid="uid://pmc2plsrtcig" path="res://Escenas/Tren/Vagon.tscn" id="1_u7ql4"]
-[ext_resource type="Texture2D" uid="uid://w43040m8wr1f" path="res://Assets/3d/textures/DaySkyHDRI069A_1K_TONEMAPPED.jpg" id="1_yht4a"]
 [ext_resource type="PackedScene" uid="uid://duhswckhasixx" path="res://Assets/3d/models/002_Pine_Tree.fbx" id="2_ott3n"]
 [ext_resource type="Texture2D" uid="uid://b08mhytstwmjr" path="res://Assets/sprites/linea san gnomo mapa2.png" id="3_0b23c"]
 [ext_resource type="Texture2D" uid="uid://cd5egavsecmpd" path="res://Assets/3d/textures/1_1024x1024.png" id="3_b60p1"]
@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://viuay4xvn0hv" path="res://Escenas/ariel_vfx/lluviaFinal.tscn" id="21_rmie6"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wlc8u"]
-panorama = ExtResource("1_yht4a")
+panorama = ExtResource("1_rmie6")
 
 [sub_resource type="Sky" id="Sky_ydg2l"]
 sky_material = SubResource("PanoramaSkyMaterial_wlc8u")
