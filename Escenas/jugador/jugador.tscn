@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://sm36gimv1kto" path="res://Escenas/ariel_vfx/humo_bala.tscn" id="17_wjsp1"]
 [ext_resource type="PackedScene" uid="uid://7spm35rdp5vh" path="res://Escenas/ariel_vfx/derrapeNube.tscn" id="18_5rlq8"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_4eka3"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_5rlq8"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxMesh" id="BoxMesh_u5bk5"]
@@ -51,7 +51,7 @@ start_as_player = true
 [node name="VidaHudEnemigo" parent="." unique_id=846224132 instance=ExtResource("2_xonte")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4119644, 0)
 visible = false
-texture = SubResource("ViewportTexture_4eka3")
+texture = SubResource("ViewportTexture_5rlq8")
 
 [node name="DeteccionGancho" parent="." unique_id=1525103931 node_paths=PackedStringArray("auto_actual") instance=ExtResource("6_c0rcm")]
 auto_actual = NodePath("..")
@@ -165,5 +165,9 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.537484, 0, -5.1441817)
 
 [node name="DerrapeNube" parent="." unique_id=406359603 instance=ExtResource("18_5rlq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0031406, 0, 1.2925882)
+
+[node name="DerrapeNube2" parent="." unique_id=538803165 instance=ExtResource("18_5rlq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0729991, -0.30577266, 0.95215964)
 
 [connection signal="murio" from="Vida" to="." method="_on_vida_murio"]
