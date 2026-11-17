@@ -1,3 +1,50 @@
 [gd_scene format=3 uid="uid://7spm35rdp5vh"]
 
+[ext_resource type="Texture2D" uid="uid://cfr2x24q067nq" path="res://Assets/sprites/smoke_06_a.png" id="1_pgu73"]
+
+[sub_resource type="Curve" id="Curve_hod46"]
+_data = [Vector2(0.047930278, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_8aeh0"]
+curve = SubResource("Curve_hod46")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5cipi"]
+emission_shape = 1
+emission_sphere_radius = 0.3
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 0.55
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = 2.0499978
+scale_min = 3.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_8aeh0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2gyy1"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.5738721, 0.5739419, 0.6058906, 0.23921569)
+albedo_texture = ExtResource("1_pgu73")
+albedo_texture_force_srgb = true
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_mnkjj"]
+material = SubResource("StandardMaterial3D_2gyy1")
+size = Vector2(1.5, 1.5)
+
 [node name="DerrapeNube" type="Node3D" unique_id=406359603]
+
+[node name="derrape" type="GPUParticles3D" parent="." unique_id=247027562]
+amount = 100
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_5cipi")
+draw_pass_1 = SubResource("QuadMesh_mnkjj")
