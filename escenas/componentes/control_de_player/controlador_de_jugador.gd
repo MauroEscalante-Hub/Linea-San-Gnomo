@@ -3,7 +3,7 @@ extends Node
 
 @export var vehiculo: VehicleBody3D
 var nuevo_vehiculo: VehicleBody3D
-@onready var sonido_motor: AudioStreamPlayer3D=$"auto quieto"
+#@onready var sonido_motor: AudioStreamPlayer3D=$"auto quieto"
 
 func _ready() -> void:
 	if vehiculo == null and get_parent() is VehicleBody3D:
