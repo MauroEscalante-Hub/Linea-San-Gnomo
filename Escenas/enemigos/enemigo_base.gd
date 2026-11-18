@@ -21,14 +21,17 @@ var velocidad_de_giro = 5
 @onready var mov_auto = $Mov_Auto
 @onready var componentevida = $Vida
 @onready var levantar =$Levantar
+@onready var motor_funcionando = $"sonido de motor"
 
 func _ready() -> void:
+	
 	arma_.danio_de_arma = danio_de_auto
 	arma_.cadencia = tiempo_de_disparo
 	componentevida.murio.connect(_on_vida_murio)
 	area_del_vehiculo.vehiculo_encontrado.connect(_on_vehiculo_encontrado)
 	mov_auto.tren_nuevo = tren
 	arma_de_jugador.cantidad_de_balas = cantidad_de_municion
+	motor_funcionando.play()
 	become_npc()
 	if start_as_player:
 		GameManager.set_player(self)
