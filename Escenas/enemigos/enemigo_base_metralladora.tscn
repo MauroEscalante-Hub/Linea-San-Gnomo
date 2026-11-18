@@ -25,7 +25,11 @@ size = Vector3(1.9979248, 1.2747192, 3.3311157)
 [sub_resource type="CylinderMesh" id="CylinderMesh_8cmsc"]
 height = 0.34014893
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cjcfc"]
+albedo_color = Color(0.12955844, 0.12955847, 0.12955844, 1)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_qsk7m"]
+material = SubResource("StandardMaterial3D_cjcfc")
 height = 0.35862732
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_kh5iw"]
@@ -89,7 +93,7 @@ transform = Transform3D(-4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-
 mesh = SubResource("CylinderMesh_kh5iw")
 
 [node name="izquierda_atras" type="VehicleWheel3D" parent="." unique_id=2090882324]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, -0.4733494, 1.0021125)
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -1, -0.4733494, 1.0021125)
 use_as_traction = true
 wheel_friction_slip = 3.0
 suspension_stiffness = 40.0
@@ -152,6 +156,6 @@ transform = Transform3D(1.19, 0, 0, 0, 1.19, 0, 0, 0, 1.19, -0.13962626, 2.94493
 texture = SubResource("ViewportTexture_5xwdt")
 
 [node name="arma_ametralladora" parent="." unique_id=696546565 instance=ExtResource("18_sevqg")]
-transform = Transform3D(-0.55, 0, -4.8082526e-08, 0, 0.55, 0, 4.8082526e-08, 0, -0.55, 0.041053772, -0.18705845, 2.6180854)
+transform = Transform3D(-0.55, 0, -4.8082526e-08, 0, 0.55, 0, 4.8082526e-08, 0, -0.55, 0.041053772, -0.22636223, 2.6180854)
 
 [connection signal="murio" from="Vida" to="." method="_on_vida_murio"]
