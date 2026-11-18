@@ -4,7 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://dqb7jkqihqm02" path="res://Escenas/dispararbalas/balas.tscn" id="2_k60kx"]
 [ext_resource type="AudioStream" uid="uid://dv5mfobbtdcq0" path="res://Escenas/audio/sfx balas/Disparo.ogg" id="3_3awrw"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65qev"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.023529412)
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_pdal0"]
+material = SubResource("StandardMaterial3D_65qev")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_u5bk5"]
 
@@ -14,6 +19,7 @@ bala = ExtResource("2_k60kx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=39034994]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+visible = false
 layers = 2
 mesh = SubResource("CapsuleMesh_pdal0")
 
@@ -25,7 +31,7 @@ transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
 shape = SubResource("SphereShape3D_u5bk5")
 
 [node name="balas" parent="." unique_id=1497429755 instance=ExtResource("2_k60kx")]
-transform = Transform3D(0.945, 0, 0, 0, 0.945, 0, 0, 0, 0.945, 0, 0, 0)
+transform = Transform3D(-4.1307263e-08, 0, 0.94500005, 0, 0.945, 0, -0.94500005, 0, -4.1307263e-08, 0, 0, 0)
 
 [node name="disparoenemigo" type="AudioStreamPlayer3D" parent="." unique_id=1966568007]
 stream = ExtResource("3_3awrw")

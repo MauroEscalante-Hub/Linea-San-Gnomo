@@ -20,10 +20,11 @@ texture = ExtResource("2_d7h27")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1752573686]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_u5bk5")
 
 [node name="balas" parent="." unique_id=1497429755 instance=ExtResource("1_bt1rc")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, -0.65032625)
+transform = Transform3D(-2.2511365e-08, 0, 0.515, 0, 0.515, 0, -0.515, 0, -2.2511365e-08, 0, 0, -0.65032625)
 
 [node name="disparojugador" type="AudioStreamPlayer3D" parent="." unique_id=1279051330]
 stream = ExtResource("4_3yuoy")

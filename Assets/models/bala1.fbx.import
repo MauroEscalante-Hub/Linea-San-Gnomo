@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://djmdnk4mxvgsb"
-path="res://.godot/imported/bala1.fbx-ac0891a128188b0d4f95244d1d16eece.scn"
+path="res://.godot/imported/bala1.fbx-ac0891a128188b0d4f95244d1d16eece.res"
 
 [deps]
 
 source_file="res://Assets/models/bala1.fbx"
-dest_files=["res://.godot/imported/bala1.fbx-ac0891a128188b0d4f95244d1d16eece.scn"]
+dest_files=["res://.godot/imported/bala1.fbx-ac0891a128188b0d4f95244d1d16eece.res"]
 
 [params]
 

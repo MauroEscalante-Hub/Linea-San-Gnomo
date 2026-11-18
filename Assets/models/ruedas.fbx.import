@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="MeshLibrary"
 importer_version=1
-type="PackedScene"
+type="MeshLibrary"
 uid="uid://cv3ys1rft13pr"
-path="res://.godot/imported/ruedas.fbx-3043650e85c5291ed0025ba124cae160.scn"
+path="res://.godot/imported/ruedas.fbx-3043650e85c5291ed0025ba124cae160.res"
 
 [deps]
 
 source_file="res://Assets/models/ruedas.fbx"
-dest_files=["res://.godot/imported/ruedas.fbx-3043650e85c5291ed0025ba124cae160.scn"]
+dest_files=["res://.godot/imported/ruedas.fbx-3043650e85c5291ed0025ba124cae160.res"]
 
 [params]
 

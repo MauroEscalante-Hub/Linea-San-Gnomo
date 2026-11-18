@@ -133,10 +133,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018756509, -0.01797095, -1
 target_position = Vector3(0, -1, -50)
 
 [node name="Arma" parent="." unique_id=192237572 node_paths=PackedStringArray("player") instance=ExtResource("8_26844")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50906384, -0.5035459)
 player = NodePath("..")
 
 [node name="Arma_de_jugador" parent="." unique_id=396609384 node_paths=PackedStringArray("player", "ray") instance=ExtResource("9_mnegl")]
-transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0.195, -0.74499446)
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0.4847054, -0.74499446)
 player = NodePath("..")
 ray = NodePath("../ray_suelo")
 danio_del_jugador = 1
