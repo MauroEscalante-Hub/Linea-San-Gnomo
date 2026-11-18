@@ -29,7 +29,7 @@ cull_mode = 2
 shading_mode = 0
 diffuse_mode = 3
 specular_mode = 1
-albedo_color = Color(0.5738721, 0.5739419, 0.6058906, 0.23921569)
+albedo_color = Color(0.509553, 0.36452702, 0.293181, 0.23921569)
 albedo_texture = ExtResource("1_pgu73")
 albedo_texture_force_srgb = true
 billboard_mode = 3
@@ -44,7 +44,6 @@ size = Vector2(1.5, 1.5)
 [node name="DerrapeNube" type="Node3D" unique_id=406359603]
 
 [node name="derrape" type="GPUParticles3D" parent="." unique_id=247027562]
-emitting = false
 amount = 100
 lifetime = 2.0
 process_material = SubResource("ParticleProcessMaterial_5cipi")

@@ -45,5 +45,6 @@ transform = Transform3D(3.9002888, 0, 0, 0, 3.443377, 0, 0, 0, 0.9999996, 0, 0, 
 [node name="particuladaño" parent="." unique_id=812034665 instance=ExtResource("3_37fko")]
 
 [node name="HumoBala" parent="." unique_id=1493959641 instance=ExtResource("4_tdg43")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.75097656)
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
