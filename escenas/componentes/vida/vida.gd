@@ -5,8 +5,8 @@ extends Node3D
 @export var vida_max: int
 @onready var progress_bar = $canvas/ProgressBar
 @onready var canvas: CanvasLayer = $canvas
-@onready var danio_de_auto= $danio_auto
-@onready var poca_vida=  $AudioStreamPlayer3D
+#@onready var danio_de_auto= $danio_auto
+#@onready var poca_vida=  $AudioStreamPlayer3D
 
 signal murio
 var vida_actual: int
@@ -31,9 +31,9 @@ func recibir_danio(cantidad: int) -> void:
 		return
 	vida_actual = maxi(vida_actual - cantidad, 0)
 	progress_bar.value = vida_actual
-	danio_de_auto.play()
+	#danio_de_auto.play()
 	if vida_actual <= 0:
-		poca_vida.play()
+		#poca_vida.play()
 		_morir()
 		
 

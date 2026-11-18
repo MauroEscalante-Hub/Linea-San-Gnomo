@@ -3,6 +3,7 @@ extends Area3D
 
 @export var enemigos: Array[VehicleBody3D] = []
 var activado:= false
+@onready var motor_enemy = $motor_enemigo
 
 func _ready():
 	print("soy area ", name)
@@ -29,6 +30,7 @@ func despertar_enemigos():
 			var movimiento = enemigo.get_node_or_null("Mov_Auto")
 			if movimiento:
 				movimiento._activate()
+				motor_enemy.play()
 	
 	set_deferred("monitoring", false)
 

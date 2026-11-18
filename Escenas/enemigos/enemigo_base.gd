@@ -21,7 +21,8 @@ var velocidad_de_giro = 5
 @onready var mov_auto = $Mov_Auto
 @onready var componentevida = $Vida
 @onready var levantar =$Levantar
-@onready var motor_funcionando = $"sonido de motor"
+#@onready var motor_funcionando = $"sonido de motor"
+@onready var sonido_danio = $"danio de enemigo"
 
 func _ready() -> void:
 	
@@ -31,7 +32,6 @@ func _ready() -> void:
 	area_del_vehiculo.vehiculo_encontrado.connect(_on_vehiculo_encontrado)
 	mov_auto.tren_nuevo = tren
 	arma_de_jugador.cantidad_de_balas = cantidad_de_municion
-	motor_funcionando.play()
 	become_npc()
 	if start_as_player:
 		GameManager.set_player(self)
@@ -71,6 +71,7 @@ func recibir_danio(cantidad: int, es_del_jugador: bool):
 	
 	if es_del_jugador:
 		arma_.recibir_disparo_del_jugador()
+		sonido_danio.play()
 
 
 func _on_vida_murio():
