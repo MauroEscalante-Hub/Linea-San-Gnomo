@@ -338,7 +338,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_q6b5w"]
 resource_name = "parte1"
-length = 15.166667
+length = 17.466667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -394,7 +394,7 @@ tracks/4/path = NodePath("AnimationPlayer/camara1:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(3.5268369, 7.133376, 10.799692, 10.998949, 11.536896, 12.15459, 12.9914665, 14.167079),
+"times": PackedFloat32Array(3.5268369, 7.133376, 11.2, 11.566667, 12.666667, 13.7, 14.7, 16.333334),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-214.1665, 7.700813, 576.08014), Vector3(-208.03406, 15.074751, 605.4886), Vector3(-208.03406, 15.074751, 605.4886), Vector3(-130.27124, 25.251558, 516.6027), Vector3(-130.27124, 27.641737, 507.0644), Vector3(-129.4024, 23.64219, 491.06516), Vector3(-127.008194, 9.365578, 468.2207), Vector3(-145.68144, 3.2572117, 434.89655)]
@@ -454,10 +454,10 @@ tracks/9/path = NodePath("AnimationPlayer/ColorRect:color")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(9.533334, 10.640287, 10.939126),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 9.7, 10.999999, 11.533334, 11.833333, 16.38062, 17.416752),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -466,7 +466,7 @@ tracks/10/path = NodePath("AnimationPlayer/camara1:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(10.879395, 10.998949, 11.536896, 12.15459, 12.9914665, 14.167079),
+"times": PackedFloat32Array(11.166667, 11.6, 12.666667, 13.7, 14.7, 16.333334),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.27235782, -1.3781568, -0.057809606), Vector3(-0.27235785, -0.12486902, -0.057809606), Vector3(-0.3957797, -0.106821574, -0.10262001), Vector3(-0.5871832, -0.101111665, 0.14239645), Vector3(-0.4402273, 0.30614302, 0.0331868), Vector3(-0.43771285, 0.05154222, -0.047531243)]
