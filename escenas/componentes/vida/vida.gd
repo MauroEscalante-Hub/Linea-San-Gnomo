@@ -7,6 +7,12 @@ extends Node3D
 @onready var canvas: CanvasLayer = $canvas
 @onready var danio_de_auto= $danio_auto
 @onready var poca_vida=  $AudioStreamPlayer3D
+@onready var fuego: GPUParticles3D = $Fuegodaño/fuego
+@onready var humo: GPUParticles3D = $Fuegodaño/humo
+@export var porcentaje :float
+
+
+
 
 signal murio
 var vida_actual: int
@@ -19,6 +25,9 @@ func _ready():
 	progress_bar.max_value = vida_max
 	progress_bar.value = vida_actual
 	canvas.visible = false
+	fuego.emitting = false
+	humo.emitting = false
+	
 
 func activate():
 	canvas.visible = true
@@ -32,6 +41,10 @@ func recibir_danio(cantidad: int) -> void:
 	vida_actual = maxi(vida_actual - cantidad, 0)
 	progress_bar.value = vida_actual
 	danio_de_auto.play()
+	if vida_actual<=vida_max*porcentaje:
+		fuego.emitting=true
+		humo.emitting=true
+		
 	if vida_actual <= 0:
 		poca_vida.play()
 		_morir()

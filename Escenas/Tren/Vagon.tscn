@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cjm870jn1ynk5" path="res://Escenas/audio/enviorment/tren_mezcla.ogg" id="4_7lld6"]
 [ext_resource type="AudioStream" uid="uid://d3o1osww3wk0q" path="res://Escenas/audio/sonidos hits/cartoon hit.ogg" id="5_3g6mo"]
 [ext_resource type="PackedScene" uid="uid://bjxhkcwh46jm0" path="res://Assets/particulas_mauro/humo_tren.tscn" id="7_3g6mo"]
+[ext_resource type="PackedScene" uid="uid://np3pk2ahj6go" path="res://Escenas/ariel_vfx/fuegodaño.tscn" id="8_5y0e1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5cipi"]
 size = Vector3(0.9869995, 1.9107056, 11.728237)
@@ -113,3 +114,12 @@ volume_db = 37.403
 
 [node name="HumoTren" parent="." unique_id=295196964 instance=ExtResource("7_3g6mo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008930796, 1.769235, -3.9787738)
+
+[node name="Fuegodaño" parent="." unique_id=730807165 instance=ExtResource("8_5y0e1")]
+transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 0, 1.1364526, -3.1144392)
+
+[node name="Fuegodaño2" parent="." unique_id=115335249 instance=ExtResource("8_5y0e1")]
+transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 0, 1.0394964, 5.576768)
+
+[node name="Fuegodaño3" parent="." unique_id=537576230 instance=ExtResource("8_5y0e1")]
+transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 0, 1.0394964, 0.73743415)

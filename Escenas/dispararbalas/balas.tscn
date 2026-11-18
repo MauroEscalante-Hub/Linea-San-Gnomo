@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://yomqjiew2lde" path="res://Escenas/dispararbalas/balas.gd" id="1_ipiei"]
 [ext_resource type="PackedScene" uid="uid://cnyntjgoerbn0" path="res://Assets/particulas_mauro/efectodisparo.tscn" id="2_4145m"]
 [ext_resource type="PackedScene" uid="uid://dbarboeu3fjrl" path="res://Assets/particulas_mauro/particulas.tscn" id="3_37fko"]
+[ext_resource type="PackedScene" uid="uid://sm36gimv1kto" path="res://Escenas/ariel_vfx/humo_bala.tscn" id="4_tdg43"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_yf5fn"]
 
@@ -42,6 +43,8 @@ mesh = SubResource("SphereMesh_g4v7s")
 transform = Transform3D(3.9002888, 0, 0, 0, 3.443377, 0, 0, 0, 0.9999996, 0, 0, 0)
 
 [node name="particuladaño" parent="." unique_id=812034665 instance=ExtResource("3_37fko")]
-visible = false
+
+[node name="HumoBala" parent="." unique_id=1493959641 instance=ExtResource("4_tdg43")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.75097656)
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
