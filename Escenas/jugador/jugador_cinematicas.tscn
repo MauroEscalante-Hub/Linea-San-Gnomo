@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://cuy62ujcohefn"]
+
+[ext_resource type="PackedScene" uid="uid://cjgv2qs0vn2wi" path="res://Escenas/componentes/vidaHudEnemigo.tscn" id="2_abkml"]
+[ext_resource type="ArrayMesh" uid="uid://cg4jyupfx42gq" path="res://Assets/models/Auto_Player_Ventana.fbx" id="3_5amsy"]
+[ext_resource type="PackedScene" uid="uid://d2lj1mpyv0yln" path="res://Escenas/componentes/DeteccionGancho.tscn" id="3_akxd1"]
+[ext_resource type="PackedScene" uid="uid://dk7bm4r3fsxmw" path="res://Assets/models/arma_basica_jugador.fbx" id="19_jkrem"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5amsy"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8cmsc"]
+size = Vector3(2.3269043, 0.99694824, 4.8269043)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8cmsc"]
+height = 0.34014893
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qsk7m"]
+height = 0.35862732
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kh5iw"]
+height = 0.31713867
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0ru8o"]
+height = 0.3305664
+
+[node name="jugador" type="VehicleBody3D" unique_id=1604139032]
+collision_layer = 3
+center_of_mass_mode = 1
+can_sleep = false
+angular_damp = 3.0
+
+[node name="VidaHudEnemigo" parent="." unique_id=846224132 instance=ExtResource("2_abkml")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4119644, 0)
+visible = false
+texture = SubResource("ViewportTexture_5amsy")
+
+[node name="DeteccionGancho" parent="." unique_id=1525103931 node_paths=PackedStringArray("auto_actual") instance=ExtResource("3_akxd1")]
+auto_actual = NodePath("..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=786756163]
+transform = Transform3D(-1.4463948, 0, -1.6451976e-07, 0, 1.660013, 0, 1.2644784e-07, 0, -1.8818867, 0, -0.7664826, -0.0024392535)
+mesh = ExtResource("3_5amsy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1328462197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.4703977, 0.013549805, 0.3207929, -0.06494731)
+shape = SubResource("BoxShape3D_8cmsc")
+
+[node name="derecha" type="VehicleWheel3D" parent="." unique_id=73082308]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, -0.32828116, -2.5337517)
+use_as_steering = true
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="derecha" unique_id=1807814371]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.019, 0, 0)
+layers = 16
+mesh = SubResource("CylinderMesh_8cmsc")
+
+[node name="izquierda" type="VehicleWheel3D" parent="." unique_id=1283648186]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.9433254, -0.328, -2.534)
+use_as_steering = true
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="izquierda" unique_id=879670267]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.002, 0, 0)
+layers = 16
+mesh = SubResource("CylinderMesh_qsk7m")
+
+[node name="derecha_atras" type="VehicleWheel3D" parent="." unique_id=368855817]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, -0.335418, 1.6967639)
+use_as_traction = true
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="derecha_atras" unique_id=1545732869]
+transform = Transform3D(-4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0, 1, 0.017, 0, 0)
+layers = 16
+mesh = SubResource("CylinderMesh_kh5iw")
+
+[node name="izquierda_atras" type="VehicleWheel3D" parent="." unique_id=2090882324]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, -0.335, 1.697)
+use_as_traction = true
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="izquierda_atras" unique_id=222053733]
+transform = Transform3D(0.000577406, 0.9999998, -8.73723e-08, -0.9999998, 0.000577406, -8.742276e-08, -8.73723e-08, 8.742276e-08, 1, 0, 0, 0)
+layers = 16
+mesh = SubResource("CylinderMesh_0ru8o")
+
+[node name="arma_basica_jugador" parent="." unique_id=165488132 instance=ExtResource("19_jkrem")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.10789, 0.051520824, -3.0426865)

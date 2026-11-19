@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://t1lm60sghuea"]
+
+[ext_resource type="Script" uid="uid://csqjjf38dlstk" path="res://Escenas/enemigos/enemigo_base.gd" id="1_sevqg"]
+[ext_resource type="PackedScene" uid="uid://dkq3vlchvbqae" path="res://Assets/models/GnomoConduciendo.fbx" id="2_5xwdt"]
+[ext_resource type="ArrayMesh" uid="uid://dqfh80p5lfptm" path="res://Assets/models/Auto_enemigo.fbx" id="3_m2k7k"]
+[ext_resource type="PackedScene" uid="uid://bjanlpui5kawe" path="res://Escenas/componentes/camara/camara.tscn" id="4_cjcfc"]
+[ext_resource type="PackedScene" uid="uid://ddrti2gwrh11m" path="res://Escenas/componentes/deteccion_de_vehiculo/deteccion_de_vehiculo.tscn" id="5_s5av1"]
+[ext_resource type="PackedScene" uid="uid://cxaro2aci7e0v" path="res://Escenas/componentes/control_de_player/controlador_de_jugador.tscn" id="6_sjtgm"]
+[ext_resource type="PackedScene" uid="uid://cldmjtak6b457" path="res://Escenas/componentes/movimiento/movimiento.tscn" id="7_qmf52"]
+[ext_resource type="PackedScene" uid="uid://bhw4fsf0ug2a3" path="res://Escenas/componentes/gancho/ganchocontrol.tscn" id="8_jblhj"]
+[ext_resource type="PackedScene" uid="uid://cu0nveryf7yao" path="res://Escenas/componentes/gancho/soga.tscn" id="9_a8sxq"]
+[ext_resource type="PackedScene" uid="uid://db0xp4k6m2u8a" path="res://Escenas/componentes/arma/arma.tscn" id="10_bdxpa"]
+[ext_resource type="PackedScene" uid="uid://w5tekxfxwx1x" path="res://Escenas/componentes/arma/arma_de_jugador.tscn" id="11_628at"]
+[ext_resource type="PackedScene" uid="uid://b8n8hfvv4ppl1" path="res://Escenas/componentes/movimiento_automatico/mov_auto.tscn" id="12_460we"]
+[ext_resource type="PackedScene" uid="uid://pka07c3fe5jd" path="res://Escenas/componentes/vida/vida.tscn" id="13_rtjbv"]
+[ext_resource type="PackedScene" uid="uid://bbsqmfxf0yc4c" path="res://Escenas/componentes/levantar/levantar.tscn" id="14_61sar"]
+[ext_resource type="PackedScene" uid="uid://d2lj1mpyv0yln" path="res://Escenas/componentes/DeteccionGancho.tscn" id="15_rriov"]
+[ext_resource type="PackedScene" uid="uid://da0ye1sfq87vc" path="res://Escenas/componentes/deteccionHudEnemigo.tscn" id="16_n6v2g"]
+[ext_resource type="PackedScene" uid="uid://cjgv2qs0vn2wi" path="res://Escenas/componentes/vidaHudEnemigo.tscn" id="17_a83aq"]
+[ext_resource type="PackedScene" uid="uid://cnu80vboweogh" path="res://Assets/models/arma_ametralladora.fbx" id="18_sevqg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8cmsc"]
+size = Vector3(1.9979248, 1.2747192, 3.3311157)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8cmsc"]
+height = 0.34014893
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cjcfc"]
+albedo_color = Color(0.12955844, 0.12955847, 0.12955844, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qsk7m"]
+material = SubResource("StandardMaterial3D_cjcfc")
+height = 0.35862732
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kh5iw"]
+height = 0.31713867
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0ru8o"]
+height = 0.3305664
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5xwdt"]
+viewport_path = NodePath("SubViewport")
+
+[node name="enemigo" type="VehicleBody3D" unique_id=1604139032 groups=["enemigos"]]
+collision_layer = 7
+collision_mask = 3
+center_of_mass_mode = 1
+can_sleep = false
+angular_damp = 3.0
+script = ExtResource("1_sevqg")
+danio_de_auto = 2
+tiempo_de_disparo = 1.0
+
+[node name="GnomoConduciendo" parent="." unique_id=637960603 instance=ExtResource("2_5xwdt")]
+transform = Transform3D(-0.1, 0, 1.509958e-08, 0, 0.1, 0, -1.509958e-08, 0, -0.1, 0.32398522, -0.6535811, 1.6941984)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=786756163]
+transform = Transform3D(-0.421, 0, -5.910446e-08, 2.9396106e-09, 0.48319376, -0.018100819, 6.350123e-08, -0.022368092, -0.39101243, 0, 0, 1.21631)
+mesh = ExtResource("3_m2k7k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1328462197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.4703977, 0.00091552734, 0.13735962, -0.60445505)
+shape = SubResource("BoxShape3D_8cmsc")
+
+[node name="derecha" type="VehicleWheel3D" parent="." unique_id=73082308]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, -0.473, -2.091458)
+use_as_steering = true
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="derecha" unique_id=1807814371]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.019, 0, 0)
+mesh = SubResource("CylinderMesh_8cmsc")
+
+[node name="izquierda" type="VehicleWheel3D" parent="." unique_id=1283648186]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, -0.473, -2.091)
+use_as_steering = true
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="izquierda" unique_id=879670267]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.002, 0, 0)
+mesh = SubResource("CylinderMesh_qsk7m")
+
+[node name="derecha_atras" type="VehicleWheel3D" parent="." unique_id=368855817]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, -0.4733494, 1.0021125)
+use_as_traction = true
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="derecha_atras" unique_id=1545732869]
+transform = Transform3D(-4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0, 1, 0.017, 0, 0)
+mesh = SubResource("CylinderMesh_kh5iw")
+
+[node name="izquierda_atras" type="VehicleWheel3D" parent="." unique_id=2090882324]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -1, -0.4733494, 1.0021125)
+use_as_traction = true
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="izquierda_atras" unique_id=222053733]
+transform = Transform3D(0.000577406, 0.9999998, -8.73723e-08, -0.9999998, 0.000577406, -8.742276e-08, -8.73723e-08, 8.742276e-08, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_0ru8o")
+
+[node name="centro de masa" type="Node3D" parent="." unique_id=783383178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17721605, -0.44497806)
+
+[node name="camara" parent="." unique_id=1265065216 node_paths=PackedStringArray("player", "arma") instance=ExtResource("4_cjcfc")]
+player = NodePath("..")
+arma = NodePath("../Arma_de_jugador")
+
+[node name="deteccion_de_vehiculo" parent="." unique_id=2053109797 node_paths=PackedStringArray("auto_actual") instance=ExtResource("5_s5av1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.96200204, 0)
+auto_actual = NodePath("..")
+
+[node name="controlador_de_jugador" parent="." unique_id=1153739361 node_paths=PackedStringArray("vehiculo") instance=ExtResource("6_sjtgm")]
+vehiculo = NodePath("..")
+
+[node name="movimiento" parent="." unique_id=1595637067 node_paths=PackedStringArray("player") instance=ExtResource("7_qmf52")]
+player = NodePath("..")
+
+[node name="Ganchocontrol" parent="." unique_id=37022380 instance=ExtResource("8_jblhj")]
+
+[node name="soga" parent="." unique_id=283510190 instance=ExtResource("9_a8sxq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.71554923)
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1196462397]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, 0.75, -1.45)
+target_position = Vector3(0, -1, -50)
+
+[node name="Arma" parent="." unique_id=192237572 node_paths=PackedStringArray("player") instance=ExtResource("10_bdxpa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6061552, -1.9810958)
+player = NodePath("..")
+
+[node name="Arma_de_jugador" parent="." unique_id=396609384 node_paths=PackedStringArray("player", "ray") instance=ExtResource("11_628at")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64763397, -1.987345)
+player = NodePath("..")
+ray = NodePath("../RayCast3D")
+
+[node name="Mov_Auto" parent="." unique_id=1749187415 node_paths=PackedStringArray("player") instance=ExtResource("12_460we")]
+player = NodePath("..")
+
+[node name="Vida" parent="." unique_id=2126800800 instance=ExtResource("13_rtjbv")]
+vida_max = 50
+
+[node name="Levantar" parent="." unique_id=1499998198 node_paths=PackedStringArray("jugador") instance=ExtResource("14_61sar")]
+jugador = NodePath("..")
+
+[node name="DeteccionGancho" parent="." unique_id=627201305 instance=ExtResource("15_rriov")]
+
+[node name="DeteccionHudEnemigo" parent="." unique_id=720868625 instance=ExtResource("16_n6v2g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.28902757, 0)
+
+[node name="VidaHudEnemigo" parent="." unique_id=846224132 instance=ExtResource("17_a83aq")]
+transform = Transform3D(1.19, 0, 0, 0, 1.19, 0, 0, 0, 1.19, -0.13962626, 2.9449358, 0.3659811)
+texture = SubResource("ViewportTexture_5xwdt")
+
+[node name="arma_ametralladora" parent="." unique_id=696546565 instance=ExtResource("18_sevqg")]
+transform = Transform3D(-0.55, 0, -4.8082526e-08, 0, 0.55, 0, 4.8082526e-08, 0, -0.55, 0.041053772, -0.22636223, 2.6180854)
+
+[connection signal="murio" from="Vida" to="." method="_on_vida_murio"]

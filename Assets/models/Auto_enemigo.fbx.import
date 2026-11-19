@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://dqfh80p5lfptm"
-path="res://.godot/imported/Auto_enemigo.fbx-80022fb17f51e7c6eaf41874279a577c.scn"
+path="res://.godot/imported/Auto_enemigo.fbx-80022fb17f51e7c6eaf41874279a577c.res"
 
 [deps]
 
 source_file="res://Assets/models/Auto_enemigo.fbx"
-dest_files=["res://.godot/imported/Auto_enemigo.fbx-80022fb17f51e7c6eaf41874279a577c.scn"]
+dest_files=["res://.godot/imported/Auto_enemigo.fbx-80022fb17f51e7c6eaf41874279a577c.res"]
 
 [params]
 
