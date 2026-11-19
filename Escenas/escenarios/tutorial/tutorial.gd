@@ -4,12 +4,14 @@ extends Node3D
 @onready var texto3 = $texto3
 @onready var texto4 = $texto4
 @onready var texto5 = $texto5
+@onready var textomedio = $textomedio
 @onready var chuchu = $AnimationPlayer
 @onready var barra = $TextureProgressBar
 @onready var triger1 = $trigers/tuto1
 @onready var triger2 = $trigers/tuto2
 @onready var triger3 = $trigers/tuto3
 @onready var triger4 = $trigers/tuto4
+@onready var trigermedio = $"trigers/tutocámara"
 
 func _on_tuto_1_body_entered(body: Node3D) -> void:
 	texto1.visible = false
@@ -18,7 +20,7 @@ func _on_tuto_1_body_entered(body: Node3D) -> void:
 	pass # Replace with function body.
 
 func _on_tuto_2_body_entered(body: Node3D) -> void:
-	texto2.visible = false
+	textomedio.visible = false
 	texto3.visible = true
 	triger2.queue_free()
 	pass # Replace with function body.
@@ -41,4 +43,10 @@ func _on_tuto_4_body_entered(body: Node3D) -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().change_scene_to_file("res://Escenas/escenas_contexto/contexto.tscn")
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	pass # Replace with function body.
+
+func _on_tutocámara_body_entered(body: Node3D) -> void:
+	texto2.visible = false
+	textomedio.visible = true
+	trigermedio.queue_free()
 	pass # Replace with function body.

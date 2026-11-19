@@ -112,6 +112,9 @@ size = Vector3(1, 3.0825806, 23.173103)
 [sub_resource type="BoxShape3D" id="BoxShape3D_3xd07"]
 size = Vector3(29.073647, 4.6538086, 3.309082)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_h83rl"]
+size = Vector3(1, 6.2332764, 15.07579)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xd07"]
 albedo_color = Color(0.75765365, 0.15986466, 9.62615e-08, 1)
 
@@ -265,6 +268,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.7017, -7.5611343, -92.392
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.418484, 1.8269043, -10.602081)
 shape = SubResource("BoxShape3D_3xd07")
 
+[node name="tutocámara" type="Area3D" parent="trigers" unique_id=211918024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.420994, -4.705682, 39.39639)
+
+[node name="Area3D" type="CollisionShape3D" parent="trigers/tutocámara" unique_id=1144677241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2310181, -1.2116776)
+shape = SubResource("BoxShape3D_h83rl")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1587337869]
 transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, 0.23377872, 0.09131333, 0.9679925, -0.44198143, 0.89675075, 0.022149473, 42.503494, 18.536507, -14.861088)
 shadow_enabled = true
@@ -341,10 +351,6 @@ collision_layer = 7
 collision_mask = 3
 top_level = true
 metadata/_edit_lock_ = true
-
-[node name="enemigo2" parent="." unique_id=492990412 instance=ExtResource("3_b8ick")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.30055, 2.5396805, -58.93795)
-cantidad_de_municion = 15
 
 [node name="Hudarma" parent="." unique_id=1431327253 instance=ExtResource("7_l6ybl")]
 
@@ -450,13 +456,34 @@ vez que el tren llegue a destino
   el nivel terminara"
 horizontal_alignment = 1
 
+[node name="textomedio" type="Node2D" parent="." unique_id=947750348]
+visible = false
+
+[node name="Label" type="Label" parent="textomedio" unique_id=1382408658]
+offset_left = 412.0
+offset_top = 101.0
+offset_right = 832.0
+offset_bottom = 233.0
+theme_override_font_sizes/font_size = 30
+text = "PULSA \"CTRL IZQUIERDO\"
+PARA ACTIVAR Y DESACTIVAR
+ EL DISPARO TRASERO"
+horizontal_alignment = 1
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1751876790]
 stream = ExtResource("9_i8ckm")
 volume_db = -17.999
 autoplay = true
 parameters/looping = false
 
+[node name="enemigo" parent="." unique_id=149613531 instance=ExtResource("3_b8ick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.117714, 1.0372636, -52.288597)
+danio_de_auto = 3
+cantidad_de_municion = 1
+
 [connection signal="body_entered" from="trigers/tuto1" to="." method="_on_tuto_1_body_entered"]
 [connection signal="body_entered" from="trigers/tuto2" to="." method="_on_tuto_2_body_entered"]
 [connection signal="body_entered" from="trigers/tuto3" to="." method="_on_tuto_3_body_entered"]
 [connection signal="body_entered" from="trigers/tuto4" to="." method="_on_tuto_4_body_entered"]
+[connection signal="area_entered" from="trigers/tutocámara" to="." method="_on_tutocámara_area_entered"]
+[connection signal="body_entered" from="trigers/tutocámara" to="." method="_on_tutocámara_body_entered"]
