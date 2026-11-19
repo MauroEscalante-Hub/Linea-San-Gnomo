@@ -21,8 +21,11 @@ var velocidad_de_giro = 5
 @onready var mov_auto = $Mov_Auto
 @onready var componentevida = $Vida
 @onready var levantar =$Levantar
+#@onready var motor_funcionando = $"sonido de motor"
+@onready var sonido_danio = $"danio de enemigo"
 
 func _ready() -> void:
+	
 	arma_.danio_de_arma = danio_de_auto
 	arma_.cadencia = tiempo_de_disparo
 	componentevida.murio.connect(_on_vida_murio)
@@ -68,6 +71,7 @@ func recibir_danio(cantidad: int, es_del_jugador: bool):
 	
 	if es_del_jugador:
 		arma_.recibir_disparo_del_jugador()
+		sonido_danio.play()
 
 
 func _on_vida_murio():

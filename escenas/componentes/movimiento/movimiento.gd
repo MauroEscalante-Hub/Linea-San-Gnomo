@@ -25,7 +25,7 @@ func _physics_process(delta):
 		motor_quieto.play()
 	if Input.is_action_pressed("avanzar"):
 		if !motor_marcha.playing:
-			#motor_quieto.stop()
+			motor_quieto.stop()
 			motor_marcha.play()
 	if !Input.is_action_pressed("avanzar"):
 		motor_quieto.play()

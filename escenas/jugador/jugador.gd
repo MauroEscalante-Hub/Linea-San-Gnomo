@@ -16,7 +16,7 @@ var nuevo_vehiculo: VehicleBody3D
 @onready var arma = $Arma
 @onready var levantar=$Levantar
 @onready var deteccionhud = $DeteccionHudEnemigo
-
+@onready var sonido_explota = $expocion
 
 
 
@@ -68,5 +68,7 @@ func recibir_danio(cantidad: int, verificar_del_jugador: bool):
 
 func _on_vida_murio():
 	if self == GameManager.current_player:
+		sonido_explota.play()
 		GameManager.jugador_muerto()
+		
 	pass # Replace with function body.

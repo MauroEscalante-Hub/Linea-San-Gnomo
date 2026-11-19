@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bthaiqxpudw45"
+path="res://.godot/imported/daño a enemigo.ogg-0a8b22e2c38423d90672370748cb5927.oggvorbisstr"
+
+[deps]
+
+source_file="res://Escenas/audio/enemigos/daño a enemigo.ogg"
+dest_files=["res://.godot/imported/daño a enemigo.ogg-0a8b22e2c38423d90672370748cb5927.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

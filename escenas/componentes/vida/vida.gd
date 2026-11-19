@@ -46,7 +46,7 @@ func recibir_danio(cantidad: int) -> void:
 		humo.emitting=true
 		
 	if vida_actual <= 0:
-		poca_vida.play()
+		#poca_vida.play()
 		_morir()
 		
 
