@@ -195,7 +195,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.546, 1.8, 1738.325)
 curve = SubResource("Curve3D_lsltb")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1142436273 node_paths=PackedStringArray("barrita_tren")]
-transform = Transform3D(0.99998295, 0, 0.003964669, 0, 1, 0, -0.003964669, 0, 0.99998295, 0.016105652, -9.536743e-07, -13.675903)
+transform = Transform3D(0.99998176, 0, 0.0039646644, 0, 1, 0, -0.0039646644, 0, 0.99998176, 0.016105652, -9.536743e-07, -13.675903)
 script = ExtResource("1_lsltb")
 barrita_tren = NodePath("TextureProgressBar")
 

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cbqfmux3syads"]
 
+[ext_resource type="Script" uid="uid://b7wqg7ekntjt3" path="res://Escenas/escenas_cinematicas/cinematica_final.gd" id="1_iq4l4"]
 [ext_resource type="Texture2D" uid="uid://clauofp52b0pq" path="res://Assets/3d/textures/DaySkyHDRI020A_1K_TONEMAPPED.jpg" id="1_xq0ci"]
 [ext_resource type="PackedScene" uid="uid://duhswckhasixx" path="res://Assets/3d/models/002_Pine_Tree.fbx" id="2_3vqqo"]
 [ext_resource type="PackedScene" uid="uid://dvpxhrcghlpod" path="res://Assets/3d/models/Grass_2.fbx" id="3_iq4l4"]
@@ -193,10 +194,166 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector3(77.606, 0, 175.68155)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Animacionfinal/gnomo3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(54.578217, 0, 167.37823)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Animacionfinal/gnomo4:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(54.741165, 0, 181.54457)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Animacionfinal/gnomo4:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.033161256, -2.008874, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Animacionfinal/gnomo5:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.3142743, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Animacionfinal/gnomo5:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(76.61107, 0, 168.11604)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Animacionfinal/gnomo7:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(80.43379, 0, 172.10838)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Animacionfinal/gnomo8:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(82.408134, 0.39702225, 182.68338)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Animacionfinal/Camera3D:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(86.97133, 7.2589674, 172.38275)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Animacionfinal/Camera3D:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.5078376, 1.9757571, -0.039410245)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Animacionfinal/Label3D:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(64.58965, 15.020758, 179.71121)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Animacionfinal/ColorRect:color")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Animacionfinal/jugador:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(58.256073, 0.8818779, 263.16803)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Animacionfinal/jugador:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_qeymv"]
 resource_name = "final"
-length = 6.6666665
+length = 9.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -216,10 +373,10 @@ tracks/1/path = NodePath("Animacionfinal/gnomo:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.26, 0.51, 0.73333335, 0.9833334, 1.1666667, 1.4166667, 1.6000001, 1.8, 1.9666668, 2.2166667, 2.44, 2.69, 2.88, 3.13, 3.3533335, 3.6033335, 3.7866669, 4.036667, 4.2200003, 4.42, 4.586667, 4.836667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.26, 0.51, 0.73333335, 0.9833334, 1.1666667, 1.4166667, 1.6000001, 1.8, 1.9666668, 2.2166667, 2.44, 2.69, 2.88, 3.13, 3.3533335, 3.6033335, 3.7866669, 4.036667, 4.2200003, 4.42, 4.586667, 4.836667, 5.1, 5.35, 5.5733333, 5.8233333, 6.0066667, 6.2566667, 6.44, 6.64, 6.806667, 7.056667, 7.2000003, 7.4500003, 7.6733336, 7.9233336, 8.106667, 8.356667, 8.540001, 8.74, 8.906668, 9.156668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017)]
+"values": [Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017), Vector3(77.47854, 0.6786418, 185.21017), Vector3(77.47854, 0, 185.21017)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -228,10 +385,166 @@ tracks/2/path = NodePath("Animacionfinal/gnomo2:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.13333334, 0.36666667, 0.5766667, 0.78, 0.99, 1.2, 1.3766668, 1.5666667, 1.7766668, 1.96, 2.17, 2.3733335, 2.5833335, 2.7933335, 2.9700003, 3.16, 3.3700001, 3.5265324, 3.7365324, 3.9398656, 4.1498656, 4.3598657, 4.5365324, 4.7265325, 4.9365325),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.13333334, 0.36666667, 0.5766667, 0.78, 0.99, 1.2, 1.3766668, 1.5666667, 1.7766668, 1.96, 2.17, 2.3733335, 2.5833335, 2.7933335, 2.9700003, 3.16, 3.3700001, 3.5265324, 3.7365324, 3.9398656, 4.1498656, 4.3598657, 4.5365324, 4.7265325, 4.9365325, 5.1301346, 5.3401346, 5.523468, 5.733468, 5.936801, 6.146801, 6.356801, 6.5334682, 6.723468, 6.933468, 7.09, 7.3, 7.503333, 7.713333, 7.923333, 8.1, 8.29, 8.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155)]
+"values": [Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155), Vector3(77.606, 0.65268373, 175.68155), Vector3(77.606, 0, 175.68155)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Animacionfinal/gnomo3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.27, 0.54, 0.86, 1.13, 1.3666668, 1.6366668, 1.89, 2.16, 2.44, 2.71, 3.04, 3.31, 3.6333334, 3.9033334, 4.12, 4.39, 4.533334, 4.8033338, 5.0400004, 5.3100004, 5.5633335, 5.833334, 6.1133337, 6.3833337, 6.7133336, 6.9833336, 7.3066673, 7.5766673, 7.7933335, 8.0633335, 8.222876, 8.492876, 8.709541, 8.979542),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(54.578217, 0, 167.37823), Vector3(54.578217, 0.67590714, 167.37823), Vector3(54.578217, 0, 167.37823), Vector3(54.578217, 0.67590714, 167.37823), Vector3(54.578217, 0, 167.37823), Vector3(54.578217, 0.67590714, 167.37823), Vector3(54.578217, 0, 167.37823), Vector3(54.578217, 0.67590714, 167.37823), Vector3(54.578217, 0, 167.37823), Vector3(54.578217, 0.67590714, 167.37823), Vector3(54.578217, 0, 167.37823), Vector3(54.578217, 0.67590714, 167.37823), Vector3(54.578217, 0, 167.37823), Vector3(54.578217, 0.67590714, 167.37823), Vector3(54.578217, 0, 167.37823), Vector3(54.578217, 0.67590714, 167.37823), Vector3(54.578217, 0, 167.37823), Vector3(54.578217, 0.67590714, 167.37823), Vector3(54.578217, 0, 167.37823), Vector3(54.578217, 0.67590714, 167.37823), Vector3(54.578217, 0, 167.37823), Vector3(54.578217, 0.67590714, 167.37823), Vector3(54.578217, 0, 167.37823), Vector3(54.578217, 0.67590714, 167.37823), Vector3(54.578217, 0, 167.37823), Vector3(54.578217, 0.67590714, 167.37823), Vector3(54.578217, 0, 167.37823), Vector3(54.578217, 0.67590714, 167.37823), Vector3(54.578217, 0, 167.37823), Vector3(54.578217, 0.67590714, 167.37823), Vector3(54.578217, 0, 167.37823), Vector3(54.578217, 0.67590714, 167.37823), Vector3(54.578217, 0, 167.37823), Vector3(54.578217, 0.67590714, 167.37823), Vector3(54.578217, 0, 167.37823)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Animacionfinal/gnomo4:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.34, 0.85, 1.27, 1.61, 2.12, 2.4666667, 2.8866668, 3.2266667, 3.7366667, 4.152875, 4.572875, 4.912875, 5.422875, 5.8333335, 6.2533336, 6.5933332, 7.1033335, 7.482875, 7.902875, 8.242875, 8.752874),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(54.741165, -0.0029973984, 181.54457), Vector3(54.741165, 2.8918152, 181.54457), Vector3(54.741165, -0.0029973984, 181.54457), Vector3(54.741165, -0.0029973984, 181.54457), Vector3(54.741165, 2.8918152, 181.54457), Vector3(54.741165, -0.0029973984, 181.54457), Vector3(54.741165, -0.0029973984, 181.54457), Vector3(54.741165, -0.0029973984, 181.54457), Vector3(54.741165, 2.8918152, 181.54457), Vector3(54.741165, -0.0029973984, 181.54457), Vector3(54.741165, -0.0029973984, 181.54457), Vector3(54.741165, -0.0029973984, 181.54457), Vector3(54.741165, 2.8918152, 181.54457), Vector3(54.741165, -0.0029973984, 181.54457), Vector3(54.741165, -0.0029973984, 181.54457), Vector3(54.741165, -0.0029973984, 181.54457), Vector3(54.741165, 2.8918152, 181.54457), Vector3(54.741165, -0.0029973984, 181.54457), Vector3(54.741165, -0.0029973984, 181.54457), Vector3(54.741165, -0.0029973984, 181.54457), Vector3(54.741165, 2.8918152, 181.54457), Vector3(54.741165, -0.0029973984, 181.54457)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Animacionfinal/gnomo4:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.37, 0.85, 1.27, 1.64, 2.12, 2.4666667, 2.8866668, 3.2566667, 3.7366667, 4.152875, 4.572875, 4.942875, 5.422875, 5.8333335, 6.2533336, 6.6233335, 7.1033335, 7.482875, 7.902875, 8.272875, 8.752874),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.033161256, -4.7315874, 0), Vector3(2.942625, -4.7315874, 0), Vector3(6.3372903, -4.7315874, 0), Vector3(-0.033161256, -4.7315874, 0), Vector3(2.942625, -4.7315874, 0), Vector3(6.3372903, -4.7315874, 0), Vector3(6.3372903, -4.7315874, 0), Vector3(-0.033161256, -4.7315874, 0), Vector3(2.942625, -4.7315874, 0), Vector3(6.3372903, -4.7315874, 0), Vector3(6.3372903, -4.7315874, 0), Vector3(-0.033161256, -4.7315874, 0), Vector3(2.942625, -4.7315874, 0), Vector3(6.3372903, -4.7315874, 0), Vector3(6.3372903, -4.7315874, 0), Vector3(-0.033161256, -4.7315874, 0), Vector3(2.942625, -4.7315874, 0), Vector3(6.3372903, -4.7315874, 0), Vector3(6.3372903, -4.7315874, 0), Vector3(-0.033161256, -4.7315874, 0), Vector3(2.942625, -4.7315874, 0), Vector3(6.3372903, -4.7315874, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Animacionfinal/gnomo5:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.91, 2.9333334, 5.8433332, 5.8714375, 8.971437),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -6.2831855, 0), Vector3(0, 6.2831855, 0), Vector3(0, -6.2831855, 0), Vector3(0, 6.2831855, 0), Vector3(0, -6.2831855, 0), Vector3(0, 6.2831855, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Animacionfinal/gnomo5:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Animacionfinal/gnomo7:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.6, 2.2333333, 3.09, 3.62, 4.17, 4.556667, 5.106667, 5.42, 5.9700003, 6.033334, 6.583334, 6.9700007, 7.520001, 7.833334, 8.383334, 8.833333, 9.383333, 9.7699995, 10.320001, 10.633333, 11.183333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(80.43379, 0, 172.10838), Vector3(78.74672, 0.8956547, 171.61952), Vector3(75.76168, 0.030091286, 170.39677), Vector3(73.27108, 1.1518745, 169.10246), Vector3(69.612465, -0.07064533, 167.64902), Vector3(69.612465, -0.07064533, 167.64902), Vector3(69.612465, 1.0817237, 167.64902), Vector3(69.612465, -0.07064533, 167.64902), Vector3(69.612465, 1.0817237, 167.64902), Vector3(69.612465, -0.07064533, 167.64902), Vector3(69.612465, 1.0817237, 167.64902), Vector3(69.612465, -0.07064533, 167.64902), Vector3(69.612465, 1.0817237, 167.64902), Vector3(69.612465, -0.07064533, 167.64902), Vector3(69.612465, 1.0817237, 167.64902), Vector3(69.612465, -0.07064533, 167.64902), Vector3(69.612465, 1.0817237, 167.64902), Vector3(69.612465, -0.07064533, 167.64902), Vector3(69.612465, 1.0817237, 167.64902), Vector3(69.612465, -0.07064533, 167.64902), Vector3(69.612465, 1.0817237, 167.64902), Vector3(69.612465, -0.07064533, 167.64902), Vector3(69.612465, 1.0817237, 167.64902), Vector3(69.612465, -0.07064533, 167.64902)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Animacionfinal/gnomo8:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.81835854, 1.9164664, 2.99, 3.75, 4.3, 4.8, 5.3500004, 5.8, 6.26, 6.451438, 7.001438, 7.501438, 8.051438, 8.501438, 8.961438),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(82.408134, 0.39702225, 182.68338), Vector3(78.18599, 0.39702225, 183.28294), Vector3(73.05677, 0.06428099, 183.28294), Vector3(73.05677, 0.06428099, 183.28294), Vector3(73.05677, 1.0366392, 183.28294), Vector3(73.05677, 0.24238682, 183.28294), Vector3(73.05677, 1.0366392, 183.28294), Vector3(73.05677, 0.24238682, 183.28294), Vector3(73.05677, 1.0366392, 183.28294), Vector3(73.05677, 0.24238682, 183.28294), Vector3(73.05677, 1.0366392, 183.28294), Vector3(73.05677, 0.24238682, 183.28294), Vector3(73.05677, 1.0366392, 183.28294), Vector3(73.05677, 0.24238682, 183.28294), Vector3(73.05677, 1.0366392, 183.28294), Vector3(73.05677, 0.24238682, 183.28294)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Animacionfinal/Camera3D:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 1.5333333, 3.9333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(86.97133, 7.2589674, 172.38275), Vector3(84.340744, 9.178069, 167.17596), Vector3(68.66914, 9.178069, 154.45755)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Animacionfinal/Camera3D:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 1.5333333, 3.9333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.5078376, 1.9757571, -0.039410245), Vector3(-0.48029107, 2.3231971, -0.08078172), Vector3(-0.4525739, 2.9909432, 0.034367327)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Animacionfinal/Label3D:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(4.145864, 4.6514378),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(64.58965, 15.020758, 179.71121), Vector3(64.58965, 6.051161, 179.71121)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Animacionfinal/ColorRect:color")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Animacionfinal/jugador:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.78, 1.365973, 2.0333333, 2.81, 3.59),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(58.256073, 0.8818779, 263.16803), Vector3(65.20753, 0.8818779, 247.84898), Vector3(68.799774, 0.8818779, 236.69939), Vector3(70.64726, 0.8818779, 224.20117), Vector3(70.64726, 0.8818779, 204.82137), Vector3(76.38175, 0.8818779, 197.03166)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Animacionfinal/jugador:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 0.78, 1.365973, 2.0333333, 2.81, 3.0799086, 3.32, 3.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.37437963, 0), Vector3(0, -0.13207465, 0), Vector3(0, -0.040743805, 0), Vector3(0, -0.25141063, 0), Vector3(0, -0.39139527, 0), Vector3(0, -0.62441564, 0), Vector3(0, -0.87818563, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tjj4k"]
@@ -241,6 +554,7 @@ _data = {
 }
 
 [node name="CinematicaFinal" type="Node3D" unique_id=397877994]
+script = ExtResource("1_iq4l4")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=546917987]
 environment = SubResource("Environment_tldom")
@@ -265,10 +579,10 @@ metadata/_edit_lock_ = true
 libraries/ = SubResource("AnimationLibrary_tjj4k")
 
 [node name="Camera3D" type="Camera3D" parent="Animacionfinal" unique_id=127450615]
-transform = Transform3D(-0.41696575, -0.45475438, 0.78698033, -0.034427658, 0.87311965, 0.4862889, -0.90827, 0.17567194, -0.37971705, 93.22216, 14.744013, 175.79543)
+transform = Transform3D(-0.37606668, -0.46213266, 0.8031235, -0.034427684, 0.87311965, 0.48628888, -0.92595285, 0.1552274, -0.34426138, 86.97133, 7.2589674, 172.38275)
 
 [node name="jugador" parent="Animacionfinal" unique_id=1604139032 instance=ExtResource("10_8vdo7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.178017, 1.3791924, 263.16803)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 58.256073, 0.8818779, 263.16803)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Animacionfinal" unique_id=1692828245]
 transform = Transform3D(-0.9998673, 0, 0.016288903, 0, 1, 0, -0.016288903, 0, -0.9998673, 66.913475, 0, 217.8735)
@@ -287,11 +601,11 @@ transform = Transform3D(0.060128123, 0, 0.06696722, 0, 0.09, 0, -0.06696722, 0, 
 mesh = ExtResource("12_3vqqo")
 
 [node name="gnomo4" type="MeshInstance3D" parent="Animacionfinal" unique_id=188992134]
-transform = Transform3D(0.038180135, 0, 0.08150017, 0, 0.09, 0, -0.08150017, 0, 0.038180135, 54.741165, 0, 181.54457)
+transform = Transform3D(-0.038177956, 0.0027021868, -0.08145639, 0, 0.089950524, 0.0029839664, 0.081501216, 0.0012657967, -0.038156956, 54.741165, 0, 181.54457)
 mesh = ExtResource("12_3vqqo")
 
 [node name="gnomo5" type="MeshInstance3D" parent="Animacionfinal" unique_id=2078177926]
-transform = Transform3D(0.022834616, 0, -0.08705504, 0, 0.09, 0, 0.08705504, 0, 0.022834616, 76.61107, 0, 168.11604)
+transform = Transform3D(0.022834614, 0, -0.08705504, 0, 0.09, 0, 0.08705504, 0, 0.022834614, 76.61107, 0, 168.11604)
 mesh = ExtResource("12_3vqqo")
 
 [node name="gnomo6" type="MeshInstance3D" parent="Animacionfinal" unique_id=744126780]
@@ -299,9 +613,24 @@ transform = Transform3D(-0.021559853, 0, -0.087379485, 0, 0.09, 0, 0.087379485, 
 mesh = ExtResource("12_3vqqo")
 
 [node name="gnomo7" type="MeshInstance3D" parent="Animacionfinal" unique_id=449889355]
-transform = Transform3D(-0.017804395, 0, -0.088221334, 0, 0.09, 0, 0.088221334, 0, -0.017804395, 80.38116, 0, 171.96297)
+transform = Transform3D(-0.017804395, 0, -0.088221334, 0, 0.09, 0, 0.088221334, 0, -0.017804395, 80.43379, 0, 172.10838)
 mesh = ExtResource("12_3vqqo")
 
 [node name="gnomo8" type="MeshInstance3D" parent="Animacionfinal" unique_id=570564227]
-transform = Transform3D(-0.007883268, 0, -0.08965408, 0, 0.09, 0, 0.08965408, 0, -0.007883268, 82.408134, 0, 182.68338)
+transform = Transform3D(-0.007883268, 0, -0.08965408, 0, 0.09, 0, 0.08965408, 0, -0.007883268, 82.408134, 0.39702225, 182.68338)
 mesh = ExtResource("12_3vqqo")
+
+[node name="Label3D" type="Label3D" parent="Animacionfinal" unique_id=580552447]
+transform = Transform3D(-3.2492626, -0.13672848, 0.30883166, -0.020025112, 4.2494364, 0.42422616, -0.45437807, 0.7904685, -2.2271554, 64.58965, 15.020758, 179.71121)
+modulate = Color(0.6733895, 0, 0.1501599, 1)
+outline_modulate = Color(1, 1, 1, 1)
+text = "MISION CUMPLIDA"
+font_size = 97
+
+[node name="ColorRect" type="ColorRect" parent="Animacionfinal" unique_id=1067666224]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
