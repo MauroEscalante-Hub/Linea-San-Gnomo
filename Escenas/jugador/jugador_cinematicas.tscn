@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cuy62ujcohefn"]
 
 [ext_resource type="PackedScene" uid="uid://cjgv2qs0vn2wi" path="res://Escenas/componentes/vidaHudEnemigo.tscn" id="2_abkml"]
+[ext_resource type="ArrayMesh" uid="uid://cg4jyupfx42gq" path="res://Assets/models/Auto_Player_Ventana.fbx" id="3_5amsy"]
 [ext_resource type="PackedScene" uid="uid://d2lj1mpyv0yln" path="res://Escenas/componentes/DeteccionGancho.tscn" id="3_akxd1"]
-[ext_resource type="ArrayMesh" uid="uid://cf2wcm82iwfx8" path="res://Assets/models/carro_jugador.fbx" id="4_71yvq"]
 [ext_resource type="PackedScene" uid="uid://dk7bm4r3fsxmw" path="res://Assets/models/arma_basica_jugador.fbx" id="19_jkrem"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_5yx5n"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_gvw3e"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8cmsc"]
@@ -32,14 +32,14 @@ angular_damp = 3.0
 [node name="VidaHudEnemigo" parent="." unique_id=846224132 instance=ExtResource("2_abkml")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4119644, 0)
 visible = false
-texture = SubResource("ViewportTexture_5yx5n")
+texture = SubResource("ViewportTexture_gvw3e")
 
 [node name="DeteccionGancho" parent="." unique_id=1525103931 node_paths=PackedStringArray("auto_actual") instance=ExtResource("3_akxd1")]
 auto_actual = NodePath("..")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=786756163]
 transform = Transform3D(-1.4463948, 0, -1.6451976e-07, 0, 1.660013, 0, 1.2644784e-07, 0, -1.8818867, 0, -0.7664826, -0.0024392535)
-mesh = ExtResource("4_71yvq")
+mesh = ExtResource("3_5amsy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1328462197]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.4703977, 0.013549805, 0.3207929, -0.06494731)

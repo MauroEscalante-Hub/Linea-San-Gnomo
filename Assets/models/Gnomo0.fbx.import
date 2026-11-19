@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://byes138xasjfu"
-path="res://.godot/imported/Gnomo0.fbx-8a716859cdc20aba0524188a92484ba1.scn"
+path="res://.godot/imported/Gnomo0.fbx-8a716859cdc20aba0524188a92484ba1.res"
 
 [deps]
 
 source_file="res://Assets/models/Gnomo0.fbx"
-dest_files=["res://.godot/imported/Gnomo0.fbx-8a716859cdc20aba0524188a92484ba1.scn"]
+dest_files=["res://.godot/imported/Gnomo0.fbx-8a716859cdc20aba0524188a92484ba1.res"]
 
 [params]
 

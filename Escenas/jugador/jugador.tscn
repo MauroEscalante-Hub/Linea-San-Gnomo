@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cjgv2qs0vn2wi" path="res://Escenas/componentes/vidaHudEnemigo.tscn" id="2_xonte"]
 [ext_resource type="PackedScene" uid="uid://cldmjtak6b457" path="res://Escenas/componentes/movimiento/movimiento.tscn" id="3_jkpmm"]
 [ext_resource type="PackedScene" uid="uid://ddrti2gwrh11m" path="res://Escenas/componentes/deteccion_de_vehiculo/deteccion_de_vehiculo.tscn" id="4_3don6"]
-[ext_resource type="ArrayMesh" uid="uid://cf2wcm82iwfx8" path="res://Assets/models/carro_jugador.fbx" id="4_5rlq8"]
+[ext_resource type="ArrayMesh" uid="uid://cg4jyupfx42gq" path="res://Assets/models/Auto_Player_Ventana.fbx" id="4_4eka3"]
 [ext_resource type="PackedScene" uid="uid://bjanlpui5kawe" path="res://Escenas/componentes/camara/camara.tscn" id="5_jkpmm"]
 [ext_resource type="PackedScene" uid="uid://d2lj1mpyv0yln" path="res://Escenas/componentes/DeteccionGancho.tscn" id="6_c0rcm"]
 [ext_resource type="PackedScene" uid="uid://cxaro2aci7e0v" path="res://Escenas/componentes/control_de_player/controlador_de_jugador.tscn" id="6_vkjxu"]
@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://sm36gimv1kto" path="res://Escenas/ariel_vfx/humo_bala.tscn" id="17_wjsp1"]
 [ext_resource type="PackedScene" uid="uid://dk7bm4r3fsxmw" path="res://Assets/models/arma_basica_jugador.fbx" id="19_4eka3"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_4eka3"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_3oeni"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8cmsc"]
@@ -39,7 +39,6 @@ height = 0.31713867
 height = 0.3305664
 
 [node name="jugador" type="VehicleBody3D" unique_id=1604139032]
-collision_layer = 3
 center_of_mass_mode = 1
 can_sleep = false
 angular_damp = 3.0
@@ -49,14 +48,14 @@ start_as_player = true
 [node name="VidaHudEnemigo" parent="." unique_id=846224132 instance=ExtResource("2_xonte")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4119644, 0)
 visible = false
-texture = SubResource("ViewportTexture_4eka3")
+texture = SubResource("ViewportTexture_3oeni")
 
 [node name="DeteccionGancho" parent="." unique_id=1525103931 node_paths=PackedStringArray("auto_actual") instance=ExtResource("6_c0rcm")]
 auto_actual = NodePath("..")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=786756163]
 transform = Transform3D(-1.4463948, 0, -1.6451976e-07, 0, 1.660013, 0, 1.2644784e-07, 0, -1.8818867, 0, -0.7664826, -0.0024392535)
-mesh = ExtResource("4_5rlq8")
+mesh = ExtResource("4_4eka3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1328462197]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.4703977, 0.013549805, 0.3207929, -0.06494731)
