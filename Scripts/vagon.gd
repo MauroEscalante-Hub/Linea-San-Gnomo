@@ -9,7 +9,9 @@ var esta_muerto: bool = false
 
 @onready var sonidostren: Node3D = $sonidostren
 @onready var explota= $sonidostren/Muerte
-
+@onready var fuegoDaño1 = $"Fuegodaño"
+@onready var fuegoDaño2 = $"Fuegodaño2"
+@onready var fuegoDaño3 = $"Fuegodaño3"
 
 func _ready() -> void:
 	barravida.vida_inicial(vida)
@@ -33,7 +35,15 @@ func recibir_danio(cantidad: int, es_del_jugador: bool = false) -> void:
 
 	if is_instance_valid(barravida):
 		barravida.vida = vida
-
+	
+	if barravida:
+		if vida <= barravida.max_value * 0.75:
+			fuegoDaño1.encender()
+		if vida <= barravida.max_value * 0.50:
+			fuegoDaño2.encender()
+		if vida <= barravida.max_value * 0.25:
+			fuegoDaño3.encender()
+		fuegoDaño3.encender()
 	if vida <= 0:
 		vida = 0
 		morir_tren()
