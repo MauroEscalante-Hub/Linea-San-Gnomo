@@ -25,4 +25,4 @@ func reproducir_cancion():
 	elif seleccionar ==2:
 		deja_vu.play()
 	elif seleccionar ==3:
-		gunfight.play
+		gunfight.play()
