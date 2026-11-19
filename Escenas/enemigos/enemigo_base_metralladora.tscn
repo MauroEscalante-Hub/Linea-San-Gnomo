@@ -18,27 +18,40 @@
 [ext_resource type="PackedScene" uid="uid://da0ye1sfq87vc" path="res://Escenas/componentes/deteccionHudEnemigo.tscn" id="16_n6v2g"]
 [ext_resource type="PackedScene" uid="uid://cjgv2qs0vn2wi" path="res://Escenas/componentes/vidaHudEnemigo.tscn" id="17_a83aq"]
 [ext_resource type="PackedScene" uid="uid://cnu80vboweogh" path="res://Assets/models/arma_ametralladora.fbx" id="18_sevqg"]
+[ext_resource type="AudioStream" uid="uid://ldm3ywmn1y0j" path="res://Escenas/audio/sfx jugador/Explosion del auto.ogg" id="19_5xwdt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8cmsc"]
 size = Vector3(1.9979248, 1.2747192, 3.3311157)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mo1pk"]
+albedo_color = Color(1.1158879, 1.0542756, 0.3457358, 1)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_8cmsc"]
+material = SubResource("StandardMaterial3D_mo1pk")
 height = 0.34014893
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cjcfc"]
-albedo_color = Color(0.12955844, 0.12955847, 0.12955844, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sevqg"]
+albedo_color = Color(1.1158879, 1.0542756, 0.3457358, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_qsk7m"]
-material = SubResource("StandardMaterial3D_cjcfc")
+material = SubResource("StandardMaterial3D_sevqg")
 height = 0.35862732
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5xwdt"]
+albedo_color = Color(1.1158879, 1.0542756, 0.3457358, 1)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_kh5iw"]
+material = SubResource("StandardMaterial3D_5xwdt")
 height = 0.31713867
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m2k7k"]
+albedo_color = Color(1.1158879, 1.0542756, 0.3457358, 1)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_0ru8o"]
+material = SubResource("StandardMaterial3D_m2k7k")
 height = 0.3305664
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_5xwdt"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_m2k7k"]
 viewport_path = NodePath("SubViewport")
 
 [node name="enemigo" type="VehicleBody3D" unique_id=1604139032 groups=["enemigos"]]
@@ -153,9 +166,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.28902757, 0)
 
 [node name="VidaHudEnemigo" parent="." unique_id=846224132 instance=ExtResource("17_a83aq")]
 transform = Transform3D(1.19, 0, 0, 0, 1.19, 0, 0, 0, 1.19, -0.13962626, 2.9449358, 0.3659811)
-texture = SubResource("ViewportTexture_5xwdt")
+texture = SubResource("ViewportTexture_m2k7k")
 
 [node name="arma_ametralladora" parent="." unique_id=696546565 instance=ExtResource("18_sevqg")]
 transform = Transform3D(-0.55, 0, -4.8082526e-08, 0, 0.55, 0, 4.8082526e-08, 0, -0.55, 0.041053772, -0.22636223, 2.6180854)
+
+[node name="expocion" type="AudioStreamPlayer3D" parent="." unique_id=1681277220]
+stream = ExtResource("19_5xwdt")
 
 [connection signal="murio" from="Vida" to="." method="_on_vida_murio"]

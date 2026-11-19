@@ -23,6 +23,7 @@ var velocidad_de_giro = 5
 @onready var levantar =$Levantar
 #@onready var motor_funcionando = $"sonido de motor"
 @onready var sonido_danio = $"danio de enemigo"
+@onready var expocion = $expocion
 
 func _ready() -> void:
 	
@@ -76,5 +77,6 @@ func recibir_danio(cantidad: int, es_del_jugador: bool):
 
 func _on_vida_murio():
 	if self == GameManager.current_player:
+		expocion.play()
 		GameManager.jugador_muerto()
 	pass # Replace with function body.
