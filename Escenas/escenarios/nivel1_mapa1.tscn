@@ -375,6 +375,8 @@ script = ExtResource("1_j5g2l")
 barrita_tren = NodePath("TextureProgressBar")
 
 [node name="VehicleBody3D" parent="Path3D/PathFollow3D" unique_id=2072145692 instance=ExtResource("1_83n1h")]
+collision_layer = 1
+collision_mask = 1
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Path3D/PathFollow3D" unique_id=612170537]
 offset_left = 219.0
