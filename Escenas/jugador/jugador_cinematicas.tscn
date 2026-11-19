@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d2lj1mpyv0yln" path="res://Escenas/componentes/DeteccionGancho.tscn" id="3_akxd1"]
 [ext_resource type="PackedScene" uid="uid://dk7bm4r3fsxmw" path="res://Assets/models/arma_basica_jugador.fbx" id="19_jkrem"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_gvw3e"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_5amsy"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8cmsc"]
@@ -32,7 +32,7 @@ angular_damp = 3.0
 [node name="VidaHudEnemigo" parent="." unique_id=846224132 instance=ExtResource("2_abkml")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4119644, 0)
 visible = false
-texture = SubResource("ViewportTexture_gvw3e")
+texture = SubResource("ViewportTexture_5amsy")
 
 [node name="DeteccionGancho" parent="." unique_id=1525103931 node_paths=PackedStringArray("auto_actual") instance=ExtResource("3_akxd1")]
 auto_actual = NodePath("..")
