@@ -57,12 +57,16 @@ script = ExtResource("1_sq7ik")
 
 [node name="song_1" type="AudioStreamPlayer" parent="." unique_id=1516318167]
 stream = SubResource("AudioStreamOggVorbis_yl4aj")
+volume_db = -18.909
 
 [node name="song_2" type="AudioStreamPlayer" parent="." unique_id=1090307674]
 stream = SubResource("AudioStreamOggVorbis_54auf")
+volume_db = -18.0
 
 [node name="song_3" type="AudioStreamPlayer" parent="." unique_id=1475753348]
 stream = SubResource("AudioStreamOggVorbis_vx2fj")
+volume_db = -18.0
 
 [node name="song_4" type="AudioStreamPlayer" parent="." unique_id=627697483]
 stream = SubResource("AudioStreamOggVorbis_sx0qg")
+volume_db = -18.0
