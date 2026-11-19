@@ -42,7 +42,7 @@ packet_data = Array[Array]([[PackedByteArray("AXZvcmJpcwAAAAACRKwAAAAAAAAAcQIAAA
 granule_positions = PackedInt64Array(0, 0, 10304, 21696, 33347)
 sampling_rate = 44100.0
 
-[sub_resource type="AudioStreamOggVorbis" id="AudioStreamOggVorbis_5rlq8"]
+[sub_resource type="AudioStreamOggVorbis" id="AudioStreamOggVorbis_ink1f"]
 packet_sequence = SubResource("OggPacketSequence_6v8wu")
 
 [node name="jugador" type="VehicleBody3D" unique_id=1604139032]
@@ -149,7 +149,7 @@ danio_del_jugador = 1
 cantidad_de_balas = 30
 
 [node name="Vida" parent="." unique_id=2126800800 instance=ExtResource("10_j2gbx")]
-vida_max = 120
+vida_max = 10
 
 [node name="Mov_Auto" parent="." unique_id=1749187415 node_paths=PackedStringArray("player") instance=ExtResource("11_0ug0u")]
 player = NodePath("..")
@@ -161,5 +161,8 @@ jugador = NodePath("..")
 target_position = Vector3(0, -5, 0)
 
 [node name="DeteccionHudEnemigo" parent="." unique_id=720868625 instance=ExtResource("14_sptr8")]
+
+[node name="expocion" type="AudioStreamPlayer3D" parent="." unique_id=1090841912]
+stream = SubResource("AudioStreamOggVorbis_ink1f")
 
 [connection signal="murio" from="Vida" to="." method="_on_vida_murio"]

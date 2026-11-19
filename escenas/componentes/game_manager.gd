@@ -61,5 +61,6 @@ func jugador_muerto():
 	print("se murio")
 	Metrics.record_add("jugador_muerto ", 1) ##Era para probar si sale y si funca luego podemos meterle la demas escenas
 	Metrics.record_add("posicion_de_muerte_jugador ", current_player.global_position)
+	await get_tree().create_timer(1.4).timeout
 	get_tree().change_scene_to_file("res://Escenas/derrota auto.tscn")
 	pass

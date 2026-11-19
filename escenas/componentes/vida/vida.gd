@@ -5,8 +5,8 @@ extends Node3D
 @export var vida_max: int
 @onready var progress_bar = $canvas/ProgressBar
 @onready var canvas: CanvasLayer = $canvas
-@onready var danio_de_auto= $danio_auto
-@onready var poca_vida=  $AudioStreamPlayer3D
+@onready var danio_de_auto= $"danio de enemigo"
+#onready var poca_vida=  $AudioStreamPlayer3D
 @onready var fuego: GPUParticles3D = $Fuegodaño/fuego
 @onready var humo: GPUParticles3D = $Fuegodaño/humo
 @export var porcentaje :float
