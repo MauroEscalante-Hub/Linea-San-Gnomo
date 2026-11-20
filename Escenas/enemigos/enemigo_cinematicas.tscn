@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://dbu378f7x65bb"]
+
+[ext_resource type="PackedScene" uid="uid://dkq3vlchvbqae" path="res://Assets/models/GnomoConduciendo.fbx" id="2_7wmn0"]
+[ext_resource type="ArrayMesh" uid="uid://dqfh80p5lfptm" path="res://Assets/models/Auto_enemigo.fbx" id="3_r5s7p"]
+[ext_resource type="PackedScene" uid="uid://cu0nveryf7yao" path="res://Escenas/componentes/gancho/soga.tscn" id="9_awo77"]
+[ext_resource type="PackedScene" uid="uid://bbsqmfxf0yc4c" path="res://Escenas/componentes/levantar/levantar.tscn" id="14_o2xp1"]
+[ext_resource type="PackedScene" uid="uid://dk7bm4r3fsxmw" path="res://Assets/models/arma_basica_jugador.fbx" id="18_70l5u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8cmsc"]
+size = Vector3(1.9979248, 1.2747192, 3.3311157)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sep2b"]
+albedo_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8cmsc"]
+material = SubResource("StandardMaterial3D_sep2b")
+height = 0.34014893
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpojy"]
+albedo_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qsk7m"]
+material = SubResource("StandardMaterial3D_jpojy")
+height = 0.35862732
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jk1w6"]
+albedo_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kh5iw"]
+material = SubResource("StandardMaterial3D_jk1w6")
+height = 0.31713867
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g881u"]
+albedo_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0ru8o"]
+material = SubResource("StandardMaterial3D_g881u")
+height = 0.3305664
+
+[node name="enemigo" type="VehicleBody3D" unique_id=1604139032 groups=["enemigos"]]
+center_of_mass_mode = 1
+can_sleep = false
+angular_damp = 3.0
+
+[node name="GnomoConduciendo" parent="." unique_id=637960603 instance=ExtResource("2_7wmn0")]
+transform = Transform3D(-0.1, 0, 1.509958e-08, 0, 0.1, 0, -1.509958e-08, 0, -0.1, 0.32398522, -0.6535811, 1.6941984)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=786756163]
+transform = Transform3D(-0.421, 0, -5.910446e-08, 2.9396106e-09, 0.48319376, -0.018100819, 6.350123e-08, -0.022368092, -0.39101243, 0, 0, 1.21631)
+mesh = ExtResource("3_r5s7p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1328462197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.4703977, 0.00091552734, 0.13735962, -0.60445505)
+shape = SubResource("BoxShape3D_8cmsc")
+
+[node name="derecha" type="VehicleWheel3D" parent="." unique_id=73082308]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, -0.473, -2.091458)
+use_as_steering = true
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="derecha" unique_id=1807814371]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.019, 0, 0)
+mesh = SubResource("CylinderMesh_8cmsc")
+
+[node name="izquierda" type="VehicleWheel3D" parent="." unique_id=1283648186]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, -0.473, -2.091)
+use_as_steering = true
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="izquierda" unique_id=879670267]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.002, 0, 0)
+mesh = SubResource("CylinderMesh_qsk7m")
+
+[node name="derecha_atras" type="VehicleWheel3D" parent="." unique_id=368855817]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, -0.4733494, 1.0021125)
+use_as_traction = true
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="derecha_atras" unique_id=1545732869]
+transform = Transform3D(-4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0, 1, 0.017, 0, 0)
+mesh = SubResource("CylinderMesh_kh5iw")
+
+[node name="izquierda_atras" type="VehicleWheel3D" parent="." unique_id=2090882324]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, -0.4733494, 1.0021125)
+use_as_traction = true
+wheel_friction_slip = 3.0
+suspension_stiffness = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="izquierda_atras" unique_id=222053733]
+transform = Transform3D(0.000577406, 0.9999998, -8.73723e-08, -0.9999998, 0.000577406, -8.742276e-08, -8.73723e-08, 8.742276e-08, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_0ru8o")
+
+[node name="centro de masa" type="Node3D" parent="." unique_id=783383178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17721605, -0.44497806)
+
+[node name="soga" parent="." unique_id=283510190 instance=ExtResource("9_awo77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.71554923)
+
+[node name="Levantar" parent="." unique_id=1499998198 node_paths=PackedStringArray("jugador") instance=ExtResource("14_o2xp1")]
+jugador = NodePath("..")
+
+[node name="arma_basica_jugador" parent="." unique_id=165488132 instance=ExtResource("18_70l5u")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.059652, 0.058480024, -3.098038)

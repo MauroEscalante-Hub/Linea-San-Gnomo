@@ -191,6 +191,73 @@ size = Vector3(47.774048, 31.735561, 3.390564)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1413725266]
 environment = SubResource("Environment_rmie6")
 
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=708842461]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.546, 1.8, 1738.325)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=370928813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018310547, -1.7957268, -60.92224)
+size = Vector3(4.542652, 0.17608643, 135.32397)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=448793448]
+transform = Transform3D(0.99970144, 0, -0.024432177, 0, 1, 0, 0.024432177, 0, 0.99970144, 2.430626, -1.7957268, -245.04688)
+size = Vector3(4.542652, 0.17608643, 234.24661)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=499509826]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.312439, -1.7957268, -430.03723)
+size = Vector3(4.606528, 0.17608643, 137.651)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2043514625]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.312439, -1.7957268, -582.3522)
+size = Vector3(4.606528, 0.17608643, 171.42935)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=982885620]
+transform = Transform3D(0.9997851, 0, -0.02072214, 0, 1, 0, 0.02072214, 0, 0.9997851, 6.0377197, -1.7957268, -707.18164)
+size = Vector3(4.880534, 0.17608643, 81.535805)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1631879124]
+transform = Transform3D(0.98571074, 0, 0.16844656, 0, 1, 0, -0.16844656, 0, 0.98571074, 5.725685, -1.7957268, -753.1138)
+size = Vector3(4.880534, 0.17608643, 15.307424)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1888861235]
+transform = Transform3D(0.8734168, 0, 0.4869736, 0, 1, 0, -0.4869736, 0, 0.8734168, -7.4301033, -1.7957268, -781.62555)
+size = Vector3(4.880534, 0.17608643, 51.154247)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1220181103]
+transform = Transform3D(0.9902082, 0, 0.13959819, 0, 1, 0, -0.13959819, 0, 0.9902082, -20.770218, -1.7957268, -816.4029)
+size = Vector3(4.880534, 0.17608643, 31.003351)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D" unique_id=674426783]
+transform = Transform3D(0.9974763, 0, 0.07100238, 0, 1, 0, -0.07100238, 0, 0.9974763, -23.74606, -1.7957268, -843.82086)
+size = Vector3(4.880534, 0.17608643, 25.388905)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1984247198]
+transform = Transform3D(0.99950445, 0, 0.031477805, 0, 1, 0, -0.031477805, 0, 0.99950445, -25.840984, -1.7957268, -901.01935)
+size = Vector3(4.880534, 0.17608643, 89.95324)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1112571889]
+transform = Transform3D(0.9984304, 0, -0.056009356, 0, 1, 0, 0.056009356, 0, 0.9984304, -25.385475, -1.7957268, -976.5693)
+size = Vector3(4.880534, 0.17608643, 62.661407)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1348405250]
+transform = Transform3D(0.934494, 0, -0.35597908, 0, 1, 0, 0.35597908, 0, 0.934494, -14.790886, -1.7957268, -1030.5862)
+size = Vector3(4.880534, 0.17608643, 50.277237)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1690042144]
+transform = Transform3D(0.9954818, 0, -0.09495326, 0, 1, 0, 0.09495326, 0, 0.9954818, -3.81258, -1.7957268, -1074.4991)
+size = Vector3(4.880534, 0.17608643, 42.511448)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="CSGCombiner3D" unique_id=57075604]
+transform = Transform3D(0.99999887, 0, -0.001507178, 0, 1, 0, 0.001507178, 0, 0.99999887, -1.7764206, -1.7957268, -1118.3845)
+size = Vector3(4.880534, 0.17608643, 49.32927)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1647249527]
+transform = Transform3D(0.99999744, 0, -0.002257464, 0, 1, 0, 0.002257464, 0, 0.99999744, -1.1196136, -1.7957268, -1291.8242)
+size = Vector3(4.880534, 0.17608643, 299.36288)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1096850722]
+transform = Transform3D(0.9999617, 0, 0.008765256, 0, 1, 0, -0.008765256, 0, 0.9999617, -1.4299393, -1.7957268, -1508.8594)
+size = Vector3(4.880534, 0.17608643, 136.4067)
+
 [node name="Path3D" type="Path3D" parent="." unique_id=1484183513]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.546, 1.8, 1738.325)
 curve = SubResource("Curve3D_lsltb")

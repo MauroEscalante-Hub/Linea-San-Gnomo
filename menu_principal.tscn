@@ -111,6 +111,23 @@ theme_override_font_sizes/font_size = 83
 text = "LINEA SAN GNOMO
 "
 
+[node name="play2" type="Button" parent="Camera3D/CanvasLayer/pantalla_menu" unique_id=1732357442]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.261
+anchor_bottom = 0.16100001
+offset_left = 46.0
+offset_top = 263.0
+offset_right = 62.328003
+offset_bottom = 370.672
+scale = Vector2(0.6800015, 0.64000034)
+theme_override_font_sizes/font_size = 74
+theme_override_styles/normal = SubResource("StyleBoxFlat_gmcsc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ul6ys")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ns3he")
+text = "Saltar 
+Tutorial"
+
 [node name="play" type="Button" parent="Camera3D/CanvasLayer/pantalla_menu" unique_id=971028238]
 layout_mode = 1
 anchors_preset = -1
@@ -132,10 +149,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.261
 anchor_bottom = 0.16100001
-offset_left = 45.0
-offset_top = 280.0
-offset_right = 61.328003
-offset_bottom = 285.672
+offset_left = 46.0
+offset_top = 412.0
+offset_right = 62.328003
+offset_bottom = 417.672
 scale = Vector2(0.68, 0.64)
 theme_override_font_sizes/font_size = 74
 theme_override_styles/normal = SubResource("StyleBoxFlat_fa1tu")
@@ -143,5 +160,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_a6518")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yxm4i")
 text = "Salir"
 
+[connection signal="pressed" from="Camera3D/CanvasLayer/pantalla_menu/play2" to="Camera3D/CanvasLayer/pantalla_menu" method="_on_play_2_pressed"]
 [connection signal="pressed" from="Camera3D/CanvasLayer/pantalla_menu/play" to="Camera3D/CanvasLayer/pantalla_menu" method="_on_play_pressed"]
 [connection signal="pressed" from="Camera3D/CanvasLayer/pantalla_menu/salir" to="Camera3D/CanvasLayer/pantalla_menu" method="_on_salir_pressed"]
