@@ -23,7 +23,6 @@
 [ext_resource type="Script" uid="uid://qrsyxphpdw6t" path="res://Escenas/escenarios/final_nivel1.gd" id="17_g68db"]
 [ext_resource type="PackedScene" uid="uid://b0w31mc2k6qos" path="res://Escenas/componentes/Hudarma.tscn" id="18_fon06"]
 [ext_resource type="PackedScene" uid="uid://bmt7dendj5og2" path="res://Escenas/despertar_enemigos/despertar_enemigos.tscn" id="19_peni2"]
-[ext_resource type="PackedScene" uid="uid://t1lm60sghuea" path="res://Escenas/enemigos/enemigo_base_metralladora.tscn" id="21_ydg2l"]
 [ext_resource type="PackedScene" uid="uid://dysyaofxoagcu" path="res://Escenas/audio/playlist.tscn" id="26_wlc8u"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_7rrox"]
@@ -358,7 +357,7 @@ cantidad_de_municion = 28
 
 [node name="despertar_enemigos2" parent="." unique_id=1888103106 node_paths=PackedStringArray("enemigos") instance=ExtResource("19_peni2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -137.20372, 2.568544, 51.231255)
-enemigos = [NodePath("../enemigo2"), NodePath("")]
+enemigos = [NodePath("../enemigo2"), null]
 
 [node name="despertar_enemigos" parent="." unique_id=326533967 node_paths=PackedStringArray("enemigos") instance=ExtResource("19_peni2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -137.20372, 2.568544, 304.97662)
@@ -462,9 +461,6 @@ path_joined = false
 smooth_faces = true
 
 [node name="Playlist" parent="." unique_id=1615269182 instance=ExtResource("26_wlc8u")]
-
-[node name="enemigo3" parent="." unique_id=26571800 instance=ExtResource("21_ydg2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.32318, 0, 399.74075)
 
 [connection signal="area_entered" from="Area3D" to="Area3D" method="_on_area_entered"]
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
