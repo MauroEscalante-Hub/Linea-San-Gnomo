@@ -1,9 +1,25 @@
 [gd_scene format=3 uid="uid://dglxbrxv7bnad"]
 
-[node name="Hudvelocimetro" type="Control" unique_id=388219477]
+[ext_resource type="Script" uid="uid://bew7rcw5fkuaa" path="res://Escenas/hudvelocimetro.gd" id="1_gp6uy"]
+[ext_resource type="Texture2D" uid="uid://bkg7yxm2gwhy6" path="res://Assets/sprites/velocimetro 2.png" id="2_7g02g"]
+[ext_resource type="Texture2D" uid="uid://wowhuyb5iocp" path="res://Assets/sprites/puntero vellocimetro.png" id="3_057jr"]
+
+[node name="Hudvelocimetro" type="Control" unique_id=812209646]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gp6uy")
+
+[node name="velocimetro" type="Sprite2D" parent="." unique_id=2079398286]
+position = Vector2(1025, 511.99997)
+scale = Vector2(0.16361335, 0.13171211)
+texture = ExtResource("2_7g02g")
+
+[node name="aguja" type="Sprite2D" parent="." unique_id=673517623]
+position = Vector2(1027, 512)
+rotation = -2.6179938
+scale = Vector2(0.16361335, 0.14224897)
+texture = ExtResource("3_057jr")

@@ -26,12 +26,15 @@ packet_sequence = SubResource("OggPacketSequence_2gvnr")
 script = ExtResource("1_48olf")
 
 [node name="velocimetro" type="Sprite2D" parent="." unique_id=1039597152]
+visible = false
 position = Vector2(1025, 511.99997)
 scale = Vector2(0.16361335, 0.13171211)
 texture = ExtResource("2_sfb2l")
 
 [node name="aguja" type="Sprite2D" parent="." unique_id=857199099]
+visible = false
 position = Vector2(1027, 512)
+rotation = 5.497787
 scale = Vector2(0.16361335, 0.14224897)
 texture = ExtResource("3_ov6tw")
 
