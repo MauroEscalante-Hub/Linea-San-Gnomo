@@ -36,6 +36,7 @@ mesh = ExtResource("2_7lld6")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=735369643]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.030195443, 0.9219782, 1.4974191)
 shape = SubResource("BoxShape3D_5cipi")
+debug_color = Color(0.8378468, 0.7981917, 3.85046e-07, 0.41960785)
 
 [node name="vidabar" parent="." unique_id=1383496892 instance=ExtResource("2_0tn0r")]
 

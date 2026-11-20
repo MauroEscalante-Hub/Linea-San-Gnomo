@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://cu0nveryf7yao"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_38v3u"]
+albedo_color = Color(0.35906908, 0.35906908, 0.35906908, 1)
+roughness = 0.0
+emission_enabled = true
+emission = Color(0, 0.76138204, 0.3253722, 1)
+emission_energy_multiplier = 0.0
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_5cipi"]
+material = SubResource("StandardMaterial3D_38v3u")
 top_radius = 0.1
 bottom_radius = 0.1
 
