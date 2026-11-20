@@ -23,6 +23,7 @@
 [ext_resource type="Script" uid="uid://qrsyxphpdw6t" path="res://Escenas/escenarios/final_nivel1.gd" id="17_g68db"]
 [ext_resource type="PackedScene" uid="uid://b0w31mc2k6qos" path="res://Escenas/componentes/Hudarma.tscn" id="18_fon06"]
 [ext_resource type="PackedScene" uid="uid://bmt7dendj5og2" path="res://Escenas/despertar_enemigos/despertar_enemigos.tscn" id="19_peni2"]
+[ext_resource type="PackedScene" uid="uid://dglxbrxv7bnad" path="res://Escenas/hudvelocimetro.tscn" id="20_wlc8u"]
 [ext_resource type="PackedScene" uid="uid://t1lm60sghuea" path="res://Escenas/enemigos/enemigo_base_metralladora.tscn" id="21_ydg2l"]
 [ext_resource type="PackedScene" uid="uid://dysyaofxoagcu" path="res://Escenas/audio/playlist.tscn" id="26_wlc8u"]
 
@@ -219,6 +220,12 @@ point_count = 20
 
 [node name="Nivel1Mapa1" type="Node3D" unique_id=148612818]
 
+[node name="Hudvelocimetro" parent="." unique_id=388219477 instance=ExtResource("20_wlc8u")]
+offset_left = 123.0
+offset_top = -2.0
+offset_right = 123.0
+offset_bottom = -2.0
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1558179221]
 environment = SubResource("Environment_ieg26")
 
@@ -245,6 +252,7 @@ metadata/_edit_lock_ = true
 
 [node name="jugador" parent="." unique_id=1604139032 instance=ExtResource("2_1gonj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.24106, 1.4823804, 445.13596)
+start_as_player = false
 
 [node name="agua" type="MeshInstance3D" parent="." unique_id=562420754]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -384.9355, -10.316027, -470.48602)
@@ -314,6 +322,7 @@ cantidad_de_municion = 15
 
 [node name="enemigo2" parent="." unique_id=1008029146 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
 transform = Transform3D(-0.6854163, 0, 0.72815144, 0, 1, 0, -0.72815144, 0, -0.6854163, -62.875927, 11.65085, -167.87668)
+start_as_player = true
 danio_de_auto = 15
 tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
 cantidad_de_municion = 20
@@ -323,7 +332,7 @@ transform = Transform3D(-0.6824919, 0, 0.73089314, 0, 1, 0, -0.73089314, 0, -0.6
 danio_de_auto = 3
 tiempo_de_disparo = 0.1
 tren = NodePath("../Path3D/PathFollow3D/VehicleBody3D")
-cantidad_de_municion = 40
+cantidad_de_municion = 160
 
 [node name="enemigo4" parent="." unique_id=1748169763 node_paths=PackedStringArray("tren") instance=ExtResource("16_rk4vk")]
 transform = Transform3D(0.7751453, -0.031895418, -0.6309773, -4.5776414e-09, 0.9987249, -0.050484773, 0.63178307, 0.039133042, 0.7741569, -427.88068, 3.327857, -247.38838)
@@ -370,7 +379,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135.2992, 0, 445.36758)
 curve = SubResource("Curve3D_ydg2l")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=532694705 node_paths=PackedStringArray("barrita_tren")]
-transform = Transform3D(0.99987143, 0, 0.011932632, 0, 1, 0, -0.011932632, 0, 0.99987143, -0.17575073, 0.00012207031, -0.24935913)
+transform = Transform3D(0.99986845, 0, 0.011932597, 0, 1, 0, -0.011932597, 0, 0.99986845, -0.17575073, 0.00012207031, -0.24935913)
 script = ExtResource("1_j5g2l")
 barrita_tren = NodePath("TextureProgressBar")
 
