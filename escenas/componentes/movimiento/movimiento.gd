@@ -1,11 +1,11 @@
 class_name Movimiento
 extends Node3D
-
+const velocidadmulti= 2
 @export var player: VehicleBody3D
 @export var max_steer := 1.1
 @export var velocidad_de_giro := 10
 @export var engine_power := 100
-@onready var aguja = $velocimetro/aguja
+@onready var aguja =$aguja
 @onready var motor_marcha= $en_marcha
 @onready var motor_quieto= $quieto
 @onready var frenando = $freno
@@ -17,9 +17,14 @@ func _ready() -> void:
 	desactivarDerrape()
 	
 func _physics_process(delta):
+	if player != GameManager.current_player:
+		return
 	player.steering = lerp(player.steering, Input.get_axis("derecha","izquierda") * max_steer, velocidad_de_giro * delta)
 	player.engine_force = Input.get_axis("frenar", "avanzar") * engine_power
-	movimiento_aguja(player)
+	
+	movimiento_aguja(round(player.linear_velocity.length()*velocidadmulti),delta)
+	print("vel: ", player.linear_velocity.length(), " | rot: ", aguja.rotation_degrees)
+	print("path: ", aguja.get_path(), " | vel: ", player.linear_velocity.length(), " | rot: ", aguja.rotation_degrees)
 	verificar_humo_giro(player)
 	if !Input.is_action_pressed("avanzar") and !Input.is_action_pressed("frenar"):
 		motor_quieto.play()
@@ -47,9 +52,9 @@ func movimineto_desactivado():
 	player.steering = 0
 	player.engine_force = 0
 
-func movimiento_aguja(refe : VehicleBody3D):
-	var velo = refe.linear_velocity.length()
-	aguja.rotation = (1.6 * velo)/60
+func movimiento_aguja(speed,delta):
+	var rot =remap(speed,0,40,-150,135)
+	aguja.rotation_degrees = lerp(aguja.rotation_degrees,rot,delta)
 func activarDerrape() -> void:
 	humo_derrape1.emitting = true
 	humo_derrape2.emitting = true
