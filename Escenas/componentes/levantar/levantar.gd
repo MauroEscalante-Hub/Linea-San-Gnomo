@@ -4,6 +4,7 @@ extends Node3D
 @export var jugador: VehicleBody3D
 @export var tiempo_requerido := 2.0
 @export var desplazamiento_rescate := Vector3(0, 0, 0)
+
 var tiempo_acumulado := 0.0
 
 func _ready():
@@ -17,7 +18,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("levantar"):
 		rescatar_vehiculo()
 		tiempo_acumulado = 0.0
-		await 5
+		
 		return
 
 	var sin_motor = is_zero_approx(jugador.engine_force)
