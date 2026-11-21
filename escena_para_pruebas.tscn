@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bt4rtt2o18nfc" path="res://Escenas/jugador/jugador.tscn" id="1_r8nmx"]
 [ext_resource type="PackedScene" uid="uid://cxmnfguj72fdi" path="res://Escenas/componentes/game_manager.tscn" id="3_ioiu6"]
 [ext_resource type="PackedScene" uid="uid://14tjj1vngcuo" path="res://Escenas/enemigos/enemigo_base.tscn" id="3_o2176"]
+[ext_resource type="PackedScene" uid="uid://t1lm60sghuea" path="res://Escenas/enemigos/enemigo_base_metralladora.tscn" id="4_o2176"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8nmx"]
 albedo_color = Color(0.36862746, 0.64705884, 1, 1)
@@ -55,3 +56,9 @@ danio_de_auto = 1
 
 [node name="jugador" parent="." unique_id=1604139032 instance=ExtResource("1_r8nmx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3669567, 2.0224614, 0)
+
+[node name="enemigo3" parent="." unique_id=2064046298 instance=ExtResource("4_o2176")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.128887, -11.26321)
+danio_de_auto = 4
+tiempo_de_disparo = 0.2
+cantidad_de_municion = 200

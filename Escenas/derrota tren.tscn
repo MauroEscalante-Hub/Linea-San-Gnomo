@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bgknqasvsdt46" path="res://Escenas/derrota_tren.gd" id="1_5xok0"]
 [ext_resource type="Texture2D" uid="uid://d11xn2aocm0jk" path="res://Assets/sprites/imageen prueba.jpg" id="1_uarsk"]
+[ext_resource type="Texture2D" uid="uid://x7i30f6mshmu" path="res://Assets/models/TrenDerrota.jpg" id="2_5xok0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3xd07"]
 bg_color = Color(0.57694936, 0.16646573, 0.16812795, 1)
@@ -10,8 +11,14 @@ bg_color = Color(0.57694936, 0.16646573, 0.16812795, 1)
 script = ExtResource("1_5xok0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2044954353]
-position = Vector2(629, 381.00003)
-scale = Vector2(1.7002724, 1.7822967)
+position = Vector2(520.38, 378.04004)
+scale = Vector2(0.6600209, 0.70933336)
+texture = ExtResource("2_5xok0")
+
+[node name="FOTODEVERDAD" type="Sprite2D" parent="." unique_id=1294291316]
+visible = false
+position = Vector2(575, 328)
+scale = Vector2(1.5667574, 1.5645931)
 texture = ExtResource("1_uarsk")
 
 [node name="Salir" type="Button" parent="." unique_id=926016097]
@@ -32,5 +39,16 @@ theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_3xd07")
 text = "Reintentar"
 
+[node name="Reintentar2" type="Button" parent="." unique_id=337035393]
+offset_left = 1110.0
+offset_top = 604.0
+offset_right = 1155.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_3xd07")
+text = "?
+"
+
 [connection signal="button_down" from="Salir" to="." method="_on_salir_button_down"]
 [connection signal="button_down" from="Reintentar" to="." method="_on_reintentar_button_down"]
+[connection signal="pressed" from="Reintentar2" to="." method="_on_reintentar_2_pressed"]

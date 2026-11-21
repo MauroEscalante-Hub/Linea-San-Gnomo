@@ -127,6 +127,7 @@ mesh = SubResource("CylinderMesh_0ru8o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17721605, -0.44497806)
 
 [node name="camara" parent="." unique_id=1265065216 node_paths=PackedStringArray("player", "arma") instance=ExtResource("4_cjcfc")]
+transform = Transform3D(1, 0, 0, 0, 0.9999016, 0.014028376, 0, -0.014028376, 0.9999016, 0, 0.6881515, 0)
 player = NodePath("..")
 arma = NodePath("../Arma_de_jugador")
 

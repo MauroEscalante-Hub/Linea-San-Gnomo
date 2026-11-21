@@ -17,6 +17,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("levantar"):
 		rescatar_vehiculo()
 		tiempo_acumulado = 0.0
+		await 5
 		return
 
 	var sin_motor = is_zero_approx(jugador.engine_force)
