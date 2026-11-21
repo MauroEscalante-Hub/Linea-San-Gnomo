@@ -18,7 +18,7 @@ func _physics_process(delta):
 		puede_levantar = false
 		rescatar_vehiculo()
 		tiempo_acumulado = 0.0
-		utawait get_tree().create_timer(cooldown_levantar).timeo
+		await get_tree().create_timer(cooldown_levantar).timeout
 		puede_levantar = true
 		return
 

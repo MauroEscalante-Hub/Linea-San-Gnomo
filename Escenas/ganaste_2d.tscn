@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ltmvsnm54c15" path="res://Escenas/ganaste_2d.gd" id="1_brne7"]
 [ext_resource type="Texture2D" uid="uid://dyrnc4mo4h7mh" path="res://Assets/models/Victoria.png" id="1_fmsa2"]
+[ext_resource type="AudioStream" uid="uid://dgxqvha58rbrb" path="res://Escenas/audio/Final-Fantasy-VII-Victory-Fanfare-_HD_.ogg" id="3_jetbi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
 bg_color = Color(0.16862746, 0.5803922, 0.6, 0.2901961)
@@ -47,6 +48,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yf5fn")
 text = "Salir"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1073412148]
+stream = ExtResource("3_jetbi")
+volume_db = -19.827
 autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
