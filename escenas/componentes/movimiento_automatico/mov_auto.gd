@@ -11,7 +11,7 @@ var tren_nuevo: VehicleBody3D
 var objetivo: Node3D
 
 func _ready():
-	set_physics_process(false)
+	_desactivate()
 	if player == null and get_parent() is VehicleBody3D:
 		player = get_parent() as VehicleBody3D
 
