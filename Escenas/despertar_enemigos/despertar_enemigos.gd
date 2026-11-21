@@ -43,8 +43,5 @@ func despertar_enemigos():
 
 
 func _on_body_entered(body: Node3D) -> void:
-	var vehiculo = body.get_parent()
-	if vehiculo is VehicleBody3D:
-		print("ES EL VEHÍCULO: ", vehiculo.name)
+	if body is VehicleBody3D:
 		despertar_enemigos()
-	pass # Replace with function body.
