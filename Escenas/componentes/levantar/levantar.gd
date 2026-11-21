@@ -1,11 +1,11 @@
 class_name AutoRescateComponente
 extends Node3D
-
+@export var cooldown_levantar :float=1.5
 @export var jugador: VehicleBody3D
 @export var tiempo_requerido := 2.0
 @export var desplazamiento_rescate := Vector3(0, 0, 0)
+@onready var puede_levantar := true
 var tiempo_acumulado := 0.0
-
 func _ready():
 	if jugador == null and get_parent() is VehicleBody3D:
 		jugador = get_parent() as VehicleBody3D
@@ -14,10 +14,12 @@ func _physics_process(delta):
 	if not jugador:
 		return
 	
-	if Input.is_action_just_pressed("levantar"):
+	if Input.is_action_just_pressed("levantar") and puede_levantar:
+		puede_levantar = false
 		rescatar_vehiculo()
 		tiempo_acumulado = 0.0
-		await 5
+		await get_tree().create_timer(cooldown_levantar).timeout
+		puede_levantar = true
 		return
 
 	var sin_motor = is_zero_approx(jugador.engine_force)
