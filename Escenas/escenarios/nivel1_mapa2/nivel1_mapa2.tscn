@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cmv6ib0nhjx2s" path="res://Escenas/path_follow_3d.gd" id="1_lsltb"]
 [ext_resource type="Texture2D" uid="uid://clauofp52b0pq" path="res://Assets/3d/textures/DaySkyHDRI020A_1K_TONEMAPPED.jpg" id="1_rmie6"]
 [ext_resource type="PackedScene" uid="uid://pmc2plsrtcig" path="res://Escenas/Tren/Vagon.tscn" id="1_u7ql4"]
+[ext_resource type="Texture2D" uid="uid://bdsqblbdkfnee" path="res://Assets/sprites/via recta.png" id="2_3bdyu"]
 [ext_resource type="PackedScene" uid="uid://duhswckhasixx" path="res://Assets/3d/models/002_Pine_Tree.fbx" id="2_ott3n"]
 [ext_resource type="Texture2D" uid="uid://b08mhytstwmjr" path="res://Assets/sprites/linea san gnomo mapa2.png" id="3_0b23c"]
 [ext_resource type="Texture2D" uid="uid://cd5egavsecmpd" path="res://Assets/3d/textures/1_1024x1024.png" id="3_b60p1"]
@@ -32,6 +33,35 @@ sky_material = SubResource("PanoramaSkyMaterial_wlc8u")
 [sub_resource type="Environment" id="Environment_rmie6"]
 background_mode = 2
 sky = SubResource("Sky_ydg2l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pd8im"]
+albedo_texture = ExtResource("2_3bdyu")
+uv1_scale = Vector3(-0.155, -0.155, -0.155)
+uv1_offset = Vector3(2.495, 0, 0)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.2745606
+uv2_triplanar = true
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l33cd"]
+albedo_texture = ExtResource("2_3bdyu")
+uv1_scale = Vector3(-0.155, -0.155, -0.155)
+uv1_offset = Vector3(6.48, 4.235, 2.735)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.2745606
+uv1_world_triplanar = true
+uv2_scale = Vector3(0.575, 0.575, 0.575)
+uv2_offset = Vector3(3.95, 0, 0)
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpf4u"]
+albedo_texture = ExtResource("2_3bdyu")
+uv1_scale = Vector3(-0.155, -0.155, -0.155)
+uv1_offset = Vector3(2.21, 0, 0)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.2745606
+uv2_triplanar = true
+texture_filter = 0
 
 [sub_resource type="Curve3D" id="Curve3D_lsltb"]
 closed = true
@@ -197,10 +227,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.546, 1.8, 1738.325)
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=370928813]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018310547, -1.7957268, -60.92224)
 size = Vector3(4.542652, 0.17608643, 135.32397)
+material = SubResource("StandardMaterial3D_pd8im")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=448793448]
-transform = Transform3D(0.99970144, 0, -0.024432177, 0, 1, 0, 0.024432177, 0, 0.99970144, 2.430626, -1.7957268, -245.04688)
-size = Vector3(4.542652, 0.17608643, 234.24661)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.12861633, -1.7957268, -209.18152)
+size = Vector3(4.542652, 0.17608643, 162.47812)
+material = SubResource("StandardMaterial3D_l33cd")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=499509826]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.312439, -1.7957268, -430.03723)
@@ -257,13 +289,14 @@ size = Vector3(4.880534, 0.17608643, 299.36288)
 [node name="CSGBox3D16" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1096850722]
 transform = Transform3D(0.9999617, 0, 0.008765256, 0, 1, 0, -0.008765256, 0, 0.9999617, -1.4299393, -1.7957268, -1508.8594)
 size = Vector3(4.880534, 0.17608643, 136.4067)
+material = SubResource("StandardMaterial3D_qpf4u")
 
 [node name="Path3D" type="Path3D" parent="." unique_id=1484183513]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.546, 1.8, 1738.325)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.546, 0.1456039, 1738.325)
 curve = SubResource("Curve3D_lsltb")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1142436273 node_paths=PackedStringArray("barrita_tren")]
-transform = Transform3D(0.99998176, 0, 0.0039646644, 0, 1, 0, -0.0039646644, 0, 0.99998176, 0.016105652, -9.536743e-07, -13.675903)
+transform = Transform3D(0.9999722, 0, 0.0039646258, 0, 0.99999124, 0, -0.0039646267, 0, 0.9999721, 0.016105652, -9.536743e-07, -13.675903)
 script = ExtResource("1_lsltb")
 barrita_tren = NodePath("TextureProgressBar")
 

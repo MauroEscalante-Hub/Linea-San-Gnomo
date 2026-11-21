@@ -23,6 +23,7 @@
 [ext_resource type="Script" uid="uid://qrsyxphpdw6t" path="res://Escenas/escenarios/final_nivel1.gd" id="17_g68db"]
 [ext_resource type="PackedScene" uid="uid://b0w31mc2k6qos" path="res://Escenas/componentes/Hudarma.tscn" id="18_fon06"]
 [ext_resource type="PackedScene" uid="uid://bmt7dendj5og2" path="res://Escenas/despertar_enemigos/despertar_enemigos.tscn" id="19_peni2"]
+[ext_resource type="Texture2D" uid="uid://bdsqblbdkfnee" path="res://Assets/sprites/via recta.png" id="20_wlc8u"]
 [ext_resource type="PackedScene" uid="uid://t1lm60sghuea" path="res://Escenas/enemigos/enemigo_base_metralladora.tscn" id="26_d0o0d"]
 [ext_resource type="PackedScene" uid="uid://dysyaofxoagcu" path="res://Escenas/audio/playlist.tscn" id="26_wlc8u"]
 
@@ -210,11 +211,94 @@ size = Vector3(270.72998, 0.052001953, 219.50269)
 [sub_resource type="BoxShape3D" id="BoxShape3D_dwbtc"]
 size = Vector3(87.63916, 0.001, 201.65375)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0o0d"]
+albedo_texture = ExtResource("20_wlc8u")
+uv1_scale = Vector3(-0.155, -0.155, -0.155)
+uv1_offset = Vector3(2.52, 0, 0)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.2745606
+uv2_triplanar = true
+texture_filter = 0
+
 [sub_resource type="BoxMesh" id="BoxMesh_jq8tk"]
-size = Vector3(3.351593, 0.7958374, 464.97754)
+material = SubResource("StandardMaterial3D_d0o0d")
+size = Vector3(3.351593, 0.7958374, 484.1289)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rcuwd"]
+albedo_texture = ExtResource("20_wlc8u")
+uv1_scale = Vector3(-0.155, -0.155, -0.155)
+uv1_offset = Vector3(2.52, 0, 0)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.2745606
+uv2_triplanar = true
+texture_filter = 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_6fhyq"]
+material = SubResource("StandardMaterial3D_rcuwd")
 size = Vector3(2.9204102, 0.4937744, 62.75099)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iq84d"]
+albedo_texture = ExtResource("20_wlc8u")
+uv1_scale = Vector3(-0.155, -0.155, -0.155)
+uv1_offset = Vector3(2.52, 0.815, -2.1)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.0717735
+uv2_triplanar = true
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojiny"]
+albedo_texture = ExtResource("20_wlc8u")
+uv1_scale = Vector3(-0.155, -0.155, -0.155)
+uv1_offset = Vector3(2.86, 0, 0)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.2745606
+uv2_triplanar = true
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6s7o"]
+albedo_texture = ExtResource("20_wlc8u")
+uv1_scale = Vector3(-0.155, -0.155, -0.155)
+uv1_offset = Vector3(6.745, 0, 0)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.2745606
+uv2_triplanar = true
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ce5q"]
+albedo_texture = ExtResource("20_wlc8u")
+uv1_scale = Vector3(-0.155, -0.155, -0.155)
+uv1_offset = Vector3(2.585, 0, 0)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.2745606
+uv2_triplanar = true
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yjll8"]
+albedo_texture = ExtResource("20_wlc8u")
+uv1_scale = Vector3(-0.115, -0.115, -0.115)
+uv1_offset = Vector3(11.285, 0.215, -11.705)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.2745606
+uv2_triplanar = true
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfl1e"]
+albedo_texture = ExtResource("20_wlc8u")
+uv1_scale = Vector3(-0.155, -0.155, -0.155)
+uv1_offset = Vector3(2.645, 0, 0)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.2745606
+uv2_triplanar = true
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_38bky"]
+albedo_texture = ExtResource("20_wlc8u")
+uv1_scale = Vector3(-0.155, -0.155, -0.155)
+uv1_offset = Vector3(2.815, 0.155, 4.95)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.2745606
+uv2_triplanar = true
+texture_filter = 0
 
 [sub_resource type="Curve3D" id="Curve3D_ydg2l"]
 _data = {
@@ -361,7 +445,7 @@ enemigos = [NodePath("../enemigo2"), null]
 [node name="railes" type="CSGCombiner3D" parent="." unique_id=2141708119]
 
 [node name="mesh" type="MeshInstance3D" parent="railes" unique_id=1146641053]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135.77621, -0.32278442, 214.69426)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135.77621, -0.32278442, 224.26994)
 mesh = SubResource("BoxMesh_jq8tk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="railes" unique_id=2139397051]
@@ -371,6 +455,7 @@ mesh = SubResource("BoxMesh_6fhyq")
 [node name="CSGBox3D3" type="CSGBox3D" parent="railes" unique_id=992889132]
 transform = Transform3D(0.6522714, 0, 0.75798553, 0, 1, 0, -0.75798553, 0, 0.6522714, -175.24298, -0.16143799, -98.21099)
 size = Vector3(3.2996535, 0.55859375, 64.89628)
+material = SubResource("StandardMaterial3D_iq84d")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="railes" unique_id=1360859990]
 transform = Transform3D(0.614579, 0, 0.7888553, 0, 1, 0, -0.7888553, 0, 0.614579, -270.90237, -0.22070313, -174.69005)
@@ -395,26 +480,32 @@ size = Vector3(3.2267776, 0.55859375, 45.78996)
 [node name="CSGBox3D9" type="CSGBox3D" parent="railes" unique_id=587664204]
 transform = Transform3D(0.9999618, 0, -0.008726534, 0, 1, 0, 0.008726534, 0, 0.9999618, -423.86783, -0.221, -502.8659)
 size = Vector3(3.2267776, 0.55859375, 190.66728)
+material = SubResource("StandardMaterial3D_ojiny")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="railes" unique_id=1317676760]
 transform = Transform3D(0.99978054, 0, 0.020942418, 0, 1, 0, -0.020942418, 0, 0.99978054, -424.09274, -0.221, -656.1821)
 size = Vector3(3.2267776, 0.55859375, 118.15663)
+material = SubResource("StandardMaterial3D_u6s7o")
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="railes" unique_id=1265060325]
 transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, -425.3807, -0.221, -761.70544)
 size = Vector3(3.2267776, 0.55859375, 93.73593)
+material = SubResource("StandardMaterial3D_6ce5q")
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="railes" unique_id=628601546]
 transform = Transform3D(0.9979154, 0, 0.064532295, 0, 1, 0, -0.064532295, 0, 0.9979154, -428.101, -0.221, -849.9658)
 size = Vector3(3.2267776, 0.55859375, 87.264114)
+material = SubResource("StandardMaterial3D_yjll8")
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="railes" unique_id=1947923422]
 transform = Transform3D(0.9999617, 0, 0.0087265335, 0, 1, 0, -0.0087265335, 0, 0.9999617, -431.62143, -0.221, -967.0273)
 size = Vector3(3.611924, 0.55859375, 148.17892)
+material = SubResource("StandardMaterial3D_vfl1e")
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="railes" unique_id=1335023171]
 transform = Transform3D(0.9998474, 0, -0.0174524, 0, 1, 0, 0.0174524, 0, 0.9998474, -431.02765, -0.221, -1121.5575)
 size = Vector3(3.7730567, 0.55859375, 164.15051)
+material = SubResource("StandardMaterial3D_38bky")
 
 [node name="Path3D" type="Path3D" parent="." unique_id=1089647206]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135.2992, 0, 445.36758)
