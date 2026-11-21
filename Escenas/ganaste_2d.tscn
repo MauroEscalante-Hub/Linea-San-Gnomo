@@ -46,4 +46,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_g4v7s")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_yf5fn")
 text = "Salir"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1073412148]
+autoplay = true
+
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
